@@ -5,28 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrueRuler — Online Ruler (cm, mm, inch) in Actual Size</title>
 <meta name="description" content="Free online ruler that shows true cm, mm and inch sizes on your screen. Auto device detection, credit-card calibration and a drag-to-measure box. No app needed.">
-<meta name="theme-color" content="#1a7fde">
+<meta name="theme-color" content="#007aff">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.svg">
 <style>
 :root{
-  --bg:#f4f6f8; --card:#ffffff; --ink:#1c2733; --muted:#5b6b7b;
-  --accent:#1a7fde; --accent-ink:#fff; --ok:#1d9d55; --warn:#b45309;
-  --ruler-bg:#ffffff; --tick:#33404e; --num:#1c2733; --grid:#e4e9ee;
+  --bg:#f5f5f7; --card:#ffffff; --ink:#1d1d1f; --muted:#86868b;
+  --accent:#007aff; --accent-ink:#fff; --ok:#30d158; --warn:#ff9500;
+  --ruler-bg:#ffffff; --tick:#1d1d1f; --num:#1d1d1f; --grid:#d2d2d7;
   --radius:14px;
 }
 [data-theme="dark"]{
-  --bg:#0f1419; --card:#182029; --ink:#e8eef4; --muted:#9fb0c0;
-  --accent:#3b9bf0; --ruler-bg:#141b23; --tick:#c8d4df; --num:#e8eef4; --grid:#243040;
+  --bg:#000000; --card:#1c1c1e; --ink:#f5f5f7; --muted:#98989d;
+  --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.ruler.h{top:0;left:0;right:0;height:64px}
-.ruler.v{top:0;left:0;bottom:0;width:52px}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ruler.h{top:0;left:0;right:0;height:50px}
+.ruler.v{top:0;left:0;bottom:0;width:50px}
 .ruler canvas{display:block;width:100%;height:100%}
-.toolbar{position:fixed;top:0;left:52px;right:0;height:64px;z-index:40;display:flex;align-items:center;gap:8px;padding:0 12px;background:color-mix(in srgb,var(--ruler-bg) 88%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--grid)}
+.toolbar{position:fixed;top:0;left:50px;right:0;height:50px;z-index:40;display:flex;align-items:center;gap:8px;padding:0 12px;background:color-mix(in srgb,var(--ruler-bg) 82%,transparent);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--grid)}
 .brand{font-weight:800;font-size:17px;letter-spacing:.2px;margin-right:6px;white-space:nowrap}
 .brand span{color:var(--accent)}
 .seg{display:flex;background:var(--grid);border-radius:999px;padding:3px}
@@ -38,14 +38,14 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe U
 .status{margin-left:auto;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
 .dot{width:9px;height:9px;border-radius:50%;background:#c2ccd6;display:inline-block}
 .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)}
-.wrap{max-width:860px;margin:0 auto;padding:96px 18px 60px}
+.wrap{max-width:860px;margin:0 auto;padding:82px 18px 60px}
 .card{background:var(--card);border:1px solid var(--grid);border-radius:var(--radius);padding:22px;margin:18px 0}
 .card h2{margin:.2em 0 .6em;font-size:20px}
 .card h3{margin:1.1em 0 .4em;font-size:16px}
 .card p,.card li{color:var(--ink)}
 .muted{color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:64px}.ruler.v{display:none}.wrap{padding-top:150px}.status{display:none}}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:50px}.ruler.v{display:none}.wrap{padding-top:136px}.status{display:none}}
 /* measure overlay */
 #measureLayer{position:fixed;inset:0;z-index:50;display:none;touch-action:none}
 #measureLayer.on{display:block}
@@ -82,7 +82,7 @@ details.method summary{font-weight:700;cursor:pointer;font-size:15px}
 /* toast + zoom banner */
 #toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:26px;background:#101820;color:#fff;padding:11px 18px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:90;pointer-events:none}
 #toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-#zoomWarn{position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:70;display:none;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+#zoomWarn{position:fixed;top:56px;left:50%;transform:translateX(-50%);z-index:70;display:none;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.15)}
 #zoomWarn.on{display:block}
 footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;color:var(--muted);font-size:13px}
 #cursorRead{position:fixed;z-index:65;pointer-events:none;display:none;background:#101820;color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap}
@@ -104,13 +104,15 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <button class="tbtn" id="btnCal" title="Calibrate for true size">Calibrate</button>
   <button class="tbtn" id="btnRot" title="Swap ruler orientation">Rotate</button>
   <button class="tbtn" id="btnFull" title="Fullscreen">Fullscreen</button>
+  <button class="tbtn" id="btnPopup" title="Open in popup window">Popup</button>
   <button class="tbtn" id="btnPro" title="Protractor — measure angles">Protractor</button>
   <button class="tbtn" id="btnPrint" title="Print a true-size paper ruler">Print</button>
   <button class="tbtn" id="btnShare" title="Copy a link that carries your calibration">Share</button>
+  <select id="langSel" class="tbtn" aria-label="Language"></select>
   <button class="tbtn" id="btnTheme" title="Dark / light">Dark</button>
 </div>
 
-<div class="status" id="statusBar" style="position:fixed;top:76px;right:14px;z-index:45;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px">
+<div class="status" id="statusBar" style="position:fixed;top:60px;right:14px;z-index:45;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px">
   <span class="dot" id="statusDot"></span><span id="statusText">Not calibrated</span>
 </div>
 
@@ -118,8 +120,19 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
 <div class="wrap">
   <div class="card">
-    <h2 style="margin-top:0">Online ruler in true size</h2>
+    <h1 style="margin-top:0;font-size:24px">Online ruler in true size</h1>
     <p class="muted" style="margin-bottom:0">TrueRuler turns your screen into a real measuring tool. It detects common phones, tablets and laptops automatically — or calibrate once with your screen size or a bank card, and the on-screen ruler matches reality to the millimetre. Nothing to install.</p>
+  </div>
+
+  <div class="card" id="quickCal">
+    <h2>Quick calibration</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Enter your screen's diagonal size for instant calibration — or open the full options.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Screen diagonal in inches">
+      <span class="muted">inches</span>
+      <button class="tbtn primary" id="qApply" disabled>Apply</button>
+      <button class="tbtn" id="qFull">More options</button>
+    </div>
   </div>
 
   <div class="card">
@@ -167,9 +180,19 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 #proLayer{position:fixed;inset:0;z-index:55;display:none;background:color-mix(in srgb,var(--bg) 70%,transparent)}
 #proLayer.on{display:block}
 #proCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
-#proRead{position:fixed;top:78px;left:50%;transform:translateX(-50%);background:#101820;color:#fff;font-size:22px;font-weight:800;padding:10px 22px;border-radius:14px;z-index:56;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:center}
+#proRead{position:fixed;top:62px;left:50%;transform:translateX(-50%);background:#101820;color:#fff;font-size:22px;font-weight:800;padding:10px 22px;border-radius:14px;z-index:56;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:center}
 #proRead small{display:block;font-size:11px;font-weight:400;color:#b9c6d2}
 #proBar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:56}
+#langSel{max-width:132px;cursor:pointer}
+.footer-inner{max-width:860px;margin:0 auto}
+.footer-brand{font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px}
+.footer-tag{margin:0 0 12px}
+.footer-langs{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;margin:0 0 12px}
+.footer-langs a{color:var(--muted);text-decoration:none;font-size:13px}
+.footer-langs a:hover{color:var(--accent)}
+.footer-langs a[aria-current="page"]{color:var(--ink);font-weight:700}
+.footer-copy{margin:0;font-size:12.5px}
+@media(max-width:760px){.toolbar{overflow-x:auto;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.toolbar>*{flex-shrink:0}}
 /* printable sheet */
 #printSheet{display:none}
 .pruler{height:28mm}
@@ -348,6 +371,7 @@ function ppiFromHash(h){
   return clampPpi(Number(m[1]));
 }
 /*__PURE_END__*/
+</script>
 
 <script>
 (function(){
@@ -529,8 +553,8 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeM
 var cur = $("cursorRead");
 document.addEventListener("pointermove", function(e){
   if($("measureLayer").classList.contains("on")) return;
-  if(e.clientY < 70 || e.clientX < 56) return;
-  var mm = pxToMm(e.clientX - 56, state.ppi);
+  if(e.clientY < 56 || e.clientX < 54) return;
+  var mm = pxToMm(e.clientX - 54, state.ppi);
   cur.style.display = "block";
   cur.style.left = (e.clientX + 14) + "px";
   cur.style.top = (e.clientY + 16) + "px";
@@ -637,6 +661,8 @@ drawAll();
 checkZoom();
 window.addEventListener("resize", function(){ drawAll(); checkZoom(); });
 window.addEventListener("orientationchange", function(){ setTimeout(drawAll, 300); });
+/* public API for optional feature modules */
+window.__trueruler = { apply: applyPpi, getPpi: function(){ return state.ppi; } };
 })();
 </script>
 <script>
@@ -784,6 +810,39 @@ $("btnCal").addEventListener("click", function(){
       "Estimated diagonal: <b>" + (Math.hypot(pw, ph) / ppi).toFixed(1) + " in</b>";
   }, 60);
 });
+
+/* ---------- language switcher ---------- */
+(function(){
+  var sel = $("langSel"); if(!sel) return;
+  var langs = window.LANGS || [{code:"en", name:"English", url:"./"}];
+  var cur = window.CURRENT_LANG || "en";
+  langs.forEach(function(l){
+    var o = document.createElement("option"); o.value = l.url; o.textContent = l.name;
+    if(l.code === cur) o.selected = true;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", function(){ location.href = sel.value; });
+})();
+
+/* ---------- popup window ---------- */
+$("btnPopup").addEventListener("click", function(){
+  window.open(location.href.split("#")[0], "trueruler-popup", "width=1000,height=760,menubar=no,toolbar=no,location=no,status=no");
+});
+
+/* ---------- quick calibration (inline) ---------- */
+(function(){
+  var qi = $("qDiag"); if(!qi) return;
+  function bad(msg){ var t = $("toast"); t.textContent = msg; t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); }, 2200); }
+  qi.addEventListener("input", function(){ $("qApply").disabled = !(Number(qi.value) > 0); });
+  $("qApply").addEventListener("click", function(){
+    var d = Number(qi.value);
+    var w = window.screen.width * (window.devicePixelRatio || 1), h = window.screen.height * (window.devicePixelRatio || 1);
+    var ppi = ppiFromDiagonal(d, w, h);
+    if(!ppi || ppi < 40 || ppi > 600){ bad("That diagonal does not look right"); return; }
+    if(window.__trueruler) window.__trueruler.apply(ppi, "diagonal");
+  });
+  $("qFull").addEventListener("click", function(){ $("btnCal").click(); });
+})();
 
 /* ---------- PWA ---------- */
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
