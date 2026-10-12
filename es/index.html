@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueRuler — Regla online (cm, mm, pulgadas) en tamaño real</title>
+<meta name="description" content="Regla online gratis con cm, mm y pulgadas en tamaño real. Detección automática del dispositivo, calibración con tarjeta y medición por arrastre. Sin instalación.">
+    <link rel="canonical" href="https://sofaxoweb.github.io/Online-Ruler/es/">
+    <link rel="alternate" hreflang="en" href="https://sofaxoweb.github.io/Online-Ruler/">
+    <link rel="alternate" hreflang="cs" href="https://sofaxoweb.github.io/Online-Ruler/cs/">
+    <link rel="alternate" hreflang="de" href="https://sofaxoweb.github.io/Online-Ruler/de/">
+    <link rel="alternate" hreflang="es" href="https://sofaxoweb.github.io/Online-Ruler/es/">
+    <link rel="alternate" hreflang="fr" href="https://sofaxoweb.github.io/Online-Ruler/fr/">
+    <link rel="alternate" hreflang="id" href="https://sofaxoweb.github.io/Online-Ruler/id/">
+    <link rel="alternate" hreflang="it" href="https://sofaxoweb.github.io/Online-Ruler/it/">
+    <link rel="alternate" hreflang="ja" href="https://sofaxoweb.github.io/Online-Ruler/ja/">
+    <link rel="alternate" hreflang="ko" href="https://sofaxoweb.github.io/Online-Ruler/ko/">
+    <link rel="alternate" hreflang="ms" href="https://sofaxoweb.github.io/Online-Ruler/ms/">
+    <link rel="alternate" hreflang="nl" href="https://sofaxoweb.github.io/Online-Ruler/nl/">
+    <link rel="alternate" hreflang="pl" href="https://sofaxoweb.github.io/Online-Ruler/pl/">
+    <link rel="alternate" hreflang="pt" href="https://sofaxoweb.github.io/Online-Ruler/pt/">
+    <link rel="alternate" hreflang="ro" href="https://sofaxoweb.github.io/Online-Ruler/ro/">
+    <link rel="alternate" hreflang="ru" href="https://sofaxoweb.github.io/Online-Ruler/ru/">
+    <link rel="alternate" hreflang="th" href="https://sofaxoweb.github.io/Online-Ruler/th/">
+    <link rel="alternate" hreflang="tr" href="https://sofaxoweb.github.io/Online-Ruler/tr/">
+    <link rel="alternate" hreflang="uk" href="https://sofaxoweb.github.io/Online-Ruler/uk/">
+    <link rel="alternate" hreflang="vi" href="https://sofaxoweb.github.io/Online-Ruler/vi/">
+    <link rel="alternate" hreflang="x-default" href="https://sofaxoweb.github.io/Online-Ruler/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sofaxoweb.github.io/Online-Ruler/es/">
+    <meta property="og:title" content="TrueRuler — Regla online (cm, mm, pulgadas) en tamaño real">
+    <meta property="og:description" content="Regla online gratis con cm, mm y pulgadas en tamaño real. Detección automática del dispositivo, calibración con tarjeta y medición por arrastre. Sin instalación.">
+    <meta property="og:locale" content="es">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TrueRuler — Regla online (cm, mm, pulgadas) en tamaño real">
+    <meta name="twitter:description" content="Regla online gratis con cm, mm y pulgadas en tamaño real. Detección automática del dispositivo, calibración con tarjeta y medición por arrastre. Sin instalación.">
+<meta name="theme-color" content="#007aff">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../icon-192.svg">
+<style>
+:root{
+  --bg:#f5f5f7; --card:#ffffff; --ink:#1d1d1f; --muted:#86868b;
+  --accent:#007aff; --accent-ink:#fff; --ok:#30d158; --warn:#ff9500;
+  --ruler-bg:#ffffff; --tick:#1d1d1f; --num:#1d1d1f; --grid:#d2d2d7;
+  --radius:14px;
+}
+[data-theme="dark"]{
+  --bg:#000000; --card:#1c1c1e; --ink:#f5f5f7; --muted:#98989d;
+  --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ruler.h{top:0;left:0;right:0;height:50px}
+.ruler.v{top:0;left:0;bottom:0;width:50px}
+.ruler canvas{display:block;width:100%;height:100%}
+.toolbar{position:fixed;top:0;left:50px;right:0;height:50px;z-index:40;display:flex;align-items:center;gap:8px;padding:0 12px;background:color-mix(in srgb,var(--ruler-bg) 82%,transparent);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--grid)}
+.brand{font-weight:800;font-size:17px;letter-spacing:.2px;margin-right:6px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.seg{display:flex;background:var(--grid);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;cursor:pointer}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.tbtn{border:1px solid var(--grid);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.tbtn:hover{border-color:var(--accent)}
+.tbtn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.status{margin-left:auto;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:#c2ccd6;display:inline-block}
+.dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)}
+.wrap{max-width:860px;margin:0 auto;padding:82px 18px 60px}
+.card{background:var(--card);border:1px solid var(--grid);border-radius:var(--radius);padding:22px;margin:18px 0}
+.card h2{margin:.2em 0 .6em;font-size:20px}
+.card h3{margin:1.1em 0 .4em;font-size:16px}
+.card p,.card li{color:var(--ink)}
+.muted{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:50px}.ruler.v{display:none}.wrap{padding-top:136px}.status{display:none}}
+/* measure overlay */
+#measureLayer{position:fixed;inset:0;z-index:50;display:none;touch-action:none}
+#measureLayer.on{display:block}
+#mbox{position:absolute;border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);cursor:move;min-width:24px;min-height:24px}
+.hdl{position:absolute;width:14px;height:14px;background:var(--accent);border:2px solid #fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.hdl[data-d="nw"]{top:-8px;left:-8px;cursor:nwse-resize}
+.hdl[data-d="ne"]{top:-8px;right:-8px;cursor:nesw-resize}
+.hdl[data-d="sw"]{bottom:-8px;left:-8px;cursor:nesw-resize}
+.hdl[data-d="se"]{bottom:-8px;right:-8px;cursor:nwse-resize}
+.hdl[data-d="n"]{top:-8px;left:50%;margin-left:-7px;cursor:ns-resize}
+.hdl[data-d="s"]{bottom:-8px;left:50%;margin-left:-7px;cursor:ns-resize}
+.hdl[data-d="w"]{left:-8px;top:50%;margin-top:-7px;cursor:ew-resize}
+.hdl[data-d="e"]{right:-8px;top:50%;margin-top:-7px;cursor:ew-resize}
+#mread{position:absolute;left:50%;top:-46px;transform:translateX(-50%);background:#101820;color:#fff;font-size:13px;font-weight:700;padding:7px 12px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+#mread small{display:block;font-weight:400;color:#b9c6d2;font-size:11px}
+#measureBar{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:60;display:none;gap:8px;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:8px 10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+#measureBar.on{display:flex}
+/* modal */
+#modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;background:rgba(10,16,24,.55);padding:16px}
+#modal.on{display:flex}
+.sheet{background:var(--card);border-radius:18px;max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:24px}
+.sheet h2{margin:0 0 4px;font-size:20px}
+.sheet h3{margin:18px 0 6px;font-size:15px}
+.sheet .x{float:right;border:0;background:var(--grid);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--ink)}
+.field{display:flex;gap:10px;align-items:center;margin:10px 0;flex-wrap:wrap}
+.field input[type=number],.field select{font-size:15px;padding:9px 12px;border:1px solid var(--grid);border-radius:10px;background:var(--bg);color:var(--ink);min-width:0}
+.field select{flex:1}
+input[type=range]{width:100%;accent-color:var(--accent)}
+#cardSizer{margin:14px auto;background:color-mix(in srgb,var(--accent) 16%,transparent);border:2px dashed var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:12px;text-align:center}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--grid);color:var(--muted)}
+.pill.good{background:#e5f6ec;color:var(--ok)} .pill.best{background:#e5f6ec;color:var(--ok);border:1px solid var(--ok)}
+details.method{border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:10px 0;background:var(--bg)}
+details.method summary{font-weight:700;cursor:pointer;font-size:15px}
+/* toast + zoom banner */
+#toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:26px;background:#101820;color:#fff;padding:11px 18px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:90;pointer-events:none}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#zoomWarn{position:fixed;top:56px;left:50%;transform:translateX(-50%);z-index:70;display:none;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+#zoomWarn.on{display:block}
+footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;color:var(--muted);font-size:13px}
+#cursorRead{position:fixed;z-index:65;pointer-events:none;display:none;background:#101820;color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap}
+</style>
+</head>
+<body data-theme="light">
+<script>window.LANGS=[{code:"en",name:"English",url:"../"},{code:"cs",name:"Čeština",url:"../cs/"},{code:"de",name:"Deutsch",url:"../de/"},{code:"es",name:"Español",url:"./"},{code:"fr",name:"Français",url:"../fr/"},{code:"id",name:"Bahasa Indonesia",url:"../id/"},{code:"it",name:"Italiano",url:"../it/"},{code:"ja",name:"日本語",url:"../ja/"},{code:"ko",name:"한국어",url:"../ko/"},{code:"ms",name:"Melayu",url:"../ms/"},{code:"nl",name:"Nederlands",url:"../nl/"},{code:"pl",name:"Polski",url:"../pl/"},{code:"pt",name:"Português",url:"../pt/"},{code:"ro",name:"Română",url:"../ro/"},{code:"ru",name:"Русский",url:"../ru/"},{code:"th",name:"ไทย",url:"../th/"},{code:"tr",name:"Türkçe",url:"../tr/"},{code:"uk",name:"Українська",url:"../uk/"},{code:"vi",name:"Tiếng Việt",url:"../vi/"}];window.CURRENT_LANG="es";</script>
+
+
+<div class="ruler h"><canvas id="rh"></canvas></div>
+<div class="ruler v"><canvas id="rv"></canvas></div>
+
+<div class="toolbar" role="toolbar" aria-label="Controles de la regla">
+  <div class="brand">True<span>Ruler</span></div>
+  <div class="seg" role="group" aria-label="Unidades">
+    <button data-unit="cm" class="on">cm</button>
+    <button data-unit="mm">mm</button>
+    <button data-unit="in">inch</button>
+  </div>
+  <button class="tbtn" id="btnMeasure" title="Arrastra un recuadro para medir lo que sea">Medir</button>
+  <button class="tbtn" id="btnCal" title="Calibrar para el tamaño real">Calibrar</button>
+  <button class="tbtn" id="btnRot" title="Cambiar la orientación de las reglas">Rotar</button>
+  <button class="tbtn" id="btnFull" title="Pantalla completa">Pantalla completa</button>
+  <button class="tbtn" id="btnPopup" title="Abrir en ventana emergente">Popup</button>
+  <button class="tbtn" id="btnPro" title="Transportador — mide ángulos">Transportador</button>
+  <button class="tbtn" id="btnPrint" title="Imprimir una regla de papel en tamaño real">Imprimir</button>
+  <button class="tbtn" id="btnShare" title="Copiar un enlace con tu calibración">Compartir</button>
+  <select id="langSel" class="tbtn" aria-label="Idioma"></select>
+  <button class="tbtn" id="btnTheme" title="Oscuro / claro">Oscuro</button>
+</div>
+
+<div class="status" id="statusBar" style="position:fixed;top:60px;right:14px;z-index:45;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px">
+  <span class="dot" id="statusDot"></span><span id="statusText">Sin calibrar</span>
+</div>
+
+<div id="zoomWarn"></div>
+
+<div class="wrap">
+  <div class="card">
+    <h1 style="margin-top:0;font-size:24px">Regla online en tamaño real</h1>
+    <p class="muted" style="margin-bottom:0">TrueRuler convierte tu pantalla en una herramienta de medición real. Detecta automáticamente teléfonos, tabletas y portátiles comunes — o calibra una vez con el tamaño de tu pantalla o una tarjeta bancaria, y la regla en pantalla coincidirá con la realidad al milímetro. Nada que instalar.</p>
+  </div>
+
+  <div class="card" id="quickCal">
+    <h2>Calibración rápida</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Introduce la diagonal de tu pantalla para una calibración instantánea — o abre las opciones completas.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal de pantalla en pulgadas">
+      <span class="muted">pulgadas</span>
+      <button class="tbtn primary" id="qApply" disabled>Aplicar</button>
+      <button class="tbtn" id="qFull">Más opciones</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cómo medir</h2>
+    <div class="grid2">
+      <div>
+        <h3>1 · Comprueba el punto verde</h3>
+        <p class="muted">Si se reconoce tu dispositivo, el indicador se pone verde y la regla ya está en tamaño real.</p>
+      </div>
+      <div>
+        <h3>2 · O calibra en 20 segundos</h3>
+        <p class="muted">Introduce la diagonal de tu pantalla o apoya una tarjeta bancaria (85.60&nbsp;mm de ancho) sobre la guía en pantalla y arrastra el deslizador hasta que coincidan.</p>
+      </div>
+      <div>
+        <h3>3 · Mide lo que sea</h3>
+        <p class="muted">Apoya el objeto contra el borde de la regla — o pulsa <b>Medir</b> y arrastra un recuadro sobre cualquier cosa en pantalla para ver la medida en cm/mm/inch en directo.</p>
+      </div>
+      <div>
+        <h3>4 · Lo recuerda</h3>
+        <p class="muted">Tu calibración se guarda en este dispositivo, así la regla seguirá siendo precisa la próxima vez que la abras.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Conversor de unidades</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valor">
+      <select id="convFrom" aria-label="Unidad de origen"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Unidad de destino"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Las conversiones de píxeles usan el PPI actual de tu regla (<span id="convPpi">96</span>).</p>
+  </div>
+
+  <div class="card">
+    <h2>Por qué las pantallas necesitan calibración</h2>
+    <p class="muted">Un centímetro en pantalla es un número de píxeles, y ese número depende de la densidad de píxeles (PPI) de tu pantalla. Dos monitores de 1920×1080 pueden ser de 22″ o de 32″ — los mismos píxeles, tamaños reales muy distintos. Por eso una app de regla debe conocer el PPI real de tu pantalla, ya sea desde una base de datos de dispositivos o con una calibración rápida. <span id="ppiEcho"></span></p>
+  </div>
+</div>
+
+<style>
+/* protractor */
+#proLayer{position:fixed;inset:0;z-index:55;display:none;background:color-mix(in srgb,var(--bg) 70%,transparent)}
+#proLayer.on{display:block}
+#proCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+#proRead{position:fixed;top:62px;left:50%;transform:translateX(-50%);background:#101820;color:#fff;font-size:22px;font-weight:800;padding:10px 22px;border-radius:14px;z-index:56;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:center}
+#proRead small{display:block;font-size:11px;font-weight:400;color:#b9c6d2}
+#proBar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:56}
+#langSel{max-width:132px;cursor:pointer}
+.footer-inner{max-width:860px;margin:0 auto}
+.footer-brand{font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px}
+.footer-tag{margin:0 0 12px}
+.footer-langs{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;margin:0 0 12px}
+.footer-langs a{color:var(--muted);text-decoration:none;font-size:13px}
+.footer-langs a:hover{color:var(--accent)}
+.footer-langs a[aria-current="page"]{color:var(--ink);font-weight:700}
+.footer-copy{margin:0;font-size:12.5px}
+@media(max-width:760px){.toolbar{overflow-x:auto;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.toolbar>*{flex-shrink:0}}
+/* printable sheet */
+#printSheet{display:none}
+.pruler{height:28mm}
+@media print{
+  .toolbar,.ruler,.wrap,footer,#measureLayer,#measureBar,#modal,#toast,#zoomWarn,#cursorRead,.status,#proLayer,#proRead,#proBar{display:none!important}
+  #printSheet{display:block!important;color:#000}
+  #printSheet h2{font-size:16pt;margin:0 0 4pt}
+  #printSheet p{font-size:9pt;color:#333;margin:0 0 12pt}
+  .pruler{position:relative;border:1px solid #000;margin:0 0 18pt;background:#fff;page-break-inside:avoid}
+  .prtick{position:absolute;bottom:0;width:1px;background:#000}
+  .prlab{position:absolute;bottom:2pt;font-size:8pt;transform:translateX(-50%);color:#000}
+}
+</style>
+
+<div id="proLayer">
+  <canvas id="proCanvas"></canvas>
+  <div id="proRead">90.0°<small>arrastra los tiradores · arrastra el centro para mover</small></div>
+  <div id="proBar"><button class="tbtn primary" id="btnProDone">Listo</button></div>
+</div>
+
+<div id="printSheet">
+  <h2>TrueRuler — regla de papel (se imprime en tamaño real)</h2>
+  <p>Imprime esta página a <b>escala 100%</b> (nunca «ajustar a la página»). Recorta por el borde y tendrás una regla real de 18&nbsp;cm / 7&nbsp;inch.</p>
+  <div class="pruler" id="prCm"></div>
+  <div class="pruler" id="prIn"></div>
+</div>
+
+<div id="measureLayer">
+  <div id="mbox">
+    <div id="mread">0.0 cm<small>0 mm · 0.00 in</small></div>
+    <div class="hdl" data-d="nw"></div><div class="hdl" data-d="n"></div><div class="hdl" data-d="ne"></div>
+    <div class="hdl" data-d="e"></div><div class="hdl" data-d="se"></div><div class="hdl" data-d="s"></div>
+    <div class="hdl" data-d="sw"></div><div class="hdl" data-d="w"></div>
+  </div>
+</div>
+<div id="measureBar">
+  <button class="tbtn" id="btnCopy">Copiar</button>
+  <button class="tbtn" id="btnNudge">⌨ mover: ←→↑↓</button>
+  <button class="tbtn primary" id="btnDone">Listo</button>
+</div>
+<div id="cursorRead"></div>
+
+<div id="modal" role="dialog" aria-modal="true" aria-label="Calibración">
+  <div class="sheet">
+    <button class="x" id="btnCloseModal" aria-label="Cerrar">✕</button>
+    <h2>Calibra tu pantalla</h2>
+    <p class="muted" style="margin-top:0">Elige un método. La calibración con tarjeta es la más precisa.</p>
+
+    <details class="method" open>
+      <summary>Buscar mi dispositivo <span class="pill good">fácil</span></summary>
+      <div class="field">
+        <select id="deviceSel"><option value="">— elige tu teléfono, tableta o portátil —</option></select>
+      </div>
+      <div class="field"><button class="tbtn primary" id="btnApplyDevice" disabled>Aplicar</button></div>
+    </details>
+
+    <details class="method">
+      <summary>Diagonal de pantalla <span class="pill good">±2%</span></summary>
+      <p class="muted">Introduce la diagonal según las especificaciones de tu dispositivo (caja o ajustes → acerca de).</p>
+      <div class="field">
+        <input type="number" id="diagInput" placeholder="e.g. 13.3" step="0.1" min="3" max="50" style="width:140px">
+        <span class="muted">pulgadas</span>
+        <button class="tbtn primary" id="btnApplyDiag" disabled>Aplicar</button>
+      </div>
+    </details>
+
+    <details class="method">
+      <summary>Calibración con tarjeta <span class="pill best">más precisa</span></summary>
+      <p class="muted">Apoya cualquier tarjeta bancaria sobre el recuadro azul y arrastra el deslizador hasta que el recuadro tenga exactamente el tamaño de la tarjeta. Todas las tarjetas miden 85.60&nbsp;×&nbsp;53.98&nbsp;mm.</p>
+      <div id="cardSizer"><div>tarjeta<br>85.60 × 53.98 mm</div></div>
+      <input type="range" id="ppiSlider" min="60" max="600" step="0.5" value="96">
+      <div class="field"><span class="muted">Densidad de pantalla:</span><b id="ppiVal">96.0 PPI</b></div>
+      <div class="field"><button class="tbtn primary" id="btnApplyCard">Guardar calibración</button></div>
+    </details>
+
+    <details class="method">
+      <summary>Mi pantalla</summary>
+      <div id="screenInfo" class="muted" style="font-size:14px;line-height:1.9"></div>
+    </details>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">TrueRuler</div>
+    <p class="footer-tag">Regla online gratis con transportador, regla imprimible y conversor de unidades.</p>
+    <nav class="footer-langs" aria-label="Languages">
+      <a href="../" hreflang="en">English</a>
+      <a href="../cs/" hreflang="cs">Čeština</a>
+      <a href="../de/" hreflang="de">Deutsch</a>
+      <a href="./" hreflang="es" aria-current="page">Español</a>
+      <a href="../fr/" hreflang="fr">Français</a>
+      <a href="../id/" hreflang="id">Bahasa Indonesia</a>
+      <a href="../it/" hreflang="it">Italiano</a>
+      <a href="../ja/" hreflang="ja">日本語</a>
+      <a href="../ko/" hreflang="ko">한국어</a>
+      <a href="../ms/" hreflang="ms">Melayu</a>
+      <a href="../nl/" hreflang="nl">Nederlands</a>
+      <a href="../pl/" hreflang="pl">Polski</a>
+      <a href="../pt/" hreflang="pt">Português</a>
+      <a href="../ro/" hreflang="ro">Română</a>
+      <a href="../ru/" hreflang="ru">Русский</a>
+      <a href="../th/" hreflang="th">ไทย</a>
+      <a href="../tr/" hreflang="tr">Türkçe</a>
+      <a href="../uk/" hreflang="uk">Українська</a>
+      <a href="../vi/" hreflang="vi">Tiếng Việt</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> TrueRuler. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+/*__PURE_START__*/
+/* Pure math + data: no DOM. Extracted and unit-tested by tools/test.js */
+var MM_PER_IN = 25.4;
+var CARD_W_MM = 85.60, CARD_H_MM = 53.98;
+
+function ppiFromDiagonal(diagIn, resW, resH){
+  diagIn = Number(diagIn);
+  if(!(diagIn > 0) || !(resW > 0) || !(resH > 0)) return null;
+  return Math.hypot(resW, resH) / diagIn;
+}
+function pxPerMm(ppi){ return ppi > 0 ? ppi / MM_PER_IN : null; }
+function mmToPx(mm, ppi){ return (mm * ppi) / MM_PER_IN; }
+function pxToMm(px, ppi){ return (px * MM_PER_IN) / ppi; }
+function pxToIn(px, ppi){ return px / ppi; }
+function cardWidthPx(ppi){ return mmToPx(CARD_W_MM, ppi); }
+function cardHeightPx(ppi){ return mmToPx(CARD_H_MM, ppi); }
+function clampPpi(p){ p = Number(p); if(!(p > 0)) return null; return Math.min(600, Math.max(40, p)); }
+function fmtLen(mm, unit){
+  if(unit === 'mm') return (Math.round(mm * 10) / 10) + ' mm';
+  if(unit === 'in') return (Math.round((mm / MM_PER_IN) * 100) / 100) + ' in';
+  return (Math.round((mm / 10) * 10) / 10) + ' cm';
+}
+/* Curated device database: public factory PPI specs. {n:name, w/h:CSS px, dpr, ppi} */
+var DEVICE_DB = [
+  {n:"iPhone 16 Pro Max", w:440, h:956, dpr:3, ppi:460},{n:"iPhone 16 Pro", w:402, h:874, dpr:3, ppi:460},
+  {n:"iPhone 16 / 15", w:393, h:852, dpr:3, ppi:460},{n:"iPhone 16 Plus / 15 Plus", w:430, h:932, dpr:3, ppi:460},
+  {n:"iPhone 14 / 13 / 12", w:390, h:844, dpr:3, ppi:460},{n:"iPhone 14 Pro Max", w:430, h:932, dpr:3, ppi:460},
+  {n:"iPhone 14 Pro", w:393, h:852, dpr:3, ppi:460},{n:"iPhone 13 mini / 12 mini", w:375, h:812, dpr:3, ppi:476},
+  {n:"iPhone 11 / XR", w:414, h:896, dpr:2, ppi:326},{n:"iPhone SE (2020/2022)", w:375, h:667, dpr:2, ppi:326},
+  {n:"iPad Pro 12.9", w:1024, h:1366, dpr:2, ppi:264},{n:"iPad Pro 11 / Air", w:834, h:1194, dpr:2, ppi:264},
+  {n:"iPad 10.9 / mini", w:820, h:1180, dpr:2, ppi:264},
+  {n:"MacBook Air 13 (M1-M3)", w:1440, h:900, dpr:2, ppi:227},{n:"MacBook Air 15", w:1512, h:944, dpr:2, ppi:224},
+  {n:"MacBook Pro 14", w:1512, h:982, dpr:2, ppi:254},{n:"MacBook Pro 16", w:1728, h:1117, dpr:2, ppi:254},
+  {n:"iMac 24", w:2240, h:1260, dpr:2, ppi:218},{n:"Studio Display 27", w:2560, h:1440, dpr:2, ppi:218},
+  {n:"Galaxy S24 Ultra", w:412, h:915, dpr:3.75, ppi:505},{n:"Galaxy S24 / S23", w:360, h:780, dpr:3, ppi:418},
+  {n:"Galaxy S24+ / S23+", w:384, h:824, dpr:3, ppi:393},{n:"Galaxy Z Fold 5 (open)", w:884, h:800, dpr:2.6, ppi:374},
+  {n:"Galaxy Z Flip 5", w:412, h:915, dpr:2.625, ppi:426},{n:"Galaxy A54", w:384, h:854, dpr:2.625, ppi:403},
+  {n:"Pixel 9 Pro XL", w:448, h:1008, dpr:3, ppi:486},{n:"Pixel 9 / 8", w:412, h:915, dpr:2.625, ppi:422},
+  {n:"Pixel 8 Pro", w:448, h:1008, dpr:3, ppi:489},{n:"Pixel 7a", w:412, h:915, dpr:2.625, ppi:429},
+  {n:"Pixel Tablet", w:1280, h:800, dpr:2, ppi:276},
+  {n:"Surface Pro 9/10", w:1440, h:960, dpr:2, ppi:267},{n:"Surface Laptop 13.8", w:1536, h:1024, dpr:2, ppi:201},
+  {n:"ThinkPad X1 Carbon 14", w:1920, h:1200, dpr:1, ppi:162},
+  {n:"24\" monitor 1080p", w:1920, h:1080, dpr:1, ppi:92},{n:"27\" monitor 1440p", w:2560, h:1440, dpr:1, ppi:109},
+  {n:"27\" monitor 4K", w:3840, h:2160, dpr:1, ppi:163},{n:"24\" monitor 1440p", w:2560, h:1440, dpr:1, ppi:123},
+  {n:"32\" monitor 4K", w:3840, h:2160, dpr:1, ppi:138},{n:"34\" ultrawide 1440p", w:3440, h:1440, dpr:1, ppi:110}
+];
+function matchDevice(w, h, dpr, ua){
+  ua = (ua || "").toLowerCase();
+  var best = null, bestScore = 0;
+  for(var i = 0; i < DEVICE_DB.length; i++){
+    var d = DEVICE_DB[i];
+    var dimOk = (Math.abs(d.w - w) <= 4 && Math.abs(d.h - h) <= 4) || (Math.abs(d.w - h) <= 4 && Math.abs(d.h - w) <= 4);
+    if(!dimOk) continue;
+    var score = 10 - Math.min(10, Math.abs(d.dpr - dpr) * 4);
+    var key = d.n.toLowerCase().split(" ")[0];
+    if(ua.indexOf("iphone") > -1 && key === "iphone") score += 6;
+    if(ua.indexOf("ipad") > -1 && key === "ipad") score += 6;
+    if(ua.indexOf("mac") > -1 && (key === "macbook" || key === "imac" || key === "studio")) score += 6;
+    if(ua.indexOf("pixel") > -1 && key === "pixel") score += 6;
+    if(ua.indexOf("sm-") > -1 && key === "galaxy") score += 6;
+    if(score > bestScore){ bestScore = score; best = d; }
+  }
+  return bestScore >= 8 ? {device: best, score: Math.round(bestScore)} : null;
+}
+/* angle between two protractor arms, 0..180 */
+function angleBetweenDeg(a, b){
+  var d = Math.abs(Number(a) - Number(b)) % 360;
+  return d > 180 ? 360 - d : d;
+}
+/* length units -> mm (px is ppi-dependent) */
+var LEN_TO_MM = {mm:1, cm:10, m:1000, inch:25.4, ft:304.8, yd:914.4, pt:25.4/72, px:null};
+function convertLen(v, from, to, ppi){
+  v = Number(v);
+  if(!isFinite(v)) return null;
+  if(!LEN_TO_MM.hasOwnProperty(from) || !LEN_TO_MM.hasOwnProperty(to)) return null;
+  var mm;
+  if(from === "px"){ if(!(ppi > 0)) return null; mm = v * MM_PER_IN / ppi; }
+  else mm = v * LEN_TO_MM[from];
+  if(to === "px"){ if(!(ppi > 0)) return null; return mm * ppi / MM_PER_IN; }
+  return mm / LEN_TO_MM[to];
+}
+/* shareable calibración link */
+function shareHashFor(ppi){ ppi = clampPpi(ppi); return ppi ? "#ppi=" + (Math.round(ppi * 10) / 10) : ""; }
+function ppiFromHash(h){
+  var m = /[#&?]ppi=([0-9]+(?:\.[0-9]+)?)/.exec(String(h || ""));
+  if(!m) return null;
+  return clampPpi(Number(m[1]));
+}
+/*__PURE_END__*/
+</script>
+
+<script>
+(function(){
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+var LS_KEY = "trueruler.v1";
+var state = { ppi: 96, calibrated: false, method: null, device: null, unit: "cm", rotated: false };
+
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify({ppi:state.ppi, calibrated:state.calibrated, method:state.method, device:state.device, unit:state.unit})); }catch(e){} }
+function load(){ try{ var s = JSON.parse(localStorage.getItem(LS_KEY) || "null"); if(s && s.ppi > 0){ state.ppi = clampPpi(s.ppi); state.calibrated = !!s.calibrated; state.method = s.method || null; state.device = s.device || null; if(s.unit) state.unit = s.unit; } }catch(e){} }
+
+/* ---------- status ---------- */
+function setStatus(){
+  var dot = $("statusDot"), txt = $("statusText");
+  if(state.calibrated){
+    dot.className = "dot ok";
+    var label = state.method === "device" && state.device ? state.device : state.method === "card" ? "calibración con tarjeta" : state.method === "diagonal" ? "entrada de diagonal" : "calibración";
+    txt.textContent = "Calibrado · " + Math.round(state.ppi) + " PPI (" + label + ")";
+  } else {
+    dot.className = "dot warn";
+    txt.textContent = "Sin calibrar — pulsa Calibrar para el tamaño real";
+  }
+  var echo = $("ppiEcho");
+  if(echo) echo.textContent = "Ahora mismo se asume que esta pantalla tiene " + Math.round(state.ppi) + " PPI" + (state.calibrated ? " (calibrado)." : " (valor predeterminado sin calibrar).");
+}
+
+/* ---------- ruler drawing ---------- */
+var rh = $("rh"), rv = $("rv");
+function setupCanvas(c){
+  var r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  c.width = Math.max(1, Math.round(r.width * dpr));
+  c.height = Math.max(1, Math.round(r.height * dpr));
+  var ctx = c.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return {ctx: ctx, w: r.width, h: r.height};
+}
+function tickSpec(unit){
+  if(unit === "in") return {minor: 1/16, mid: 1/2, major: 1, label: function(v){ return v + "″"; }};
+  if(unit === "mm") return {minor: 1, mid: 5, major: 10, label: function(v){ return v; }};
+  return {minor: 1, mid: 5, major: 10, label: function(v){ return (v/10); }}; // cm: work in mm
+}
+function pxPerMinor(ppi, unit){
+  if(unit === "in") return ppi / 16;
+  return ppi / 25.4; // 1 mm
+}
+function drawRuler(canvas, horizontal){
+  var s = setupCanvas(canvas), ctx = s.ctx;
+  var css = getComputedStyle(document.body);
+  var tick = css.getPropertyValue("--tick").trim() || "#33404e";
+  var num = css.getPropertyValue("--num").trim() || "#1c2733";
+  var grid = css.getPropertyValue("--grid").trim() || "#e4e9ee";
+  var bg = css.getPropertyValue("--ruler-bg").trim() || "#fff";
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, s.w, s.h);
+  var unit = state.rotated ? (horizontal ? "v" : "h") : (horizontal ? "h" : "v");
+  void unit;
+  var u = state.unit, spec = tickSpec(u), ppm = pxPerMinor(state.ppi, u);
+  var len = horizontal ? s.w : s.h;
+  var H = horizontal ? s.h : s.w;
+  ctx.strokeStyle = tick; ctx.fillStyle = num; ctx.lineWidth = 1;
+  ctx.font = "11px -apple-system,Segoe UI,Roboto,sans-serif";
+  ctx.textBaseline = "top";
+  var minorMM = u === "in" ? 25.4/16 : 1;
+  var n = 0, x = 0;
+  while(x <= len + 1){
+    var mm = n * minorMM;
+    var isMajor = u === "in" ? (n % 16 === 0) : (Math.round(mm) % spec.major === 0);
+    var isMid = !isMajor && (u === "in" ? (n % 8 === 0) : (Math.round(mm) % spec.mid === 0));
+    var tl = isMajor ? H * 0.62 : isMid ? H * 0.42 : H * 0.26;
+    ctx.beginPath();
+    if(horizontal){ ctx.moveTo(x + .5, H); ctx.lineTo(x + .5, H - tl); }
+    else { ctx.moveTo(0, x + .5); ctx.lineTo(tl, x + .5); }
+    ctx.stroke();
+    if(isMajor && x > 2){
+      var label = u === "in" ? spec.label(n/16) : u === "mm" ? spec.label(Math.round(mm)) : spec.label(Math.round(mm));
+      if(horizontal) ctx.fillText(label, x + 4, 4);
+      else { ctx.save(); ctx.translate(6, x + 4); ctx.fillText(label, 0, 0); ctx.restore(); }
+    }
+    n++; x = n * ppm;
+    if(n > 20000) break;
+  }
+  ctx.strokeStyle = grid; ctx.beginPath();
+  if(horizontal){ ctx.moveTo(0, H - .5); ctx.lineTo(len, H - .5); }
+  else { ctx.moveTo(W0(), 0); ctx.lineTo(W0(), len); }
+  ctx.stroke();
+  function W0(){ return s.w - .5; }
+}
+function drawAll(){ drawRuler(rh, true); var v = document.querySelector(".ruler.v"); if(v && getComputedStyle(v).display !== "none") drawRuler(rv, false); }
+
+/* ---------- toast ---------- */
+var toastT = null;
+function toast(msg){ var t = $("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("on"); }, 2200); }
+
+/* ---------- calibración ---------- */
+function applyPpi(ppi, method, deviceName){
+  ppi = clampPpi(ppi); if(!ppi) return;
+  state.ppi = ppi; state.calibrated = true; state.method = method; state.device = deviceName || null;
+  save(); setStatus(); drawAll(); sizeCardSizer();
+  toast("Calibrado · " + Math.round(ppi) + " PPI");
+}
+function sizeCardSizer(){
+  var el = $("cardSizer"); if(!el) return;
+  var wpx = cardWidthPx(state.ppi), hpx = cardHeightPx(state.ppi);
+  var maxW = 420;
+  var scale = wpx > maxW ? maxW / wpx : 1;
+  el.style.width = Math.round(wpx * scale) + "px";
+  el.style.height = Math.round(hpx * scale) + "px";
+}
+function openModal(){ $("modal").classList.add("on"); sizeCardSizer(); $("ppiSlider").value = state.ppi; $("ppiVal").textContent = state.ppi.toFixed(1) + " PPI"; }
+function closeModal(){ $("modal").classList.remove("on"); }
+
+/* device list */
+(function fillDevices(){
+  var sel = $("deviceSel");
+  DEVICE_DB.slice().sort(function(a,b){ return a.n < b.n ? -1 : 1; }).forEach(function(d){
+    var o = document.createElement("option"); o.value = d.n; o.textContent = d.n + " — " + d.ppi + " PPI"; sel.appendChild(o);
+  });
+  sel.addEventListener("change", function(){ $("btnApplyDevice").disabled = !sel.value; });
+  $("btnApplyDevice").addEventListener("click", function(){
+    var d = DEVICE_DB.filter(function(x){ return x.n === sel.value; })[0];
+    if(d) applyPpi(d.ppi, "device", d.n);
+    closeModal();
+  });
+})();
+
+/* diagonal */
+$("diagInput").addEventListener("input", function(){ $("btnApplyDiag").disabled = !(Number(this.value) > 0); });
+$("btnApplyDiag").addEventListener("click", function(){
+  var diag = Number($("diagInput").value);
+  var w = window.screen.width * (window.devicePixelRatio || 1), h = window.screen.height * (window.devicePixelRatio || 1);
+  var ppi = ppiFromDiagonal(diag, w, h);
+  if(!ppi || ppi < 40 || ppi > 600){ toast("Esa diagonal no parece correcta"); return; }
+  applyPpi(ppi, "diagonal"); closeModal();
+});
+
+/* card slider */
+$("ppiSlider").addEventListener("input", function(){
+  state.ppi = Number(this.value);
+  $("ppiVal").textContent = state.ppi.toFixed(1) + " PPI";
+  sizeCardSizer(); drawAll();
+});
+$("btnApplyCard").addEventListener("click", function(){ applyPpi(state.ppi, "card"); closeModal(); });
+
+/* auto-detect on load */
+function autoDetect(){
+  var w = Math.round(window.screen.width), h = Math.round(window.screen.height), dpr = window.devicePixelRatio || 1;
+  var m = matchDevice(w, h, dpr, navigator.userAgent);
+  if(m && !state.calibrated){
+    state.ppi = m.device.ppi; state.calibrated = true; state.method = "device"; state.device = m.device.n + " (auto)";
+    save(); toast("Detectado: " + m.device.n);
+  }
+  setStatus();
+}
+
+/* ---------- toolbar ---------- */
+document.querySelectorAll(".seg button").forEach(function(b){
+  if(b.dataset.unit === state.unit) { document.querySelectorAll(".seg button").forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); }
+  b.addEventListener("click", function(){
+    document.querySelectorAll(".seg button").forEach(function(x){x.classList.remove("on");});
+    b.classList.add("on"); state.unit = b.dataset.unit; save(); drawAll(); updateMeasureReadout();
+  });
+});
+$("btnCal").addEventListener("click", openModal);
+$("btnCloseModal").addEventListener("click", closeModal);
+$("modal").addEventListener("click", function(e){ if(e.target === this) closeModal(); });
+$("btnRot").addEventListener("click", function(){ state.rotated = !state.rotated; drawAll(); toast(state.rotated ? "Reglas intercambiadas" : "Reglas normales"); });
+$("btnFull").addEventListener("click", function(){
+  if(document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+});
+$("btnTheme").addEventListener("click", function(){
+  var b = document.body, dark = b.getAttribute("data-theme") !== "dark";
+  b.setAttribute("data-theme", dark ? "dark" : "light");
+  this.textContent = dark ? "Claro" : "Oscuro";
+  drawAll();
+});
+document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeModal(); stopMeasure(); } });
+
+/* ---------- cursor readout ---------- */
+var cur = $("cursorRead");
+document.addEventListener("pointermove", function(e){
+  if($("measureLayer").classList.contains("on")) return;
+  if(e.clientY < 56 || e.clientX < 54) return;
+  var mm = pxToMm(e.clientX - 54, state.ppi);
+  cur.style.display = "block";
+  cur.style.left = (e.clientX + 14) + "px";
+  cur.style.top = (e.clientY + 16) + "px";
+  cur.textContent = "↔ " + fmtLen(Math.max(0, mm), state.unit);
+});
+document.addEventListener("pointerleave", function(){ cur.style.display = "none"; });
+
+/* ---------- measure mode ---------- */
+var mbox = $("mbox"), layer = $("measureLayer"), mread = $("mread");
+var mState = null;
+function fmtBox(mmW, mmH){
+  return fmtLen(mmW, state.unit) + " × " + fmtLen(mmH, state.unit);
+}
+function fmtBoxSub(mmW, mmH){
+  return Math.round(mmW) + " × " + Math.round(mmH) + " mm · " +
+    (Math.round(mmW/25.4*100)/100) + " × " + (Math.round(mmH/25.4*100)/100) + " in";
+}
+function updateMeasureReadout(){
+  if(!mState) return;
+  var r = mbox.getBoundingClientRect();
+  var mmW = pxToMm(r.width, state.ppi), mmH = pxToMm(r.height, state.ppi);
+  mread.innerHTML = "";
+  mread.appendChild(document.createTextNode(fmtBox(mmW, mmH)));
+  var sm = document.createElement("small"); sm.textContent = fmtBoxSub(mmW, mmH);
+  mread.appendChild(sm);
+  mState.mmW = mmW; mState.mmH = mmH;
+}
+function startMeasure(){
+  layer.classList.add("on"); $("measureBar").classList.add("on");
+  var w = Math.min(320, innerWidth - 120), h = Math.min(200, innerHeight - 220);
+  mbox.style.left = ((innerWidth - w) / 2) + "px";
+  mbox.style.top = ((innerHeight - h) / 2 + 40) + "px";
+  mbox.style.width = w + "px"; mbox.style.height = h + "px";
+  mState = {drag:null};
+  updateMeasureReadout();
+}
+function stopMeasure(){ layer.classList.remove("on"); $("measureBar").classList.remove("on"); mState = null; }
+$("btnMeasure").addEventListener("click", startMeasure);
+$("btnDone").addEventListener("click", stopMeasure);
+$("btnCopy").addEventListener("click", function(){
+  if(!mState) return;
+  var t = fmtBox(mState.mmW, mState.mmH) + " (" + fmtBoxSub(mState.mmW, mState.mmH) + ")";
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(
+    function(){ toast("Copiado: " + t); }, function(){ toast(t); });
+});
+$("btnNudge").addEventListener("click", function(){ toast("Las flechas mueven el recuadro"); });
+document.addEventListener("keydown", function(e){
+  if(!mState) return;
+  var step = e.shiftKey ? 10 : 1, l = parseFloat(mbox.style.left), t = parseFloat(mbox.style.top), moved = true;
+  if(e.key === "ArrowLeft") l -= step; else if(e.key === "ArrowRight") l += step;
+  else if(e.key === "ArrowUp") t -= step; else if(e.key === "ArrowDown") t += step; else moved = false;
+  if(moved){ e.preventDefault(); mbox.style.left = l + "px"; mbox.style.top = t + "px"; }
+});
+layer.addEventListener("pointerdown", function(e){
+  if(!mState) return;
+  var hdl = e.target.closest(".hdl");
+  var r = mbox.getBoundingClientRect();
+  mState.drag = {mode: hdl ? "resize" : "move", dir: hdl ? hdl.dataset.d : null,
+    sx: e.clientX, sy: e.clientY, l: r.left, t: r.top, w: r.width, h: r.height};
+  mbox.setPointerCapture && layer.setPointerCapture(e.pointerId);
+  e.preventDefault();
+});
+layer.addEventListener("pointermove", function(e){
+  if(!mState || !mState.drag) return;
+  var d = mState.drag, dx = e.clientX - d.sx, dy = e.clientY - d.sy;
+  var l = d.l, t = d.t, w = d.w, h = d.h;
+  if(d.mode === "move"){ l += dx; t += dy; }
+  else {
+    var dir = d.dir;
+    if(dir.indexOf("e") > -1) w += dx;
+    if(dir.indexOf("s") > -1) h += dy;
+    if(dir.indexOf("w") > -1){ w -= dx; l += dx; }
+    if(dir.indexOf("n") > -1){ h -= dy; t += dy; }
+    w = Math.max(24, w); h = Math.max(24, h);
+  }
+  mbox.style.left = l + "px"; mbox.style.top = t + "px";
+  mbox.style.width = w + "px"; mbox.style.height = h + "px";
+  updateMeasureReadout();
+});
+layer.addEventListener("pointerup", function(){ if(mState) mState.drag = null; });
+
+/* ---------- zoom warning ---------- */
+function checkZoom(){
+  var el = $("zoomWarn");
+  if(/Mobi|Android/i.test(navigator.userAgent)){ el.classList.remove("on"); return; }
+  var z = (window.outerWidth && window.innerWidth) ? window.outerWidth / window.innerWidth : 1;
+  if(Math.abs(z - 1) > 0.03){ el.textContent = "El zoom del navegador está al " + Math.round(z*100) + "% — restablece el zoom al 100% para una regla de tamaño real."; el.classList.add("on"); }
+  else el.classList.remove("on");
+}
+
+/* ---------- boot ---------- */
+(function(){
+  // shared calibración link (#ppi=...) wins when nothing saved yet
+  var hp = ppiFromHash(location.hash), had = null;
+  try{ had = localStorage.getItem(LS_KEY); }catch(e){}
+  if(hp && !had){
+    try{ localStorage.setItem(LS_KEY, JSON.stringify({ppi: hp, calibrated: true, method: "enlace compartido", unit: "cm"})); }catch(e){}
+  }
+})();
+load();
+$("year").textContent = new Date().getFullYear();
+autoDetect();
+drawAll();
+checkZoom();
+window.addEventListener("resize", function(){ drawAll(); checkZoom(); });
+window.addEventListener("orientationchange", function(){ setTimeout(drawAll, 300); });
+/* public API for optional feature modules */
+window.__trueruler = { apply: applyPpi, getPpi: function(){ return state.ppi; } };
+})();
+</script>
+<script>
+/* Features v2: protractor, print sheet, converter, share, screen info, PWA */
+(function(){
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+function currentPpi(){
+  try{ var s = JSON.parse(localStorage.getItem("trueruler.v1") || "null"); if(s && s.ppi > 0) return s.ppi; }catch(e){}
+  return 96;
+}
+
+/* ---------- protractor ---------- */
+var pro = {cx:0, cy:0, R:180, a1:15, a2:105, drag:null};
+var pc = $("proCanvas");
+function proResize(){
+  var d = window.devicePixelRatio || 1;
+  pc.width = Math.round(innerWidth * d); pc.height = Math.round(innerHeight * d);
+  pc.getContext("2d").setTransform(d, 0, 0, d, 0, 0);
+}
+function proPos(a){ var r = a * Math.PI / 180; return {x: pro.cx + pro.R * Math.cos(r), y: pro.cy - pro.R * Math.sin(r)}; }
+function proDraw(){
+  proResize();
+  var ctx = pc.getContext("2d"), css = getComputedStyle(document.body);
+  var tick = css.getPropertyValue("--tick").trim() || "#33404e";
+  var num = css.getPropertyValue("--num").trim() || "#1c2733";
+  var acc = css.getPropertyValue("--accent").trim() || "#1a7fde";
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  ctx.strokeStyle = tick; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(pro.cx, pro.cy, pro.R, Math.PI, 0); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pro.cx - pro.R - 14, pro.cy); ctx.lineTo(pro.cx + pro.R + 14, pro.cy); ctx.stroke();
+  ctx.fillStyle = num; ctx.font = "11px -apple-system,Segoe UI,Roboto,sans-serif"; ctx.textAlign = "center";
+  for(var d = 0; d <= 180; d++){
+    var r = d * Math.PI / 180, inner = pro.R - (d % 10 === 0 ? 20 : (d % 5 === 0 ? 14 : 8));
+    ctx.beginPath();
+    ctx.moveTo(pro.cx + pro.R * Math.cos(r), pro.cy - pro.R * Math.sin(r));
+    ctx.lineTo(pro.cx + inner * Math.cos(r), pro.cy - inner * Math.sin(r));
+    ctx.lineWidth = d % 10 === 0 ? 2 : 1; ctx.stroke();
+    if(d % 10 === 0){
+      ctx.fillText(d + "°", pro.cx + (pro.R - 36) * Math.cos(r), pro.cy - (pro.R - 36) * Math.sin(r) + 4);
+    }
+  }
+  [pro.a1, pro.a2].forEach(function(a, i){
+    var p = proPos(a);
+    ctx.strokeStyle = acc; ctx.lineWidth = 3; ctx.setLineDash(i === 1 ? [7, 5] : []);
+    ctx.beginPath(); ctx.moveTo(pro.cx, pro.cy); ctx.lineTo(p.x, p.y); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(p.x, p.y, 11, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(p.x, p.y, 4, 0, 7); ctx.fill();
+  });
+  ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(pro.cx, pro.cy, 10, 0, 7); ctx.fill();
+  var ang = angleBetweenDeg(pro.a1, pro.a2);
+  $("proRead").innerHTML = ang.toFixed(1) + "°<small>arrastra los tiradores · arrastra el centro para mover</small>";
+}
+function proHit(e){
+  function dist(x, y){ return Math.hypot(e.clientX - x, e.clientY - y); }
+  var p1 = proPos(pro.a1), p2 = proPos(pro.a2);
+  if(dist(p1.x, p1.y) < 26) return "a1";
+  if(dist(p2.x, p2.y) < 26) return "a2";
+  if(dist(pro.cx, pro.cy) < 26) return "c";
+  return null;
+}
+pc.addEventListener("pointerdown", function(e){ var h = proHit(e); if(h){ pro.drag = h; try{pc.setPointerCapture(e.pointerId);}catch(_){} e.preventDefault(); } });
+pc.addEventListener("pointermove", function(e){
+  if(!pro.drag) return;
+  if(pro.drag === "c"){ pro.cx = e.clientX; pro.cy = e.clientY; }
+  else{
+    var a = Math.atan2(pro.cy - e.clientY, e.clientX - pro.cx) * 180 / Math.PI;
+    if(a < 0) a += 360; if(a > 180) a = 180;
+    if(pro.drag === "a1") pro.a1 = a; else pro.a2 = a;
+  }
+  proDraw();
+});
+pc.addEventListener("pointerup", function(){ pro.drag = null; });
+$("btnPro").addEventListener("click", function(){
+  pro.cx = innerWidth / 2; pro.cy = innerHeight / 2 + 30;
+  pro.R = Math.max(120, Math.min(innerWidth, innerHeight) * 0.32);
+  $("proLayer").classList.add("on"); proDraw();
+});
+$("btnProDone").addEventListener("click", function(){ $("proLayer").classList.remove("on"); });
+window.addEventListener("resize", function(){ if($("proLayer").classList.contains("on")) proDraw(); });
+
+/* ---------- printable sheet (physical CSS units = true size in print) ---------- */
+(function buildPrint(){
+  var cm = $("prCm"); if(!cm) return;
+  cm.style.width = "180mm";
+  for(var mm = 0; mm <= 180; mm++){
+    var t = document.createElement("div"); t.className = "prtick";
+    t.style.left = mm + "mm";
+    t.style.height = (mm % 10 === 0 ? "22mm" : (mm % 5 === 0 ? "15mm" : "9mm"));
+    cm.appendChild(t);
+    if(mm % 10 === 0){ var l = document.createElement("div"); l.className = "prlab"; l.style.left = mm + "mm"; l.textContent = (mm / 10); cm.appendChild(l); }
+  }
+  var inch = $("prIn"); inch.style.width = "7in";
+  for(var i = 0; i <= 7 * 16; i++){
+    var t2 = document.createElement("div"); t2.className = "prtick";
+    t2.style.left = (i / 16) + "in";
+    t2.style.height = (i % 16 === 0 ? "22mm" : (i % 8 === 0 ? "16mm" : (i % 4 === 0 ? "12mm" : "8mm")));
+    inch.appendChild(t2);
+    if(i % 16 === 0){ var l2 = document.createElement("div"); l2.className = "prlab"; l2.style.left = (i / 16) + "in"; l2.textContent = (i / 16); inch.appendChild(l2); }
+  }
+})();
+$("btnPrint").addEventListener("click", function(){ window.print(); });
+
+/* ---------- unit converter ---------- */
+(function(){
+  var f = $("convFrom"), t = $("convTo");
+  Object.keys(LEN_TO_MM).forEach(function(u){
+    var a = document.createElement("option"); a.value = u; a.textContent = u; f.appendChild(a);
+    var b = document.createElement("option"); b.value = u; b.textContent = u; t.appendChild(b);
+  });
+  f.value = "cm"; t.value = "inch";
+  function upd(){
+    var ppi = currentPpi();
+    $("convPpi").textContent = Math.round(ppi);
+    var v = parseFloat($("convVal").value), out = $("convOut");
+    if(isNaN(v)){ out.textContent = "—"; return; }
+    var r = convertLen(v, f.value, t.value, ppi);
+    out.textContent = (r === null) ? "N/A" : ((+r.toFixed(4)) + " " + t.value);
+  }
+  ["convVal", "convFrom", "convTo"].forEach(function(id){ $(id).addEventListener("input", upd); });
+  upd();
+  $("btnCal").addEventListener("click", function(){ setTimeout(upd, 400); });
+})();
+
+/* ---------- share calibración link ---------- */
+$("btnShare").addEventListener("click", function(){
+  var url = location.origin + location.pathname + shareHashFor(currentPpi());
+  var toastEl = $("toast");
+  function done(msg){ toastEl.textContent = msg; toastEl.classList.add("on"); setTimeout(function(){ toastEl.classList.remove("on"); }, 2200); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(function(){ done("Enlace para compartir copiado"); }, function(){ done(url); });
+  } else done(url);
+});
+
+/* ---------- screen info ---------- */
+$("btnCal").addEventListener("click", function(){
+  setTimeout(function(){
+    var el = $("screenInfo"); if(!el) return;
+    var dpr = window.devicePixelRatio || 1, ppi = currentPpi();
+    var pw = Math.round(screen.width * dpr), ph = Math.round(screen.height * dpr);
+    el.innerHTML = "Ventana CSS: <b>" + screen.width + " × " + screen.height + " px</b><br>" +
+      "Píxeles físicos: <b>" + pw + " × " + ph + "</b><br>" +
+      "Relación de píxeles: <b>" + dpr + "</b><br>" +
+      "PPI actual de la regla: <b>" + ppi.toFixed(1) + "</b><br>" +
+      "Diagonal estimada: <b>" + (Math.hypot(pw, ph) / ppi).toFixed(1) + " in</b>";
+  }, 60);
+});
+
+/* ---------- language switcher ---------- */
+(function(){
+  var sel = $("langSel"); if(!sel) return;
+  var langs = window.LANGS || [{code:"en", name:"English", url:"./"}];
+  var cur = window.CURRENT_LANG || "en";
+  langs.forEach(function(l){
+    var o = document.createElement("option"); o.value = l.url; o.textContent = l.name;
+    if(l.code === cur) o.selected = true;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", function(){ location.href = sel.value; });
+})();
+
+/* ---------- popup window ---------- */
+$("btnPopup").addEventListener("click", function(){
+  window.open(location.href.split("#")[0], "trueruler-popup", "width=1000,height=760,menubar=no,toolbar=no,location=no,status=no");
+});
+
+/* ---------- quick calibración (inline) ---------- */
+(function(){
+  var qi = $("qDiag"); if(!qi) return;
+  function bad(msg){ var t = $("toast"); t.textContent = msg; t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); }, 2200); }
+  qi.addEventListener("input", function(){ $("qApply").disabled = !(Number(qi.value) > 0); });
+  $("qApply").addEventListener("click", function(){
+    var d = Number(qi.value);
+    var w = window.screen.width * (window.devicePixelRatio || 1), h = window.screen.height * (window.devicePixelRatio || 1);
+    var ppi = ppiFromDiagonal(d, w, h);
+    if(!ppi || ppi < 40 || ppi > 600){ bad("Esa diagonal no parece correcta"); return; }
+    if(window.__trueruler) window.__trueruler.apply(ppi, "diagonal");
+  });
+  $("qFull").addEventListener("click", function(){ $("btnCal").click(); });
+})();
+
+/* ---------- PWA ---------- */
+if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
+  window.addEventListener("load", function(){ navigator.serviceWorker.register("../sw.js").catch(function(){}); });
+}
+})();
+</script>
+</body>
+</html>
