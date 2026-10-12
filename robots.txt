@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sofaxoweb.github.io/Online-Ruler/sitemap.xml

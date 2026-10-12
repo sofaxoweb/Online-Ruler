@@ -5,6 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrueRuler — Online Ruler (cm, mm, inch) in Actual Size</title>
 <meta name="description" content="Free online ruler that shows true cm, mm and inch sizes on your screen. Auto device detection, credit-card calibration and a drag-to-measure box. No app needed.">
+    <link rel="canonical" href="https://sofaxoweb.github.io/Online-Ruler/">
+    <link rel="alternate" hreflang="en" href="https://sofaxoweb.github.io/Online-Ruler/">
+    <link rel="alternate" hreflang="cs" href="https://sofaxoweb.github.io/Online-Ruler/cs/">
+    <link rel="alternate" hreflang="de" href="https://sofaxoweb.github.io/Online-Ruler/de/">
+    <link rel="alternate" hreflang="es" href="https://sofaxoweb.github.io/Online-Ruler/es/">
+    <link rel="alternate" hreflang="fr" href="https://sofaxoweb.github.io/Online-Ruler/fr/">
+    <link rel="alternate" hreflang="id" href="https://sofaxoweb.github.io/Online-Ruler/id/">
+    <link rel="alternate" hreflang="it" href="https://sofaxoweb.github.io/Online-Ruler/it/">
+    <link rel="alternate" hreflang="ja" href="https://sofaxoweb.github.io/Online-Ruler/ja/">
+    <link rel="alternate" hreflang="ko" href="https://sofaxoweb.github.io/Online-Ruler/ko/">
+    <link rel="alternate" hreflang="ms" href="https://sofaxoweb.github.io/Online-Ruler/ms/">
+    <link rel="alternate" hreflang="nl" href="https://sofaxoweb.github.io/Online-Ruler/nl/">
+    <link rel="alternate" hreflang="pl" href="https://sofaxoweb.github.io/Online-Ruler/pl/">
+    <link rel="alternate" hreflang="pt" href="https://sofaxoweb.github.io/Online-Ruler/pt/">
+    <link rel="alternate" hreflang="ro" href="https://sofaxoweb.github.io/Online-Ruler/ro/">
+    <link rel="alternate" hreflang="ru" href="https://sofaxoweb.github.io/Online-Ruler/ru/">
+    <link rel="alternate" hreflang="th" href="https://sofaxoweb.github.io/Online-Ruler/th/">
+    <link rel="alternate" hreflang="tr" href="https://sofaxoweb.github.io/Online-Ruler/tr/">
+    <link rel="alternate" hreflang="uk" href="https://sofaxoweb.github.io/Online-Ruler/uk/">
+    <link rel="alternate" hreflang="vi" href="https://sofaxoweb.github.io/Online-Ruler/vi/">
+    <link rel="alternate" hreflang="x-default" href="https://sofaxoweb.github.io/Online-Ruler/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sofaxoweb.github.io/Online-Ruler/">
+    <meta property="og:title" content="TrueRuler — Online Ruler (cm, mm, inch) in Actual Size">
+    <meta property="og:description" content="Free online ruler that shows true cm, mm and inch sizes on your screen. Auto device detection, credit-card calibration and a drag-to-measure box. No app needed.">
+    <meta property="og:locale" content="en">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TrueRuler — Online Ruler (cm, mm, inch) in Actual Size">
+    <meta name="twitter:description" content="Free online ruler that shows true cm, mm and inch sizes on your screen. Auto device detection, credit-card calibration and a drag-to-measure box. No app needed.">
 <meta name="theme-color" content="#007aff">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.svg">
@@ -89,6 +118,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 </style>
 </head>
 <body data-theme="light">
+<script>window.LANGS=[{code:"en",name:"English",url:"./"},{code:"cs",name:"Čeština",url:"cs/"},{code:"de",name:"Deutsch",url:"de/"},{code:"es",name:"Español",url:"es/"},{code:"fr",name:"Français",url:"fr/"},{code:"id",name:"Bahasa Indonesia",url:"id/"},{code:"it",name:"Italiano",url:"it/"},{code:"ja",name:"日本語",url:"ja/"},{code:"ko",name:"한국어",url:"ko/"},{code:"ms",name:"Melayu",url:"ms/"},{code:"nl",name:"Nederlands",url:"nl/"},{code:"pl",name:"Polski",url:"pl/"},{code:"pt",name:"Português",url:"pt/"},{code:"ro",name:"Română",url:"ro/"},{code:"ru",name:"Русский",url:"ru/"},{code:"th",name:"ไทย",url:"th/"},{code:"tr",name:"Türkçe",url:"tr/"},{code:"uk",name:"Українська",url:"uk/"},{code:"vi",name:"Tiếng Việt",url:"vi/"}];window.CURRENT_LANG="en";</script>
+
 
 <div class="ruler h"><canvas id="rh"></canvas></div>
 <div class="ruler v"><canvas id="rv"></canvas></div>
@@ -144,7 +175,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       </div>
       <div>
         <h3>2 · Or calibrate in 20 seconds</h3>
-        <p class="muted">Enter your screen diagonal, or hold a bank card (85.60&nbsp;mm wide) against the on-screen guide and drag the slider until they match.</p>
+        <p class="muted">Enter your screen diagonal, or hold a bank card (85.60 mm wide) against the on-screen guide and drag the slider until they match.</p>
       </div>
       <div>
         <h3>3 · Measure anything</h3>
@@ -215,7 +246,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
 <div id="printSheet">
   <h2>TrueRuler — paper ruler (prints at true size)</h2>
-  <p>Print this page at <b>100% scale</b> (never "fit to page"). Cut along the edge and you have a real 18&nbsp;cm / 7&nbsp;inch ruler.</p>
+  <p>Print this page at <b>100% scale</b> (never "fit to page"). Cut along the edge and you have a real 18 cm / 7 inch ruler.</p>
   <div class="pruler" id="prCm"></div>
   <div class="pruler" id="prIn"></div>
 </div>
@@ -261,7 +292,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
     <details class="method">
       <summary>Bank-card calibration <span class="pill best">most accurate</span></summary>
-      <p class="muted">Hold any bank card against the blue box and drag the slider until the box is exactly card-sized. All bank cards are 85.60&nbsp;×&nbsp;53.98&nbsp;mm.</p>
+      <p class="muted">Hold any bank card against the blue box and drag the slider until the box is exactly card-sized. All bank cards are 85.60 × 53.98 mm.</p>
       <div id="cardSizer"><div>bank-card<br>85.60 × 53.98 mm</div></div>
       <input type="range" id="ppiSlider" min="60" max="600" step="0.5" value="96">
       <div class="field"><span class="muted">Screen density:</span><b id="ppiVal">96.0 PPI</b></div>
@@ -278,7 +309,32 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="toast"></div>
 
 <footer>
-  TrueRuler · free online ruler · <span id="year"></span>
+  <div class="footer-inner">
+    <div class="footer-brand">TrueRuler</div>
+    <p class="footer-tag">Free online ruler with protractor, printable ruler and unit converter.</p>
+    <nav class="footer-langs" aria-label="Languages">
+      <a href="./" hreflang="en" aria-current="page">English</a>
+      <a href="cs/" hreflang="cs">Čeština</a>
+      <a href="de/" hreflang="de">Deutsch</a>
+      <a href="es/" hreflang="es">Español</a>
+      <a href="fr/" hreflang="fr">Français</a>
+      <a href="id/" hreflang="id">Bahasa Indonesia</a>
+      <a href="it/" hreflang="it">Italiano</a>
+      <a href="ja/" hreflang="ja">日本語</a>
+      <a href="ko/" hreflang="ko">한국어</a>
+      <a href="ms/" hreflang="ms">Melayu</a>
+      <a href="nl/" hreflang="nl">Nederlands</a>
+      <a href="pl/" hreflang="pl">Polski</a>
+      <a href="pt/" hreflang="pt">Português</a>
+      <a href="ro/" hreflang="ro">Română</a>
+      <a href="ru/" hreflang="ru">Русский</a>
+      <a href="th/" hreflang="th">ไทย</a>
+      <a href="tr/" hreflang="tr">Türkçe</a>
+      <a href="uk/" hreflang="uk">Українська</a>
+      <a href="vi/" hreflang="vi">Tiếng Việt</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> TrueRuler. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
@@ -651,7 +707,7 @@ function checkZoom(){
   var hp = ppiFromHash(location.hash), had = null;
   try{ had = localStorage.getItem(LS_KEY); }catch(e){}
   if(hp && !had){
-    try{ localStorage.setItem(LS_KEY, JSON.stringify({ppi: hp, calibrated: true, method: "shared-link", unit: "cm"})); }catch(e){}
+    try{ localStorage.setItem(LS_KEY, JSON.stringify({ppi: hp, calibrated: true, method: "shared link", unit: "cm"})); }catch(e){}
   }
 })();
 load();
