@@ -72,6 +72,8 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .steps{margin:10px 0;padding-left:22px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+.table-wrap{overflow-x:auto;margin:12px 0}
+.table-wrap table.stable{margin:0;min-width:420px}
 table.stable th,table.stable td{border:1px solid var(--grid);padding:8px 10px;text-align:left}
 table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .faq h3{margin:18px 0 4px;font-size:16.5px}
@@ -247,13 +249,13 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <div class="card">
     <h2>Reading the scales: inches, centimetres and millimetres</h2>
     <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
       <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
       <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
       <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -284,14 +286,14 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h2>Online ruler vs alternatives</h2>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
       <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
       <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
       <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
       <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
       <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -616,6 +618,16 @@ function drawRuler(canvas, horizontal){
   ctx.strokeStyle = tick; ctx.fillStyle = num; ctx.lineWidth = 1;
   ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   ctx.textBaseline = "top";
+  var accent = css.getPropertyValue("--accent").trim() || "#007aff";
+  var unitName = u === "in" ? "IN" : u === "mm" ? "MM" : "CM";
+  // unit badge, competitor-style (blue "CM" on the ruler itself)
+  ctx.save();
+  ctx.fillStyle = accent; ctx.font = "bold 12px -apple-system,Segoe UI,Roboto,sans-serif";
+  if(horizontal){ ctx.fillText(unitName, 8, 4); }
+  else { ctx.translate(36, 20); ctx.rotate(-Math.PI/2); ctx.textAlign = "center"; ctx.fillText(unitName, 0, 0); }
+  ctx.restore();
+  ctx.fillStyle = num;
+  ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   var minorMM = u === "in" ? 25.4/16 : 1;
   var n = 0, x = 0;
   while(x <= len + 1){
