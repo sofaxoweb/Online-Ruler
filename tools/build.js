@@ -130,6 +130,12 @@ function buildLang(lang, dict) {
     <nav class="footer-langs" aria-label="Languages">
       ${links}
     </nav>
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
     <p class="footer-copy">&copy; <span id="year"></span> TrueRuler. ${dict.strings["All rights reserved."]}</p>
   </div>
 </footer>`;
@@ -144,6 +150,7 @@ function buildLang(lang, dict) {
   if (lang.dir) {
     html = html.split('href="manifest.json"').join('href="../manifest.json"');
     html = html.split('href="icon-192.svg"').join('href="../icon-192.svg"');
+    html = html.split('src="img/').join('src="../img/');
     html = html.split('navigator.serviceWorker.register("sw.js")').join('navigator.serviceWorker.register("../sw.js")');
   }
 
@@ -183,6 +190,35 @@ function main() {
       console.log(`copied ${f} -> dist/`);
     }
   }
+  // copy guide illustrations
+  const imgSrc = path.join(ROOT, "img"), imgOut = path.join(OUT, "img");
+  if (fs.existsSync(imgSrc)) {
+    fs.mkdirSync(imgOut, { recursive: true });
+    for (const f of fs.readdirSync(imgSrc)) {
+      fs.copyFileSync(path.join(imgSrc, f), path.join(imgOut, f));
+    }
+    console.log(`copied img/ -> dist/img/`);
+  }
+  // copy English legal pages
+  for (const p of ["about", "contact", "privacy", "terms"]) {
+    const src = path.join(ROOT, "legal", p, "index.html");
+    if (fs.existsSync(src)) {
+      const outDir = path.join(OUT, p);
+      fs.mkdirSync(outDir, { recursive: true });
+      fs.copyFileSync(src, path.join(outDir, "index.html"));
+    }
+  }
+  console.log(`copied legal/ -> dist/`);
+  // sitemap.xml + robots.txt (19 languages + 4 legal pages)
+  const smUrls = [
+    ...LANGS.map(l => pageUrl(l)),
+    ...["about", "contact", "privacy", "terms"].map(p => BASE_URL + p + "/"),
+  ];
+  const sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    smUrls.map(u => `    <url>\n        <loc>${u}</loc>\n    </url>`).join("\n") + '\n</urlset>\n';
+  fs.writeFileSync(path.join(OUT, "sitemap.xml"), sm);
+  fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}sitemap.xml\n`);
+  console.log(`wrote sitemap.xml (${smUrls.length} urls) + robots.txt`);
 }
 
 main();
