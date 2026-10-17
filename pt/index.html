@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Calibração rápida</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Introduza a diagonal do seu ecrã para uma calibração instantânea — ou abra as opções completas.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal do ecrã em polegadas">
+      <span class="muted">polegadas</span>
+      <button class="tbtn primary" id="qApply" disabled>Aplicar</button>
+      <button class="tbtn" id="qFull">Mais opções</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Conversor de unidades</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valor">
+      <select id="convFrom" aria-label="Unidade de origem"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Unidade de destino"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">As conversões de píxeis usam o PPI atual da sua régua (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Régua online em tamanho real</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Última atualização: 13 de outubro de 2026 · Pela equipa TrueRuler</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Mantenha o zoom do navegador a 100% para medições precisas</li>
       <li>Grátis para sempre — sem conta, sem instalação; a sua calibração é guardada neste dispositivo</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Calibração rápida</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Introduza a diagonal do seu ecrã para uma calibração instantânea — ou abra as opções completas.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal do ecrã em polegadas">
-      <span class="muted">polegadas</span>
-      <button class="tbtn primary" id="qApply" disabled>Aplicar</button>
-      <button class="tbtn" id="qFull">Mais opções</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Meça.</b> Encoste o objeto ao rebordo da régua, prima <b>Medir</b> e arraste uma caixa sobre qualquer coisa no ecrã, ou abra o <b>Transferidor</b> para medir ângulos.</li>
       <li><b>Aperfeiçoe e reutilize.</b> Ajuste a caixa de medição com as teclas de setas, copie a leitura e volte quando quiser — a sua calibração é guardada neste dispositivo.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Conversor de unidades</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valor">
-      <select id="convFrom" aria-label="Unidade de origem"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Unidade de destino"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">As conversões de píxeis usam o PPI atual da sua régua (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI significa píxeis por polegada — a densidade de píxeis do seu ecrã. Uma régua tem de o conhecer para converter píxeis em centímetros e polegadas reais. Esse único número é toda a diferença entre uma imagem decorativa de régua e uma ferramenta de medição em tamanho real.</p>
     </div>
   </div>
+
 </div>
 
 <style>
