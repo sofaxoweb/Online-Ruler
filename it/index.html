@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Calibrazione rapida</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Inserisci la diagonale del tuo schermo per una calibrazione istantanea — oppure apri le opzioni complete.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonale dello schermo in pollici">
+      <span class="muted">pollici</span>
+      <button class="tbtn primary" id="qApply" disabled>Applica</button>
+      <button class="tbtn" id="qFull">Altre opzioni</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Convertitore di unità</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valore">
+      <select id="convFrom" aria-label="Unità di partenza"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Unità di destinazione"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Le conversioni in pixel usano il PPI attuale del tuo righello (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Righello online in dimensioni reali</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Keep browser zoom at 100% for accurate measurements</li>
       <li>Free forever — no account, no installation; your calibration is saved on this device</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Calibrazione rapida</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Inserisci la diagonale del tuo schermo per una calibrazione istantanea — oppure apri le opzioni complete.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonale dello schermo in pollici">
-      <span class="muted">pollici</span>
-      <button class="tbtn primary" id="qApply" disabled>Applica</button>
-      <button class="tbtn" id="qFull">Altre opzioni</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
       <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Convertitore di unità</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valore">
-      <select id="convFrom" aria-label="Unità di partenza"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Unità di destinazione"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Le conversioni in pixel usano il PPI attuale del tuo righello (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
     </div>
   </div>
+
 </div>
 
 <style>
