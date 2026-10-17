@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Calibrage rapide</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Saisissez la diagonale de votre écran pour un calibrage instantané — ou ouvrez les options complètes.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonale de l'écran en pouces">
+      <span class="muted">pouces</span>
+      <button class="tbtn primary" id="qApply" disabled>Appliquer</button>
+      <button class="tbtn" id="qFull">Plus d'options</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Convertisseur d'unités</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valeur">
+      <select id="convFrom" aria-label="Unité de départ"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Unité d'arrivée"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Les conversions de pixels utilisent le PPI actuel de votre règle (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Règle en ligne en taille réelle</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Dernière mise à jour : 13 octobre 2026 · Par l'équipe TrueRuler</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Gardez le zoom du navigateur à 100 % pour des mesures précises</li>
       <li>Gratuit pour toujours — sans compte, sans installation ; votre calibrage est enregistré sur cet appareil</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Calibrage rapide</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Saisissez la diagonale de votre écran pour un calibrage instantané — ou ouvrez les options complètes.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonale de l'écran en pouces">
-      <span class="muted">pouces</span>
-      <button class="tbtn primary" id="qApply" disabled>Appliquer</button>
-      <button class="tbtn" id="qFull">Plus d'options</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Mesurez.</b> Tenez l'objet contre le bord de la règle, appuyez sur <b>Mesurer</b> et faites glisser un cadre sur tout élément à l'écran, ou ouvrez le <b>Rapporteur</b> pour mesurer des angles.</li>
       <li><b>Affinez et réutilisez.</b> Ajustez le cadre de mesure avec les flèches du clavier, copiez la mesure et revenez quand vous voulez — votre calibrage est enregistré sur cet appareil.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Convertisseur d'unités</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valeur">
-      <select id="convFrom" aria-label="Unité de départ"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Unité d'arrivée"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Les conversions de pixels utilisent le PPI actuel de votre règle (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI signifie « pixels par pouce » — la densité de pixels de votre écran. Une règle doit la connaître pour convertir les pixels en centimètres et pouces réels. Ce seul chiffre fait toute la différence entre une image décorative de règle et un véritable outil de mesure en taille réelle.</p>
     </div>
   </div>
+
 </div>
 
 <style>
