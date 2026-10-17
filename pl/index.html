@@ -94,7 +94,9 @@ table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .card p,.card li{color:var(--ink)}
 .muted{color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:50px}.ruler.v{display:none}.wrap{padding-top:136px}.status{display:none}}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:50px}.ruler.v{display:none}.wrap{padding-top:136px}.status{display:none}
+body.rotated .ruler.h{display:none}body.rotated .ruler.v{display:block}body.rotated .toolbar{left:50px;top:0}body.rotated .wrap{padding-top:82px}}
+@media(min-width:641px){#btnRot{display:none}}
 /* measure overlay */
 #measureLayer{position:fixed;inset:0;z-index:50;display:none;touch-action:none}
 #measureLayer.on{display:block}
@@ -588,8 +590,6 @@ function drawRuler(canvas, horizontal){
   var grid = css.getPropertyValue("--grid").trim() || "#e4e9ee";
   var bg = css.getPropertyValue("--ruler-bg").trim() || "#fff";
   ctx.fillStyle = bg; ctx.fillRect(0, 0, s.w, s.h);
-  var unit = state.rotated ? (horizontal ? "v" : "h") : (horizontal ? "h" : "v");
-  void unit;
   var u = state.unit, spec = tickSpec(u), ppm = pxPerMinor(state.ppi, u);
   var len = horizontal ? s.w : s.h;
   var H = horizontal ? s.h : s.w;
@@ -621,7 +621,7 @@ function drawRuler(canvas, horizontal){
   ctx.stroke();
   function W0(){ return s.w - .5; }
 }
-function drawAll(){ drawRuler(rh, true); var v = document.querySelector(".ruler.v"); if(v && getComputedStyle(v).display !== "none") drawRuler(rv, false); }
+function drawAll(){ var h = document.querySelector(".ruler.h"), v = document.querySelector(".ruler.v"); if(h && getComputedStyle(h).display !== "none") drawRuler(rh, true); if(v && getComputedStyle(v).display !== "none") drawRuler(rv, false); }
 
 /* ---------- toast ---------- */
 var toastT = null;
@@ -699,7 +699,7 @@ document.querySelectorAll(".seg button").forEach(function(b){
 $("btnCal").addEventListener("click", openModal);
 $("btnCloseModal").addEventListener("click", closeModal);
 $("modal").addEventListener("click", function(e){ if(e.target === this) closeModal(); });
-$("btnRot").addEventListener("click", function(){ state.rotated = !state.rotated; drawAll(); toast(state.rotated ? "Linijki zamienione" : "Linijki normalnie"); });
+$("btnRot").addEventListener("click", function(){ state.rotated = !state.rotated; document.body.classList.toggle("rotated", state.rotated); drawAll(); toast(state.rotated ? "Linijki zamienione" : "Linijki normalnie"); });
 $("btnFull").addEventListener("click", function(){
   if(document.fullscreenElement) document.exitFullscreen();
   else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
