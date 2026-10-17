@@ -108,7 +108,11 @@ function buildLang(lang, dict) {
     `    <meta property="og:title" content="${dict.meta.title}">\n` +
     `    <meta property="og:description" content="${dict.meta.description}">\n` +
     `    <meta property="og:locale" content="${lang.code}">\n` +
-    `    <meta name="twitter:card" content="summary">\n` +
+    `    <meta property="og:image" content="${BASE_URL}og-image.png">\n` +
+    `    <meta property="og:image:width" content="1200">\n` +
+    `    <meta property="og:image:height" content="630">\n` +
+    `    <meta name="twitter:card" content="summary_large_image">\n` +
+    `    <meta name="twitter:image" content="${BASE_URL}og-image.png">\n` +
     `    <meta name="twitter:title" content="${dict.meta.title}">\n` +
     `    <meta name="twitter:description" content="${dict.meta.description}">`;
   html = html.replace(/(<meta name="description"[^>]*>)/, `$1\n${head}`);
@@ -172,7 +176,7 @@ function main() {
   }
   console.log(totalWarnings === 0 ? "BUILD CLEAN" : `BUILD DONE with ${totalWarnings} warnings`);
   // copy root-level static files that must survive the dist wipe
-  for (const f of [".htaccess"]) {
+  for (const f of [".htaccess", "og-image.png"]) {
     const src = path.join(ROOT, f);
     if (fs.existsSync(src)) {
       fs.copyFileSync(src, path.join(OUT, f));
