@@ -75,6 +75,11 @@ table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 table.stable th,table.stable td{border:1px solid var(--grid);padding:8px 10px;text-align:left}
 table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .faq h3{margin:18px 0 4px;font-size:16.5px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.guide-grid figure{margin:0;background:var(--bg);border:1px solid var(--grid);border-radius:12px;overflow:hidden}
+.guide-grid img{display:block;width:100%;height:auto}
+.guide-grid figcaption{padding:10px 12px;font-size:13.5px;font-weight:600}
+@media(max-width:640px){.guide-grid{grid-template-columns:1fr;max-width:340px}}
 .faq p{margin:0 0 6px}
 .card h2{margin-top:22px}
 .card h2:first-child{margin-top:0}
@@ -231,6 +236,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Messen.</b> Halte den Gegenstand an die Linealkante, drücke <b>Messen</b> und ziehe ein Rechteck über einen beliebigen Bildschirmbereich — oder öffne den <b>Winkelmesser</b> für Winkel.</li>
       <li><b>Verfeinern und wiederverwenden.</b> Justiere das Messrechteck mit den Pfeiltasten, kopiere den Messwert und komm jederzeit wieder — deine Kalibrierung bleibt auf diesem Gerät gespeichert.</li>
     </ol>
+    <h3>Visuelle Anleitung</h3>
+    <div class="guide-grid">
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Schritt 1: Lineal mit einer Bankkarte kalibrieren"><figcaption>1. Mit Bankkarte kalibrieren (85,60 mm)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Schritt 2: Gegenstand an das Bildschirmlineal halten"><figcaption>2. Gegenstand an das Lineal halten</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Schritt 3: mit Messbox und Winkelmesser präzise messen"><figcaption>3. Präzise messen mit Messbox und Winkelmesser</figcaption></figure>
+    </div>
   </div>
 
   <div class="card">
@@ -331,6 +342,9 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 .footer-langs a{color:var(--muted);text-decoration:none;font-size:13px}
 .footer-langs a:hover{color:var(--accent)}
 .footer-langs a[aria-current="page"]{color:var(--ink);font-weight:700}
+.footer-legal{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center;margin:0 0 12px}
+.footer-legal a{color:var(--muted);text-decoration:none;font-size:13px}
+.footer-legal a:hover{color:var(--accent)}
 .footer-copy{margin:0;font-size:12.5px}
 @media(max-width:760px){.toolbar{overflow-x:auto;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.toolbar>*{flex-shrink:0}}
 /* printable sheet */
@@ -441,6 +455,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <a href="../tr/" hreflang="tr">Türkçe</a>
       <a href="../uk/" hreflang="uk">Українська</a>
       <a href="../vi/" hreflang="vi">Tiếng Việt</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms</a>
     </nav>
     <p class="footer-copy">&copy; <span id="year"></span> TrueRuler. Alle Rechte vorbehalten.</p>
   </div>
