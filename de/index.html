@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Schnellkalibrierung</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Gib die Bildschirmdiagonale für eine Sofortkalibrierung ein — oder öffne die vollständigen Optionen.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Bildschirmdiagonale in Zoll">
+      <span class="muted">Zoll</span>
+      <button class="tbtn primary" id="qApply" disabled>Anwenden</button>
+      <button class="tbtn" id="qFull">Weitere Optionen</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Einheitenumrechner</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Wert">
+      <select id="convFrom" aria-label="Von Einheit"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Zu Einheit"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Pixel-Umrechnungen verwenden die aktuelle Lineal-PPI (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Online-Lineal in Originalgröße</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Zuletzt aktualisiert: 13. Oktober 2026 · Vom TrueRuler-Team</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Halte den Browser-Zoom für genaue Messungen auf 100 %</li>
       <li>Für immer kostenlos — kein Konto, keine Installation; deine Kalibrierung bleibt auf diesem Gerät gespeichert</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Schnellkalibrierung</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Gib die Bildschirmdiagonale für eine Sofortkalibrierung ein — oder öffne die vollständigen Optionen.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Bildschirmdiagonale in Zoll">
-      <span class="muted">Zoll</span>
-      <button class="tbtn primary" id="qApply" disabled>Anwenden</button>
-      <button class="tbtn" id="qFull">Weitere Optionen</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Messen.</b> Halte den Gegenstand an die Linealkante, drücke <b>Messen</b> und ziehe ein Rechteck über einen beliebigen Bildschirmbereich — oder öffne den <b>Winkelmesser</b> für Winkel.</li>
       <li><b>Verfeinern und wiederverwenden.</b> Justiere das Messrechteck mit den Pfeiltasten, kopiere den Messwert und komm jederzeit wieder — deine Kalibrierung bleibt auf diesem Gerät gespeichert.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Einheitenumrechner</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Wert">
-      <select id="convFrom" aria-label="Von Einheit"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Zu Einheit"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Pixel-Umrechnungen verwenden die aktuelle Lineal-PPI (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI bedeutet Pixel pro Zoll — die Pixeldichte deines Bildschirms. Ein Lineal muss sie kennen, um Pixel in echte Zentimeter und Zoll umzurechnen. Diese eine Zahl macht den ganzen Unterschied zwischen einem dekorativen Linealbild und einem Messwerkzeug in Originalgröße.</p>
     </div>
   </div>
+
 </div>
 
 <style>
