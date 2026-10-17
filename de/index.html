@@ -72,6 +72,8 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .steps{margin:10px 0;padding-left:22px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+.table-wrap{overflow-x:auto;margin:12px 0}
+.table-wrap table.stable{margin:0;min-width:420px}
 table.stable th,table.stable td{border:1px solid var(--grid);padding:8px 10px;text-align:left}
 table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .faq h3{margin:18px 0 4px;font-size:16.5px}
@@ -247,13 +249,13 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <div class="card">
     <h2>Skalen ablesen: Zoll, Zentimeter und Millimeter</h2>
     <p>Das Lineal zeigt metrische und imperiale Skalen nebeneinander. Nutze <b>Millimeter</b> für präzises Arbeiten, <b>Zentimeter</b> fürs Messen im Alltag und <b>Zoll</b> für imperiale Maße. Der eingebaute Umrechner weiter oben beherrscht außerdem Meter, Fuß, Yard und Punkt.</p>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Einheit</th><th>In Zentimetern</th><th>In Millimetern</th><th>In Zoll</th></tr>
       <tr><td>1 Zoll</td><td>2.54 cm</td><td>25.4 mm</td><td>1 Zoll</td></tr>
       <tr><td>1 Zentimeter</td><td>1 cm</td><td>10 mm</td><td>0.3937 Zoll</td></tr>
       <tr><td>1 Millimeter</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 Zoll</td></tr>
       <tr><td>12 Zoll</td><td>30.48 cm</td><td>304.8 mm</td><td>12 Zoll</td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -284,14 +286,14 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h2>Online-Lineal im Vergleich</h2>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Methode</th><th>Am besten für</th><th>Achte auf</th></tr>
       <tr><td>Physisches Lineal</td><td>Alltagsgenauigkeit, auf die du dich verlassen kannst</td><td>Nicht immer zur Hand</td></tr>
       <tr><td>Maßband</td><td>Große Gegenstände und Räume</td><td>Ungenau unter einem Millimeter</td></tr>
       <tr><td>AR-Mess-Apps fürs Smartphone</td><td>3D-Räume und Möbel</td><td>Kameraverzerrung; muss installiert werden</td></tr>
       <tr><td>Papierlineal</td><td>Originalgröße auf Papier</td><td>Braucht einen Drucker und 100 % Skalierung</td></tr>
       <tr><td><b>TrueRuler (Online-Lineal)</b></td><td><b>Schnelles Messen auf jedem Bildschirm</b></td><td><b>Braucht einmalige Kalibrierung; Zoom auf 100 % halten</b></td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -616,6 +618,16 @@ function drawRuler(canvas, horizontal){
   ctx.strokeStyle = tick; ctx.fillStyle = num; ctx.lineWidth = 1;
   ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   ctx.textBaseline = "top";
+  var accent = css.getPropertyValue("--accent").trim() || "#007aff";
+  var unitName = u === "in" ? "IN" : u === "mm" ? "MM" : "CM";
+  // unit badge, competitor-style (blue "CM" on the ruler itself)
+  ctx.save();
+  ctx.fillStyle = accent; ctx.font = "bold 12px -apple-system,Segoe UI,Roboto,sans-serif";
+  if(horizontal){ ctx.fillText(unitName, 8, 4); }
+  else { ctx.translate(36, 20); ctx.rotate(-Math.PI/2); ctx.textAlign = "center"; ctx.fillText(unitName, 0, 0); }
+  ctx.restore();
+  ctx.fillStyle = num;
+  ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   var minorMM = u === "in" ? 25.4/16 : 1;
   var n = 0, x = 0;
   while(x <= len + 1){
