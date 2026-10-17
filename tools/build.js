@@ -157,6 +157,11 @@ function buildLang(lang, dict) {
   // 8. restore protected code identifiers (LAST - after all injections)
   html = restore(html);
 
+  // 8b. brand link points at the current language home (after restore: class="brand" was protected)
+  if (lang.dir) {
+    html = html.split('<a class="brand" href="/">').join(`<a class="brand" href="/${lang.dir}/">`);
+  }
+
   const outDir = path.join(OUT, lang.dir);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "index.html"), html, "utf8");
