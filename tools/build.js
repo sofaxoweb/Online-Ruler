@@ -7,8 +7,8 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, process.argv[2] === "--out" ? process.argv[3] : "dist");
-// Change when the production domain is known:
-const BASE_URL = "https://sofaxoweb.github.io/Online-Ruler/";
+// Change when the production domain is known (temp domain 2026-10-17):
+const BASE_URL = "https://orangered-anteater-301358.hostingersite.com/";
 
 const LANGS = [
   { code: "en", name: "English", dir: "" },
