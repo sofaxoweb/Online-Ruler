@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Rychlá kalibrace</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Zadejte úhlopříčku obrazovky pro okamžitou kalibraci — nebo otevřete všechny možnosti.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Úhlopříčka obrazovky v palcích">
+      <span class="muted">palce</span>
+      <button class="tbtn primary" id="qApply" disabled>Použít</button>
+      <button class="tbtn" id="qFull">Další možnosti</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Převodník jednotek</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Hodnota">
+      <select id="convFrom" aria-label="Zdrojová jednotka"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Cílová jednotka"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Převody pixelů používají aktuální PPI pravítka (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Online pravítko ve skutečné velikosti</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Keep browser zoom at 100% for accurate measurements</li>
       <li>Free forever — no account, no installation; your calibration is saved on this device</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Rychlá kalibrace</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Zadejte úhlopříčku obrazovky pro okamžitou kalibraci — nebo otevřete všechny možnosti.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Úhlopříčka obrazovky v palcích">
-      <span class="muted">palce</span>
-      <button class="tbtn primary" id="qApply" disabled>Použít</button>
-      <button class="tbtn" id="qFull">Další možnosti</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
       <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Převodník jednotek</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Hodnota">
-      <select id="convFrom" aria-label="Zdrojová jednotka"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Cílová jednotka"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Převody pixelů používají aktuální PPI pravítka (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
     </div>
   </div>
+
 </div>
 
 <style>
