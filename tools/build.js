@@ -171,6 +171,14 @@ function main() {
     console.log(`built ${lang.code} -> ${(lang.dir || "/") + "index.html"}`);
   }
   console.log(totalWarnings === 0 ? "BUILD CLEAN" : `BUILD DONE with ${totalWarnings} warnings`);
+  // copy root-level static files that must survive the dist wipe
+  for (const f of [".htaccess"]) {
+    const src = path.join(ROOT, f);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(OUT, f));
+      console.log(`copied ${f} -> dist/`);
+    }
+  }
 }
 
 main();
