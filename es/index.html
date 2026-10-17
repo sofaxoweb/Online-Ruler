@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Calibración rápida</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Introduce la diagonal de tu pantalla para una calibración instantánea — o abre las opciones completas.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal de pantalla en pulgadas">
+      <span class="muted">pulgadas</span>
+      <button class="tbtn primary" id="qApply" disabled>Aplicar</button>
+      <button class="tbtn" id="qFull">Más opciones</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Conversor de unidades</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valor">
+      <select id="convFrom" aria-label="Unidad de origen"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Unidad de destino"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Las conversiones de píxeles usan el PPI actual de tu regla (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Regla online en tamaño real</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Última actualización: 13 de octubre de 2026 · Por el equipo de TrueRuler</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Mantén el zoom del navegador al 100 % para mediciones precisas</li>
       <li>Gratis para siempre: sin cuenta y sin instalación; tu calibración se guarda en este dispositivo</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Calibración rápida</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Introduce la diagonal de tu pantalla para una calibración instantánea — o abre las opciones completas.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal de pantalla en pulgadas">
-      <span class="muted">pulgadas</span>
-      <button class="tbtn primary" id="qApply" disabled>Aplicar</button>
-      <button class="tbtn" id="qFull">Más opciones</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Mide.</b> Apoya el objeto contra el borde de la regla, pulsa <b>Medir</b> y arrastra un recuadro sobre cualquier cosa en pantalla, o abre el <b>Transportador</b> para medir ángulos.</li>
       <li><b>Ajusta y reutiliza.</b> Mueve el recuadro de medición con las flechas del teclado, copia la lectura y vuelve cuando quieras: tu calibración se guarda en este dispositivo.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Conversor de unidades</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Valor">
-      <select id="convFrom" aria-label="Unidad de origen"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Unidad de destino"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Las conversiones de píxeles usan el PPI actual de tu regla (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI significa píxeles por pulgada: la densidad de píxeles de tu pantalla. Una regla debe conocerlo para convertir píxeles en centímetros y pulgadas reales. Ese único número es toda la diferencia entre una imagen decorativa de regla y una herramienta de medición en tamaño real.</p>
     </div>
   </div>
+
 </div>
 
 <style>
