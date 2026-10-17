@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>빠른 보정</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">화면 대각선 크기를 입력하면 즉시 보정됩니다 — 전체 옵션을 열 수도 있습니다.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="화면 대각선(인치)">
+      <span class="muted">인치</span>
+      <button class="tbtn primary" id="qApply" disabled>적용</button>
+      <button class="tbtn" id="qFull">자세한 옵션</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>단위 변환</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="값">
+      <select id="convFrom" aria-label="변환 전 단위"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="변환 후 단위"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">픽셀 환산에는 현재 자의 PPI(<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">실제 크기로 재는 온라인 자</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Keep browser zoom at 100% for accurate measurements</li>
       <li>Free forever — no account, no installation; your calibration is saved on this device</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>빠른 보정</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">화면 대각선 크기를 입력하면 즉시 보정됩니다 — 전체 옵션을 열 수도 있습니다.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="화면 대각선(인치)">
-      <span class="muted">인치</span>
-      <button class="tbtn primary" id="qApply" disabled>적용</button>
-      <button class="tbtn" id="qFull">자세한 옵션</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
       <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>단위 변환</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="값">
-      <select id="convFrom" aria-label="변환 전 단위"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="변환 후 단위"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">픽셀 환산에는 현재 자의 PPI(<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
     </div>
   </div>
+
 </div>
 
 <style>
