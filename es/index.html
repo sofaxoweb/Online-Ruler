@@ -72,6 +72,8 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .steps{margin:10px 0;padding-left:22px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+.table-wrap{overflow-x:auto;margin:12px 0}
+.table-wrap table.stable{margin:0;min-width:420px}
 table.stable th,table.stable td{border:1px solid var(--grid);padding:8px 10px;text-align:left}
 table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .faq h3{margin:18px 0 4px;font-size:16.5px}
@@ -247,13 +249,13 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <div class="card">
     <h2>Cómo leer las escalas: pulgadas, centímetros y milímetros</h2>
     <p>La regla muestra las escalas métricas e imperiales lado a lado. Usa los <b>milímetros</b> para trabajos de precisión, los <b>centímetros</b> para medir en el día a día y las <b>pulgadas</b> para medidas imperiales. El convertidor integrado de arriba también maneja metros, pies, yardas y puntos.</p>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Unidad</th><th>En centímetros</th><th>En milímetros</th><th>En pulgadas</th></tr>
       <tr><td>1 pulgada</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
       <tr><td>1 centímetro</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
       <tr><td>1 milímetro</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 pulgadas</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -284,14 +286,14 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h2>Regla online frente a otras opciones</h2>
-    <table class="stable">
+    <div class="table-wrap"><table class="stable">
       <tr><th>Método</th><th>Ideal para</th><th>Ten en cuenta</th></tr>
       <tr><td>Regla física</td><td>Precisión diaria en la que puedes confiar</td><td>No siempre la tienes a mano</td></tr>
       <tr><td>Cinta métrica</td><td>Objetos grandes y habitaciones</td><td>Poca precisión por debajo del milímetro</td></tr>
       <tr><td>Apps de medición con RA del teléfono</td><td>Espacios 3D y muebles</td><td>Distorsión de la cámara; hay que instalarlas</td></tr>
       <tr><td>Regla imprimible</td><td>Tamaño real en papel</td><td>Necesita impresora y el ajuste de escala al 100 %</td></tr>
       <tr><td><b>TrueRuler (regla online)</b></td><td><b>Medición rápida en cualquier pantalla</b></td><td><b>Necesita una calibración única; mantén el zoom al 100 %</b></td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="card">
@@ -616,6 +618,16 @@ function drawRuler(canvas, horizontal){
   ctx.strokeStyle = tick; ctx.fillStyle = num; ctx.lineWidth = 1;
   ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   ctx.textBaseline = "top";
+  var accent = css.getPropertyValue("--accent").trim() || "#007aff";
+  var unitName = u === "in" ? "IN" : u === "mm" ? "MM" : "CM";
+  // unit badge, competitor-style (blue "CM" on the ruler itself)
+  ctx.save();
+  ctx.fillStyle = accent; ctx.font = "bold 12px -apple-system,Segoe UI,Roboto,sans-serif";
+  if(horizontal){ ctx.fillText(unitName, 8, 4); }
+  else { ctx.translate(36, 20); ctx.rotate(-Math.PI/2); ctx.textAlign = "center"; ctx.fillText(unitName, 0, 0); }
+  ctx.restore();
+  ctx.fillStyle = num;
+  ctx.font = (horizontal ? "11px" : "13px") + " -apple-system,Segoe UI,Roboto,sans-serif";
   var minorMM = u === "in" ? 25.4/16 : 1;
   var n = 0, x = 0;
   while(x <= len + 1){
