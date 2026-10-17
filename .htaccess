@@ -1,0 +1,17 @@
+# TrueRuler — canonical domain: everything → https://trueruleronline.com/
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Force HTTPS + non-www canonical in a single 301 redirect.
+# Covers: http://, www., and the old temporary hostingersite subdomain.
+RewriteCond %{HTTP_HOST} !^trueruleronline\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://trueruleronline.com/$1 [R=301,L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/svg+xml "access plus 1 month"
+ExpiresByType application/manifest+json "access plus 1 week"
+</IfModule>
