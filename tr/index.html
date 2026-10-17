@@ -58,9 +58,9 @@ html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
 .ruler.h{top:0;left:0;right:0;height:50px}
-.ruler.v{top:0;left:0;bottom:0;width:50px}
+.ruler.v{top:100px;left:0;bottom:0;width:50px}
 .ruler canvas{display:block;width:100%;height:100%}
-.toolbar{position:fixed;top:0;left:50px;right:0;height:50px;z-index:40;display:flex;align-items:center;gap:8px;padding:0 12px;background:color-mix(in srgb,var(--ruler-bg) 82%,transparent);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--grid)}
+.toolbar{position:fixed;top:50px;left:0;right:0;height:50px;z-index:40;display:flex;align-items:center;gap:8px;padding:0 12px;background:color-mix(in srgb,var(--ruler-bg) 82%,transparent);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--grid)}
 .brand{font-weight:800;font-size:17px;letter-spacing:.2px;margin-right:6px;white-space:nowrap}
 .brand span{color:var(--accent)}
 /* content typography */
@@ -87,7 +87,7 @@ table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .status{margin-left:auto;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
 .dot{width:9px;height:9px;border-radius:50%;background:#c2ccd6;display:inline-block}
 .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)}
-.wrap{max-width:860px;margin:0 auto;padding:82px 18px 60px}
+.wrap{max-width:860px;margin:0 auto;padding:132px 18px 60px}
 .card{background:var(--card);border:1px solid var(--grid);border-radius:var(--radius);padding:22px;margin:18px 0}
 .card h2{margin:.2em 0 .6em;font-size:20px}
 .card h3{margin:1.1em 0 .4em;font-size:16px}
@@ -95,7 +95,7 @@ table.stable th{background:color-mix(in srgb,var(--bg) 60%,var(--card))}
 .muted{color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:640px){.grid2{grid-template-columns:1fr}.toolbar{left:0;top:50px}.ruler.v{display:none}.wrap{padding-top:136px}.status{display:none}
-body.rotated .ruler.h{display:none}body.rotated .ruler.v{display:block}body.rotated .toolbar{left:50px;top:0}body.rotated .wrap{padding-top:82px}}
+body.rotated .ruler.h{display:none}body.rotated .ruler.v{display:block;top:0}body.rotated .toolbar{left:50px;top:0}body.rotated .wrap{padding-top:82px}}
 @media(min-width:641px){#btnRot{display:none}}
 /* measure overlay */
 #measureLayer{position:fixed;inset:0;z-index:50;display:none;touch-action:none}
@@ -133,7 +133,7 @@ details.method summary{font-weight:700;cursor:pointer;font-size:15px}
 /* toast + zoom banner */
 #toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:26px;background:#101820;color:#fff;padding:11px 18px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:90;pointer-events:none}
 #toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-#zoomWarn{position:fixed;top:56px;left:50%;transform:translateX(-50%);z-index:70;display:none;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+#zoomWarn{position:fixed;top:106px;left:50%;transform:translateX(-50%);z-index:70;display:none;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.15)}
 #zoomWarn.on{display:block}
 footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;color:var(--muted);font-size:13px}
 #cursorRead{position:fixed;z-index:65;pointer-events:none;display:none;background:#101820;color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap}
@@ -165,7 +165,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <button class="tbtn" id="btnTheme" title="Koyu / açık">Koyu</button>
 </div>
 
-<div class="status" id="statusBar" style="position:fixed;top:60px;right:14px;z-index:45;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px">
+<div class="status" id="statusBar" style="position:fixed;top:110px;right:14px;z-index:45;background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px">
   <span class="dot" id="statusDot"></span><span id="statusText">Kalibre edilmedi</span>
 </div>
 
@@ -320,7 +320,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 #proLayer{position:fixed;inset:0;z-index:55;display:none;background:color-mix(in srgb,var(--bg) 70%,transparent)}
 #proLayer.on{display:block}
 #proCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
-#proRead{position:fixed;top:62px;left:50%;transform:translateX(-50%);background:#101820;color:#fff;font-size:22px;font-weight:800;padding:10px 22px;border-radius:14px;z-index:56;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:center}
+#proRead{position:fixed;top:112px;left:50%;transform:translateX(-50%);background:#101820;color:#fff;font-size:22px;font-weight:800;padding:10px 22px;border-radius:14px;z-index:56;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:center}
 #proRead small{display:block;font-size:11px;font-weight:400;color:#b9c6d2}
 #proBar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:56}
 #langSel{max-width:132px;cursor:pointer}
