@@ -15,3 +15,11 @@ ExpiresActive On
 ExpiresByType image/svg+xml "access plus 1 month"
 ExpiresByType application/manifest+json "access plus 1 week"
 </IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
