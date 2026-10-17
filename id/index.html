@@ -166,6 +166,29 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 <div id="zoomWarn"></div>
 
 <div class="wrap">
+  <div class="card" id="quickCal">
+    <h2>Kalibrasi cepat</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:6px">Masukkan ukuran diagonal layar untuk kalibrasi instan — atau buka opsi lengkap.</p>
+    <div class="field">
+      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal layar dalam inci">
+      <span class="muted">inci</span>
+      <button class="tbtn primary" id="qApply" disabled>Terapkan</button>
+      <button class="tbtn" id="qFull">Opsi lainnya</button>
+    </div>
+  </div>
+
+  <div class="card" id="converterCard">
+    <h2>Konverter satuan</h2>
+    <div class="field">
+      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Nilai">
+      <select id="convFrom" aria-label="Dari satuan"></select>
+      <span class="muted">→</span>
+      <select id="convTo" aria-label="Ke satuan"></select>
+    </div>
+    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">Konversi piksel memakai PPI penggaris saat ini (<span id="convPpi">96</span>).</p>
+  </div>
+
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Penggaris online ukuran sebenarnya</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Terakhir diperbarui: 13 Oktober 2026 · Oleh tim TrueRuler</p>
@@ -177,17 +200,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Jaga zoom peramban tetap 100% agar pengukuran akurat</li>
       <li>Gratis selamanya — tanpa akun, tanpa instalasi; kalibrasi Anda tersimpan di perangkat ini</li>
     </ul>
-  </div>
-
-  <div class="card" id="quickCal">
-    <h2>Kalibrasi cepat</h2>
-    <p class="muted" style="margin-top:0;margin-bottom:6px">Masukkan ukuran diagonal layar untuk kalibrasi instan — atau buka opsi lengkap.</p>
-    <div class="field">
-      <input type="number" id="qDiag" placeholder="e.g. 15.6" step="0.1" min="3" max="50" style="width:130px" aria-label="Diagonal layar dalam inci">
-      <span class="muted">inci</span>
-      <button class="tbtn primary" id="qApply" disabled>Terapkan</button>
-      <button class="tbtn" id="qFull">Opsi lainnya</button>
-    </div>
   </div>
 
   <div class="card">
@@ -213,18 +225,6 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Ukur.</b> Tempelkan benda pada tepi penggaris, tekan <b>Ukur</b> lalu seret kotak di atas apa pun di layar, atau buka <b>Busur derajat</b> untuk mengukur sudut.</li>
       <li><b>Sempurnakan dan pakai lagi.</b> Geser kotak ukur dengan tombol panah, salin hasil bacaannya, dan kembali kapan saja — kalibrasi Anda tersimpan di perangkat ini.</li>
     </ol>
-  </div>
-
-  <div class="card" id="converterCard">
-    <h2>Konverter satuan</h2>
-    <div class="field">
-      <input type="number" id="convVal" value="10" step="any" style="width:130px" aria-label="Nilai">
-      <select id="convFrom" aria-label="Dari satuan"></select>
-      <span class="muted">→</span>
-      <select id="convTo" aria-label="Ke satuan"></select>
-    </div>
-    <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">Konversi piksel memakai PPI penggaris saat ini (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
@@ -306,6 +306,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <p>PPI berarti piksel per inci — kepadatan piksel layar Anda. Sebuah penggaris harus mengetahuinya untuk mengubah piksel menjadi sentimeter dan inci sungguhan. Satu angka inilah yang membedakan gambar penggaris hiasan dengan alat ukur berukuran sebenarnya.</p>
     </div>
   </div>
+
 </div>
 
 <style>
