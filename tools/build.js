@@ -188,7 +188,7 @@ function main() {
   }
   console.log(totalWarnings === 0 ? "BUILD CLEAN" : `BUILD DONE with ${totalWarnings} warnings`);
   // copy root-level static files that must survive the dist wipe
-  for (const f of [".htaccess", "og-image.png"]) {
+  for (const f of [".htaccess", "og-image.png", "404.html"]) {
     const src = path.join(ROOT, f);
     if (fs.existsSync(src)) {
       fs.copyFileSync(src, path.join(OUT, f));

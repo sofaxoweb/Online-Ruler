@@ -7,22 +7,41 @@
 <meta name="description" content="About TrueRuler — a free online ruler that shows true cm, mm and inch sizes on any screen.">
 <link rel="canonical" href="https://trueruleronline.com/about/">
 <link rel="icon" type="image/svg+xml" href="https://trueruleronline.com/icon-192.svg">
-<style>
-:root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--muted:#6e6e73;--accent:#007aff;--grid:#e4e9ee;--radius:16px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65}
-.topbar{background:#fff;border-bottom:1px solid var(--grid);padding:14px 20px;position:sticky;top:0;z-index:10}
-.topbar a.brand{font-weight:800;font-size:18px;color:var(--ink);text-decoration:none}
+<style>:root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--muted:#6e6e73;--accent:#007aff;--grid:#e4e9ee;--radius:16px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+/* synced top bar (same look as site toolbar) */
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;height:56px;padding:0 20px;background:color-mix(in srgb,#fff 82%,transparent);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--grid)}
+.topbar a.brand{font-weight:800;font-size:17px;letter-spacing:.2px;color:var(--ink);text-decoration:none;white-space:nowrap}
 .topbar a.brand span{color:var(--accent)}
-.wrap{max-width:820px;margin:0 auto;padding:34px 20px 60px}
+.wrap{max-width:860px;margin:0 auto;padding:34px 20px 60px}
 .card{background:var(--card);border:1px solid var(--grid);border-radius:var(--radius);padding:30px;margin:0 0 18px}
-h1{font-size:28px;margin:.2em 0 .6em}h2{font-size:20px;margin:1.4em 0 .5em}
+h1{font-size:28px;margin:.2em 0 .6em;letter-spacing:-.3px}h2{font-size:20px;margin:1.4em 0 .5em}
 p,li{font-size:15.5px}ul{padding-left:22px}li{margin-bottom:6px}
 a{color:var(--accent)}.muted{color:var(--muted);font-size:13.5px}
-.btn{display:inline-block;background:var(--accent);color:#fff!important;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;margin-top:8px}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;font-weight:700;padding:12px 24px;border-radius:12px;text-decoration:none;margin-top:10px}
 .email-box{background:var(--bg);border:1px dashed var(--grid);border-radius:10px;padding:16px;text-align:center;font-size:19px;font-weight:700;margin:18px 0}
-footer{border-top:1px solid var(--grid);padding:24px 20px;text-align:center;color:var(--muted);font-size:13px}
-footer nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
-footer nav a{color:var(--muted);text-decoration:none}footer nav a:hover{color:var(--accent)}
+/* synced footer (same as site) */
+footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;color:var(--muted);font-size:13px}
+.footer-inner{max-width:860px;margin:0 auto}
+.footer-brand{font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px}
+.footer-tag{margin:0 0 12px}
+.footer-langs{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;margin:0 0 12px}
+.footer-langs a{color:var(--muted);text-decoration:none;font-size:12.5px}
+.footer-langs a:hover{color:var(--accent)}
+.footer-legal{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center;margin:0 0 12px}
+.footer-legal a{color:var(--muted);text-decoration:none;font-size:13px}
+.footer-legal a:hover{color:var(--accent)}
+.footer-legal a[aria-current="page"]{color:var(--ink);font-weight:700}
+.footer-copy{margin:0;font-size:12.5px}
+/* 404 */
+.e404{text-align:center;padding:40px 10px}
+.e404 .code{font-size:84px;font-weight:800;letter-spacing:-2px;color:var(--ink);line-height:1}
+.e404 .code span{color:var(--accent)}
+.e404 p.lead{font-size:18px;color:var(--muted)}
+.e404 .qlinks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.e404 .qlinks a{border:1px solid var(--grid);background:#fff;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px;font-weight:600;color:var(--ink)}
+.e404 .qlinks a:hover{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -47,11 +66,39 @@ footer nav a{color:var(--muted);text-decoration:none}footer nav a:hover{color:va
 </div>
 </div>
 <footer>
-<nav aria-label="Legal"><a href="https://trueruleronline.com/about/">About</a>
-<a href="https://trueruleronline.com/contact/">Contact</a>
-<a href="https://trueruleronline.com/privacy/">Privacy Policy</a>
-<a href="https://trueruleronline.com/terms/">Terms</a></nav>
-<p>&copy; 2026 TrueRuler. All rights reserved.</p>
+  <div class="footer-inner">
+    <div class="footer-brand">TrueRuler</div>
+    <p class="footer-tag">Free online ruler with protractor, printable ruler and unit converter.</p>
+    <nav class="footer-langs" aria-label="Languages">
+      <a href="https://trueruleronline.com/">English</a>
+      <a href="https://trueruleronline.com/cs/">Čeština</a>
+      <a href="https://trueruleronline.com/de/">Deutsch</a>
+      <a href="https://trueruleronline.com/es/">Español</a>
+      <a href="https://trueruleronline.com/fr/">Français</a>
+      <a href="https://trueruleronline.com/id/">Bahasa Indonesia</a>
+      <a href="https://trueruleronline.com/it/">Italiano</a>
+      <a href="https://trueruleronline.com/ja/">日本語</a>
+      <a href="https://trueruleronline.com/ko/">한국어</a>
+      <a href="https://trueruleronline.com/ms/">Melayu</a>
+      <a href="https://trueruleronline.com/nl/">Nederlands</a>
+      <a href="https://trueruleronline.com/pl/">Polski</a>
+      <a href="https://trueruleronline.com/pt/">Português</a>
+      <a href="https://trueruleronline.com/ro/">Română</a>
+      <a href="https://trueruleronline.com/ru/">Русский</a>
+      <a href="https://trueruleronline.com/th/">ไทย</a>
+      <a href="https://trueruleronline.com/tr/">Türkçe</a>
+      <a href="https://trueruleronline.com/uk/">Українська</a>
+      <a href="https://trueruleronline.com/vi/">Tiếng Việt</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="https://trueruleronline.com/about/" aria-current="page">About</a>
+      <a href="https://trueruleronline.com/contact/">Contact</a>
+      <a href="https://trueruleronline.com/privacy/">Privacy Policy</a>
+      <a href="https://trueruleronline.com/terms/">Terms</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year">2026</span> TrueRuler. All rights reserved.</p>
+  </div>
 </footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
