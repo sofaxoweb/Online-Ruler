@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Thước online kích thước thật</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Cập nhật lần cuối: 13 tháng 10, 2026 · Bởi đội ngũ TrueRuler</p>
+    <p><b>Thước trực tuyến biến màn hình của bạn thành công cụ đo thật.</b> TrueRuler vẽ thang centimet, milimet và inch đúng kích thước vật lý bằng cách phát hiện mật độ điểm ảnh của thiết bị — hoặc hiệu chuẩn một lần bằng kích thước màn hình hay thẻ ngân hàng chuẩn. Miễn phí, không cần cài đặt, dùng được trên mọi điện thoại, máy tính bảng, laptop hay màn hình.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>Thước cm, mm và inch đúng kích thước thật trên mọi màn hình</li>
+      <li>Tự động nhận diện thiết bị, hoặc hiệu chuẩn bằng đường chéo màn hình hay thẻ ngân hàng (85.60&nbsp;mm)</li>
+      <li>Gồm hộp kéo-để-đo, thước đo góc, thước giấy in được và bộ chuyển đổi đơn vị</li>
+      <li>Giữ mức thu phóng trình duyệt ở 100% để đo chính xác</li>
+      <li>Miễn phí mãi mãi — không tài khoản, không cài đặt; hiệu chuẩn được lưu trên thiết bị này</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>Thước trực tuyến là gì?</h2>
+    <p class="def"><b>Thước trực tuyến là công cụ đo trên web, hiển thị thước trên màn hình đúng kích thước vật lý.</b> Công cụ tính số điểm ảnh trên mỗi inch (PPI) của màn hình rồi vẽ từng centimet, milimet và inch khớp với thước thật đặt áp vào màn hình. Sau một lần hiệu chuẩn, bạn có thể đo trực tiếp vật nhỏ trên màn hình — không cần cài app.</p>
+    <h2>Thước này đo kích thước thật như thế nào</h2>
+    <p>Màn hình của bạn không biết một inch là bao nhiêu — nó chỉ biết điểm ảnh. Cầu nối giữa hai thứ là <b>mật độ điểm ảnh</b>, đo bằng PPI (điểm ảnh trên mỗi inch). Nếu màn hình hiển thị 141 điểm ảnh mỗi inch, thước sẽ vẽ một inch đúng bằng 141 điểm ảnh, một centimet bằng 55.6 điểm ảnh và một milimet bằng 5.56 điểm ảnh.</p>
+    <p>Có một điểm cần lưu ý: hai màn hình có thể cùng độ phân giải 1920×1080 nhưng một cái rộng 22 inch, cái kia 32 inch — cùng số điểm ảnh nhưng kích thước thật rất khác nhau. Đó là lý do thước trực tuyến phải biết PPI thật của màn hình. TrueRuler làm điều này theo hai cách: nhận diện điện thoại, máy tính bảng và laptop phổ biến từ cơ sở dữ liệu thiết bị rồi áp dụng PPI gốc của chúng, hoặc tính PPI từ kích thước đường chéo màn hình. <span id="ppiEcho"></span></p>
+    <p>Một chi tiết nữa: trình duyệt làm việc với <b>điểm ảnh CSS</b>, có thể khác điểm ảnh vật lý trên màn hình mật độ cao ("Retina"). TrueRuler đọc tỉ lệ điểm ảnh của thiết bị và tự động chuyển đổi, đồng thời cảnh báo nếu mức thu phóng của trình duyệt không ở 100%, vì thu phóng làm thay đổi kích thước điểm ảnh CSS.</p>
+    <h2>Công thức hiệu chuẩn</h2>
+    <p>Khi bạn nhập kích thước đường chéo màn hình, thước sẽ tính PPI bằng định lý Pythagore:</p>
+    <p class="formula"><b>PPI = √(chiều rộng² + chiều cao²) ÷ số inch đường chéo</b></p>
+    <p><b>Ví dụ minh họa.</b> Laptop 15.6 inch màn hình 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 điểm ảnh theo đường chéo. Chia cho 15.6 inch → <b>141.2 PPI</b>. Như vậy một inch được vẽ bằng 141.2 điểm ảnh, một centimet bằng 55.6 điểm ảnh (141.2 ÷ 2.54) và một milimet bằng 5.56 điểm ảnh.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>Cách sử dụng TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>Kiểm tra chấm trạng thái.</b> Nếu thiết bị được nhận diện, chấm chuyển xanh lá và thước đã đúng kích thước thật.</li>
+      <li><b>Hiệu chuẩn nếu cần.</b> Nhập đường chéo màn hình để hiệu chuẩn ngay — hoặc mở đầy đủ tùy chọn: chọn thiết bị từ danh sách, hay áp thẻ ngân hàng (rộng 85.60&nbsp;mm) vào thanh dẫn màu xanh rồi kéo thanh trượt đến khi khớp.</li>
+      <li><b>Chọn đơn vị.</b> Chuyển đổi giữa centimet, milimet và inch trên thanh công cụ phía trên thước.</li>
+      <li><b>Đo.</b> Áp vật cần đo vào mép thước, nhấn <b>Đo</b> rồi kéo hộp bao quanh bất cứ thứ gì trên màn hình, hoặc mở <b>Thước đo góc</b> để đo góc.</li>
+      <li><b>Tinh chỉnh và dùng lại.</b> Dùng phím mũi tên để nhích hộp đo, sao chép số đo, rồi quay lại bất cứ lúc nào — hiệu chuẩn của bạn được lưu trên thiết bị này.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>Hướng dẫn bằng hình</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Bước 1: hiệu chuẩn thước bằng thẻ ngân hàng"><figcaption>1. Hiệu chuẩn bằng thẻ ngân hàng (85.60 mm)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Bước 2: áp vật cần đo vào thước trên màn hình"><figcaption>2. Áp bất kỳ vật nào vào thước</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Bước 3: đo chính xác bằng hộp kéo và thước đo góc"><figcaption>3. Đo chính xác bằng hộp và thước đo góc</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>Đọc thang đo: inch, centimet và milimet</h2>
+    <p>Thước hiển thị thang mét và thang inch cạnh nhau. Dùng <b>milimet</b> cho công việc cần độ chính xác, <b>centimet</b> cho đo đạc hằng ngày và <b>inch</b> cho đơn vị đo Anh-Mỹ. Bộ chuyển đổi tích hợp phía trên còn hỗ trợ mét, feet, yard và point.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
+      <tr><th>Đơn vị</th><th>Theo centimet</th><th>Theo milimet</th><th>Theo inch</th></tr>
       <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><td>1 centimet</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
+      <tr><td>1 milimet</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
+      <tr><td>12 inch</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 inch"] -->
+    <h2>Thước dọc và xoay màn hình</h2>
+    <p>Nhấn <b>Xoay</b> để đổi thước ngang và thước dọc — tiện khi đo chiều cao hoặc khi màn hình hẹp. Thước dọc hoạt động y hệt thước ngang, với centimet, milimet và inch.</p>
+    <h2>Đo vật thể bằng hộp kéo-để-đo</h2>
+    <p>Nhấn <b>Đo</b> rồi kéo hộp bao quanh bất cứ thứ gì hiển thị trên màn hình — ảnh chụp, sơ đồ, ảnh sản phẩm. Hộp hiển thị trực tiếp chiều rộng × chiều cao bằng cm, mm và inch. Kéo các tay cầm để đổi kích thước, kéo phần giữa để di chuyển, dùng phím mũi tên để chỉnh tinh. <b>Sao chép</b> sẽ đưa số đo vào clipboard.</p>
+    <h2>Đo size nhẫn</h2>
+    <p>Để biết size nhẫn, hãy quấn dải giấy mỏng quanh ngón tay, đánh dấu chỗ giấy chồng lên nhau, rồi đặt dải giấy phẳng áp vào thước trên màn hình và đọc độ dài bằng milimet — hầu hết thợ kim hoàn định size nhẫn theo chu vi ngón tay tính bằng mm. Với chiếc nhẫn bạn đã có, mở hộp <b>Đo</b> rồi kéo qua đường kính trong của nhẫn. Size ngón tay thay đổi nhẹ trong ngày, nên hãy đo vào buổi tối để có kết quả đáng tin nhất.</p>
+    <h2>Chế độ thước đo góc</h2>
+    <p>Nhấn <b>Thước đo góc</b> để phủ thước đo góc 180° đầy đủ. Kéo một trong hai cánh tay đến góc cần đo; số đọc hiển thị độ trực tiếp. Kéo phần giữa để di chuyển cả thước đo góc. Công cụ dùng cùng hiệu chuẩn với thước kẻ nên góc luôn đúng trên mọi màn hình.</p>
+    <h2>Thước giấy in được</h2>
+    <p>Nhấn <b>In</b> để có thước giấy đúng kích thước thật: 18&nbsp;cm một cạnh và 7&nbsp;inch cạnh còn lại. In ở <b>tỉ lệ 100%</b> (không bao giờ chọn "vừa trang"), cắt dọc theo mép rồi đối chiếu với vật đã biết kích thước. Thước giấy rất tiện khi bạn cần đo thứ gì đó xa màn hình.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Thước giấy in được at true size, 18 cm and 7 inch"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>Hạn chế</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Mức thu phóng trình duyệt phải là 100%.</b> Thu phóng làm thay đổi kích thước điểm ảnh; TrueRuler sẽ cảnh báo nếu mức thu phóng sai.</li>
+      <li><b>Tỉ lệ hiển thị của hệ điều hành rất quan trọng.</b> Nếu hệ điều hành phóng to hiển thị (ví dụ 125% trên Windows), hãy hiệu chuẩn lại sau khi thay đổi.</li>
+      <li><b>Màn hình ngoài mỗi cái một khác.</b> Cùng độ phân giải có thể cho kích thước vật lý khác nhau, vì vậy hãy hiệu chuẩn màn hình mới thay vì tin vào cài đặt cũ.</li>
+      <li><b>Điện thoại ở chế độ máy tính.</b> Một số trình duyệt di động báo khung nhìn bất thường; nếu thước hiển thị sai, hãy dùng phương pháp hiệu chuẩn bằng thẻ ngân hàng.</li>
+      <li><b>Không phải thước đo PD.</b> Đây là thước đo đa năng, không phải thước đo khoảng cách đồng tử để đặt kính — việc đó cần dụng cụ chuyên dụng.</li>
+      <li><b>Giới hạn độ dài màn hình.</b> Thước trên màn hình chỉ dài bằng màn hình hiển thị; với vật dài hơn, hãy dùng thước giấy hoặc đo từng đoạn.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>Thước trực tuyến so với các lựa chọn khác</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>Phương pháp</th><th>Phù hợp nhất cho</th><th>Lưu ý</th></tr>
+      <tr><td>Thước thật</td><td>Độ chính xác hằng ngày đáng tin cậy</td><td>Không phải lúc nào cũng có sẵn</td></tr>
+      <tr><td>Thước dây</td><td>Vật lớn và phòng ốc</td><td>Kém chính xác dưới một milimet</td></tr>
+      <tr><td>App đo AR trên điện thoại</td><td>Không gian 3D và nội thất</td><td>Camera bị méo hình; cần cài đặt</td></tr>
+      <tr><td>Thước in được</td><td>Kích thước thật trên giấy</td><td>Cần máy in và cài đặt tỉ lệ 100%</td></tr>
+      <tr><td><b>TrueRuler (thước trực tuyến)</b></td><td><b>Đo nhanh trên mọi màn hình</b></td><td><b>Cần hiệu chuẩn một lần; giữ thu phóng ở 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>Câu hỏi thường gặp</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>Thước trực tuyến này có chính xác không?</h3>
+      <p>Có — sau khi hiệu chuẩn, độ chính xác khoảng một milimet trên hầu hết màn hình. Chấm trạng thái xanh lá nghĩa là thiết bị của bạn đã được nhận diện và mật độ điểm ảnh gốc đã được áp dụng. Nếu thiết bị không được nhận diện, hãy hiệu chuẩn bằng phương pháp thẻ ngân hàng — lựa chọn chính xác nhất.</p>
+      <h3>Làm thế nào để hiệu chuẩn màn hình?</h3>
+      <p>Chọn một trong ba cách: chọn thiết bị từ danh sách, nhập kích thước đường chéo màn hình, hoặc áp thẻ ngân hàng chuẩn (rộng 85.60&nbsp;mm) vào thanh dẫn màu xanh rồi kéo thanh trượt đến khi khớp. Hiệu chuẩn của bạn được lưu tự động.</p>
+      <h3>Tại sao thước hiển thị sai trên màn hình của tôi?</h3>
+      <p>Hầu như luôn là vì hai màn hình có cùng độ phân giải nhưng kích thước vật lý khác nhau — tấm nền 1920×1080 có thể là 22 hoặc 32 inch. Thước không thể đoán, vì vậy hãy hiệu chuẩn màn hình đó một lần bằng phương pháp thẻ ngân hàng, nó sẽ luôn đúng.</p>
+      <h3>Thước trên màn hình dài bao nhiêu?</h3>
+      <p>Dài bằng màn hình của bạn — thước 12 inch vừa hầu hết laptop, còn điện thoại hiển thị ít hơn. Muốn mốc độ dài cố định, hãy in thước giấy: đúng 18&nbsp;cm một cạnh và 7&nbsp;inch cạnh còn lại ở tỉ lệ 100%.</p>
+      <h3>Tôi có thể dùng làm thước milimet không?</h3>
+      <p>Có. Chuyển thanh công cụ sang <b>mm</b>, các thước sẽ vẽ lại với vạch và số milimet — lý tưởng cho phép đo nhỏ cần độ chính xác.</p>
+      <h3>Có dùng được trên điện thoại và máy tính bảng không?</h3>
+      <p>Có. Bố cục tự thích ứng với màn hình nhỏ, và hầu hết điện thoại, máy tính bảng phổ biến đều có trong cơ sở dữ liệu thiết bị để tự động hiệu chuẩn. Trên màn hình cảm ứng, hãy dùng ngón tay kéo hộp đo.</p>
+      <h3>Tôi có cần camera không?</h3>
+      <p>Không. Không giống app đo bằng AR, TrueRuler không bao giờ dùng camera của bạn — công cụ đo dựa trên mật độ điểm ảnh của màn hình nên không có gì để chĩa vào và không cần cấp quyền.</p>
+      <h3>Có thực sự miễn phí không?</h3>
+      <p>Có, hoàn toàn miễn phí, không cần tài khoản, không cần cài đặt. Mọi xử lý diễn ra trong trình duyệt của bạn; không có gì bạn đo bị tải lên đâu cả.</p>
+      <h3>Tôi có thể đo size nhẫn bằng công cụ này không?</h3>
+      <p>Có. Quấn dải giấy quanh ngón tay, đánh dấu chỗ chồng, đặt phẳng áp vào thước trên màn hình rồi đọc số milimet — thợ kim hoàn định size nhẫn theo chu vi ngón tay. Hoặc kéo hộp <b>Đo</b> qua đường kính trong của nhẫn.</p>
+      <h3>Làm thế nào để in thước đúng kích thước thật?</h3>
+      <p>Nhấn <b>In</b>, rồi in ở <b>tỉ lệ 100%</b> — không bao giờ chọn "vừa trang" vì sẽ làm co lại. Cắt dọc mép và kiểm tra lại bằng thẻ ngân hàng (85.60&nbsp;mm) trước khi tin dùng.</p>
+      <h3>Công cụ có lưu cài đặt của tôi không?</h3>
+      <p>Hiệu chuẩn, đơn vị đã chọn và giao diện của bạn được lưu trong bộ nhớ cục bộ của trình duyệt, trên chính thiết bị của bạn. Xóa dữ liệu trang web sẽ đặt lại chúng; không có gì được gửi đến máy chủ nào.</p>
+      <h3>PPI là gì và tại sao nó quan trọng?</h3>
+      <p>PPI nghĩa là điểm ảnh trên mỗi inch — mật độ điểm ảnh của màn hình. Thước phải biết con số này để đổi điểm ảnh thành centimet và inch thật. Chỉ một con số ấy tạo nên toàn bộ khác biệt giữa ảnh thước trang trí và công cụ đo đúng kích thước thật.</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your hiệu chỉnh is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inch on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Đo box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press In, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"Thước trực tuyến này có chính xác không?","acceptedAnswer":{"@type":"Answer","text":"Có — sau khi hiệu chuẩn, độ chính xác khoảng một milimet trên hầu hết màn hình. Chấm trạng thái xanh lá nghĩa là thiết bị của bạn đã được nhận diện và mật độ điểm ảnh gốc đã được áp dụng. Nếu thiết bị không được nhận diện, hãy hiệu chuẩn bằng phương pháp thẻ ngân hàng — lựa chọn chính xác nhất."}},
+{"@type":"Question","name":"Làm thế nào để hiệu chuẩn màn hình?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your hiệu chỉnh is saved automatically."}},
+{"@type":"Question","name":"Tại sao thước hiển thị sai trên màn hình của tôi?","acceptedAnswer":{"@type":"Answer","text":"Hầu như luôn là vì hai màn hình có cùng độ phân giải nhưng kích thước vật lý khác nhau — tấm nền 1920×1080 có thể là 22 hoặc 32 inch. Thước không thể đoán, vì vậy hãy hiệu chuẩn màn hình đó một lần bằng phương pháp thẻ ngân hàng, nó sẽ luôn đúng."}},
+{"@type":"Question","name":"Thước trên màn hình dài bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inch on the other at 100% scale."}},
+{"@type":"Question","name":"Tôi có thể dùng làm thước milimet không?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"Có dùng được trên điện thoại và máy tính bảng không?","acceptedAnswer":{"@type":"Answer","text":"Có. Bố cục tự thích ứng với màn hình nhỏ, và hầu hết điện thoại, máy tính bảng phổ biến đều có trong cơ sở dữ liệu thiết bị để tự động hiệu chuẩn. Trên màn hình cảm ứng, hãy dùng ngón tay kéo hộp đo."}},
+{"@type":"Question","name":"Tôi có cần camera không?","acceptedAnswer":{"@type":"Answer","text":"Không. Không giống app đo bằng AR, TrueRuler không bao giờ dùng camera của bạn — công cụ đo dựa trên mật độ điểm ảnh của màn hình nên không có gì để chĩa vào và không cần cấp quyền."}},
+{"@type":"Question","name":"Có thực sự miễn phí không?","acceptedAnswer":{"@type":"Answer","text":"Có, hoàn toàn miễn phí, không cần tài khoản, không cần cài đặt. Mọi xử lý diễn ra trong trình duyệt của bạn; không có gì bạn đo bị tải lên đâu cả."}},
+{"@type":"Question","name":"Tôi có thể đo size nhẫn bằng công cụ này không?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Đo box across a ring's inner diameter."}},
+{"@type":"Question","name":"Làm thế nào để in thước đúng kích thước thật?","acceptedAnswer":{"@type":"Answer","text":"Press In, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"Công cụ có lưu cài đặt của tôi không?","acceptedAnswer":{"@type":"Answer","text":"Hiệu chuẩn, đơn vị đã chọn và giao diện của bạn được lưu trong bộ nhớ cục bộ của trình duyệt, trên chính thiết bị của bạn. Xóa dữ liệu trang web sẽ đặt lại chúng; không có gì được gửi đến máy chủ nào."}},
+{"@type":"Question","name":"PPI là gì và tại sao nó quan trọng?","acceptedAnswer":{"@type":"Answer","text":"PPI nghĩa là điểm ảnh trên mỗi inch — mật độ điểm ảnh của màn hình. Thước phải biết con số này để đổi điểm ảnh thành centimet và inch thật. Chỉ một con số ấy tạo nên toàn bộ khác biệt giữa ảnh thước trang trí và công cụ đo đúng kích thước thật."}}
 ]}
 </script>
 </body>
