@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Pembaris dalam talian saiz sebenar</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Kemas kini terakhir: 13 Oktober 2026 · Oleh pasukan TrueRuler</p>
+    <p><b>Pembaris dalam talian mengubah skrin anda menjadi alat pengukur sebenar.</b> TrueRuler melukis skala sentimeter, milimeter dan inci pada saiz fizikal sebenar dengan mengesan ketumpatan piksel peranti anda — atau dengan menentukur sekali sahaja menggunakan saiz skrin anda atau kad bank standard. Ia percuma, tidak memerlukan pemasangan, dan berfungsi pada mana-mana telefon, tablet, komputer riba atau monitor.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>Pembaris cm, mm dan inci bersaiz sebenar pada mana-mana skrin</li>
+      <li>Pengesanan peranti automatik, atau tentukurkan dengan pepenjuru skrin anda atau kad bank (85.60&nbsp;mm)</li>
+      <li>Kotak seret-untuk-ukur, protraktor, pembaris kertas boleh cetak dan penukar unit disertakan</li>
+      <li>Kekalkan zum pelayar pada 100% untuk pengukuran tepat</li>
+      <li>Percuma selamanya — tiada akaun, tiada pemasangan; penentukuran anda disimpan pada peranti ini</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>Apakah itu pembaris dalam talian?</h2>
+    <p class="def"><b>Pembaris dalam talian ialah alat pengukur berasaskan web yang memaparkan pembaris pada skrin anda pada saiz fizikal sebenar.</b> Ia mengira piksel-per-inci (PPI) paparan anda dan melukis setiap sentimeter, milimeter dan inci agar sepadan dengan pembaris fizikal yang dipegang pada skrin. Selepas penentukuran sekali sahaja, anda boleh mengukur objek kecil terus pada paparan anda — tiada aplikasi untuk dipasang.</p>
+    <h2>Bagaimana pembaris ini mengukur dalam saiz sebenar</h2>
+    <p>Skrin anda tidak tahu apa itu inci — ia hanya tahu piksel. Penghubung antara keduanya ialah <b>ketumpatan piksel</b>, diukur dalam PPI (piksel per inci). Jika skrin anda memaparkan 141 piksel per inci, pembaris melukis satu inci sebagai tepat 141 piksel, satu sentimeter sebagai 55.6 piksel, dan satu milimeter sebagai 5.56 piksel.</p>
+    <p>Ada satu perkara: dua monitor boleh berkongsi resolusi 1920×1080 yang sama tetapi berukuran 22 atau 32 inci lebar — piksel yang sama, saiz sebenar yang sangat berbeza. Itulah sebabnya pembaris dalam talian mesti mengetahui PPI sebenar skrin anda. TrueRuler melakukannya dalam dua cara: ia mengenali telefon, tablet dan komputer riba biasa daripada pangkalan data peranti dan menggunakan PPI kilang mereka, atau ia mengira PPI daripada saiz pepenjuru skrin. <span id="ppiEcho"></span></p>
+    <p>Satu lagi perincian: pelayar berfungsi dalam <b>piksel CSS</b>, yang boleh berbeza daripada piksel fizikal pada paparan berketumpatan tinggi ("Retina"). TrueRuler membaca nisbah piksel peranti anda dan menukar secara automatik, dan ia memberi amaran jika zum pelayar bukan pada 100%, kerana zum mengubah saiz piksel CSS.</p>
+    <h2>Formula penentukuran</h2>
+    <p>Apabila anda memasukkan saiz pepenjuru skrin anda, pembaris mengira PPI dengan teorem Pythagoras:</p>
+    <p class="formula"><b>PPI = √(lebar² + tinggi²) ÷ inci pepenjuru</b></p>
+    <p><b>Contoh pengiraan.</b> Komputer riba 15.6 inci dengan skrin 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel secara pepenjuru. Bahagi dengan 15.6 inci → <b>141.2 PPI</b>. Satu inci oleh itu dilukis sebagai 141.2 piksel, satu sentimeter sebagai 55.6 piksel (141.2 ÷ 2.54), dan satu milimeter sebagai 5.56 piksel.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>Cara menggunakan TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>Semak titik status.</b> Jika peranti anda dikenal pasti, titik bertukar hijau dan pembaris sudah bersaiz sebenar.</li>
+      <li><b>Tentukurkan jika perlu.</b> Masukkan pepenjuru skrin anda untuk penentukuran segera — atau buka pilihan penuh: pilih peranti anda daripada senarai, atau pegang kad bank (85.60&nbsp;mm lebar) pada panduan biru dan seret peluncur sehingga sepadan.</li>
+      <li><b>Pilih unit anda.</b> Tukar antara sentimeter, milimeter dan inci dalam bar alat di atas pembaris.</li>
+      <li><b>Ukur.</b> Pegang objek pada tepi pembaris, tekan <b>Ukur</b> dan seret kotak pada apa sahaja pada skrin, atau buka <b>Protraktor</b> untuk mengukur sudut.</li>
+      <li><b>Perhalusi dan guna semula.</b> Laraskan kotak ukuran dengan kekunci anak panah anda, salin bacaan, dan kembali bila-bila masa — penentukuran anda disimpan pada peranti ini.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>Panduan visual</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Langkah 1: tentukurkan pembaris dengan kad bank"><figcaption>1. Tentukurkan dengan kad bank (85.60 mm)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Langkah 2: pegang objek pada pembaris skrin"><figcaption>2. Pegang mana-mana objek pada pembaris</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Langkah 3: ukur dengan tepat menggunakan kotak seret dan protraktor"><figcaption>3. Ukur dengan tepat menggunakan kotak dan protraktor</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>Membaca skala: inci, sentimeter dan milimeter</h2>
+    <p>Pembaris memaparkan skala metrik dan imperial bersebelahan. Gunakan <b>milimeter</b> untuk kerja berketepatan, <b>sentimeter</b> untuk pengukuran harian, dan <b>inci</b> untuk ukuran imperial. Penukar terbina dalam di atas juga mengendalikan meter, kaki, ela dan poin.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>Unit</th><th>Dalam sentimeter</th><th>Dalam milimeter</th><th>Dalam inci</th></tr>
+      <tr><td>1 inci</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
+      <tr><td>1 sentimeter</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
+      <tr><td>1 milimeter</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
+      <tr><td>12 inci</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 inci"] -->
+    <h2>Pembaris menegak dan putaran skrin</h2>
+    <p>Tekan <b>Putar</b> untuk menukar pembaris melintang dan menegak — berguna untuk mengukur ketinggian atau apabila skrin anda sempit. Pembaris menegak berfungsi sama seperti yang melintang, dalam sentimeter, milimeter dan inci.</p>
+    <h2>Mengukur objek dengan kotak seret-untuk-ukur</h2>
+    <p>Tekan <b>Ukur</b> dan seret kotak pada apa sahaja yang kelihatan pada skrin — foto, rajah, imej produk. Kotak menunjukkan lebar × tinggi secara langsung dalam cm, mm dan inci. Seret pemegang untuk mengubah saiz, seret bahagian tengah untuk mengalihkannya, dan gunakan kekunci anak panah untuk pelarasan tepat. <b>Salin</b> meletakkan bacaan pada papan klip anda.</p>
+    <h2>Mengukur saiz cincin</h2>
+    <p>Untuk mengetahui saiz cincin anda, lilitkan jalur kertas nipis pada jari anda, tandakan di mana ia bertindih, kemudian letakkan jalur itu rata pada pembaris skrin dan baca panjangnya dalam milimeter — kebanyakan tukang emas menentukan saiz cincin berdasarkan lilitan jari dalam mm. Untuk cincin yang sudah anda miliki, buka kotak <b>Ukur</b> dan seretkannya merentasi diameter dalam cincin. Saiz jari berubah sedikit sepanjang hari, jadi ukur pada waktu petang untuk hasil paling boleh dipercayai.</p>
+    <h2>Mod protraktor</h2>
+    <p>Tekan <b>Protraktor</b> untuk memaparkan protraktor 180° penuh. Seret mana-mana lengan ke sudut yang ingin anda ukur; bacaan menunjukkan darjah secara langsung. Seret bahagian tengah untuk mengalihkan seluruh protraktor. Ia menggunakan penentukuran yang sama seperti pembaris, jadi sudut kekal tepat pada mana-mana skrin.</p>
+    <h2>Pembaris kertas boleh cetak</h2>
+    <p>Tekan <b>Cetak</b> untuk pembaris kertas pada saiz sebenar yang tepat: 18&nbsp;cm pada satu sisi dan 7&nbsp;inci pada sisi yang lain. Cetak pada <b>skala 100%</b> (jangan sekali-kali "muat ke halaman"), potong sepanjang tepi, dan semak dengan objek yang diketahui. Pembaris bercetak berguna apabila anda perlu mengukur sesuatu jauh dari skrin.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Pembaris kertas boleh cetak at true size, 18 cm and 7 inci"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>Batasan</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Zum pelayar mestilah 100%.</b> Zum mengubah saiz piksel; TrueRuler memberi amaran jika zum tidak tepat.</li>
+      <li><b>Penskalaan paparan sistem pengendalian penting.</b> Jika OS anda menskalakan paparan (contohnya 125% pada Windows), tentukurkan semula selepas mengubahnya.</li>
+      <li><b>Monitor luaran berbeza-beza.</b> Resolusi yang sama boleh bermaksud saiz fizikal berbeza, jadi tentukurkan monitor baharu dan bukannya mempercayai tetapan lama.</li>
+      <li><b>Telefon dalam mod desktop.</b> Sesetengah pelayar mudah alih melaporkan viewport yang luar biasa; jika pembaris kelihatan tidak betul, gunakan penentukuran kad bank.</li>
+      <li><b>Bukan pembaris PD.</b> Ini ialah pembaris pengukur tujuan umum, bukan pembaris jarak pupillary untuk memesan cermin mata — itu memerlukan alat khusus.</li>
+      <li><b>Had panjang skrin.</b> Pembaris pada skrin hanya boleh sepanjang paparan anda; untuk objek yang lebih panjang, gunakan pembaris boleh cetak atau ukur secara berperingkat.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>Pembaris dalam talian lawan alternatif</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>Kaedah</th><th>Sesuai untuk</th><th>Perhatikan</th></tr>
+      <tr><td>Pembaris fizikal</td><td>Ketepatan harian yang boleh dipercayai</td><td>Tidak selalu ada di tangan</td></tr>
+      <tr><td>Pita pengukur</td><td>Objek besar dan bilik</td><td>Ketepatan lemah di bawah satu milimeter</td></tr>
+      <tr><td>Aplikasi pengukur AR telefon</td><td>Ruang 3D dan perabot</td><td>Herotan kamera; perlu dipasang</td></tr>
+      <tr><td>Pembaris boleh cetak</td><td>Saiz sebenar pada kertas</td><td>Memerlukan pencetak dan tetapan skala 100%</td></tr>
+      <tr><td><b>TrueRuler (pembaris dalam talian)</b></td><td><b>Pengukuran pantas pada mana-mana skrin</b></td><td><b>Memerlukan penentukuran sekali sahaja; kekalkan zum pada 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>Soalan lazim</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>Adakah pembaris dalam talian ini tepat?</h3>
+      <p>Ya — setelah ditentukur, ia tepat hingga kira-kira satu milimeter pada kebanyakan skrin. Titik status hijau bermakna peranti anda telah dikenal pasti dan ketumpatan piksel kilang digunakan. Jika peranti anda tidak dikenal pasti, tentukurkan dengan kaedah kad bank, yang merupakan pilihan paling tepat.</p>
+      <h3>Bagaimana saya menentukur skrin saya?</h3>
+      <p>Pilih mana-mana daripada tiga kaedah: pilih peranti anda daripada senarai, masukkan saiz pepenjuru skrin anda, atau pegang kad bank standard (85.60&nbsp;mm lebar) pada panduan biru dan seret peluncur sehingga sepadan. Penentukuran anda disimpan secara automatik.</p>
+      <h3>Mengapa pembaris kelihatan tidak betul pada monitor saya?</h3>
+      <p>Hampir selalu kerana dua monitor berkongsi resolusi tetapi bukan saiz fizikal — panel 1920×1080 boleh jadi 22 atau 32 inci. Pembaris tidak boleh meneka, jadi tentukurkan monitor itu sekali dengan kaedah kad bank dan ia akan kekal betul.</p>
+      <h3>Berapa panjangkah pembaris pada skrin?</h3>
+      <p>Selagi skrin anda muat — pembaris 12 inci muat pada kebanyakan komputer riba, manakala telefon memaparkan kurang. Untuk rujukan panjang tetap, cetak pembaris kertas: tepat 18&nbsp;cm pada satu sisi dan 7&nbsp;inci pada sisi yang lain pada skala 100%.</p>
+      <h3>Bolehkah saya menggunakannya sebagai pembaris milimeter?</h3>
+      <p>Ya. Tukar bar alat kepada <b>mm</b> dan pembaris dilukis semula dengan tanda dan nombor milimeter — sesuai untuk pengukuran kecil yang tepat.</p>
+      <h3>Adakah ia berfungsi pada telefon dan tablet?</h3>
+      <p>Ya. Susun atur menyesuaikan dengan skrin kecil, dan kebanyakan telefon dan tablet popular ada dalam pangkalan data peranti untuk penentukuran automatik. Pada skrin sentuh, seret kotak ukuran dengan jari anda.</p>
+      <h3>Adakah saya memerlukan kamera saya?</h3>
+      <p>Tidak. Tidak seperti aplikasi pengukur AR, TrueRuler tidak pernah menggunakan kamera anda — ia mengukur daripada ketumpatan piksel skrin anda, jadi tiada apa untuk dihalakan dan tiada kebenaran untuk diberikan.</p>
+      <h3>Adakah ia benar-benar percuma?</h3>
+      <p>Ya, percuma sepenuhnya tanpa akaun dan tanpa pemasangan. Semua pemprosesan berlaku dalam pelayar anda; tiada apa yang anda ukur dimuat naik ke mana-mana.</p>
+      <h3>Bolehkah saya mengukur saiz cincin saya dengannya?</h3>
+      <p>Ya. Lilitkan jalur kertas pada jari anda, tandakan tindihannya, letakkannya rata pada pembaris skrin dan baca milimeter — tukang emas menentukan saiz cincin daripada lilitan jari. Atau seret kotak <b>Ukur</b> merentasi diameter dalam cincin.</p>
+      <h3>Bagaimana saya mencetak pembaris pada saiz sebenar?</h3>
+      <p>Tekan <b>Cetak</b>, kemudian cetak pada <b>skala 100%</b> — jangan sekali-kali "muat ke halaman", yang akan mengecilkannya. Potong sepanjang tepi dan sahkan dengan kad bank (85.60&nbsp;mm) sebelum mempercayainya.</p>
+      <h3>Adakah ia menyimpan tetapan saya?</h3>
+      <p>Penentukuran, pilihan unit dan tema anda disimpan dalam storan setempat pelayar anda pada peranti anda sendiri. Mengosongkan data tapak menetapkan semulanya; tiada apa yang dihantar ke mana-mana pelayan.</p>
+      <h3>Apakah PPI dan mengapa ia penting?</h3>
+      <p>PPI bermaksud piksel per inci — ketumpatan piksel skrin anda. Pembaris mesti mengetahuinya untuk menukar piksel kepada sentimeter dan inci sebenar. Angka tunggal itu ialah seluruh perbezaan antara imej pembaris hiasan dan alat pengukur saiz sebenar.</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your penentukuran is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Ukur box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press Cetak, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"Adakah pembaris dalam talian ini tepat?","acceptedAnswer":{"@type":"Answer","text":"Ya — setelah ditentukur, ia tepat hingga kira-kira satu milimeter pada kebanyakan skrin. Titik status hijau bermakna peranti anda telah dikenal pasti dan ketumpatan piksel kilang digunakan. Jika peranti anda tidak dikenal pasti, tentukurkan dengan kaedah kad bank, yang merupakan pilihan paling tepat."}},
+{"@type":"Question","name":"Bagaimana saya menentukur skrin saya?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your penentukuran is saved automatically."}},
+{"@type":"Question","name":"Mengapa pembaris kelihatan tidak betul pada monitor saya?","acceptedAnswer":{"@type":"Answer","text":"Hampir selalu kerana dua monitor berkongsi resolusi tetapi bukan saiz fizikal — panel 1920×1080 boleh jadi 22 atau 32 inci. Pembaris tidak boleh meneka, jadi tentukurkan monitor itu sekali dengan kaedah kad bank dan ia akan kekal betul."}},
+{"@type":"Question","name":"Berapa panjangkah pembaris pada skrin?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
+{"@type":"Question","name":"Bolehkah saya menggunakannya sebagai pembaris milimeter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"Adakah ia berfungsi pada telefon dan tablet?","acceptedAnswer":{"@type":"Answer","text":"Ya. Susun atur menyesuaikan dengan skrin kecil, dan kebanyakan telefon dan tablet popular ada dalam pangkalan data peranti untuk penentukuran automatik. Pada skrin sentuh, seret kotak ukuran dengan jari anda."}},
+{"@type":"Question","name":"Adakah saya memerlukan kamera saya?","acceptedAnswer":{"@type":"Answer","text":"Tidak. Tidak seperti aplikasi pengukur AR, TrueRuler tidak pernah menggunakan kamera anda — ia mengukur daripada ketumpatan piksel skrin anda, jadi tiada apa untuk dihalakan dan tiada kebenaran untuk diberikan."}},
+{"@type":"Question","name":"Adakah ia benar-benar percuma?","acceptedAnswer":{"@type":"Answer","text":"Ya, percuma sepenuhnya tanpa akaun dan tanpa pemasangan. Semua pemprosesan berlaku dalam pelayar anda; tiada apa yang anda ukur dimuat naik ke mana-mana."}},
+{"@type":"Question","name":"Bolehkah saya mengukur saiz cincin saya dengannya?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Ukur box across a ring's inner diameter."}},
+{"@type":"Question","name":"Bagaimana saya mencetak pembaris pada saiz sebenar?","acceptedAnswer":{"@type":"Answer","text":"Press Cetak, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"Adakah ia menyimpan tetapan saya?","acceptedAnswer":{"@type":"Answer","text":"Penentukuran, pilihan unit dan tema anda disimpan dalam storan setempat pelayar anda pada peranti anda sendiri. Mengosongkan data tapak menetapkan semulanya; tiada apa yang dihantar ke mana-mana pelayan."}},
+{"@type":"Question","name":"Apakah PPI dan mengapa ia penting?","acceptedAnswer":{"@type":"Answer","text":"PPI bermaksud piksel per inci — ketumpatan piksel skrin anda. Pembaris mesti mengetahuinya untuk menukar piksel kepada sentimeter dan inci sebenar. Angka tunggal itu ialah seluruh perbezaan antara imej pembaris hiasan dan alat pengukur saiz sebenar."}}
 ]}
 </script>
 </body>
