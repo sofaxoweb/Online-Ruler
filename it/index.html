@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Righello online in dimensioni reali</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Ultimo aggiornamento: 13 ottobre 2026 · Dal team di TrueRuler</p>
+    <p><b>Un righello online trasforma il tuo schermo in un vero strumento di misura.</b> TrueRuler disegna scale in centimetri, millimetri e pollici a dimensioni fisiche reali rilevando la densità dei pixel del tuo dispositivo — oppure con una sola calibrazione usando le dimensioni dello schermo o una comune carta di credito. È gratis, non richiede installazione e funziona su qualsiasi telefono, tablet, laptop o monitor.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>Righelli in cm, mm e pollici in dimensioni reali su qualsiasi schermo</li>
+      <li>Rilevamento automatico del dispositivo, oppure calibra con la diagonale dello schermo o una carta di credito (85.60&nbsp;mm)</li>
+      <li>Riquadro di misurazione trascinabile, goniometro, righello di carta stampabile e convertitore di unità inclusi</li>
+      <li>Mantieni lo zoom del browser al 100% per misure precise</li>
+      <li>Gratis per sempre — senza account, senza installazione; la tua calibrazione è salvata su questo dispositivo</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>Cos'è un righello online?</h2>
+    <p class="def"><b>Un righello online è uno strumento di misura via web che mostra un righello sul tuo schermo in dimensioni fisiche reali.</b> Calcola i pixel per pollice (PPI) del tuo display e disegna ogni centimetro, millimetro e pollice in modo che corrisponda a un righello fisico appoggiato allo schermo. Dopo una sola calibrazione puoi misurare piccoli oggetti direttamente sul display — senza installare alcuna app.</p>
+    <h2>Come questo righello misura in dimensioni reali</h2>
+    <p>Il tuo schermo non sa cos'è un pollice — conosce solo i pixel. Il ponte tra i due è la <b>densità dei pixel</b>, misurata in PPI (pixel per pollice). Se il tuo schermo mostra 141 pixel per pollice, il righello disegna un pollice come esattamente 141 pixel, un centimetro come 55,6 pixel e un millimetro come 5,56 pixel.</p>
+    <p>C'è un trucco: due monitor possono condividere la stessa risoluzione 1920×1080 ed essere larghi 22 o 32 pollici — gli stessi pixel, dimensioni reali molto diverse. Ecco perché un righello online deve conoscere il vero PPI del tuo schermo. TrueRuler lo fa in due modi: riconosce i telefoni, tablet e laptop più comuni da un database di dispositivi e applica il loro PPI di fabbrica, oppure calcola il PPI dalla diagonale dello schermo. <span id="ppiEcho"></span></p>
+    <p>Un altro dettaglio: i browser lavorano in <b>pixel CSS</b>, che possono differire dai pixel fisici sui display ad alta densità ("Retina"). TrueRuler legge il rapporto pixel del tuo dispositivo e converte automaticamente, e ti avvisa se lo zoom del browser non è al 100%, perché lo zoom cambia la dimensione di un pixel CSS.</p>
+    <h2>La formula di calibrazione</h2>
+    <p>Quando inserisci la diagonale del tuo schermo, il righello calcola il PPI con il teorema di Pitagora:</p>
+    <p class="formula"><b>PPI = √(larghezza² + altezza²) ÷ pollici di diagonale</b></p>
+    <p><b>Esempio pratico.</b> Un laptop da 15,6 pollici con schermo 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4.852.800 ≈ 2202,9 pixel in diagonale. Dividi per 15,6 pollici → <b>141,2 PPI</b>. Un pollice viene quindi disegnato come 141,2 pixel, un centimetro come 55,6 pixel (141,2 ÷ 2,54) e un millimetro come 5,56 pixel.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>Come usare TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>Controlla l'indicatore di stato.</b> Se il tuo dispositivo viene riconosciuto, il punto diventa verde e il righello è già in dimensioni reali.</li>
+      <li><b>Calibra se necessario.</b> Inserisci la diagonale del tuo schermo per una calibrazione istantanea — oppure apri le opzioni complete: scegli il tuo dispositivo dall'elenco, o appoggia una carta di credito (larga 85.60&nbsp;mm) sulla guida blu e trascina il cursore finché non corrispondono.</li>
+      <li><b>Scegli l'unità.</b> Passa da centimetri a millimetri e pollici nella barra degli strumenti sopra il righello.</li>
+      <li><b>Misura.</b> Appoggia l'oggetto al bordo del righello, premi <b>Misura</b> e trascina un riquadro su qualsiasi cosa sullo schermo, oppure apri il <b>Goniometro</b> per misurare gli angoli.</li>
+      <li><b>Raffina e riusa.</b> Sposta il riquadro di misurazione con i tasti freccia, copia la misura e torna quando vuoi — la tua calibrazione è salvata su questo dispositivo.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>Guida visiva</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Passaggio 1: calibra il righello con una carta di credito"><figcaption>1. Calibra con una carta di credito (85.60 mm)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Passaggio 2: appoggia un oggetto al righello sullo schermo"><figcaption>2. Appoggia qualsiasi oggetto al righello</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Passaggio 3: misura con precisione con il riquadro trascinabile e il goniometro"><figcaption>3. Misura con precisione con il riquadro e il goniometro</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>Leggere le scale: pollici, centimetri e millimetri</h2>
+    <p>Il righello mostra le scale metriche e imperiali fianco a fianco. Usa i <b>millimetri</b> per lavori di precisione, i <b>centimetri</b> per le misure quotidiane e i <b>pollici</b> per le misure imperiali. Il convertitore integrato qui sopra gestisce anche metri, piedi, iarde e punti.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>Unità</th><th>In centimetri</th><th>In millimetri</th><th>In pollici</th></tr>
+      <tr><td>1 pollice</td><td>2,54 cm</td><td>25,4 mm</td><td>1 in</td></tr>
+      <tr><td>1 centimetro</td><td>1 cm</td><td>10 mm</td><td>0,3937 in</td></tr>
+      <tr><td>1 millimetro</td><td>0,1 cm</td><td>1 mm</td><td>0,03937 in</td></tr>
+      <tr><td>12 pollici</td><td>30,48 cm</td><td>304,8 mm</td><td>12 in</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 pollici"] -->
+    <h2>Righello verticale e rotazione dello schermo</h2>
+    <p>Premi <b>Ruota</b> per passare dal righello orizzontale a quello verticale — comodo per misurare altezze o quando lo schermo è stretto. Il righello verticale funziona esattamente come quello orizzontale, in centimetri, millimetri e pollici.</p>
+    <h2>Misurare oggetti con il riquadro di misurazione trascinabile</h2>
+    <p>Premi <b>Misura</b> e trascina un riquadro su qualsiasi cosa visibile sullo schermo — una foto, un diagramma, l'immagine di un prodotto. Il riquadro mostra in tempo reale larghezza × altezza in cm, mm e pollici. Trascina le maniglie per ridimensionarlo, trascina il centro per spostarlo e usa i tasti freccia per regolazioni precise. <b>Copia</b> mette la misura negli appunti.</p>
+    <h2>Misura dell'anello</h2>
+    <p>Per trovare la tua misura dell'anello, avvolgi una sottile striscia di carta intorno al dito, segna il punto di sovrapposizione, poi appoggia la striscia distesa sul righello a schermo e leggi la lunghezza in millimetri — la maggior parte dei gioiellieri misura gli anelli dalla circonferenza del dito in mm. Per un anello che già possiedi, apri il riquadro <b>Misura</b> e trascinalo sul diametro interno dell'anello. La misura del dito varia leggermente durante il giorno, quindi misura la sera per il risultato più affidabile.</p>
+    <h2>Modalità goniometro</h2>
+    <p>Premi <b>Goniometro</b> per sovrapporre un goniometro completo da 180°. Trascina uno dei due bracci sull'angolo da misurare; la lettura mostra i gradi in tempo reale. Trascina il centro per spostare l'intero goniometro. Usa la stessa calibrazione del righello, così gli angoli restano precisi su qualsiasi schermo.</p>
+    <h2>Righello di carta stampabile</h2>
+    <p>Premi <b>Stampa</b> per un righello di carta in dimensioni reali esatte: 18&nbsp;cm su un lato e 7&nbsp;pollici sull'altro. Stampa in <b>scala 100%</b> (mai "adatta alla pagina"), ritaglia lungo il bordo e confrontalo con un oggetto noto. Un righello stampato è comodo quando devi misurare qualcosa lontano dallo schermo.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Righello di carta stampabile at true size, 18 cm and 7 pollici"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>Limiti</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Lo zoom del browser deve essere al 100%.</b> Lo zoom cambia le dimensioni dei pixel; TrueRuler ti avvisa se lo zoom non è corretto.</li>
+      <li><b>Il ridimensionamento dello schermo del sistema operativo conta.</b> Se il tuo sistema operativo ridimensiona lo schermo (ad esempio 125% su Windows), ricalibra dopo averlo cambiato.</li>
+      <li><b>I monitor esterni variano.</b> La stessa risoluzione può significare dimensioni fisiche diverse, quindi calibra un nuovo monitor invece di fidarti dell'impostazione precedente.</li>
+      <li><b>Telefoni in modalità desktop.</b> Alcuni browser mobili riportano una viewport insolita; se il righello sembra sbagliato, usa la calibrazione con carta di credito.</li>
+      <li><b>Non è un righello per la distanza pupillare.</b> Questo è un righello di misura generico, non un righello per la distanza pupillare per ordinare occhiali — per quello serve uno strumento specializzato.</li>
+      <li><b>Limiti di lunghezza dello schermo.</b> Il righello a schermo può essere lungo solo quanto il tuo display; per oggetti più lunghi, usa il righello stampabile o misura a sezioni.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>Righello online vs alternative</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>Metodo</th><th>Ideale per</th><th>Attenzione a</th></tr>
+      <tr><td>Righello fisico</td><td>Precisione quotidiana di cui fidarti</td><td>Non sempre a portata di mano</td></tr>
+      <tr><td>Metro a nastro</td><td>Oggetti grandi e stanze</td><td>Scarsa precisione sotto il millimetro</td></tr>
+      <tr><td>App di misurazione AR</td><td>Spazi 3D e mobili</td><td>Distorsione della fotocamera; richiede installazione</td></tr>
+      <tr><td>Righello stampabile</td><td>Dimensioni reali su carta</td><td>Richiede una stampante e l'impostazione scala 100%</td></tr>
+      <tr><td><b>TrueRuler (righello online)</b></td><td><b>Misurazioni rapide su qualsiasi schermo</b></td><td><b>Richiede una sola calibrazione; mantieni lo zoom al 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>Domande frequenti</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>Questo righello online è preciso?</h3>
+      <p>Sì — una volta calibrato, è preciso a circa un millimetro sulla maggior parte degli schermi. Il punto verde di stato significa che il tuo dispositivo è stato riconosciuto e viene applicata la densità pixel di fabbrica. Se il tuo dispositivo non viene riconosciuto, calibra con il metodo della carta di credito, che è l'opzione più precisa.</p>
+      <h3>Come calibro il mio schermo?</h3>
+      <p>Scegli uno dei tre metodi: seleziona il tuo dispositivo dall'elenco, inserisci la diagonale del tuo schermo, oppure appoggia una comune carta di credito (larga 85.60&nbsp;mm) sulla guida blu e trascina il cursore finché non corrispondono. La calibrazione viene salvata automaticamente.</p>
+      <h3>Perché il righello sembra sbagliato sul mio monitor?</h3>
+      <p>Quasi sempre perché due monitor condividono la risoluzione ma non le dimensioni fisiche — un pannello 1920×1080 può essere da 22 o da 32 pollici. Il righello non può indovinare, quindi calibra quel monitor una volta con il metodo della carta di credito e resterà preciso.</p>
+      <h3>Quanto è lungo il righello sullo schermo?</h3>
+      <p>Lungo quanto il tuo schermo — un righello da 12 pollici sta sulla maggior parte dei laptop, mentre i telefoni ne mostrano di meno. Come riferimento di lunghezza fissa, stampa il righello di carta: esattamente 18&nbsp;cm su un lato e 7&nbsp;pollici sull'altro in scala 100%.</p>
+      <h3>Posso usarlo come righello millimetrato?</h3>
+      <p>Sì. Passa la barra degli strumenti su <b>mm</b> e i righelli si ridisegnano con tacche e numerazione in millimetri — ideale per piccole misure precise.</p>
+      <h3>Funziona su telefoni e tablet?</h3>
+      <p>Sì. Il layout si adatta agli schermi piccoli e la maggior parte dei telefoni e tablet più diffusi è nel database dei dispositivi per la calibrazione automatica. Sugli schermi touch, trascina il riquadro di misurazione con il dito.</p>
+      <h3>Devo usare la fotocamera?</h3>
+      <p>No. A differenza delle app di misurazione AR, TrueRuler non usa mai la tua fotocamera — misura dalla densità dei pixel del tuo schermo, quindi non c'è nulla da inquadrare e nessun permesso da concedere.</p>
+      <h3>È davvero gratis?</h3>
+      <p>Sì, completamente gratis, senza account e senza installazione. Tutta l'elaborazione avviene nel tuo browser; nulla di ciò che misuri viene caricato da nessuna parte.</p>
+      <h3>Posso misurare la mia misura dell'anello?</h3>
+      <p>Sì. Avvolgi una striscia di carta intorno al dito, segna la sovrapposizione, appoggiala distesa sul righello a schermo e leggi i millimetri — i gioiellieri misurano gli anelli dalla circonferenza del dito. Oppure trascina il riquadro <b>Misura</b> sul diametro interno dell'anello.</p>
+      <h3>Come stampo un righello in dimensioni reali?</h3>
+      <p>Premi <b>Stampa</b>, poi stampa in <b>scala 100%</b> — mai "adatta alla pagina", che lo rimpicciolirebbe. Ritaglia lungo il bordo e verificalo con una carta di credito (85.60&nbsp;mm) prima di fidarti.</p>
+      <h3>Salva le mie impostazioni?</h3>
+      <p>La tua calibrazione, l'unità scelta e il tema vengono salvati nella memoria locale del tuo browser, sul tuo dispositivo. Cancellare i dati del sito li azzera; nulla viene inviato ad alcun server.</p>
+      <h3>Cos'è il PPI e perché è importante?</h3>
+      <p>PPI significa pixel per pollice — la densità dei pixel del tuo schermo. Un righello deve conoscerlo per convertire i pixel in centimetri e pollici reali. Quel singolo numero è tutta la differenza tra un'immagine decorativa di un righello e un vero strumento di misura in dimensioni reali.</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrazione is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pollici on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Misura box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press Stampa, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"Questo righello online è preciso?","acceptedAnswer":{"@type":"Answer","text":"Sì — una volta calibrato, è preciso a circa un millimetro sulla maggior parte degli schermi. Il punto verde di stato significa che il tuo dispositivo è stato riconosciuto e viene applicata la densità pixel di fabbrica. Se il tuo dispositivo non viene riconosciuto, calibra con il metodo della carta di credito, che è l'opzione più precisa."}},
+{"@type":"Question","name":"Come calibro il mio schermo?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrazione is saved automatically."}},
+{"@type":"Question","name":"Perché il righello sembra sbagliato sul mio monitor?","acceptedAnswer":{"@type":"Answer","text":"Quasi sempre perché due monitor condividono la risoluzione ma non le dimensioni fisiche — un pannello 1920×1080 può essere da 22 o da 32 pollici. Il righello non può indovinare, quindi calibra quel monitor una volta con il metodo della carta di credito e resterà preciso."}},
+{"@type":"Question","name":"Quanto è lungo il righello sullo schermo?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pollici on the other at 100% scale."}},
+{"@type":"Question","name":"Posso usarlo come righello millimetrato?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"Funziona su telefoni e tablet?","acceptedAnswer":{"@type":"Answer","text":"Sì. Il layout si adatta agli schermi piccoli e la maggior parte dei telefoni e tablet più diffusi è nel database dei dispositivi per la calibrazione automatica. Sugli schermi touch, trascina il riquadro di misurazione con il dito."}},
+{"@type":"Question","name":"Devo usare la fotocamera?","acceptedAnswer":{"@type":"Answer","text":"No. A differenza delle app di misurazione AR, TrueRuler non usa mai la tua fotocamera — misura dalla densità dei pixel del tuo schermo, quindi non c'è nulla da inquadrare e nessun permesso da concedere."}},
+{"@type":"Question","name":"È davvero gratis?","acceptedAnswer":{"@type":"Answer","text":"Sì, completamente gratis, senza account e senza installazione. Tutta l'elaborazione avviene nel tuo browser; nulla di ciò che misuri viene caricato da nessuna parte."}},
+{"@type":"Question","name":"Posso misurare la mia misura dell'anello?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Misura box across a ring's inner diameter."}},
+{"@type":"Question","name":"Come stampo un righello in dimensioni reali?","acceptedAnswer":{"@type":"Answer","text":"Press Stampa, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"Salva le mie impostazioni?","acceptedAnswer":{"@type":"Answer","text":"La tua calibrazione, l'unità scelta e il tema vengono salvati nella memoria locale del tuo browser, sul tuo dispositivo. Cancellare i dati del sito li azzera; nulla viene inviato ad alcun server."}},
+{"@type":"Question","name":"Cos'è il PPI e perché è importante?","acceptedAnswer":{"@type":"Answer","text":"PPI significa pixel per pollice — la densità dei pixel del tuo schermo. Un righello deve conoscerlo per convertire i pixel in centimetri e pollici reali. Quel singolo numero è tutta la differenza tra un'immagine decorativa di un righello e un vero strumento di misura in dimensioni reali."}}
 ]}
 </script>
 </body>
