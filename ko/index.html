@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">실제 크기로 재는 온라인 자</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">최종 업데이트: 2026년 10월 13일 · TrueRuler 팀</p>
+    <p><b>온라인 자는 화면을 진짜 측정 도구로 바꿔줍니다.</b> TrueRuler는 기기의 픽셀 밀도를 감지해 센티미터, 밀리미터, 인치 눈금을 실제 크기에 맞게 그려줍니다. 화면 크기나 일반 은행 카드로 한 번 보정하는 방법도 있어요. 무료이며 설치가 필요 없고, 휴대폰, 태블릿, 노트북, 모니터 등 어떤 화면에서도 사용할 수 있어요.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>어떤 화면에서도 실제 크기의 cm, mm, 인치 자</li>
+      <li>기기 자동 감지, 또는 화면 대각선 크기나 은행 카드(85.60&nbsp;mm)로 보정</li>
+      <li>드래그 측정 상자, 각도기, 인쇄용 종이 자, 단위 변환기 포함</li>
+      <li>정확한 측정을 위해 브라우저 확대/축소는 100%로 유지하세요</li>
+      <li>영원히 무료 — 계정 불필요, 설치 불필요. 보정값은 이 기기에 저장돼요</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>온라인 자란 무엇인가요?</h2>
+    <p class="def"><b>온라인 자는 화면에 실제 크기의 자를 표시해주는 웹 기반 측정 도구예요.</b> 디스플레이의 PPI(pixels-per-inch)를 계산해서 화면에 댄 실제 자와 정확히 일치하도록 모든 센티미터, 밀리미터, 인치를 그려줍니다. 한 번만 보정하면 작은 물건을 화면에서 바로 잴 수 있어요. 앱을 설치할 필요가 없어요.</p>
+    <h2>이 자가 실제 크기로 측정하는 방법</h2>
+    <p>화면은 1인치가 무엇인지 몰라요. 화면이 아는 것은 픽셀뿐이에요. 둘을 연결해주는 것이 바로 <b>픽셀 밀도</b>, 즉 PPI(pixels per inch)예요. 화면이 1인치당 141픽셀이라면, 자는 1인치를 정확히 141픽셀, 1센티미터를 55.6픽셀, 1밀리미터를 5.56픽셀로 그려줍니다.</p>
+    <p>단, 주의할 점이 있어요. 1920×1080이라는 같은 해상도라도 22인치와 32인치 모니터가 있어요. 픽셀은 같지만 실제 크기는 크게 다르죠. 그래서 온라인 자는 화면의 진짜 PPI를 알아야 해요. TrueRuler는 두 가지 방법으로 이를 해결해요. 흔한 휴대폰, 태블릿, 노트북을 기기 데이터베이스에서 인식해 공장 출고 시 PPI를 적용하거나, 화면 대각선 크기에서 PPI를 계산해요. <span id="ppiEcho"></span></p>
+    <p>한 가지 더: 브라우저는 <b>CSS 픽셀</b> 단위로 동작하는데, 고밀도("Retina") 디스플레이에서는 물리적 픽셀과 다를 수 있어요. TrueRuler는 기기의 픽셀 비율을 읽어 자동으로 변환해주고, 브라우저 확대/축소가 100%가 아닐 경우 경고해줍니다. 확대/축소를 하면 CSS 픽셀의 크기가 달라지기 때문이에요.</p>
+    <h2>보정 계산식</h2>
+    <p>화면의 대각선 크기를 입력하면, 자가 피타고라스 정리로 PPI를 계산해줘요:</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ 대각선 인치</b></p>
+    <p><b>계산 예시.</b> 1920×1080 화면의 15.6인치 노트북: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 대각선 2202.9픽셀. 15.6인치로 나누면 → <b>141.2 PPI</b>. 따라서 1인치는 141.2픽셀, 1센티미터는 55.6픽셀(141.2 ÷ 2.54), 1밀리미터는 5.56픽셀로 그려져요.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>TrueRuler 사용 방법</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>상태 표시등을 확인하세요.</b> 기기가 인식되면 표시등이 초록색으로 바뀌고 자는 이미 실제 크기로 표시돼요.</li>
+      <li><b>필요하면 보정하세요.</b> 화면 대각선 크기를 입력하면 즉시 보정돼요. 전체 옵션을 열면 목록에서 기기를 선택하거나, 은행 카드(너비 85.60&nbsp;mm)를 파란색 가이드에 대고 일치할 때까지 슬라이더를 드래그할 수도 있어요.</li>
+      <li><b>단위를 선택하세요.</b> 자 위쪽 도구 모음에서 센티미터, 밀리미터, 인치를 바꿀 수 있어요.</li>
+      <li><b>측정하세요.</b> 물건을 자 가장자리에 대고 <b>측정</b>을 누른 뒤 화면 위에서 상자를 드래그하세요. 각도를 잴 때는 <b>각도기</b>를 여세요.</li>
+      <li><b>다듬고 다시 사용하세요.</b> 방향 키로 측정 상자를 미세 조정하고, 측정값을 복사하세요. 보정값이 이 기기에 저장되므로 언제든 돌아와 사용할 수 있어요.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>그림 안내</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="1단계: 은행 카드로 자 보정하기"><figcaption>1. 은행 카드(85.60 mm)로 보정하기</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="2단계: 물건을 화면 속 자에 대기"><figcaption>2. 아무 물건이나 자에 대기</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="3단계: 드래그 상자와 각도기로 정밀 측정하기"><figcaption>3. 상자와 각도기로 정밀 측정하기</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>눈금 읽는 방법: 인치, 센티미터, 밀리미터</h2>
+    <p>자에는 미터법과 야드파운드법 눈금이 나란히 표시돼요. 정밀한 작업에는 <b>밀리미터</b>, 일상적인 측정에는 <b>센티미터</b>, 인치 단위 측정에는 <b>인치</b>를 사용하세요. 내장된 단위 변환기로 미터, 피트, 야드, 포인트 변환도 가능해요.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>단위</th><th>센티미터 환산</th><th>밀리미터 환산</th><th>인치 환산</th></tr>
+      <tr><td>1인치</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
+      <tr><td>1센티미터</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
+      <tr><td>1밀리미터</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
+      <tr><td>12인치</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 인치"] -->
+    <h2>세로 자와 화면 회전</h2>
+    <p><b>회전</b>을 누르면 가로 자와 세로 자가 바뀌어요. 높이를 잴 때나 화면이 좁을 때 유용해요. 세로 자는 가로 자와 사용법이 똑같으며 센티미터, 밀리미터, 인치를 지원해요.</p>
+    <h2>드래그 측정 상자로 물체 재기</h2>
+    <p><b>측정</b>을 누르고 화면에 보이는 것(사진, 도표, 상품 이미지 등) 위에서 상자를 드래그하세요. 상자에 가로×세로가 cm, mm, 인치로 실시간 표시돼요. 모서리를 드래그하면 크기 조절, 가운데를 드래그하면 이동, 방향 키로는 정밀하게 미세 조정할 수 있어요. <b>복사</b>를 누르면 측정값이 클립보드에 복사돼요.</p>
+    <h2>반지 사이즈 재기</h2>
+    <p>반지 사이즈를 알아보려면 얇게 자른 종이를 손가락에 감고 겹치는 부분에 표시한 뒤, 종이를 화면 속 자에 평평하게 대고 길이를 밀리미터로 읽으세요. 대부분의 주얼리 업체는 손가락 둘레(mm)로 반지 사이즈를 정해요. 이미 가지고 있는 반지라면 <b>측정</b> 상자를 열어 반지 안지름에 맞춰 드래그하세요. 손가락 크기는 하루 중에도 조금씩 변하니 저녁에 재는 것이 가장 정확해요.</p>
+    <h2>각도기 모드</h2>
+    <p><b>각도기</b>를 누르면 180° 각도기가 화면에 나타나요. 양쪽 팔 중 하나를 재고 싶은 각도까지 드래그하면 각도가 실시간으로 표시돼요. 가운데를 드래그하면 각도기 전체를 이동할 수 있어요. 자와 동일한 보정값을 사용하므로 어떤 화면에서도 각도가 정확해요.</p>
+    <h2>인쇄용 종이 자</h2>
+    <p><b>인쇄</b>를 누르면 실제 크기와 똑같은 종이 자를 만들 수 있어요. 한쪽 면에 18&nbsp;cm, 반대쪽 면에 7&nbsp;인치가 인쇄돼요. 반드시 <b>100% 배율</b>로 인쇄하고("용지에 맞춤"은 선택하지 마세요), 가장자리를 따라 자른 뒤 알려진 물건과 대조해 확인하세요. 화면에서 떨어진 곳에서 측정할 때 유용해요.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "인쇄용 종이 자 at true size, 18 cm and 7 인치"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>제한 사항</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>브라우저 확대/축소는 반드시 100%여야 해요.</b> 확대/축소를 하면 픽셀 크기가 달라져요. 설정이 다르면 TrueRuler가 경고해줘요.</li>
+      <li><b>운영체제의 디스플레이 배율 설정이 중요해요.</b> OS에서 화면을 확대하고 있다면(예: Windows의 125%), 변경 후 다시 보정하세요.</li>
+      <li><b>외부 모니터는 제각각이에요.</b> 같은 해상도라도 실제 크기가 다를 수 있으니, 새 모니터에서는 기존 설정을 믿지 말고 새로 보정하세요.</li>
+      <li><b>휴대폰의 데스크톱 모드.</b> 일부 모바일 브라우저는 특이한 뷰포트를 보고해요. 자가 이상하게 보이면 은행 카드 방식으로 보정하세요.</li>
+      <li><b>PD 자가 아니에요.</b> 이것은 범용 측정 자이며, 안경 주문용 동공 간 거리(PD) 자가 아니에요. PD 측정에는 전용 도구가 필요해요.</li>
+      <li><b>화면 길이의 한계.</b> 화면 속 자는 디스플레이 길이까지만 표시돼요. 더 긴 물건을 잴 때는 인쇄용 자를 사용하거나 나눠서 측정하세요.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>온라인 자와 다른 방법 비교</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>방법</th><th>적합한 용도</th><th>주의할 점</th></tr>
+      <tr><td>실물 자</td><td>믿을 수 있는 일상적인 정확도</td><td>항상 손에 있는 것은 아니에요</td></tr>
+      <tr><td>줄자</td><td>큰 물건이나 방 측정</td><td>1밀리미터 이하 정밀도는 떨어져요</td></tr>
+      <tr><td>휴대폰 AR 측정 앱</td><td>3D 공간이나 가구 측정</td><td>카메라 왜곡 있음. 설치 필요</td></tr>
+      <tr><td>인쇄용 자</td><td>종이에 실제 크기 재현</td><td>프린터와 100% 배율 설정 필요</td></tr>
+      <tr><td><b>TrueRuler(온라인 자)</b></td><td><b>어떤 화면에서도 빠른 측정</b></td><td><b>한 번의 보정 필요. 확대/축소는 100% 유지</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>자주 묻는 질문</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>이 온라인 자는 정확한가요?</h3>
+      <p>네. 한 번 보정하면 대부분의 화면에서 약 1밀리미터 정도의 정확도로 측정할 수 있어요. 초록색 상태 표시등은 기기가 인식되어 공장 출고 시 픽셀 밀도가 적용되었음을 의미해요. 기기가 인식되지 않으면 가장 정밀한 은행 카드 방식으로 보정하세요.</p>
+      <h3>화면은 어떻게 보정하나요?</h3>
+      <p>세 가지 방법 중 선택하세요. 목록에서 기기를 선택하거나, 화면 대각선 크기를 입력하거나, 일반 은행 카드(너비 85.60&nbsp;mm)를 파란색 가이드에 대고 일치할 때까지 슬라이더를 드래그하는 방법이 있어요. 보정값은 자동으로 저장돼요.</p>
+      <h3>모니터에서 자가 이상하게 보이는 이유는 무엇인가요?</h3>
+      <p>거의 대부분 두 모니터의 해상도는 같지만 실제 크기가 다르기 때문이에요. 1920×1080 패널도 22인치와 32인치가 있어요. 자가 이를 구분할 수는 없으니, 해당 모니터를 은행 카드 방식으로 한 번 보정하면 계속 정확하게 유지돼요.</p>
+      <h3>화면 속 자의 길이는 얼마나 되나요?</h3>
+      <p>화면 크기에 따라 달라요. 12인치 자는 대부분의 노트북에 들어가지만 휴대폰에서는 더 짧게 표시돼요. 고정된 길이 기준이 필요하면 종이 자를 인쇄하세요. 100% 배율로 한쪽 면 정확히 18&nbsp;cm, 반대쪽 면 정확히 7&nbsp;인치가 인쇄돼요.</p>
+      <h3>밀리미터 자로 사용할 수 있나요?</h3>
+      <p>네. 도구 모음에서 <b>mm</b>로 바꾸면 자가 밀리미터 눈금과 숫자로 다시 그려져요. 정밀한 소형 측정에 딱 맞아요.</p>
+      <h3>휴대폰이나 태블릿에서도 사용할 수 있나요?</h3>
+      <p>네. 레이아웃이 작은 화면에 맞게 조정되고, 인기 있는 휴대폰과 태블릿 대부분은 자동 보정을 위한 기기 데이터베이스에 등록되어 있어요. 터치스크린에서는 측정 상자를 손가락으로 드래그하세요.</p>
+      <h3>카메라가 필요한가요?</h3>
+      <p>아니요. AR 측정 앱과 달리 TrueRuler는 카메라를 전혀 사용하지 않아요. 화면의 픽셀 밀도로 측정하므로 비출 것도 없고 권한을 허용할 필요도 없어요.</p>
+      <h3>정말 무료인가요?</h3>
+      <p>네, 완전히 무료예요. 계정도 필요 없고 설치도 필요 없어요. 모든 처리는 브라우저 안에서 이루어지며, 측정한 내용이 어디에도 업로드되지 않아요.</p>
+      <h3>반지 사이즈도 잴 수 있나요?</h3>
+      <p>네. 종이 조각을 손가락에 감고 겹치는 부분에 표시한 뒤, 화면 속 자에 평평하게 대고 밀리미터를 읽으세요. 주얼리 업체는 손가락 둘레로 사이즈를 정해요. 또는 <b>측정</b> 상자를 반지 안지름에 맞춰 드래그하세요.</p>
+      <h3>실제 크기로 자를 인쇄하려면 어떻게 하나요?</h3>
+      <p><b>인쇄</b>를 누른 뒤 <b>100% 배율</b>로 인쇄하세요. "용지에 맞춤"은 축소되므로 선택하지 마세요. 가장자리를 따라 자르고, 사용하기 전에 은행 카드(85.60&nbsp;mm)와 대조해 확인하세요.</p>
+      <h3>설정이 저장되나요?</h3>
+      <p>보정값, 단위 선택, 테마는 사용 중인 기기의 브라우저 로컬 저장소에 저장돼요. 사이트 데이터를 지우면 초기화되며, 어떤 서버로도 전송되지 않아요.</p>
+      <h3>PPI란 무엇이며 왜 중요한가요?</h3>
+      <p>PPI는 pixels per inch, 즉 화면의 픽셀 밀도를 뜻해요. 픽셀을 실제 센티미터와 인치로 변환하려면 이 수치를 알아야 해요. 이 하나의 숫자가 장식용 자 이미지와 실제 크기 측정 도구를 가르는 전부예요.</p>
     </div>
   </div>
 
@@ -577,7 +577,7 @@ function setStatus(){
   if(state.calibrated){
     dot.className = "dot ok";
     var label = state.method === "device" && state.device ? state.device : state.method === "card" ? "카드로 보정" : state.method === "diagonal" ? "대각선 입력" : "보정";
-    txt.textContent = "보정됨 · " + Math.round(state.ppi) + " PPI(" + label + ")";
+    txt.textContent = "보정됨 · " + Math.round(state.ppi) + " PPI (" + label + ")";
   } else {
     dot.className = "dot warn";
     txt.textContent = "보정되지 않음 — 실제 크기로 보려면 '보정'을 누르세요";
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your 보정 is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 인치 on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the 측정 box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press 인쇄, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"이 온라인 자는 정확한가요?","acceptedAnswer":{"@type":"Answer","text":"네. 한 번 보정하면 대부분의 화면에서 약 1밀리미터 정도의 정확도로 측정할 수 있어요. 초록색 상태 표시등은 기기가 인식되어 공장 출고 시 픽셀 밀도가 적용되었음을 의미해요. 기기가 인식되지 않으면 가장 정밀한 은행 카드 방식으로 보정하세요."}},
+{"@type":"Question","name":"화면은 어떻게 보정하나요?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your 보정 is saved automatically."}},
+{"@type":"Question","name":"모니터에서 자가 이상하게 보이는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"거의 대부분 두 모니터의 해상도는 같지만 실제 크기가 다르기 때문이에요. 1920×1080 패널도 22인치와 32인치가 있어요. 자가 이를 구분할 수는 없으니, 해당 모니터를 은행 카드 방식으로 한 번 보정하면 계속 정확하게 유지돼요."}},
+{"@type":"Question","name":"화면 속 자의 길이는 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 인치 on the other at 100% scale."}},
+{"@type":"Question","name":"밀리미터 자로 사용할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"휴대폰이나 태블릿에서도 사용할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 레이아웃이 작은 화면에 맞게 조정되고, 인기 있는 휴대폰과 태블릿 대부분은 자동 보정을 위한 기기 데이터베이스에 등록되어 있어요. 터치스크린에서는 측정 상자를 손가락으로 드래그하세요."}},
+{"@type":"Question","name":"카메라가 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"아니요. AR 측정 앱과 달리 TrueRuler는 카메라를 전혀 사용하지 않아요. 화면의 픽셀 밀도로 측정하므로 비출 것도 없고 권한을 허용할 필요도 없어요."}},
+{"@type":"Question","name":"정말 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 완전히 무료예요. 계정도 필요 없고 설치도 필요 없어요. 모든 처리는 브라우저 안에서 이루어지며, 측정한 내용이 어디에도 업로드되지 않아요."}},
+{"@type":"Question","name":"반지 사이즈도 잴 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the 측정 box across a ring's inner diameter."}},
+{"@type":"Question","name":"실제 크기로 자를 인쇄하려면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"Press 인쇄, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"설정이 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"보정값, 단위 선택, 테마는 사용 중인 기기의 브라우저 로컬 저장소에 저장돼요. 사이트 데이터를 지우면 초기화되며, 어떤 서버로도 전송되지 않아요."}},
+{"@type":"Question","name":"PPI란 무엇이며 왜 중요한가요?","acceptedAnswer":{"@type":"Answer","text":"PPI는 pixels per inch, 즉 화면의 픽셀 밀도를 뜻해요. 픽셀을 실제 센티미터와 인치로 변환하려면 이 수치를 알아야 해요. 이 하나의 숫자가 장식용 자 이미지와 실제 크기 측정 도구를 가르는 전부예요."}}
 ]}
 </script>
 </body>
