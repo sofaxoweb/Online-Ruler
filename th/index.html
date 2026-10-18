@@ -200,130 +200,130 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <select id="convTo" aria-label="เป็นหน่วย"></select>
     </div>
     <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">การแปลงพิกเซลใช้ค่า PPI ของไม้บรรทัดปัจจุบัน (<span id="convPpi">96</span>)</p>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">การแปลงพิกเซลใช้ค่า PPI ของไม้บรรทัดปัจจุบัน (<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">ไม้บรรทัดออนไลน์ขนาดจริง</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">อัปเดตล่าสุด: 13 ตุลาคม 2026 · โดยทีม TrueRuler</p>
+    <p><b>ไม้บรรทัดออนไลน์เปลี่ยนหน้าจอของคุณให้เป็นเครื่องมือวัดจริง</b> TrueRuler วาดสเกลเซนติเมตร มิลลิเมตร และนิ้วในขนาดจริงโดยตรวจจับความหนาแน่นพิกเซลของอุปกรณ์ — หรือปรับเทียบเพียงครั้งเดียวด้วยขนาดหน้าจอหรือบัตรธนาคารมาตรฐาน ใช้งานฟรี ไม่ต้องติดตั้ง และใช้ได้กับโทรศัพท์ แท็บเล็ต แล็ปท็อป หรือจอภาพทุกชนิด</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>ไม้บรรทัดซม. มม. และนิ้วขนาดจริงบนทุกหน้าจอ</li>
+      <li>ตรวจจับอุปกรณ์อัตโนมัติ หรือปรับเทียบด้วยเส้นทแยงมุมหน้าจอหรือบัตรธนาคาร (85.60&nbsp;มม.)</li>
+      <li>มีกล่องลากเพื่อวัด โปรแทรกเตอร์ ไม้บรรทัดกระดาษสำหรับพิมพ์ และตัวแปลงหน่วยในตัว</li>
+      <li>คงซูมเบราว์เซอร์ไว้ที่ 100% เพื่อการวัดที่แม่นยำ</li>
+      <li>ฟรีตลอดไป — ไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้ง การปรับเทียบถูกบันทึกบนอุปกรณ์นี้</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>ไม้บรรทัดออนไลน์คืออะไร?</h2>
+    <p class="def"><b>ไม้บรรทัดออนไลน์คือเครื่องมือวัดบนเว็บที่แสดงไม้บรรทัดบนหน้าจอในขนาดจริง</b> โดยคำนวณค่าพิกเซลต่อนิ้ว (PPI) ของจอแสดงผล แล้ววาดทุกเซนติเมตร มิลลิเมตร และนิ้วให้ตรงกับไม้บรรทัดจริงที่ทาบกับหน้าจอ หลังปรับเทียบเพียงครั้งเดียว คุณก็วัดวัตถุชิ้นเล็กบนจอได้โดยตรง — ไม่ต้องติดตั้งแอป</p>
+    <h2>ไม้บรรทัดนี้วัดขนาดจริงได้อย่างไร</h2>
+    <p>หน้าจอของคุณไม่รู้จักว่าหนึ่งนิ้วยาวแค่ไหน — มันรู้จักแค่พิกเซล สะพานเชื่อมระหว่างสองสิ่งนี้คือ <b>ความหนาแน่นพิกเซล</b> ซึ่งวัดเป็น PPI (พิกเซลต่อนิ้ว) ถ้าหน้าจอแสดงผล 141 พิกเซลต่อนิ้ว ไม้บรรทัดจะวาดหนึ่งนิ้วด้วย 141 พิกเซลพอดี หนึ่งเซนติเมตรด้วย 55.6 พิกเซล และหนึ่งมิลลิเมตรด้วย 5.56 พิกเซล</p>
+    <p>มีข้อแม้อยู่: จอสองจออาจมีความละเอียด 1920×1080 เท่ากัน แต่กว้าง 22 หรือ 32 นิ้วก็ได้ — พิกเซลเท่ากัน แต่ขนาดจริงต่างกันมาก นั่นคือเหตุผลที่ไม้บรรทัดออนไลน์ต้องรู้ค่า PPI จริงของหน้าจอ TrueRuler ทำได้ 2 วิธี: จดจำโทรศัพท์ แท็บเล็ต และแล็ปท็อปทั่วไปจากฐานข้อมูลอุปกรณ์แล้วใช้ค่า PPI จากโรงงาน หรือคำนวณ PPI จากขนาดเส้นทแยงมุมของหน้าจอ <span id="ppiEcho"></span></p>
+    <p>รายละเอียดอีกอย่าง: เบราว์เซอร์ทำงานด้วย <b>พิกเซล CSS</b> ซึ่งอาจต่างจากพิกเซลจริงบนจอความหนาแน่นสูง (แบบ "Retina") TrueRuler จะอ่านอัตราส่วนพิกเซลของอุปกรณ์และแปลงให้อัตโนมัติ และจะเตือนหากซูมเบราว์เซอร์ไม่ได้อยู่ที่ 100% เพราะการซูมเปลี่ยนขนาดของพิกเซล CSS</p>
+    <h2>สูตรการปรับเทียบ</h2>
+    <p>เมื่อคุณกรอกขนาดเส้นทแยงมุมของหน้าจอ ไม้บรรทัดจะคำนวณ PPI ด้วยทฤษฎีบทพีทาโกรัส:</p>
+    <p class="formula"><b>PPI = √(ความกว้าง² + ความสูง²) ÷ นิ้วเส้นทแยงมุม</b></p>
+    <p><b>ตัวอย่างการคำนวณ</b> แล็ปท็อป 15.6 นิ้ว หน้าจอ 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 พิกเซลตามแนวทแยง หารด้วย 15.6 นิ้ว → <b>141.2 PPI</b> ดังนั้นหนึ่งนิ้วจึงวาดด้วย 141.2 พิกเซล หนึ่งเซนติเมตรด้วย 55.6 พิกเซล (141.2 ÷ 2.54) และหนึ่งมิลลิเมตรด้วย 5.56 พิกเซล</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>วิธีใช้ TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>ดูจุดสถานะ</b> หากจดจำอุปกรณ์ได้ จุดจะเปลี่ยนเป็นสีเขียวและไม้บรรทัดมีขนาดจริงแล้ว</li>
+      <li><b>ปรับเทียบหากจำเป็น</b> กรอกเส้นทแยงมุมหน้าจอเพื่อปรับเทียบทันที — หรือเปิดตัวเลือกทั้งหมด: เลือกอุปกรณ์จากรายการ หรือทาบบัตรธนาคาร (กว้าง 85.60&nbsp;มม.) กับแถบสีน้ำเงินแล้วลากแถบเลื่อนจนตรงกัน</li>
+      <li><b>เลือกหน่วย</b> สลับระหว่างเซนติเมตร มิลลิเมตร และนิ้วในแถบเครื่องมือเหนือไม้บรรทัด</li>
+      <li><b>วัด</b> ทาบวัตถุกับขอบไม้บรรทัด กด <b>วัด</b> แล้วลากกล่องคลุมสิ่งบนหน้าจอ หรือเปิด <b>โปรแทรกเตอร์</b> เพื่อวัดมุม</li>
+      <li><b>ปรับละเอียดและใช้ซ้ำ</b> ใช้ปุ่มลูกศรขยับกล่องวัด คัดลอกค่าที่ได้ แล้วกลับมาเมื่อไรก็ได้ — การปรับเทียบถูกบันทึกบนอุปกรณ์นี้</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>คู่มือภาพ</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="ขั้นตอนที่ 1: ปรับเทียบไม้บรรทัดด้วยบัตรธนาคาร"><figcaption>1. ปรับเทียบด้วยบัตรธนาคาร (85.60 มม.)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="ขั้นตอนที่ 2: ทาบวัตถุกับไม้บรรทัดบนหน้าจอ"><figcaption>2. ทาบวัตถุใดก็ได้กับไม้บรรทัด</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="ขั้นตอนที่ 3: วัดอย่างละเอียดด้วยกล่องลากและโปรแทรกเตอร์"><figcaption>3. วัดอย่างละเอียดด้วยกล่องและโปรแทรกเตอร์</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>การอ่านสเกล: นิ้ว เซนติเมตร และมิลลิเมตร</h2>
+    <p>ไม้บรรทัดแสดงสเกลเมตริกและอิมพีเรียลคู่กัน ใช้ <b>มิลลิเมตร</b> สำหรับงานที่ต้องการความละเอียด ใช้ <b>เซนติเมตร</b> สำหรับการวัดทั่วไป และใช้ <b>นิ้ว</b> สำหรับหน่วยอิมพีเรียล ตัวแปลงหน่วยในตัวด้านบนยังรองรับเมตร ฟุต หลา และพอยต์ด้วย</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>หน่วย</th><th>เป็นเซนติเมตร</th><th>เป็นมิลลิเมตร</th><th>เป็นนิ้ว</th></tr>
+      <tr><td>1 นิ้ว</td><td>2.54 ซม.</td><td>25.4 มม.</td><td>1 นิ้ว</td></tr>
+      <tr><td>1 เซนติเมตร</td><td>1 ซม.</td><td>10 มม.</td><td>0.3937 นิ้ว</td></tr>
+      <tr><td>1 มิลลิเมตร</td><td>0.1 ซม.</td><td>1 มม.</td><td>0.03937 นิ้ว</td></tr>
+      <tr><td>12 นิ้ว</td><td>30.48 ซม.</td><td>304.8 มม.</td><td>12 นิ้ว</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 นิ้ว"] -->
+    <h2>ไม้บรรทัดแนวตั้งและการหมุนหน้าจอ</h2>
+    <p>กด <b>หมุน</b> เพื่อสลับไม้บรรทัดแนวนอนกับแนวตั้ง — สะดวกเมื่อต้องการวัดความสูงหรือเมื่อหน้าจอแคบ ไม้บรรทัดแนวตั้งทำงานเหมือนแนวนอนทุกอย่าง ทั้งเซนติเมตร มิลลิเมตร และนิ้ว</p>
+    <h2>การวัดวัตถุด้วยกล่องลากเพื่อวัด</h2>
+    <p>กด <b>วัด</b> แล้วลากกล่องคลุมสิ่งที่เห็นบนหน้าจอ — รูปถ่าย แผนภาพ รูปสินค้า กล่องจะแสดงความกว้าง × ความสูงแบบเรียลไทม์เป็นซม. มม. และนิ้ว ลากจุดจับเพื่อปรับขนาด ลากตรงกลางเพื่อย้าย และใช้ปุ่มลูกศรเพื่อขยับอย่างละเอียด <b>คัดลอก</b> จะนำค่าที่วัดได้ไปไว้ในคลิปบอร์ด</p>
+    <h2>การวัดขนาดแหวน</h2>
+    <p>หากต้องการทราบขนาดแหวน ให้พันแถบกระดาษบางรอบนิ้ว ทำเครื่องหมายตรงที่ซ้อนทับกัน แล้ววางแถบราบกับไม้บรรทัดบนหน้าจอ อ่านความยาวเป็นมิลลิเมตร — ร้านเครื่องประดับส่วนใหญ่กำหนดขนาดแหวนจากเส้นรอบวงนิ้วเป็นมม. สำหรับแหวนที่มีอยู่แล้ว ให้เปิดกล่อง <b>วัด</b> แล้วลากคลุมเส้นผ่านศูนย์กลางด้านในของแหวน ขนาดนิ้วจะเปลี่ยนเล็กน้อยระหว่างวัน ควรวัดตอนเย็นจึงจะได้ผลน่าเชื่อถือที่สุด</p>
+    <h2>โหมดโปรแทรกเตอร์</h2>
+    <p>กด <b>โปรแทรกเตอร์</b> เพื่อแสดงไม้โปรแทรกเตอร์ 180° เต็ม ลากแขนข้างใดข้างหนึ่งไปยังมุมที่ต้องการวัด ค่าที่อ่านได้จะแสดงองศาแบบเรียลไทม์ ลากตรงกลางเพื่อย้ายโปรแทรกเตอร์ทั้งอัน โดยใช้การปรับเทียบเดียวกับไม้บรรทัด มุมจึงถูกต้องบนทุกหน้าจอ</p>
+    <h2>ไม้บรรทัดกระดาษสำหรับพิมพ์</h2>
+    <p>กด <b>พิมพ์</b> เพื่อรับไม้บรรทัดกระดาษขนาดจริงเป๊ะ: 18&nbsp;ซม. ด้านหนึ่ง และ 7&nbsp;นิ้วอีกด้านหนึ่ง พิมพ์ที่ <b>ขนาด 100%</b> (ห้ามใช้ "พอดีหน้ากระดาษ") ตัดตามขอบ แล้วเทียบกับวัตถุที่รู้ขนาด ไม้บรรทัดกระดาษมีประโยชน์เมื่อต้องวัดสิ่งที่อยู่ห่างจากหน้าจอ</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "ไม้บรรทัดกระดาษสำหรับพิมพ์ at true size, 18 cm and 7 นิ้ว"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>ข้อจำกัด</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>ซูมเบราว์เซอร์ต้องอยู่ที่ 100%</b> การซูมเปลี่ยนขนาดพิกเซล TrueRuler จะเตือนหากซูมไม่ถูกต้อง</li>
+      <li><b>การปรับสเกลจอของระบบปฏิบัติการมีผล</b> หาก OS ปรับสเกลจอ (เช่น 125% บน Windows) ให้ปรับเทียบใหม่หลังเปลี่ยน</li>
+      <li><b>จอภาพภายนอกแต่ละจอต่างกัน</b> ความละเอียดเดียวกันอาจมีขนาดจริงต่างกัน จึงควรปรับเทียบจอใหม่แทนที่จะเชื่อค่าตั้งเดิม</li>
+      <li><b>โทรศัพท์ในโหมดเดสก์ท็อป</b> เบราว์เซอร์มือถือบางตัวรายงาน viewport ผิดปกติ หากไม้บรรทัดดูเพี้ยน ให้ใช้การปรับเทียบด้วยบัตรธนาคาร</li>
+      <li><b>ไม่ใช่ไม้บรรทัดวัด PD</b> นี่คือไม้บรรทัดวัดทั่วไป ไม่ใช่ไม้บรรทัดวัดระยะห่างรูม่านตาสำหรับสั่งแว่นตา — งานนั้นต้องใช้เครื่องมือเฉพาะ</li>
+      <li><b>จำกัดด้วยความยาวหน้าจอ</b> ไม้บรรทัดบนหน้าจอยาวได้เท่าจอแสดงผลเท่านั้น สำหรับวัตถุที่ยาวกว่า ให้ใช้ไม้บรรทัดกระดาษหรือวัดเป็นช่วง</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>ไม้บรรทัดออนไลน์กับทางเลือกอื่น</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>วิธี</th><th>เหมาะสำหรับ</th><th>ข้อควรระวัง</th></tr>
+      <tr><td>ไม้บรรทัดจริง</td><td>ความแม่นยำที่ใช้ได้ทุกวันน่าเชื่อถือ</td><td>ไม่ได้พกติดตัวเสมอ</td></tr>
+      <tr><td>สายวัด</td><td>วัตถุใหญ่และห้อง</td><td>ความละเอียดต่ำกว่าหนึ่งมิลลิเมตรไม่ดี</td></tr>
+      <tr><td>แอปวัดแบบ AR บนโทรศัพท์</td><td>พื้นที่ 3 มิติและเฟอร์นิเจอร์</td><td>กล้องบิดเบือน ต้องติดตั้ง</td></tr>
+      <tr><td>ไม้บรรทัดสำหรับพิมพ์</td><td>ขนาดจริงบนกระดาษ</td><td>ต้องมีเครื่องพิมพ์และตั้งขนาด 100%</td></tr>
+      <tr><td><b>TrueRuler (ไม้บรรทัดออนไลน์)</b></td><td><b>วัดเร็วบนทุกหน้าจอ</b></td><td><b>ต้องปรับเทียบครั้งเดียว คงซูมไว้ที่ 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>คำถามที่พบบ่อย</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>ไม้บรรทัดออนไลน์นี้แม่นยำหรือไม่?</h3>
+      <p>ใช่ — เมื่อปรับเทียบแล้ว จะแม่นยำประมาณหนึ่งมิลลิเมตรบนหน้าจอส่วนใหญ่ จุดสถานะสีเขียวหมายความว่าอุปกรณ์ของคุณได้รับการจดจำและใช้ค่าความหนาแน่นพิกเซลจากโรงงาน หากไม่รู้จักอุปกรณ์ ให้ปรับเทียบด้วยวิธีบัตรธนาคารซึ่งแม่นยำที่สุด</p>
+      <h3>ฉันจะปรับเทียบหน้าจอของฉันได้อย่างไร?</h3>
+      <p>เลือกได้ 3 วิธี: เลือกอุปกรณ์จากรายการ กรอกขนาดเส้นทแยงมุมของหน้าจอ หรือทาบบัตรธนาคารมาตรฐาน (กว้าง 85.60&nbsp;มม.) กับแถบสีน้ำเงินแล้วลากแถบเลื่อนจนตรงกัน การปรับเทียบจะถูกบันทึกอัตโนมัติ</p>
+      <h3>ทำไมไม้บรรทัดจึงดูผิดเพี้ยนบนจอของฉัน?</h3>
+      <p>เกือบทุกครั้งเป็นเพราะจอสองจอมีความละเอียดเท่ากันแต่ขนาดจริงไม่เท่า — จอ 1920×1080 อาจเป็น 22 หรือ 32 นิ้วก็ได้ ไม้บรรทัดเดาไม่ได้ จึงควรปรับเทียบจอนั้นครั้งเดียวด้วยวิธีบัตรธนาคาร แล้วจะถูกต้องตลอดไป</p>
+      <h3>ไม้บรรทัดบนหน้าจอยาวแค่ไหน?</h3>
+      <p>ยาวเท่าที่หน้าจอ — ไม้บรรทัด 12 นิ้วพอดีกับแล็ปท็อปส่วนใหญ่ ส่วนโทรศัพท์จะแสดงได้น้อยกว่า หากต้องการความยาวคงที่ ให้พิมพ์ไม้บรรทัดกระดาษ: 18&nbsp;ซม. เป๊ะด้านหนึ่ง และ 7&nbsp;นิ้วอีกด้านหนึ่งที่ขนาด 100%</p>
+      <h3>ใช้เป็นไม้บรรทัดมิลลิเมตรได้หรือไม่?</h3>
+      <p>ได้ เปลี่ยนแถบเครื่องมือเป็น <b>มม.</b> ไม้บรรทัดจะวาดใหม่ด้วยขีดและตัวเลขมิลลิเมตร — เหมาะกับการวัดชิ้นเล็กที่ต้องการความละเอียด</p>
+      <h3>ใช้ได้กับโทรศัพท์และแท็บเล็ตหรือไม่?</h3>
+      <p>ได้ รูปแบบหน้าจอปรับให้เข้ากับจอเล็ก และโทรศัพท์กับแท็บเล็ตยอดนิยมส่วนใหญ่อยู่ในฐานข้อมูลอุปกรณ์จึงปรับเทียบอัตโนมัติ บนจอสัมผัส ให้ใช้นิ้วลากกล่องวัด</p>
+      <h3>ต้องใช้กล้องหรือไม่?</h3>
+      <p>ไม่ต้อง TrueRuler ไม่ใช้กล้องของคุณเลยต่างจากแอปวัดแบบ AR — เพราะวัดจากความหนาแน่นพิกเซลของหน้าจอ จึงไม่มีอะไรต้องเล็งและไม่ต้องขอสิทธิ์</p>
+      <h3>ฟรีจริงหรือ?</h3>
+      <p>ใช่ ฟรีทั้งหมด ไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้ง ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณ ไม่มีอะไรที่คุณวัดถูกอัปโหลดไปที่ใด</p>
+      <h3>วัดขนาดแหวนของฉันได้หรือไม่?</h3>
+      <p>ได้ พันแถบกระดาษรอบนิ้ว ทำเครื่องหมายตรงที่ซ้อนกัน วางราบกับไม้บรรทัดบนหน้าจอแล้วอ่านค่ามิลลิเมตร — ร้านเครื่องประดับกำหนดขนาดแหวนจากเส้นรอบวงนิ้ว หรือลากกล่อง <b>วัด</b> คลุมเส้นผ่านศูนย์กลางด้านในของแหวน</p>
+      <h3>จะพิมพ์ไม้บรรทัดขนาดจริงได้อย่างไร?</h3>
+      <p>กด <b>พิมพ์</b> แล้วพิมพ์ที่ <b>ขนาด 100%</b> — ห้ามใช้ "พอดีหน้ากระดาษ" เพราะจะทำให้ย่อเล็กลง ตัดตามขอบแล้วเทียบกับบัตรธนาคาร (85.60&nbsp;มม.) ก่อนนำไปใช้จริง</p>
+      <h3>บันทึกการตั้งค่าของฉันหรือไม่?</h3>
+      <p>ค่าปรับเทียบ หน่วยที่เลือก และธีมจะถูกบันทึกใน local storage ของเบราว์เซอร์บนอุปกรณ์ของคุณเอง การล้างข้อมูลไซต์จะรีเซ็ตทั้งหมด ไม่มีข้อมูลใดถูกส่งไปยังเซิร์ฟเวอร์</p>
+      <h3>PPI คืออะไรและทำไมจึงสำคัญ?</h3>
+      <p>PPI ย่อมาจาก pixels per inch — ความหนาแน่นพิกเซลของหน้าจอ ไม้บรรทัดต้องรู้ค่านี้เพื่อแปลงพิกเซลเป็นเซนติเมตรและนิ้วจริง ตัวเลขเพียงตัวเดียวนี้คือความแตกต่างทั้งหมดระหว่างรูปไม้บรรทัดประดับกับเครื่องมือวัดขนาดจริง</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your การปรับเทียบ is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 นิ้ว on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the วัด box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press พิมพ์, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"ไม้บรรทัดออนไลน์นี้แม่นยำหรือไม่?","acceptedAnswer":{"@type":"Answer","text":"ใช่ — เมื่อปรับเทียบแล้ว จะแม่นยำประมาณหนึ่งมิลลิเมตรบนหน้าจอส่วนใหญ่ จุดสถานะสีเขียวหมายความว่าอุปกรณ์ของคุณได้รับการจดจำและใช้ค่าความหนาแน่นพิกเซลจากโรงงาน หากไม่รู้จักอุปกรณ์ ให้ปรับเทียบด้วยวิธีบัตรธนาคารซึ่งแม่นยำที่สุด"}},
+{"@type":"Question","name":"ฉันจะปรับเทียบหน้าจอของฉันได้อย่างไร?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your การปรับเทียบ is saved automatically."}},
+{"@type":"Question","name":"ทำไมไม้บรรทัดจึงดูผิดเพี้ยนบนจอของฉัน?","acceptedAnswer":{"@type":"Answer","text":"เกือบทุกครั้งเป็นเพราะจอสองจอมีความละเอียดเท่ากันแต่ขนาดจริงไม่เท่า — จอ 1920×1080 อาจเป็น 22 หรือ 32 นิ้วก็ได้ ไม้บรรทัดเดาไม่ได้ จึงควรปรับเทียบจอนั้นครั้งเดียวด้วยวิธีบัตรธนาคาร แล้วจะถูกต้องตลอดไป"}},
+{"@type":"Question","name":"ไม้บรรทัดบนหน้าจอยาวแค่ไหน?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 นิ้ว on the other at 100% scale."}},
+{"@type":"Question","name":"ใช้เป็นไม้บรรทัดมิลลิเมตรได้หรือไม่?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"ใช้ได้กับโทรศัพท์และแท็บเล็ตหรือไม่?","acceptedAnswer":{"@type":"Answer","text":"ได้ รูปแบบหน้าจอปรับให้เข้ากับจอเล็ก และโทรศัพท์กับแท็บเล็ตยอดนิยมส่วนใหญ่อยู่ในฐานข้อมูลอุปกรณ์จึงปรับเทียบอัตโนมัติ บนจอสัมผัส ให้ใช้นิ้วลากกล่องวัด"}},
+{"@type":"Question","name":"ต้องใช้กล้องหรือไม่?","acceptedAnswer":{"@type":"Answer","text":"ไม่ต้อง TrueRuler ไม่ใช้กล้องของคุณเลยต่างจากแอปวัดแบบ AR — เพราะวัดจากความหนาแน่นพิกเซลของหน้าจอ จึงไม่มีอะไรต้องเล็งและไม่ต้องขอสิทธิ์"}},
+{"@type":"Question","name":"ฟรีจริงหรือ?","acceptedAnswer":{"@type":"Answer","text":"ใช่ ฟรีทั้งหมด ไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้ง ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณ ไม่มีอะไรที่คุณวัดถูกอัปโหลดไปที่ใด"}},
+{"@type":"Question","name":"วัดขนาดแหวนของฉันได้หรือไม่?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the วัด box across a ring's inner diameter."}},
+{"@type":"Question","name":"จะพิมพ์ไม้บรรทัดขนาดจริงได้อย่างไร?","acceptedAnswer":{"@type":"Answer","text":"Press พิมพ์, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"บันทึกการตั้งค่าของฉันหรือไม่?","acceptedAnswer":{"@type":"Answer","text":"ค่าปรับเทียบ หน่วยที่เลือก และธีมจะถูกบันทึกใน local storage ของเบราว์เซอร์บนอุปกรณ์ของคุณเอง การล้างข้อมูลไซต์จะรีเซ็ตทั้งหมด ไม่มีข้อมูลใดถูกส่งไปยังเซิร์ฟเวอร์"}},
+{"@type":"Question","name":"PPI คืออะไรและทำไมจึงสำคัญ?","acceptedAnswer":{"@type":"Answer","text":"PPI ย่อมาจาก pixels per inch — ความหนาแน่นพิกเซลของหน้าจอ ไม้บรรทัดต้องรู้ค่านี้เพื่อแปลงพิกเซลเป็นเซนติเมตรและนิ้วจริง ตัวเลขเพียงตัวเดียวนี้คือความแตกต่างทั้งหมดระหว่างรูปไม้บรรทัดประดับกับเครื่องมือวัดขนาดจริง"}}
 ]}
 </script>
 </body>
