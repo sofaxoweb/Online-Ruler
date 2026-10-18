@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Riglă online la dimensiune reală</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Ultima actualizare: 13 octombrie 2026 · Echipa TrueRuler</p>
+    <p><b>O riglă online transformă ecranul tău într-un instrument de măsurat adevărat.</b> TrueRuler desenează scale de centimetri, milimetri și inch la dimensiune fizică reală – detectează densitatea de pixeli a dispozitivului tău sau o calibrezi o dată cu dimensiunea ecranului ori cu un card bancar obișnuit. E gratuită, nu instalezi nimic și merge pe orice telefon, tabletă, laptop sau monitor.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>Rigle de cm, mm și inch la dimensiune reală, pe orice ecran</li>
+      <li>Detectare automată a dispozitivului sau calibrare cu diagonala ecranului ori cu un card bancar (85.60&nbsp;mm)</li>
+      <li>Casetă de măsurare prin tragere, raportor, riglă de hârtie de imprimat și convertor de unități incluse</li>
+      <li>Ține zoomul browserului la 100% pentru măsurători precise</li>
+      <li>Gratuit pentru totdeauna – fără cont, fără instalare; calibrarea se salvează pe dispozitivul tău</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>Ce este o riglă online?</h2>
+    <p class="def"><b>O riglă online este un instrument de măsurat bazat pe web, care îți arată o riglă pe ecran la dimensiune fizică reală.</b> Calculează pixelii pe inch (PPI) ai afișajului tău și desenează fiecare centimetru, milimetru și inch astfel încât să se potrivească cu o riglă fizică lipită de ecran. După o singură calibrare, poți măsura obiecte mici direct pe ecran – fără să instalezi vreo aplicație.</p>
+    <h2>Cum măsoară această riglă la dimensiune reală</h2>
+    <p>Ecranul tău nu știe ce e un inch – știe doar pixeli. Puntea dintre ele este <b>densitatea de pixeli</b>, măsurată în PPI (pixeli pe inch). Dacă ecranul tău are 141 de pixeli pe inch, rigla desenează un inch ca exact 141 de pixeli, un centimetru ca 55.6 pixeli și un milimetru ca 5.56 pixeli.</p>
+    <p>Aici e șmecheria: două monitoare pot avea aceeași rezoluție 1920×1080, dar lățimi de 22 sau 32 de inch – aceiași pixeli, dimensiuni reale foarte diferite. De asta o riglă online trebuie să afle PPI-ul real al ecranului tău. TrueRuler face asta în două feluri: recunoaște telefoanele, tabletele și laptopurile comune dintr-o bază de date cu dispozitive și aplică PPI-ul lor din fabrică sau calculează PPI din diagonala ecranului. <span id="ppiEcho"></span></p>
+    <p>Încă un detaliu: browserele lucrează în <b>pixeli CSS</b>, care pot diferi de pixelii fizici pe afișajele cu densitate mare („Retina”). TrueRuler citește raportul de pixeli al dispozitivului tău și convertește totul automat, plus te avertizează dacă zoomul browserului nu e la 100% – pentru că zoomul schimbă dimensiunea unui pixel CSS.</p>
+    <h2>Formula de calibrare</h2>
+    <p>Când introduci diagonala ecranului tău, rigla calculează PPI cu teorema lui Pitagora:</p>
+    <p class="formula"><b>PPI = √(lățime² + înălțime²) ÷ diagonala în inch</b></p>
+    <p><b>Exemplu practic.</b> Un laptop cu ecran de 15,6 inch și rezoluție 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixeli pe diagonală. Împărțit la 15,6 inch → <b>141.2 PPI</b>. Un inch e deci desenat ca 141.2 pixeli, un centimetru ca 55.6 pixeli (141.2 ÷ 2.54) și un milimetru ca 5.56 pixeli.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>Cum să folosești TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>Verifică punctul de stare.</b> Dacă dispozitivul tău e recunoscut, punctul devine verde și rigla e deja la dimensiune reală.</li>
+      <li><b>Calibrează dacă e nevoie.</b> Introdu diagonala ecranului pentru calibrare instant – sau deschide toate opțiunile: alege-ți dispozitivul din listă ori lipește un card bancar (85.60&nbsp;mm lățime) de ghidajul albastru și trage de cursor până se potrivesc.</li>
+      <li><b>Alege-ți unitatea.</b> Comută între centimetri, milimetri și inch în bara de instrumente de deasupra riglei.</li>
+      <li><b>Măsoară.</b> Ține obiectul lipit de marginea riglei, apasă <b>Măsoară</b> și trage o casetă peste orice e pe ecran sau deschide <b>Raportor</b> ca să măsori unghiuri.</li>
+      <li><b>Rafinează și revino.</b> Mișcă caseta cu săgețile, copiază valoarea și revino oricând – calibrarea rămâne salvată pe dispozitivul tău.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>Ghid vizual</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Pasul 1: calibrează rigla cu un card bancar"><figcaption>1. Calibrează cu un card bancar (85.60 mm)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Pasul 2: ține un obiect lipit de rigla de pe ecran"><figcaption>2. Ține orice obiect lipit de riglă</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Pasul 3: măsoară precis cu caseta și raportorul"><figcaption>3. Măsoară precis cu caseta și raportorul</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>Citirea scalelor: inch, centimetri și milimetri</h2>
+    <p>Rigla arată scala metrică și cea imperială una lângă alta. Folosește <b>milimetri</b> pentru lucrări de precizie, <b>centimetri</b> pentru măsurători de zi cu zi și <b>inch</b> pentru măsurători imperiale. Convertorul încorporat de mai sus știe și metri, picioare, yarzi și puncte.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>Unitate</th><th>În centimetri</th><th>În milimetri</th><th>În inch</th></tr>
+      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 inch</td></tr>
+      <tr><td>1 centimetru</td><td>1 cm</td><td>10 mm</td><td>0.3937 inch</td></tr>
+      <tr><td>1 milimetru</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 inch</td></tr>
+      <tr><td>12 inchi</td><td>30.48 cm</td><td>304.8 mm</td><td>12 inch</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 țoli"] -->
+    <h2>Rigla verticală și rotirea ecranului</h2>
+    <p>Apasă <b>Rotește</b> ca să schimbi rigla orizontală cu cea verticală – util când măsori înălțimi sau când ecranul tău e îngust. Rigla verticală funcționează exact ca cea orizontală, în centimetri, milimetri și inch.</p>
+    <h2>Măsurarea obiectelor cu caseta de măsurare</h2>
+    <p>Apasă <b>Măsoară</b> și trage o casetă peste orice se vede pe ecran – o fotografie, o diagramă, o imagine de produs. Caseta arată live lățimea × înălțimea în cm, mm și inch. Trage de mânere ca s-o redimensionezi, trage de centru ca s-o muți, iar cu săgețile o ajustezi la pixel. Butonul <b>Copiază</b> pune valoarea în clipboard.</p>
+    <h2>Cum afli mărimea inelului</h2>
+    <p>Ca să afli mărimea inelului, înfășoară o fâșie subțire de hârtie în jurul degetului, marchează unde se suprapune, apoi pune fâșia întinsă lângă rigla de pe ecran și citește lungimea în milimetri – bijutierii stabilesc mărimea inelului după circumferința degetului în mm. Pentru un inel pe care îl ai deja, deschide caseta <b>Măsoară</b> și trage-o peste diametrul interior al inelului. Degetul își schimbă puțin dimensiunea în timpul zilei, așa că măsoară seara pentru cel mai sigur rezultat.</p>
+    <h2>Modul raportor</h2>
+    <p>Apasă <b>Raportor</b> și peste ecran se deschide un raportor complet de 180°. Trage oricare braț spre unghiul pe care vrei să-l măsori; afișajul arată live gradele. Trage de centru ca să muți tot raportorul. Folosește aceeași calibrare ca rigla, deci unghiurile rămân corecte pe orice ecran.</p>
+    <h2>Riglă de hârtie de imprimat</h2>
+    <p>Apasă <b>Imprimă</b> pentru o riglă de hârtie la dimensiune reală exactă: 18&nbsp;cm pe o margine și 7&nbsp;inch pe cealaltă. Imprimă la <b>scară 100%</b> (niciodată „potrivește la pagină”), taie de-a lungul marginii și verific-o cu un obiect cunoscut. O riglă imprimată e utilă când trebuie să măsori ceva departe de ecran.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Riglă de hârtie de imprimat at true size, 18 cm and 7 țoli"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>Limitări</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Zoomul browserului trebuie să fie 100%.</b> Zoomul schimbă dimensiunea pixelilor; TrueRuler te avertizează dacă zoomul nu e corect.</li>
+      <li><b>Scalarea afișajului din sistem contează.</b> Dacă sistemul tău de operare scalează afișajul (de exemplu 125% pe Windows), recalibrează după schimbare.</li>
+      <li><b>Monitoarele externe diferă.</b> Aceeași rezoluție poate însemna dimensiuni fizice diferite, așa că calibrează un monitor nou în loc să te încrezi în setarea veche.</li>
+      <li><b>Telefoane în mod desktop.</b> Unele browsere mobile raportează un viewport neobișnuit; dacă rigla arată greșit, calibreaz-o cu cardul bancar.</li>
+      <li><b>Nu e o riglă PD.</b> Aceasta e o riglă de măsurat universală, nu o riglă pentru distanța pupilara la comanda ochelarilor – pentru asta îți trebuie un instrument specializat.</li>
+      <li><b>Limite de lungime a ecranului.</b> Rigla de pe ecran poate fi lungă doar cât afișajul tău; pentru obiecte mai lungi, folosește rigla imprimată sau măsoară pe porțiuni.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>Rigla online vs alternative</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>Metoda</th><th>La ce e bună</th><th>Atenție la</th></tr>
+      <tr><td>Riglă fizică</td><td>Precizie de zi cu zi în care poți avea încredere</td><td>N-o ai mereu la îndemână</td></tr>
+      <tr><td>Ruletă</td><td>Obiecte mari și camere</td><td>Precizie slabă sub un milimetru</td></tr>
+      <tr><td>Aplicații AR de măsurat din telefon</td><td>Spații 3D și mobilă</td><td>Distorsiuni de cameră; trebuie instalate</td></tr>
+      <tr><td>Riglă de imprimat</td><td>Dimensiune reală pe hârtie</td><td>Îți trebuie imprimantă și setarea de scară 100%</td></tr>
+      <tr><td><b>TrueRuler (riglă online)</b></td><td><b>Măsurători rapide pe orice ecran</b></td><td><b>Necesită o singură calibrare; ține zoomul la 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>Întrebări frecvente</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>Este precisă această riglă online?</h3>
+      <p>Da – odată calibrată, e precisă cam la un milimetru pe majoritatea ecranelor. Punctul verde înseamnă că dispozitivul tău a fost recunoscut și s-a aplicat densitatea de pixeli din fabrică. Dacă dispozitivul tău nu e recunoscut, calibrează-l cu metoda cardului bancar, care e cea mai precisă.</p>
+      <h3>Cum îmi calibrez ecranul?</h3>
+      <p>Alege oricare din cele trei metode: alege-ți dispozitivul din listă, introdu diagonala ecranului sau lipește un card bancar obișnuit (85.60&nbsp;mm lățime) de ghidajul albastru și trage de cursor până se potrivesc. Calibrarea se salvează automat.</p>
+      <h3>De ce arată rigla greșit pe monitorul meu?</h3>
+      <p>Aproape mereu pentru că două monitoare pot avea aceeași rezoluție, dar dimensiune fizică diferită – un panou 1920×1080 poate avea 22 sau 32 de inch. Rigla nu poate ghici, așa că calibrează monitorul o dată cu metoda cardului bancar și va rămâne corect.</p>
+      <h3>Cât de lungă e rigla de pe ecran?</h3>
+      <p>Cât ține ecranul tău – o riglă de 12 inch încape pe majoritatea laptopurilor, iar pe telefon vezi mai puțin. Pentru o referință fixă, imprimă rigla de hârtie: la scară 100% are exact 18&nbsp;cm pe o margine și 7&nbsp;inch pe cealaltă.</p>
+      <h3>O pot folosi ca riglă milimetrică?</h3>
+      <p>Da. Comută bara de instrumente pe <b>mm</b> și riglele se redesenează cu gradații și numere milimetrice – ideal pentru măsurători mici și precise.</p>
+      <h3>Funcționează pe telefoane și tablete?</h3>
+      <p>Da. Aspectul se adaptează la ecrane mici, iar majoritatea telefoanelor și tabletelor populare sunt în baza de date cu dispozitive, pentru calibrare automată. Pe ecrane tactile, trage caseta de măsurare cu degetul.</p>
+      <h3>Am nevoie de cameră?</h3>
+      <p>Nu. Spre deosebire de aplicațiile de măsurat AR, TrueRuler nu folosește niciodată camera – măsoară din densitatea de pixeli a ecranului tău, deci n-ai spre ce s-o îndrepți și n-ai ce permisiune să dai.</p>
+      <h3>Este chiar gratuit?</h3>
+      <p>Da, complet gratuit, fără cont și fără instalare. Totul se întâmplă în browserul tău; nimic din ce măsori nu e încărcat nicăieri.</p>
+      <h3>Pot măsura mărimea inelului cu ea?</h3>
+      <p>Da. Înfășoară o fâșie de hârtie în jurul degetului, marchează suprapunerea, pune-o întinsă lângă rigla de pe ecran și citește milimetrii – bijutierii stabilesc mărimea inelului după circumferința degetului. Sau trage caseta <b>Măsoară</b> peste diametrul interior al inelului.</p>
+      <h3>Cum imprim o riglă la dimensiune reală?</h3>
+      <p>Apasă <b>Imprimă</b>, apoi imprimă la <b>scară 100%</b> – niciodată „potrivește la pagină”, că s-ar micșora. Taie de-a lungul marginii și verific-o cu un card bancar (85.60&nbsp;mm) înainte să te încrezi în ea.</p>
+      <h3>Îmi salvează setările?</h3>
+      <p>Calibrarea, alegerea unității și tema se salvează în stocarea locală a browserului tău, pe propriul tău dispozitiv. Ștergerea datelor site-ului le resetează; nimic nu e trimis către vreun server.</p>
+      <h3>Ce este PPI și de ce contează?</h3>
+      <p>PPI înseamnă pixeli pe inch – densitatea de pixeli a ecranului tău. O riglă trebuie s-o știe ca să convertească pixelii în centimetri și inch reali. Acest singur număr e toată diferența dintre o imagine decorativă de riglă și un instrument de măsurat adevărat, la dimensiune reală.</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrare is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 țoli on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Măsoară box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press Imprimă, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"Este precisă această riglă online?","acceptedAnswer":{"@type":"Answer","text":"Da – odată calibrată, e precisă cam la un milimetru pe majoritatea ecranelor. Punctul verde înseamnă că dispozitivul tău a fost recunoscut și s-a aplicat densitatea de pixeli din fabrică. Dacă dispozitivul tău nu e recunoscut, calibrează-l cu metoda cardului bancar, care e cea mai precisă."}},
+{"@type":"Question","name":"Cum îmi calibrez ecranul?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrare is saved automatically."}},
+{"@type":"Question","name":"De ce arată rigla greșit pe monitorul meu?","acceptedAnswer":{"@type":"Answer","text":"Aproape mereu pentru că două monitoare pot avea aceeași rezoluție, dar dimensiune fizică diferită – un panou 1920×1080 poate avea 22 sau 32 de inch. Rigla nu poate ghici, așa că calibrează monitorul o dată cu metoda cardului bancar și va rămâne corect."}},
+{"@type":"Question","name":"Cât de lungă e rigla de pe ecran?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 țoli on the other at 100% scale."}},
+{"@type":"Question","name":"O pot folosi ca riglă milimetrică?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"Funcționează pe telefoane și tablete?","acceptedAnswer":{"@type":"Answer","text":"Da. Aspectul se adaptează la ecrane mici, iar majoritatea telefoanelor și tabletelor populare sunt în baza de date cu dispozitive, pentru calibrare automată. Pe ecrane tactile, trage caseta de măsurare cu degetul."}},
+{"@type":"Question","name":"Am nevoie de cameră?","acceptedAnswer":{"@type":"Answer","text":"Nu. Spre deosebire de aplicațiile de măsurat AR, TrueRuler nu folosește niciodată camera – măsoară din densitatea de pixeli a ecranului tău, deci n-ai spre ce s-o îndrepți și n-ai ce permisiune să dai."}},
+{"@type":"Question","name":"Este chiar gratuit?","acceptedAnswer":{"@type":"Answer","text":"Da, complet gratuit, fără cont și fără instalare. Totul se întâmplă în browserul tău; nimic din ce măsori nu e încărcat nicăieri."}},
+{"@type":"Question","name":"Pot măsura mărimea inelului cu ea?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Măsoară box across a ring's inner diameter."}},
+{"@type":"Question","name":"Cum imprim o riglă la dimensiune reală?","acceptedAnswer":{"@type":"Answer","text":"Press Imprimă, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"Îmi salvează setările?","acceptedAnswer":{"@type":"Answer","text":"Calibrarea, alegerea unității și tema se salvează în stocarea locală a browserului tău, pe propriul tău dispozitiv. Ștergerea datelor site-ului le resetează; nimic nu e trimis către vreun server."}},
+{"@type":"Question","name":"Ce este PPI și de ce contează?","acceptedAnswer":{"@type":"Answer","text":"PPI înseamnă pixeli pe inch – densitatea de pixeli a ecranului tău. O riglă trebuie s-o știe ca să convertească pixelii în centimetri și inch reali. Acest singur număr e toată diferența dintre o imagine decorativă de riglă și un instrument de măsurat adevărat, la dimensiune reală."}}
 ]}
 </script>
 </body>
