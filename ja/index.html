@@ -200,130 +200,130 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <select id="convTo" aria-label="変換先の単位"></select>
     </div>
     <div id="convOut" style="font-size:22px;font-weight:800">—</div>
-    <p class="muted" style="font-size:12.5px;margin-bottom:0">ピクセル換算には現在の定規のPPI（<span id="convPpi">96</span>）。</p>
+    <p class="muted" style="font-size:12.5px;margin-bottom:0">ピクセル換算には現在の定規のPPI（<span id="convPpi">96</span>).</p>
   </div>
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">実寸表示のオンライン定規</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">最終更新：2026年10月13日 · TrueRulerチーム</p>
+    <p><b>オンライン定規は、画面を本物の測定ツールに変えます。</b>TrueRulerは、お使いのデバイスの画素密度を検出して、センチメートル・ミリメートル・インチの目盛りを実寸どおりに描画します。画面サイズや一般的な銀行カードで一度キャリブレーションする方法もあります。無料で、インストール不要。スマホ、タブレット、ノートパソコン、モニターなど、あらゆる画面で使えます。</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>あらゆる画面で実寸のcm・mm・インチ定規</li>
+      <li>デバイスの自動検出、または画面の対角線サイズや銀行カード（85.60&nbsp;mm）でキャリブレーション</li>
+      <li>ドラッグ測定ボックス・分度器・印刷用紙定規・単位コンバーター付き</li>
+      <li>正確に測るにはブラウザのズームを100%に</li>
+      <li>永久無料。アカウントもインストールも不要。キャリブレーションはこのデバイスに保存されます</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>オンライン定規とは？</h2>
+    <p class="def"><b>オンライン定規とは、画面上に実寸大の定規を表示するウェブベースの測定ツールです。</b>ディスプレイのPPI（pixels-per-inch）を計算し、画面に当てた本物の定規とぴったり合うように、すべてのセンチメートル・ミリメートル・インチを描画します。一度キャリブレーションすれば、小さな物を画面上で直接測れます。アプリのインストールは不要です。</p>
+    <h2>この定規が実寸で測れる仕組み</h2>
+    <p>画面は「1インチ」が何かを知りません。知っているのはピクセルだけです。両者をつなぐのが<b>画素密度</b>、すなわちPPI（pixels per inch）です。たとえば画面が1インチあたり141ピクセルなら、定規は1インチを正確に141ピクセル、1センチメートルを55.6ピクセル、1ミリメートルを5.56ピクセルとして描画します。</p>
+    <p>ただし注意点があります。1920×1080という同じ解像度でも、22インチと32インチのモニターがあります。ピクセルは同じでも、実際の大きさは大きく違うのです。だからこそ、オンライン定規は画面の真のPPIを知る必要があります。TrueRulerは2つの方法でこれを行います。よくあるスマホ・タブレット・ノートパソコンをデバイスデータベースから認識して工場出荷時のPPIを適用するか、画面の対角線サイズからPPIを計算します。 <span id="ppiEcho"></span></p>
+    <p>もうひとつ：ブラウザは<b>CSSピクセル</b>で動作します。これは高精細（「Retina」）ディスプレイでは物理ピクセルと異なる場合があります。TrueRulerはデバイスのピクセル比を読み取って自動で変換します。また、ズームするとCSSピクセルのサイズが変わるため、ブラウザのズームが100%でない場合は警告を表示します。</p>
+    <h2>キャリブレーションの計算式</h2>
+    <p>画面の対角線サイズを入力すると、定規は三平方の定理でPPIを計算します：</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ 対角線インチ数</b></p>
+    <p><b>計算例</b> 15.6インチのノートパソコン（1920×1080）：√(1920²&nbsp;+&nbsp;1080²)＝√4,852,800 ≒ 対角線2202.9ピクセル。15.6インチで割ると → <b>141.2 PPI</b>。つまり1インチは141.2ピクセル、1センチメートルは55.6ピクセル（141.2 ÷ 2.54）、1ミリメートルは5.56ピクセルとして描画されます。</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>TrueRulerの使い方</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>ステータスドットを確認しましょう。</b>デバイスが認識されるとドットが緑色になり、定規はすでに実寸になっています。</li>
+      <li><b>必要に応じてキャリブレーション。</b>画面の対角線サイズを入力すれば即座に調整できます。詳細オプションを開いて、リストからデバイスを選ぶか、銀行カード（幅85.60&nbsp;mm）を青いガイドに当て、ぴったり合うまでスライダーをドラッグする方法もあります。</li>
+      <li><b>単位を選びます。</b>定規の上のツールバーで、センチメートル・ミリメートル・インチを切り替えられます。</li>
+      <li><b>測定します。</b>物を定規の端に当て、<b>測定</b>を押して画面上のものにボックスをドラッグします。角度を測るには<b>分度器</b>を開きます。</li>
+      <li><b>微調整と再利用。</b>矢印キーで測定ボックスを微調整し、測定値をコピー。キャリブレーションはこのデバイスに保存されるので、いつでも戻って使えます。</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>図解ガイド</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="ステップ1：銀行カードで定規をキャリブレーション"><figcaption>1. 銀行カード（85.60 mm）でキャリブレーション</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="ステップ2：物を画面上の定規に当てる"><figcaption>2. 物を定規に当てる</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="ステップ3：ドラッグボックスと分度器で精密に測定"><figcaption>3. ボックスと分度器で精密に測定</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>目盛りの読み方：インチ・センチメートル・ミリメートル</h2>
+    <p>定規にはメートル法とヤード・ポンド法の目盛りが並んで表示されます。精密な作業には<b>ミリメートル</b>、普段の測定には<b>センチメートル</b>、インチ単位の測定には<b>インチ</b>を使いましょう。内蔵コンバーターではメートル・フィート・ヤード・ポイントの変換もできます。</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>単位</th><th>センチメートル換算</th><th>ミリメートル換算</th><th>インチ換算</th></tr>
+      <tr><td>1インチ</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
+      <tr><td>1センチメートル</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
+      <tr><td>1ミリメートル</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
+      <tr><td>12インチ</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 インチ"] -->
+    <h2>縦定規と画面の回転</h2>
+    <p><b>回転</b>を押すと横定規と縦定規が切り替わります。高さを測るときや画面が狭いときに便利です。縦定規の使い方は横定規とまったく同じで、センチメートル・ミリメートル・インチに対応しています。</p>
+    <h2>ドラッグ測定ボックスで物を測る</h2>
+    <p><b>測定</b>を押して、画面に映っているもの（写真・図・商品画像など）の上でボックスをドラッグします。ボックスには幅×高さがcm・mm・インチでリアルタイム表示されます。ハンドルをドラッグしてサイズ変更、中央をドラッグして移動、矢印キーで微調整ができます。<b>コピー</b>を押すと測定値がクリップボードにコピーされます。</p>
+    <h2>指輪のサイズを測る</h2>
+    <p>指輪のサイズを調べるには、細く切った紙を指に巻き、重なったところに印をつけます。その紙を画面上の定規にぴったり当て、長さをミリメートルで読み取ります。多くのジュエラーは指の周囲長（mm）でサイズを決めています。すでにお持ちの指輪なら、<b>測定</b>ボックスを開いて指輪の内径に合わせてドラッグしてください。指のサイズは1日の中でわずかに変わるので、夕方に測るのがおすすめです。</p>
+    <h2>分度器モード</h2>
+    <p><b>分度器</b>を押すと、180°の分度器が画面に重ねて表示されます。どちらかのアームを測りたい角度までドラッグすると、角度がリアルタイムで表示されます。中央をドラッグすれば分度器全体を移動できます。定規と同じキャリブレーションを使っているので、どの画面でも正確な角度が測れます。</p>
+    <h2>印刷できる紙の定規</h2>
+    <p><b>印刷</b>を押すと、実寸どおりの紙の定規が作れます。片側に18&nbsp;cm、反対側に7&nbsp;インチが印刷されます。<b>100%の倍率</b>で印刷し（「ページに合わせる」は選ばないでください）、縁に沿って切り取り、既知の物と照らして確認しましょう。画面から離れた場所で測りたいときに便利です。</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "印刷できる紙の定規 at true size, 18 cm and 7 インチ"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>制限事項</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>ブラウザのズームは100%に。</b>ズームするとピクセルサイズが変わります。ズームがずれているとTrueRulerが警告します。</li>
+      <li><b>OSのディスプレイスケーリングに注意。</b>OS側で表示を拡大している場合（例：Windowsの125%）、変更後に再キャリブレーションしてください。</li>
+      <li><b>外部モニターは個体差があります。</b>同じ解像度でも物理サイズが違うことがあるので、新しいモニターでは古い設定を使わず、改めてキャリブレーションしてください。</li>
+      <li><b>スマホのデスクトップモード。</b>一部のモバイルブラウザは特殊なビューポートを報告します。定規がずれて見える場合は、銀行カード方式でキャリブレーションしてください。</li>
+      <li><b>PD定規ではありません。</b>これは汎用の測定定規であり、メガネ注文用の瞳孔間距離（PD）定規ではありません。PD測定には専用ツールが必要です。</li>
+      <li><b>画面の長さの限界。</b>画面上の定規はディスプレイの長さまでしか表示できません。長い物を測るには、印刷用定規を使うか、区切って測りましょう。</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>オンライン定規と他の方法の比較</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>方法</th><th>向いている用途</th><th>注意点</th></tr>
+      <tr><td>本物の定規</td><td>信頼できる日常の精度</td><td>いつも手元にあるとは限らない</td></tr>
+      <tr><td>メジャー</td><td>大きな物や部屋の測定</td><td>1ミリ以下の精度は低い</td></tr>
+      <tr><td>スマホのAR測定アプリ</td><td>3D空間や家具の測定</td><td>カメラの歪みあり。インストールが必要</td></tr>
+      <tr><td>印刷用定規</td><td>紙で実寸を再現</td><td>プリンターと100%倍率設定が必要</td></tr>
+      <tr><td><b>TrueRuler（オンライン定規）</b></td><td><b>どの画面でも素早く測定</b></td><td><b>一度のキャリブレーションが必要。ズームは100%に</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>よくある質問</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>このオンライン定規は正確ですか？</h3>
+      <p>はい。一度キャリブレーションすれば、ほとんどの画面で約1ミリメートルの精度で測れます。緑のステータスドットは、お使いのデバイスが認識され、工場出荷時の画素密度が適用されていることを示します。デバイスが認識されない場合は、最も精密な銀行カード方式でキャリブレーションしてください。</p>
+      <h3>画面をキャリブレーションするには？</h3>
+      <p>3つの方法から選べます。リストからお使いのデバイスを選ぶ、画面の対角線サイズを入力する、または一般的な銀行カード（幅85.60&nbsp;mm）を青いガイドに当て、ぴったり合うまでスライダーをドラッグする方法です。キャリブレーションは自動で保存されます。</p>
+      <h3>モニターで定規がずれて見えるのはなぜ？</h3>
+      <p>たいていの場合、2台のモニターが同じ解像度でも物理サイズが違うためです。1920×1080のパネルでも22インチと32インチがあります。定規には判別できないので、そのモニターを銀行カード方式で一度キャリブレーションすれば、以降は正確に保たれます。</p>
+      <h3>画面上の定規の長さは？</h3>
+      <p>画面の大きさ次第です。12インチの定規はほとんどのノートパソコンに収まりますが、スマホでは短くなります。決まった長さの基準がほしい場合は紙の定規を印刷しましょう。100%倍率で、片側ちょうど18&nbsp;cm、反対側ちょうど7&nbsp;インチになります。</p>
+      <h3>ミリメートル定規として使えますか？</h3>
+      <p>はい。ツールバーを<b>mm</b>に切り替えると、定規がミリメートル単位の目盛りと数字で再描画されます。細かい精密測定に最適です。</p>
+      <h3>スマホやタブレットでも使えますか？</h3>
+      <p>はい。レイアウトは小さな画面にも対応し、人気のスマホやタブレットの多くは自動キャリブレーション用のデバイスデータベースに登録されています。タッチ画面では、測定ボックスを指でドラッグできます。</p>
+      <h3>カメラは必要ですか？</h3>
+      <p>いいえ。AR測定アプリとは違い、TrueRulerはカメラを一切使いません。画面の画素密度から測定するので、かざす必要もなく、許可を求められることもありません。</p>
+      <h3>本当に無料ですか？</h3>
+      <p>はい、完全無料です。アカウント登録もインストールも不要です。すべての処理はブラウザ内で行われ、測定した内容が外部に送信されることはありません。</p>
+      <h3>指輪のサイズも測れますか？</h3>
+      <p>はい。紙の細片を指に巻いて重なり部分に印をつけ、画面上の定規に平らに当ててミリメートルを読み取ります。ジュエラーは指の周囲長でサイズを決めています。または<b>測定</b>ボックスを指輪の内径に合わせてドラッグしてください。</p>
+      <h3>実寸で定規を印刷するには？</h3>
+      <p><b>印刷</b>を押して、<b>100%の倍率</b>で印刷します。「ページに合わせる」は縮小されてしまうので選ばないでください。縁に沿って切り取り、使う前に銀行カード（85.60&nbsp;mm）と照らして確認しましょう。</p>
+      <h3>設定は保存されますか？</h3>
+      <p>キャリブレーション・単位の選択・テーマは、お使いのデバイスのブラウザのローカルストレージに保存されます。サイトのデータを消去するとリセットされます。サーバーに送信されることはありません。</p>
+      <h3>PPIとは？なぜ重要なの？</h3>
+      <p>PPIとはpixels per inch、つまり画面の画素密度のことです。ピクセルを実際のセンチメートルやインチに換算するには、この数値が欠かせません。この一つの数値こそ、ただの定規の画像と実寸測定ツールとの決定的な違いです。</p>
     </div>
   </div>
 
@@ -577,7 +577,7 @@ function setStatus(){
   if(state.calibrated){
     dot.className = "dot ok";
     var label = state.method === "device" && state.device ? state.device : state.method === "card" ? "カードによる補正" : state.method === "diagonal" ? "対角サイズ入力" : "補正";
-    txt.textContent = "補正済み · " + Math.round(state.ppi) + " PPI（" + label + ")";
+    txt.textContent = "補正済み · " + Math.round(state.ppi) + " PPI (" + label + ")";
   } else {
     dot.className = "dot warn";
     txt.textContent = "未補正 — 実寸表示にするには「補正」を押してください";
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your 補正 is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 インチ on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the 測定 box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press 印刷, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"このオンライン定規は正確ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。一度キャリブレーションすれば、ほとんどの画面で約1ミリメートルの精度で測れます。緑のステータスドットは、お使いのデバイスが認識され、工場出荷時の画素密度が適用されていることを示します。デバイスが認識されない場合は、最も精密な銀行カード方式でキャリブレーションしてください。"}},
+{"@type":"Question","name":"画面をキャリブレーションするには？","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your 補正 is saved automatically."}},
+{"@type":"Question","name":"モニターで定規がずれて見えるのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"たいていの場合、2台のモニターが同じ解像度でも物理サイズが違うためです。1920×1080のパネルでも22インチと32インチがあります。定規には判別できないので、そのモニターを銀行カード方式で一度キャリブレーションすれば、以降は正確に保たれます。"}},
+{"@type":"Question","name":"画面上の定規の長さは？","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 インチ on the other at 100% scale."}},
+{"@type":"Question","name":"ミリメートル定規として使えますか？","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"スマホやタブレットでも使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。レイアウトは小さな画面にも対応し、人気のスマホやタブレットの多くは自動キャリブレーション用のデバイスデータベースに登録されています。タッチ画面では、測定ボックスを指でドラッグできます。"}},
+{"@type":"Question","name":"カメラは必要ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。AR測定アプリとは違い、TrueRulerはカメラを一切使いません。画面の画素密度から測定するので、かざす必要もなく、許可を求められることもありません。"}},
+{"@type":"Question","name":"本当に無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料です。アカウント登録もインストールも不要です。すべての処理はブラウザ内で行われ、測定した内容が外部に送信されることはありません。"}},
+{"@type":"Question","name":"指輪のサイズも測れますか？","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the 測定 box across a ring's inner diameter."}},
+{"@type":"Question","name":"実寸で定規を印刷するには？","acceptedAnswer":{"@type":"Answer","text":"Press 印刷, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"設定は保存されますか？","acceptedAnswer":{"@type":"Answer","text":"キャリブレーション・単位の選択・テーマは、お使いのデバイスのブラウザのローカルストレージに保存されます。サイトのデータを消去するとリセットされます。サーバーに送信されることはありません。"}},
+{"@type":"Question","name":"PPIとは？なぜ重要なの？","acceptedAnswer":{"@type":"Answer","text":"PPIとはpixels per inch、つまり画面の画素密度のことです。ピクセルを実際のセンチメートルやインチに換算するには、この数値が欠かせません。この一つの数値こそ、ただの定規の画像と実寸測定ツールとの決定的な違いです。"}}
 ]}
 </script>
 </body>
