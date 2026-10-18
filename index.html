@@ -1040,6 +1040,7 @@ $("btnPopup").addEventListener("click", function(){
 })();
 
 /* ---------- PWA ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
   window.addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
 }
