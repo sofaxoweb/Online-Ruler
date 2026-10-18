@@ -205,125 +205,125 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Онлайн-лінійка у реальному розмірі</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 13, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Оновлено: 13 жовтня 2026 р. · Команда TrueRuler</p>
+    <p><b>Онлайн-лінійка перетворює твій екран на справжній вимірювальний інструмент.</b> TrueRuler малює шкали в сантиметрах, міліметрах і дюймах у справжньому фізичному розмірі, визначаючи щільність пікселів твого пристрою, — або після одноразового калібрування за розміром екрана чи звичайною банківською карткою. Це безкоштовно, не потребує встановлення і працює на будь-якому телефоні, планшеті, ноутбуці чи моніторі.</p>
     <ul class="ticks">
-      <li>True-size cm, mm and inch rulers on any screen</li>
-      <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
-      <li>Drag-to-measure box, protractor, printable paper ruler and unit converter included</li>
-      <li>Keep browser zoom at 100% for accurate measurements</li>
-      <li>Free forever — no account, no installation; your calibration is saved on this device</li>
+      <li>Лінійки у справжньому розмірі — см, мм і дюйми — на будь-якому екрані</li>
+      <li>Автоматичне розпізнавання пристрою або калібрування за діагоналлю екрана чи банківською карткою (85,60&nbsp;мм)</li>
+      <li>У комплекті: рамка для вимірювань, транспортир, паперова лінійка для друку та конвертер одиниць</li>
+      <li>Тримай масштаб браузера на 100% для точних вимірювань</li>
+      <li>Безкоштовно назавжди — без облікового запису й встановлення; калібрування зберігається на цьому пристрої</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
-    <h2>How this ruler measures in real size</h2>
-    <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
-    <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
-    <h2>The calibration formula</h2>
-    <p>When you enter your screen's diagonal size, the ruler computes PPI with the Pythagorean theorem:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Worked example.</b> A 15.6-inch laptop with a 1920×1080 screen: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels diagonally. Divide by 15.6 inches → <b>141.2 PPI</b>. One inch is therefore drawn as 141.2 pixels, one centimetre as 55.6 pixels (141.2 ÷ 2.54), and one millimetre as 5.56 pixels.</p>
+    <h2>Що таке онлайн-лінійка?</h2>
+    <p class="def"><b>Онлайн-лінійка — це вебінструмент для вимірювань, який показує лінійку на екрані в реальному фізичному розмірі.</b> Вона обчислює щільність пікселів твого дисплея (PPI) і малює кожен сантиметр, міліметр і дюйм так, щоб вони збігалися зі звичайною лінійкою, прикладеною до екрана. Після одноразового калібрування ти зможеш вимірювати невеликі предмети просто на дисплеї — без встановлення застосунків.</p>
+    <h2>Як ця лінійка вимірює в реальному розмірі</h2>
+    <p>Твій екран не знає, що таке дюйм, — він знає лише пікселі. Місток між ними — це <b>щільність пікселів</b>, що вимірюється в PPI (пікселів на дюйм). Якщо на твоєму екрані 141 піксель на дюйм, лінійка малює один дюйм рівно як 141 піксель, один сантиметр — як 55,6 пікселя, а один міліметр — як 5,56 пікселя.</p>
+    <p>Є нюанс: два монітори можуть мати однакову роздільну здатність 1920×1080, але діагоналі 22 і 32 дюйми — ті самі пікселі, але зовсім різний реальний розмір. Саме тому онлайн-лінійка має дізнатися справжній PPI твого екрана. TrueRuler робить це двома способами: розпізнає популярні телефони, планшети й ноутбуки за базою пристроїв і застосовує їхній заводський PPI або обчислює PPI за діагоналлю екрана. <span id="ppiEcho"></span></p>
+    <p>Ще одна деталь: браузери працюють у <b>CSS-пікселях</b>, які можуть відрізнятися від фізичних пікселів на дисплеях із високою щільністю («Retina»). TrueRuler зчитує піксельне співвідношення твого пристрою й перераховує автоматично, а також попереджає, якщо масштаб браузера не дорівнює 100%, — адже масштабування змінює розмір CSS-пікселя.</p>
+    <h2>Формула калібрування</h2>
+    <p>Коли ти вводиш діагональ свого екрана, лінійка обчислює PPI за теоремою Піфагора:</p>
+    <p class="formula"><b>PPI = √(ширина² + висота²) ÷ діагональ у дюймах</b></p>
+    <p><b>Приклад розрахунку.</b> Ноутбук із діагоналлю 15,6 дюйма та екраном 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4 852 800 ≈ 2202,9 пікселя по діагоналі. Ділимо на 15,6 дюйма → <b>141,2 PPI</b>. Отже, один дюйм малюється як 141,2 пікселя, один сантиметр — як 55,6 пікселя (141,2 ÷ 2,54), а один міліметр — як 5,56 пікселя.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
   </div>
 
   <div class="card">
-    <h2>How to use TrueRuler</h2>
+    <h2>Як користуватися TrueRuler</h2>
     <ol class="steps">
-      <li><b>Check the status dot.</b> If your device is recognised, the dot turns green and the ruler is already true to size.</li>
-      <li><b>Calibrate if needed.</b> Enter your screen's diagonal for instant calibration — or open the full options: pick your device from the list, or hold a bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match.</li>
-      <li><b>Choose your unit.</b> Switch between centimetres, millimetres and inches in the toolbar above the ruler.</li>
-      <li><b>Measure.</b> Hold the object against the ruler edge, press <b>Measure</b> and drag a box over anything on screen, or open the <b>Protractor</b> to measure angles.</li>
-      <li><b>Refine and reuse.</b> Nudge the measure box with your arrow keys, copy the reading, and come back any time — your calibration is saved on this device.</li>
+      <li><b>Перевір індикатор.</b> Якщо твій пристрій розпізнано, індикатор стане зеленим, і лінійка одразу покаже справжній розмір.</li>
+      <li><b>Відкалібруй за потреби.</b> Введи діагональ екрана для миттєвого калібрування — або відкрий повні налаштування: обери пристрій зі списку або приклади банківську картку (завширшки 85,60&nbsp;мм) до синьої напрямної та рухай повзунок, доки вони не збіжаться.</li>
+      <li><b>Обери одиниці.</b> Перемикайся між сантиметрами, міліметрами й дюймами на панелі інструментів над лінійкою.</li>
+      <li><b>Вимірюй.</b> Приклади предмет до краю лінійки, натисни <b>Measure</b> і розтягни рамку поверх будь-якого об'єкта на екрані або відкрий <b>Protractor</b>, щоб вимірювати кути.</li>
+      <li><b>Уточнюй і повертайся.</b> Порухай вимірювальну рамку стрілками на клавіатурі, скопіюй результат і повертайся будь-коли — твоє калібрування збережено на цьому пристрої.</li>
     </ol>
-    <h3>Visual guide</h3>
+    <h3>Наочний посібник</h3>
     <div class="guide-grid">
-      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Step 1: calibrate the ruler with a bank card"><figcaption>1. Calibrate with a bank card (85.60 mm)</figcaption></figure>
-      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Step 2: hold an object against the on-screen ruler"><figcaption>2. Hold any object against the ruler</figcaption></figure>
-      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Step 3: measure precisely with the drag box and protractor"><figcaption>3. Measure precisely with the box and protractor</figcaption></figure>
+      <figure><img src="../img/guide-1.svg" width="500" height="600" loading="lazy" alt="Крок 1: відкалібруй лінійку за банківською карткою"><figcaption>1. Калібрування за банківською карткою (85,60 мм)</figcaption></figure>
+      <figure><img src="../img/guide-2.svg" width="500" height="600" loading="lazy" alt="Крок 2: приклади предмет до лінійки на екрані"><figcaption>2. Приклади будь-який предмет до лінійки</figcaption></figure>
+      <figure><img src="../img/guide-3.svg" width="500" height="600" loading="lazy" alt="Крок 3: точно вимірюй рамкою та транспортиром"><figcaption>3. Точні вимірювання рамкою та транспортиром</figcaption></figure>
     </div>
   </div>
 
   <div class="card">
-    <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <h2>Як читати шкали: дюйми, сантиметри й міліметри</h2>
+    <p>Лінійка показує метричну та дюймову шкали поруч. Використовуй <b>міліметри</b> для точної роботи, <b>сантиметри</b> для повсякденних вимірювань, а <b>дюйми</b> — для вимірювань у дюймовій системі. Вбудований конвертер вище також переводить метри, фути, ярди та пункти.</p>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
-      <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
-      <tr><td>1 centimetre</td><td>1 cm</td><td>10 mm</td><td>0.3937 in</td></tr>
-      <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
-      <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
+      <tr><th>Одиниця</th><th>У сантиметрах</th><th>У міліметрах</th><th>У дюймах</th></tr>
+      <tr><td>1 дюйм</td><td>2,54 см</td><td>25,4 мм</td><td>1 дюйм</td></tr>
+      <tr><td>1 сантиметр</td><td>1 см</td><td>10 мм</td><td>0,3937 дюйма</td></tr>
+      <tr><td>1 міліметр</td><td>0,1 см</td><td>1 мм</td><td>0,03937 дюйма</td></tr>
+      <tr><td>12 дюймів</td><td>30,48 см</td><td>304,8 мм</td><td>12 дюймів</td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Vertical ruler and screen rotation</h2>
-    <p>Press <b>Rotate</b> to swap the horizontal and vertical rulers — handy for measuring height or when your screen is narrow. The vertical ruler works exactly like the horizontal one, in centimetres, millimetres and inches.</p>
-    <h2>Measuring objects with the drag-to-measure box</h2>
-    <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
-    <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
-    <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
-    <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
-    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 дюйми"] -->
+    <h2>Вертикальна лінійка та поворот екрана</h2>
+    <p>Натисни <b>Rotate</b>, щоб поміняти місцями горизонтальну та вертикальну лінійки, — зручно для вимірювання висоти або коли екран вузький. Вертикальна лінійка працює так само, як горизонтальна: у сантиметрах, міліметрах і дюймах.</p>
+    <h2>Вимірювання об'єктів рамкою</h2>
+    <p>Натисни <b>Measure</b> і розтягни рамку поверх будь-якого об'єкта на екрані — фотографії, схеми, зображення товару. Рамка показує ширину × висоту в реальному часі в см, мм і дюймах. Тягни за маркери, щоб змінити розмір, за центр — щоб перемістити, а для точного підганяння використовуй стрілки на клавіатурі. Кнопка <b>Copy</b> копіює результат у буфер обміну.</p>
+    <h2>Як дізнатися розмір каблучки</h2>
+    <p>Щоб дізнатися свій розмір каблучки, обгорни тонку смужку паперу навколо пальця, познач місце накладання, потім приклади смужку до лінійки на екрані й виміряй довжину в міліметрах — ювеліри зазвичай визначають розмір каблучки за обхватом пальця в мм. Якщо каблучка вже є, відкрий рамку <b>Measure</b> і розтягни її за внутрішнім діаметром каблучки. Розмір пальця трохи змінюється протягом дня, тож для надійного результату вимірюй увечері.</p>
+    <h2>Режим транспортира</h2>
+    <p>Натисни <b>Protractor</b>, щоб накласти транспортир на 180°. Перетягни будь-яку зі сторін на потрібний кут — показання в градусах оновлюються в реальному часі. Тягни за центр, щоб перемістити весь транспортир. Він використовує те саме калібрування, що й лінійка, тож кути лишаються точними на будь-якому екрані.</p>
+    <h2>Паперова лінійка для друку</h2>
+    <p>Натисни <b>Print</b>, щоб отримати паперову лінійку в точному реальному розмірі: 18&nbsp;см з одного краю і 7&nbsp;дюймів з іншого. Друкуй у <b>масштабі 100%</b> (ніколи не обирай «за розміром сторінки»), виріж за краєм і звір із відомим предметом. Паперова лінійка стане в пригоді, коли треба виміряти щось подалі від екрана.</p>
+    <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Паперова лінійка для друку at true size, 18 cm and 7 дюйми"] -->
   </div>
 
   <div class="card">
-    <h2>Limitations</h2>
+    <h2>Обмеження</h2>
     <ul class="ticks">
-      <li><b>Browser zoom must be 100%.</b> Zooming changes pixel sizes; TrueRuler warns you if zoom is off.</li>
-      <li><b>Operating-system display scaling matters.</b> If your OS scales the display (for example 125% on Windows), recalibrate after changing it.</li>
-      <li><b>External monitors vary.</b> The same resolution can mean different physical sizes, so calibrate a new monitor instead of trusting the old setting.</li>
-      <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
-      <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
-      <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Масштаб браузера має бути 100%.</b> Масштабування змінює розмір пікселів; TrueRuler попередить тебе, якщо масштаб збито.</li>
+      <li><b>Масштабування дисплея в ОС має значення.</b> Якщо твоя система масштабує зображення (наприклад, 125% у Windows), після зміни відкалібруй заново.</li>
+      <li><b>Зовнішні монітори різняться.</b> Та сама роздільна здатність може означати різний фізичний розмір, тож новий монітор відкалібруй заново, а не довіряй старій настройці.</li>
+      <li><b>Телефони в десктопному режимі.</b> Деякі мобільні браузери повідомляють незвичний в'юпорт; якщо лінійка виглядає неправильно, відкалібруй за банківською карткою.</li>
+      <li><b>Це не PD-лінійка.</b> Перед тобою універсальна вимірювальна лінійка, а не лінійка для вимірювання міжзіничної відстані при замовленні окулярів — для цього потрібен спеціалізований інструмент.</li>
+      <li><b>Обмеження довжини екрана.</b> Лінійка на екрані не може бути довшою за твій дисплей; для довших предметів використовуй паперову лінійку або вимірюй частинами.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Online ruler vs alternatives</h2>
+    <h2>Онлайн-лінійка та альтернативи</h2>
     <div class="table-wrap"><table class="stable">
-      <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
-      <tr><td>Physical ruler</td><td>Everyday accuracy you can trust</td><td>Not always at hand</td></tr>
-      <tr><td>Tape measure</td><td>Large objects and rooms</td><td>Poor precision below a millimetre</td></tr>
-      <tr><td>Phone AR measuring apps</td><td>3D spaces and furniture</td><td>Camera distortion; needs installing</td></tr>
-      <tr><td>Printable ruler</td><td>True size on paper</td><td>Needs a printer and the 100% scale setting</td></tr>
-      <tr><td><b>TrueRuler (online ruler)</b></td><td><b>Quick measuring on any screen</b></td><td><b>Needs one-time calibration; keep zoom at 100%</b></td></tr>
+      <tr><th>Спосіб</th><th>Найкраще для</th><th>На що звернути увагу</th></tr>
+      <tr><td>Звичайна лінійка</td><td>Повсякденна точність, якій можна довіряти</td><td>Не завжди під рукою</td></tr>
+      <tr><td>Рулетка</td><td>Великі предмети й приміщення</td><td>Низька точність менше міліметра</td></tr>
+      <tr><td>AR-застосунки для вимірювань</td><td>3D-простори й меблі</td><td>Спотворення камери; потрібне встановлення</td></tr>
+      <tr><td>Друкована лінійка</td><td>Справжній розмір на папері</td><td>Потрібні принтер і масштаб 100%</td></tr>
+      <tr><td><b>TrueRuler (онлайн-лінійка)</b></td><td><b>Швидкі вимірювання на будь-якому екрані</b></td><td><b>Потрібне одноразове калібрування; тримай масштаб на 100%</b></td></tr>
     </table></div>
   </div>
 
   <div class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>Часті запитання</h2>
     <div class="faq">
-      <h3>Is this online ruler accurate?</h3>
-      <p>Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option.</p>
-      <h3>How do I calibrate my screen?</h3>
-      <p>Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60&nbsp;mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically.</p>
-      <h3>Why does the ruler look wrong on my monitor?</h3>
-      <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
-      <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
-      <h3>Can I use it as a millimetre ruler?</h3>
-      <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
-      <h3>Does it work on phones and tablets?</h3>
-      <p>Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger.</p>
-      <h3>Do I need my camera?</h3>
-      <p>No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant.</p>
-      <h3>Is it really free?</h3>
-      <p>Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere.</p>
-      <h3>Can I measure my ring size with it?</h3>
-      <p>Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the <b>Measure</b> box across a ring's inner diameter.</p>
-      <h3>How do I print a ruler at actual size?</h3>
-      <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
-      <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
-      <h3>What is PPI and why does it matter?</h3>
-      <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
+      <h3>Наскільки точна ця онлайн-лінійка?</h3>
+      <p>Так — після калібрування точність на більшості екранів становить близько міліметра. Зелений індикатор означає, що твій пристрій розпізнано й застосовано заводську щільність пікселів. Якщо пристрій не розпізнано, відкалібруй за банківською карткою — це найточніший спосіб.</p>
+      <h3>Як відкалібрувати екран?</h3>
+      <p>Обери будь-який із трьох способів: знайди свій пристрій у списку, введи діагональ екрана або приклади стандартну банківську картку (завширшки 85,60&nbsp;мм) до синьої напрямної та рухай повзунок, доки вони не збіжаться. Калібрування зберігається автоматично.</p>
+      <h3>Чому лінійка неправильно відображається на моєму моніторі?</h3>
+      <p>Майже завжди причина в тому, що два монітори мають однакову роздільну здатність, але різний фізичний розмір: панель 1920×1080 може бути і 22, і 32 дюйми. Лінійка не вміє вгадувати, тож один раз відкалібруй цей монітор за банківською карткою — і показання лишаться точними.</p>
+      <h3>Якої довжини лінійка на екрані?</h3>
+      <p>Наскільки вистачить екрана: 12-дюймова лінійка вміщується на більшості ноутбуків, а на телефонах видно менше. Якщо потрібен еталон фіксованої довжини, надрукуй паперову лінійку: рівно 18&nbsp;см з одного краю і 7&nbsp;дюймів з іншого за масштабу 100%.</p>
+      <h3>Чи можна використовувати її як міліметрову лінійку?</h3>
+      <p>Так. Перемкни панель інструментів на <b>mm</b> — і лінійки перемалюються з міліметровими поділками та нумерацією: ідеально для точних дрібних вимірювань.</p>
+      <h3>Чи працює вона на телефонах і планшетах?</h3>
+      <p>Так. Верстка підлаштовується під маленькі екрани, а більшість популярних телефонів і планшетів є в базі пристроїв для автоматичного калібрування. На сенсорних екранах перетягуй вимірювальну рамку пальцем.</p>
+      <h3>Чи потрібна камера?</h3>
+      <p>Ні. На відміну від AR-застосунків для вимірювань, TrueRuler ніколи не використовує камеру — вимірювання будуються на щільності пікселів твого екрана, тож нічого наводити й не треба жодних дозволів.</p>
+      <h3>Це справді безкоштовно?</h3>
+      <p>Так, повністю безкоштовно: без облікового запису й без встановлення. Вся обробка відбувається у твоєму браузері; ніщо з виміряного нікуди не завантажується.</p>
+      <h3>Чи можна нею виміряти розмір каблучки?</h3>
+      <p>Так. Обгорни смужку паперу навколо пальця, познач накладання, приклади її до лінійки на екрані й виміряй міліметри — ювеліри визначають розмір каблучки за обхватом пальця. Або розтягни рамку <b>Measure</b> за внутрішнім діаметром каблучки.</p>
+      <h3>Як надрукувати лінійку в реальному розмірі?</h3>
+      <p>Натисни <b>Print</b> і друкуй у <b>масштабі 100%</b> — ніколи не обирай «за розміром сторінки», інакше лінійка зменшиться. Виріж за краєм і звір із банківською карткою (85,60&nbsp;мм), перш ніж довіряти вимірюванням.</p>
+      <h3>Чи зберігаються мої налаштування?</h3>
+      <p>Твоє калібрування, вибір одиниць і тема зберігаються в локальному сховищі браузера на твоєму пристрої. Очищення даних сайту скидає їх; на сервер нічого не надсилається.</p>
+      <h3>Що таке PPI і чому це важливо?</h3>
+      <p>PPI означає «пікселів на дюйм» — це щільність пікселів твого екрана. Лінійка має знати це число, щоб переводити пікселі у справжні сантиметри й дюйми. Саме це одне число відрізняє декоративну картинку лінійки від справжнього вимірювального інструмента.</p>
     </div>
   </div>
 
@@ -1049,18 +1049,18 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes — once calibrated, it is accurate to about a millimetre on most screens. The green status dot means your device was recognised and the factory pixel density is applied. If your device is not recognised, calibrate with the bank-card method, which is the most precise option."}},
-{"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your калібрування is saved automatically."}},
-{"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 дюйми on the other at 100% scale."}},
-{"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
-{"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
-{"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
-{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
-{"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Виміряти box across a ring's inner diameter."}},
-{"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press Друк, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
-{"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
+{"@type":"Question","name":"Наскільки точна ця онлайн-лінійка?","acceptedAnswer":{"@type":"Answer","text":"Так — після калібрування точність на більшості екранів становить близько міліметра. Зелений індикатор означає, що твій пристрій розпізнано й застосовано заводську щільність пікселів. Якщо пристрій не розпізнано, відкалібруй за банківською карткою — це найточніший спосіб."}},
+{"@type":"Question","name":"Як відкалібрувати екран?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your калібрування is saved automatically."}},
+{"@type":"Question","name":"Чому лінійка неправильно відображається на моєму моніторі?","acceptedAnswer":{"@type":"Answer","text":"Майже завжди причина в тому, що два монітори мають однакову роздільну здатність, але різний фізичний розмір: панель 1920×1080 може бути і 22, і 32 дюйми. Лінійка не вміє вгадувати, тож один раз відкалібруй цей монітор за банківською карткою — і показання лишаться точними."}},
+{"@type":"Question","name":"Якої довжини лінійка на екрані?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 дюйми on the other at 100% scale."}},
+{"@type":"Question","name":"Чи можна використовувати її як міліметрову лінійку?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
+{"@type":"Question","name":"Чи працює вона на телефонах і планшетах?","acceptedAnswer":{"@type":"Answer","text":"Так. Верстка підлаштовується під маленькі екрани, а більшість популярних телефонів і планшетів є в базі пристроїв для автоматичного калібрування. На сенсорних екранах перетягуй вимірювальну рамку пальцем."}},
+{"@type":"Question","name":"Чи потрібна камера?","acceptedAnswer":{"@type":"Answer","text":"Ні. На відміну від AR-застосунків для вимірювань, TrueRuler ніколи не використовує камеру — вимірювання будуються на щільності пікселів твого екрана, тож нічого наводити й не треба жодних дозволів."}},
+{"@type":"Question","name":"Це справді безкоштовно?","acceptedAnswer":{"@type":"Answer","text":"Так, повністю безкоштовно: без облікового запису й без встановлення. Вся обробка відбувається у твоєму браузері; ніщо з виміряного нікуди не завантажується."}},
+{"@type":"Question","name":"Чи можна нею виміряти розмір каблучки?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Виміряти box across a ring's inner diameter."}},
+{"@type":"Question","name":"Як надрукувати лінійку в реальному розмірі?","acceptedAnswer":{"@type":"Answer","text":"Press Друк, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
+{"@type":"Question","name":"Чи зберігаються мої налаштування?","acceptedAnswer":{"@type":"Answer","text":"Твоє калібрування, вибір одиниць і тема зберігаються в локальному сховищі браузера на твоєму пристрої. Очищення даних сайту скидає їх; на сервер нічого не надсилається."}},
+{"@type":"Question","name":"Що таке PPI і чому це важливо?","acceptedAnswer":{"@type":"Answer","text":"PPI означає «пікселів на дюйм» — це щільність пікселів твого екрана. Лінійка має знати це число, щоб переводити пікселі у справжні сантиметри й дюйми. Саме це одне число відрізняє декоративну картинку лінійки від справжнього вимірювального інструмента."}}
 ]}
 </script>
 </body>
