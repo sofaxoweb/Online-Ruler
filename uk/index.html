@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 міліметр</td><td>0,1 см</td><td>1 мм</td><td>0,03937 дюйма</td></tr>
       <tr><td>12 дюймів</td><td>30,48 см</td><td>304,8 мм</td><td>12 дюймів</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Як дізнатися розмір каблучки</h2>
     <p>Щоб дізнатися свій розмір каблучки, обгорни тонку смужку паперу навколо пальця, познач місце накладання, потім приклади смужку до лінійки на екрані й виміряй довжину в міліметрах — ювеліри зазвичай визначають розмір каблучки за обхватом пальця в мм. Якщо каблучка вже є, відкрий рамку <b>Measure</b> і розтягни її за внутрішнім діаметром каблучки. Розмір пальця трохи змінюється протягом дня, тож для надійного результату вимірюй увечері.</p>
     <h2>Режим транспортира</h2>
-    <p>Натисни <b>Protractor</b>, щоб накласти транспортир на 180°. Перетягни будь-яку зі сторін на потрібний кут — показання в градусах оновлюються в реальному часі. Тягни за центр, щоб перемістити весь транспортир. Він використовує те саме калібрування, що й лінійка, тож кути лишаються точними на будь-якому екрані.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Паперова лінійка для друку</h2>
     <p>Натисни <b>Print</b>, щоб отримати паперову лінійку в точному реальному розмірі: 18&nbsp;см з одного краю і 7&nbsp;дюймів з іншого. Друкуй у <b>масштабі 100%</b> (ніколи не обирай «за розміром сторінки»), виріж за краєм і звір із відомим предметом. Паперова лінійка стане в пригоді, коли треба виміряти щось подалі від екрана.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Паперова лінійка для друку at true size, 18 cm and 7 дюйми"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Телефони в десктопному режимі.</b> Деякі мобільні браузери повідомляють незвичний в'юпорт; якщо лінійка виглядає неправильно, відкалібруй за банківською карткою.</li>
       <li><b>Це не PD-лінійка.</b> Перед тобою універсальна вимірювальна лінійка, а не лінійка для вимірювання міжзіничної відстані при замовленні окулярів — для цього потрібен спеціалізований інструмент.</li>
       <li><b>Обмеження довжини екрана.</b> Лінійка на екрані не може бути довшою за твій дисплей; для довших предметів використовуй паперову лінійку або вимірюй частинами.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Чому лінійка неправильно відображається на моєму моніторі?</h3>
       <p>Майже завжди причина в тому, що два монітори мають однакову роздільну здатність, але різний фізичний розмір: панель 1920×1080 може бути і 22, і 32 дюйми. Лінійка не вміє вгадувати, тож один раз відкалібруй цей монітор за банківською карткою — і показання лишаться точними.</p>
       <h3>Якої довжини лінійка на екрані?</h3>
-      <p>Наскільки вистачить екрана: 12-дюймова лінійка вміщується на більшості ноутбуків, а на телефонах видно менше. Якщо потрібен еталон фіксованої довжини, надрукуй паперову лінійку: рівно 18&nbsp;см з одного краю і 7&nbsp;дюймів з іншого за масштабу 100%.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Чи можна використовувати її як міліметрову лінійку?</h3>
       <p>Так. Перемкни панель інструментів на <b>mm</b> — і лінійки перемалюються з міліметровими поділками та нумерацією: ідеально для точних дрібних вимірювань.</p>
       <h3>Чи працює вона на телефонах і планшетах?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Наскільки точна ця онлайн-лінійка?","acceptedAnswer":{"@type":"Answer","text":"Так — після калібрування точність на більшості екранів становить близько міліметра. Зелений індикатор означає, що твій пристрій розпізнано й застосовано заводську щільність пікселів. Якщо пристрій не розпізнано, відкалібруй за банківською карткою — це найточніший спосіб."}},
 {"@type":"Question","name":"Як відкалібрувати екран?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your калібрування is saved automatically."}},
 {"@type":"Question","name":"Чому лінійка неправильно відображається на моєму моніторі?","acceptedAnswer":{"@type":"Answer","text":"Майже завжди причина в тому, що два монітори мають однакову роздільну здатність, але різний фізичний розмір: панель 1920×1080 може бути і 22, і 32 дюйми. Лінійка не вміє вгадувати, тож один раз відкалібруй цей монітор за банківською карткою — і показання лишаться точними."}},
-{"@type":"Question","name":"Якої довжини лінійка на екрані?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 дюйми on the other at 100% scale."}},
+{"@type":"Question","name":"Якої довжини лінійка на екрані?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 дюйми or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 дюйми on the other at 100% scale."}},
 {"@type":"Question","name":"Чи можна використовувати її як міліметрову лінійку?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Чи працює вона на телефонах і планшетах?","acceptedAnswer":{"@type":"Answer","text":"Так. Верстка підлаштовується під маленькі екрани, а більшість популярних телефонів і планшетів є в базі пристроїв для автоматичного калібрування. На сенсорних екранах перетягуй вимірювальну рамку пальцем."}},
 {"@type":"Question","name":"Чи потрібна камера?","acceptedAnswer":{"@type":"Answer","text":"Ні. На відміну від AR-застосунків для вимірювань, TrueRuler ніколи не використовує камеру — вимірювання будуються на щільності пікселів твого екрана, тож нічого наводити й не треба жодних дозволів."}},
