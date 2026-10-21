@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 millimètre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 po</td></tr>
       <tr><td>12 pouces</td><td>30.48 cm</td><td>304.8 mm</td><td>12 po</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Mesurer une taille de bague</h2>
     <p>Pour connaître votre taille de bague, enroulez une fine bande de papier autour de votre doigt, marquez l'endroit où elle se chevauche, puis posez-la à plat contre la règle à l'écran et lisez la longueur en millimètres — la plupart des bijoutiers dimensionnent les bagues d'après la circonférence du doigt en mm. Pour une bague que vous possédez déjà, ouvrez le cadre <b>Mesurer</b> et faites-le glisser sur le diamètre intérieur de l'anneau. La taille du doigt varie légèrement au cours de la journée, mesurez donc le soir pour un résultat plus fiable.</p>
     <h2>Mode rapporteur</h2>
-    <p>Appuyez sur <b>Rapporteur</b> pour superposer un rapporteur complet de 180°. Faites glisser l'un des bras jusqu'à l'angle à mesurer ; l'affichage indique les degrés en direct. Faites glisser le centre pour déplacer tout le rapporteur. Il utilise le même calibrage que la règle, donc les angles restent justes sur n'importe quel écran.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Règle papier à imprimer</h2>
     <p>Appuyez sur <b>Imprimer</b> pour obtenir une règle papier en taille réelle exacte : 18&nbsp;cm sur un bord et 7&nbsp;pouces sur l'autre. Imprimez à <b>échelle 100 %</b> (jamais « ajuster à la page »), découpez le long du bord et vérifiez avec un objet de taille connue. Une règle imprimée est pratique quand vous devez mesurer quelque chose loin de l'écran.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Règle papier à imprimer at true size, 18 cm and 7 pouces"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Téléphones en mode bureau.</b> Certains navigateurs mobiles signalent une zone d'affichage inhabituelle ; si la règle semble fausse, utilisez le calibrage par carte bancaire.</li>
       <li><b>Pas une règle PD.</b> Il s'agit d'une règle de mesure généraliste, et non d'une règle de distance pupillaire pour commander des lunettes — cela nécessite un outil spécialisé.</li>
       <li><b>Limites de longueur d'écran.</b> La règle à l'écran ne peut être aussi longue que votre écran ; pour des objets plus longs, utilisez la règle imprimable ou mesurez par sections.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Pourquoi la règle semble-t-elle fausse sur mon moniteur ?</h3>
       <p>Presque toujours parce que deux moniteurs partagent la même résolution mais pas la même taille physique — une dalle 1920×1080 peut faire 22 ou 32 pouces. La règle ne peut pas deviner, alors calibrez ce moniteur une fois avec la méthode de la carte bancaire et il restera juste.</p>
       <h3>Quelle est la longueur de la règle à l'écran ?</h3>
-      <p>Aussi longue que votre écran — une règle de 12 pouces tient sur la plupart des ordinateurs portables, tandis que les téléphones en affichent moins. Pour une référence de longueur fixe, imprimez la règle papier : exactement 18&nbsp;cm sur un bord et 7&nbsp;pouces sur l'autre à échelle 100 %.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Puis-je l'utiliser comme règle millimétrée ?</h3>
       <p>Oui. Basculez la barre d'outils sur <b>mm</b> et les règles se redessinent avec des graduations et une numérotation en millimètres — idéal pour les petites mesures précises.</p>
       <h3>Fonctionne-t-elle sur téléphone et tablette ?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Cette règle en ligne est-elle précise ?","acceptedAnswer":{"@type":"Answer","text":"Oui — une fois calibré, l'outil est précis au millimètre près sur la plupart des écrans. Le point de statut vert signifie que votre appareil a été reconnu et que la densité de pixels d'usine est appliquée. Si votre appareil n'est pas reconnu, calibrez avec la méthode de la carte bancaire, qui est l'option la plus précise."}},
 {"@type":"Question","name":"Comment calibrer mon écran ?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrage is saved automatically."}},
 {"@type":"Question","name":"Pourquoi la règle semble-t-elle fausse sur mon moniteur ?","acceptedAnswer":{"@type":"Answer","text":"Presque toujours parce que deux moniteurs partagent la même résolution mais pas la même taille physique — une dalle 1920×1080 peut faire 22 ou 32 pouces. La règle ne peut pas deviner, alors calibrez ce moniteur une fois avec la méthode de la carte bancaire et il restera juste."}},
-{"@type":"Question","name":"Quelle est la longueur de la règle à l'écran ?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pouces on the other at 100% scale."}},
+{"@type":"Question","name":"Quelle est la longueur de la règle à l'écran ?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 pouces or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pouces on the other at 100% scale."}},
 {"@type":"Question","name":"Puis-je l'utiliser comme règle millimétrée ?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Fonctionne-t-elle sur téléphone et tablette ?","acceptedAnswer":{"@type":"Answer","text":"Oui. La mise en page s'adapte aux petits écrans, et la plupart des téléphones et tablettes populaires figurent dans la base d'appareils pour un calibrage automatique. Sur les écrans tactiles, faites glisser le cadre de mesure avec votre doigt."}},
 {"@type":"Question","name":"Faut-il utiliser la caméra ?","acceptedAnswer":{"@type":"Answer","text":"Non. Contrairement aux applications de mesure en réalité augmentée, TrueRuler n'utilise jamais votre caméra — il mesure à partir de la densité de pixels de votre écran, donc rien à viser et aucune autorisation à accorder."}},
