@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1ミリメートル</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12インチ</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>指輪のサイズを測る</h2>
     <p>指輪のサイズを調べるには、細く切った紙を指に巻き、重なったところに印をつけます。その紙を画面上の定規にぴったり当て、長さをミリメートルで読み取ります。多くのジュエラーは指の周囲長（mm）でサイズを決めています。すでにお持ちの指輪なら、<b>測定</b>ボックスを開いて指輪の内径に合わせてドラッグしてください。指のサイズは1日の中でわずかに変わるので、夕方に測るのがおすすめです。</p>
     <h2>分度器モード</h2>
-    <p><b>分度器</b>を押すと、180°の分度器が画面に重ねて表示されます。どちらかのアームを測りたい角度までドラッグすると、角度がリアルタイムで表示されます。中央をドラッグすれば分度器全体を移動できます。定規と同じキャリブレーションを使っているので、どの画面でも正確な角度が測れます。</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>印刷できる紙の定規</h2>
     <p><b>印刷</b>を押すと、実寸どおりの紙の定規が作れます。片側に18&nbsp;cm、反対側に7&nbsp;インチが印刷されます。<b>100%の倍率</b>で印刷し（「ページに合わせる」は選ばないでください）、縁に沿って切り取り、既知の物と照らして確認しましょう。画面から離れた場所で測りたいときに便利です。</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "印刷できる紙の定規 at true size, 18 cm and 7 インチ"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>スマホのデスクトップモード。</b>一部のモバイルブラウザは特殊なビューポートを報告します。定規がずれて見える場合は、銀行カード方式でキャリブレーションしてください。</li>
       <li><b>PD定規ではありません。</b>これは汎用の測定定規であり、メガネ注文用の瞳孔間距離（PD）定規ではありません。PD測定には専用ツールが必要です。</li>
       <li><b>画面の長さの限界。</b>画面上の定規はディスプレイの長さまでしか表示できません。長い物を測るには、印刷用定規を使うか、区切って測りましょう。</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>モニターで定規がずれて見えるのはなぜ？</h3>
       <p>たいていの場合、2台のモニターが同じ解像度でも物理サイズが違うためです。1920×1080のパネルでも22インチと32インチがあります。定規には判別できないので、そのモニターを銀行カード方式で一度キャリブレーションすれば、以降は正確に保たれます。</p>
       <h3>画面上の定規の長さは？</h3>
-      <p>画面の大きさ次第です。12インチの定規はほとんどのノートパソコンに収まりますが、スマホでは短くなります。決まった長さの基準がほしい場合は紙の定規を印刷しましょう。100%倍率で、片側ちょうど18&nbsp;cm、反対側ちょうど7&nbsp;インチになります。</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>ミリメートル定規として使えますか？</h3>
       <p>はい。ツールバーを<b>mm</b>に切り替えると、定規がミリメートル単位の目盛りと数字で再描画されます。細かい精密測定に最適です。</p>
       <h3>スマホやタブレットでも使えますか？</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"このオンライン定規は正確ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。一度キャリブレーションすれば、ほとんどの画面で約1ミリメートルの精度で測れます。緑のステータスドットは、お使いのデバイスが認識され、工場出荷時の画素密度が適用されていることを示します。デバイスが認識されない場合は、最も精密な銀行カード方式でキャリブレーションしてください。"}},
 {"@type":"Question","name":"画面をキャリブレーションするには？","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your 補正 is saved automatically."}},
 {"@type":"Question","name":"モニターで定規がずれて見えるのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"たいていの場合、2台のモニターが同じ解像度でも物理サイズが違うためです。1920×1080のパネルでも22インチと32インチがあります。定規には判別できないので、そのモニターを銀行カード方式で一度キャリブレーションすれば、以降は正確に保たれます。"}},
-{"@type":"Question","name":"画面上の定規の長さは？","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 インチ on the other at 100% scale."}},
+{"@type":"Question","name":"画面上の定規の長さは？","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 インチ or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 インチ on the other at 100% scale."}},
 {"@type":"Question","name":"ミリメートル定規として使えますか？","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"スマホやタブレットでも使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。レイアウトは小さな画面にも対応し、人気のスマホやタブレットの多くは自動キャリブレーション用のデバイスデータベースに登録されています。タッチ画面では、測定ボックスを指でドラッグできます。"}},
 {"@type":"Question","name":"カメラは必要ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。AR測定アプリとは違い、TrueRulerはカメラを一切使いません。画面の画素密度から測定するので、かざす必要もなく、許可を求められることもありません。"}},
