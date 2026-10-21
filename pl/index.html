@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimetr</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 cala</td></tr>
       <tr><td>12 cali</td><td>30.48 cm</td><td>304.8 mm</td><td>12 cali</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Jak zmierzyć rozmiar pierścionka</h2>
     <p>Żeby poznać rozmiar pierścionka, owiń palec cienkim paskiem papieru, zaznacz miejsce zakładki, połóż pasek płasko przy linijce na ekranie i odczytaj długość w milimetrach – jubilerzy wyznaczają rozmiar pierścionka z obwodu palca w mm. Jeśli masz już pierścionek, otwórz ramkę <b>Zmierz</b> i przeciągnij ją przez wewnętrzną średnicę obrączki. Palec w ciągu dnia lekko zmienia obwód, więc najpewniej zmierzysz go wieczorem.</p>
     <h2>Tryb kątomierza</h2>
-    <p>Naciśnij <b>Kątomierz</b>, a na ekranie rozłoży się pełny kątomierz 180°. Przeciągnij jedno ramię do kąta, który chcesz zmierzyć – odczyt na żywo pokaże stopnie. Za środek przesuniesz cały kątomierz. Korzysta z tej samej kalibracji co linijka, więc kąty zgadzają się na każdym ekranie.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Papierowa linijka do druku</h2>
     <p>Naciśnij <b>Drukuj</b>, a dostaniesz papierową linijkę w dokładnym prawdziwym rozmiarze: 18&nbsp;cm na jednej krawędzi i 7&nbsp;cali na drugiej. Drukuj w <b>skali 100%</b> (nigdy „dopasuj do strony”), wytnij wzdłuż krawędzi i sprawdź ją na znanym przedmiocie. Drukowana linijka przydaje się, gdy musisz coś zmierzyć z dala od ekranu.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Papierowa linijka do druku at true size, 18 cm and 7 cale"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telefony w trybie pulpitu.</b> Niektóre mobilne przeglądarki zgłaszają nietypowy widok; jeśli linijka wygląda źle, skalibruj ją kartą bankową.</li>
       <li><b>To nie linijka PD.</b> To uniwersalna linijka pomiarowa, nie linijka do rozstawu źrenic przy zamawianiu okularów – do tego potrzeba specjalistycznego narzędzia.</li>
       <li><b>Ograniczenie długości ekranu.</b> Linijka na ekranie może być długa tylko jak twój wyświetlacz; dłuższe obiekty mierz linijką papierową albo na raty.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Dlaczego linijka źle wygląda na moim monitorze?</h3>
       <p>Niemal zawsze dlatego, że dwa monitory mogą mieć tę samą rozdzielczość, ale różny fizyczny rozmiar – panel 1920×1080 może mieć 22 albo 32 cale. Linijka nie zgadnie, więc skalibruj ten monitor raz metodą z kartą bankową i już zawsze będzie dobrze.</p>
       <h3>Jak długa jest linijka na ekranie?</h3>
-      <p>Tyle, ile twój ekran – na większość laptopów mieści się linijka 12-calowa, na telefonie zobaczysz mniej. Jeśli chcesz stały wzorzec, wydrukuj papierową linijkę: w skali 100% ma dokładnie 18&nbsp;cm na jednej krawędzi i 7&nbsp;cali na drugiej.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Czy mogę używać jej jako linijki milimetrowej?</h3>
       <p>Tak. Przełącz pasek narzędzi na <b>mm</b>, a linijki przerysują się z podziałką i numeracją milimetrową – idealne do precyzyjnych drobnych pomiarów.</p>
       <h3>Czy działa na telefonach i tabletach?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Czy ta linijka online jest dokładna?","acceptedAnswer":{"@type":"Answer","text":"Tak – po kalibracji na większości ekranów jest dokładna do około milimetra. Zielona kropka oznacza, że twoje urządzenie zostało rozpoznane i zastosowano fabryczną gęstość pikseli. Jeśli twoje urządzenie nie zostało rozpoznane, skalibruj je metodą z kartą bankową – to najdokładniejsza opcja."}},
 {"@type":"Question","name":"Jak skalibrować ekran?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your kalibracja is saved automatically."}},
 {"@type":"Question","name":"Dlaczego linijka źle wygląda na moim monitorze?","acceptedAnswer":{"@type":"Answer","text":"Niemal zawsze dlatego, że dwa monitory mogą mieć tę samą rozdzielczość, ale różny fizyczny rozmiar – panel 1920×1080 może mieć 22 albo 32 cale. Linijka nie zgadnie, więc skalibruj ten monitor raz metodą z kartą bankową i już zawsze będzie dobrze."}},
-{"@type":"Question","name":"Jak długa jest linijka na ekranie?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 cale on the other at 100% scale."}},
+{"@type":"Question","name":"Jak długa jest linijka na ekranie?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 cale or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 cale on the other at 100% scale."}},
 {"@type":"Question","name":"Czy mogę używać jej jako linijki milimetrowej?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Czy działa na telefonach i tabletach?","acceptedAnswer":{"@type":"Answer","text":"Tak. Układ dopasowuje się do małych ekranów, a większość popularnych telefonów i tabletów jest w bazie urządzeń, więc kalibrują się automatycznie. Na ekranach dotykowych przeciągaj ramkę pomiarową palcem."}},
 {"@type":"Question","name":"Czy potrzebuję aparatu?","acceptedAnswer":{"@type":"Answer","text":"Nie. W przeciwieństwie do aplikacji pomiarowych AR, TrueRuler w ogóle nie używa aparatu – mierzy na podstawie gęstości pikseli twojego ekranu, więc nie ma w co celować i nie musisz nic zezwalać."}},
