@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 millimetro</td><td>0,1 cm</td><td>1 mm</td><td>0,03937 in</td></tr>
       <tr><td>12 pollici</td><td>30,48 cm</td><td>304,8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Misura dell'anello</h2>
     <p>Per trovare la tua misura dell'anello, avvolgi una sottile striscia di carta intorno al dito, segna il punto di sovrapposizione, poi appoggia la striscia distesa sul righello a schermo e leggi la lunghezza in millimetri — la maggior parte dei gioiellieri misura gli anelli dalla circonferenza del dito in mm. Per un anello che già possiedi, apri il riquadro <b>Misura</b> e trascinalo sul diametro interno dell'anello. La misura del dito varia leggermente durante il giorno, quindi misura la sera per il risultato più affidabile.</p>
     <h2>Modalità goniometro</h2>
-    <p>Premi <b>Goniometro</b> per sovrapporre un goniometro completo da 180°. Trascina uno dei due bracci sull'angolo da misurare; la lettura mostra i gradi in tempo reale. Trascina il centro per spostare l'intero goniometro. Usa la stessa calibrazione del righello, così gli angoli restano precisi su qualsiasi schermo.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Righello di carta stampabile</h2>
     <p>Premi <b>Stampa</b> per un righello di carta in dimensioni reali esatte: 18&nbsp;cm su un lato e 7&nbsp;pollici sull'altro. Stampa in <b>scala 100%</b> (mai "adatta alla pagina"), ritaglia lungo il bordo e confrontalo con un oggetto noto. Un righello stampato è comodo quando devi misurare qualcosa lontano dallo schermo.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Righello di carta stampabile at true size, 18 cm and 7 pollici"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telefoni in modalità desktop.</b> Alcuni browser mobili riportano una viewport insolita; se il righello sembra sbagliato, usa la calibrazione con carta di credito.</li>
       <li><b>Non è un righello per la distanza pupillare.</b> Questo è un righello di misura generico, non un righello per la distanza pupillare per ordinare occhiali — per quello serve uno strumento specializzato.</li>
       <li><b>Limiti di lunghezza dello schermo.</b> Il righello a schermo può essere lungo solo quanto il tuo display; per oggetti più lunghi, usa il righello stampabile o misura a sezioni.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Perché il righello sembra sbagliato sul mio monitor?</h3>
       <p>Quasi sempre perché due monitor condividono la risoluzione ma non le dimensioni fisiche — un pannello 1920×1080 può essere da 22 o da 32 pollici. Il righello non può indovinare, quindi calibra quel monitor una volta con il metodo della carta di credito e resterà preciso.</p>
       <h3>Quanto è lungo il righello sullo schermo?</h3>
-      <p>Lungo quanto il tuo schermo — un righello da 12 pollici sta sulla maggior parte dei laptop, mentre i telefoni ne mostrano di meno. Come riferimento di lunghezza fissa, stampa il righello di carta: esattamente 18&nbsp;cm su un lato e 7&nbsp;pollici sull'altro in scala 100%.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Posso usarlo come righello millimetrato?</h3>
       <p>Sì. Passa la barra degli strumenti su <b>mm</b> e i righelli si ridisegnano con tacche e numerazione in millimetri — ideale per piccole misure precise.</p>
       <h3>Funziona su telefoni e tablet?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Questo righello online è preciso?","acceptedAnswer":{"@type":"Answer","text":"Sì — una volta calibrato, è preciso a circa un millimetro sulla maggior parte degli schermi. Il punto verde di stato significa che il tuo dispositivo è stato riconosciuto e viene applicata la densità pixel di fabbrica. Se il tuo dispositivo non viene riconosciuto, calibra con il metodo della carta di credito, che è l'opzione più precisa."}},
 {"@type":"Question","name":"Come calibro il mio schermo?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrazione is saved automatically."}},
 {"@type":"Question","name":"Perché il righello sembra sbagliato sul mio monitor?","acceptedAnswer":{"@type":"Answer","text":"Quasi sempre perché due monitor condividono la risoluzione ma non le dimensioni fisiche — un pannello 1920×1080 può essere da 22 o da 32 pollici. Il righello non può indovinare, quindi calibra quel monitor una volta con il metodo della carta di credito e resterà preciso."}},
-{"@type":"Question","name":"Quanto è lungo il righello sullo schermo?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pollici on the other at 100% scale."}},
+{"@type":"Question","name":"Quanto è lungo il righello sullo schermo?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 pollici or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 pollici on the other at 100% scale."}},
 {"@type":"Question","name":"Posso usarlo come righello millimetrato?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Funziona su telefoni e tablet?","acceptedAnswer":{"@type":"Answer","text":"Sì. Il layout si adatta agli schermi piccoli e la maggior parte dei telefoni e tablet più diffusi è nel database dei dispositivi per la calibrazione automatica. Sugli schermi touch, trascina il riquadro di misurazione con il dito."}},
 {"@type":"Question","name":"Devo usare la fotocamera?","acceptedAnswer":{"@type":"Answer","text":"No. A differenza delle app di misurazione AR, TrueRuler non usa mai la tua fotocamera — misura dalla densità dei pixel del tuo schermo, quindi non c'è nulla da inquadrare e nessun permesso da concedere."}},
