@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Онлайн-лінійка у реальному розмірі</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Оновлено: 13 жовтня 2026 р. · Команда TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Оновлено: 21 жовтня 2026 р. · Команда TrueRuler</p>
     <p><b>Онлайн-лінійка перетворює твій екран на справжній вимірювальний інструмент.</b> TrueRuler малює шкали в сантиметрах, міліметрах і дюймах у справжньому фізичному розмірі, визначаючи щільність пікселів твого пристрою, — або після одноразового калібрування за розміром екрана чи звичайною банківською карткою. Це безкоштовно, не потребує встановлення і працює на будь-якому телефоні, планшеті, ноутбуці чи моніторі.</p>
     <ul class="ticks">
       <li>Лінійки у справжньому розмірі — см, мм і дюйми — на будь-якому екрані</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Тримай масштаб браузера на 100% для точних вимірювань</li>
       <li>Безкоштовно назавжди — без облікового запису й встановлення; калібрування зберігається на цьому пристрої</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Калібрувати: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Виміряти: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Твій екран не знає, що таке дюйм, — він знає лише пікселі. Місток між ними — це <b>щільність пікселів</b>, що вимірюється в PPI (пікселів на дюйм). Якщо на твоєму екрані 141 піксель на дюйм, лінійка малює один дюйм рівно як 141 піксель, один сантиметр — як 55,6 пікселя, а один міліметр — як 5,56 пікселя.</p>
     <p>Є нюанс: два монітори можуть мати однакову роздільну здатність 1920×1080, але діагоналі 22 і 32 дюйми — ті самі пікселі, але зовсім різний реальний розмір. Саме тому онлайн-лінійка має дізнатися справжній PPI твого екрана. TrueRuler робить це двома способами: розпізнає популярні телефони, планшети й ноутбуки за базою пристроїв і застосовує їхній заводський PPI або обчислює PPI за діагоналлю екрана. <span id="ppiEcho"></span></p>
     <p>Ще одна деталь: браузери працюють у <b>CSS-пікселях</b>, які можуть відрізнятися від фізичних пікселів на дисплеях із високою щільністю («Retina»). TrueRuler зчитує піксельне співвідношення твого пристрою й перераховує автоматично, а також попереджає, якщо масштаб браузера не дорівнює 100%, — адже масштабування змінює розмір CSS-пікселя.</p>
-    <h2>Формула калібрування</h2>
-    <p>Коли ти вводиш діагональ свого екрана, лінійка обчислює PPI за теоремою Піфагора:</p>
-    <p class="formula"><b>PPI = √(ширина² + висота²) ÷ діагональ у дюймах</b></p>
-    <p><b>Приклад розрахунку.</b> Ноутбук із діагоналлю 15,6 дюйма та екраном 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4 852 800 ≈ 2202,9 пікселя по діагоналі. Ділимо на 15,6 дюйма → <b>141,2 PPI</b>. Отже, один дюйм малюється як 141,2 пікселя, один сантиметр — як 55,6 пікселя (141,2 ÷ 2,54), а один міліметр — як 5,56 пікселя.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Формула калібрування</h2>
+    <p>Коли ти вводиш діагональ свого екрана, лінійка обчислює PPI за теоремою Піфагора:</p>
+    <p class="formula"><b>PPI = √(ширина² + висота²) ÷ діагональ у дюймах</b></p>
+    <p><b>Приклад розрахунку.</b> Ноутбук із діагоналлю 15,6 дюйма та екраном 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4 852 800 ≈ 2202,9 пікселя по діагоналі. Ділимо на 15,6 дюйма → <b>141,2 PPI</b>. Отже, один дюйм малюється як 141,2 пікселя, один сантиметр — як 55,6 пікселя (141,2 ÷ 2,54), а один міліметр — як 5,56 пікселя.</p>
+    <p><b>How reliable is each калібрування method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Діагональ екрана — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a калібрування only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Як читати шкали: дюйми, сантиметри й міліметри</h2>
     <p>Лінійка показує метричну та дюймову шкали поруч. Використовуй <b>міліметри</b> для точної роботи, <b>сантиметри</b> для повсякденних вимірювань, а <b>дюйми</b> — для вимірювань у дюймовій системі. Вбудований конвертер вище також переводить метри, фути, ярди та пункти.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Натисни <b>Rotate</b>, щоб поміняти місцями горизонтальну та вертикальну лінійки, — зручно для вимірювання висоти або коли екран вузький. Вертикальна лінійка працює так само, як горизонтальна: у сантиметрах, міліметрах і дюймах.</p>
     <h2>Вимірювання об'єктів рамкою</h2>
     <p>Натисни <b>Measure</b> і розтягни рамку поверх будь-якого об'єкта на екрані — фотографії, схеми, зображення товару. Рамка показує ширину × висоту в реальному часі в см, мм і дюймах. Тягни за маркери, щоб змінити розмір, за центр — щоб перемістити, а для точного підганяння використовуй стрілки на клавіатурі. Кнопка <b>Copy</b> копіює результат у буфер обміну.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Як дізнатися розмір каблучки</h2>
     <p>Щоб дізнатися свій розмір каблучки, обгорни тонку смужку паперу навколо пальця, познач місце накладання, потім приклади смужку до лінійки на екрані й виміряй довжину в міліметрах — ювеліри зазвичай визначають розмір каблучки за обхватом пальця в мм. Якщо каблучка вже є, відкрий рамку <b>Measure</b> і розтягни її за внутрішнім діаметром каблучки. Розмір пальця трохи змінюється протягом дня, тож для надійного результату вимірюй увечері.</p>
     <h2>Режим транспортира</h2>
