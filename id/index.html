@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Penggaris online ukuran sebenarnya</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Terakhir diperbarui: 13 Oktober 2026 · Oleh tim TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Terakhir diperbarui: 21 Oktober 2026 · Oleh tim TrueRuler</p>
     <p><b>Penggaris online mengubah layar Anda menjadi alat ukur sungguhan.</b> TrueRuler menggambar skala sentimeter, milimeter, dan inci dalam ukuran fisik yang sebenarnya dengan mendeteksi kepadatan piksel perangkat Anda — atau dengan kalibrasi sekali saja memakai ukuran layar atau kartu bank standar. Gratis, tanpa perlu instalasi, dan berfungsi di ponsel, tablet, laptop, maupun monitor apa pun.</p>
     <ul class="ticks">
       <li>Penggaris cm, mm, dan inci ukuran sebenarnya di layar apa pun</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Jaga zoom peramban tetap 100% agar pengukuran akurat</li>
       <li>Gratis selamanya — tanpa akun, tanpa instalasi; kalibrasi Anda tersimpan di perangkat ini</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Kalibrasi: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Ukur: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Layar Anda tidak tahu apa itu satu inci — ia hanya mengenal piksel. Jembatan antara keduanya adalah <b>kepadatan piksel</b>, yang diukur dalam PPI (piksel per inci). Jika layar Anda menampilkan 141 piksel per inci, penggaris menggambar satu inci tepat sepanjang 141 piksel, satu sentimeter sepanjang 55.6 piksel, dan satu milimeter sepanjang 5.56 piksel.</p>
     <p>Ada jebakannya: dua monitor bisa berbagi resolusi 1920×1080 yang sama namun berukuran 22 atau 32 inci — piksel yang sama, ukuran nyata yang sangat berbeda. Itulah mengapa penggaris online harus mengetahui PPI sebenarnya dari layar Anda. TrueRuler melakukannya dengan dua cara: mengenali ponsel, tablet, dan laptop umum dari basis data perangkat lalu menerapkan PPI bawaan pabriknya, atau menghitung PPI dari ukuran diagonal layar. <span id="ppiEcho"></span></p>
     <p>Satu hal lagi: peramban bekerja dalam <b>piksel CSS</b>, yang bisa berbeda dari piksel fisik pada layar berkepadatan tinggi ("Retina"). TrueRuler membaca rasio piksel perangkat Anda dan mengonversinya secara otomatis, serta memperingatkan Anda jika zoom peramban tidak berada di 100%, karena memperbesar tampilan akan mengubah ukuran piksel CSS.</p>
-    <h2>Rumus kalibrasi</h2>
-    <p>Saat Anda memasukkan ukuran diagonal layar, penggaris menghitung PPI dengan teorema Pythagoras:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Contoh perhitungan.</b> Laptop 15.6 inci dengan layar 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel secara diagonal. Bagi dengan 15.6 inci → <b>141.2 PPI</b>. Satu inci digambar sepanjang 141.2 piksel, satu sentimeter sepanjang 55.6 piksel (141.2 ÷ 2.54), dan satu milimeter sepanjang 5.56 piksel.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Rumus kalibrasi</h2>
+    <p>Saat Anda memasukkan ukuran diagonal layar, penggaris menghitung PPI dengan teorema Pythagoras:</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
+    <p><b>Contoh perhitungan.</b> Laptop 15.6 inci dengan layar 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel secara diagonal. Bagi dengan 15.6 inci → <b>141.2 PPI</b>. Satu inci digambar sepanjang 141.2 piksel, satu sentimeter sepanjang 55.6 piksel (141.2 ÷ 2.54), dan satu milimeter sepanjang 5.56 piksel.</p>
+    <p><b>How reliable is each kalibrasi method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Diagonal layar — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a kalibrasi only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Membaca skala: inci, sentimeter, dan milimeter</h2>
     <p>Penggaris menampilkan skala metrik dan imperial berdampingan. Gunakan <b>milimeter</b> untuk pekerjaan presisi, <b>sentimeter</b> untuk pengukuran sehari-hari, dan <b>inci</b> untuk ukuran imperial. Konverter bawaan di atas juga menangani meter, kaki, yard, dan poin.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Tekan <b>Putar</b> untuk menukar penggaris horizontal dan vertikal — praktis untuk mengukur tinggi atau saat layar Anda sempit. Penggaris vertikal bekerja persis seperti penggaris horizontal, dalam sentimeter, milimeter, dan inci.</p>
     <h2>Mengukur benda dengan kotak ukur seret</h2>
     <p>Tekan <b>Ukur</b> lalu seret sebuah kotak di atas apa pun yang terlihat di layar — foto, diagram, gambar produk. Kotak menampilkan lebar × tinggi secara langsung dalam cm, mm, dan inci. Seret gagangnya untuk mengubah ukuran, seret bagian tengah untuk memindahkannya, dan gunakan tombol panah untuk menggeser dengan presisi. <b>Salin</b> menaruh hasil bacaan ke papan klip Anda.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Mengukur ukuran cincin</h2>
     <p>Untuk mengetahui ukuran cincin, lilitkan selembar kertas tipis mengelilingi jari Anda, tandai titik bertemunya, lalu letakkan kertas mendatar menempel pada penggaris di layar dan baca panjangnya dalam milimeter — kebanyakan toko perhiasan menentukan ukuran cincin dari keliling jari dalam mm. Untuk cincin yang sudah Anda miliki, buka kotak <b>Ukur</b> lalu seret melintasi diameter dalam cincin. Ukuran jari sedikit berubah sepanjang hari, jadi ukurlah pada malam hari untuk hasil yang paling dapat diandalkan.</p>
     <h2>Mode busur derajat</h2>
