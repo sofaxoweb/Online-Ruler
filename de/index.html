@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Online-Lineal in Originalgröße</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Zuletzt aktualisiert: 13. Oktober 2026 · Vom TrueRuler-Team</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Zuletzt aktualisiert: 21. Oktober 2026 · Vom TrueRuler-Team</p>
     <p><b>Ein Online-Lineal verwandelt deinen Bildschirm in ein echtes Messwerkzeug.</b> TrueRuler zeichnet Zentimeter-, Millimeter- und Zollskalen in echter physischer Größe — indem es die Pixeldichte deines Geräts erkennt oder indem du es einmalig über deine Bildschirmgröße oder eine Standard-Bankkarte kalibrierst. Es ist kostenlos, braucht keine Installation und funktioniert auf jedem Smartphone, Tablet, Laptop und Monitor.</p>
     <ul class="ticks">
       <li>Lineale in Originalgröße (cm, mm, Zoll) auf jedem Bildschirm</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Halte den Browser-Zoom für genaue Messungen auf 100 %</li>
       <li>Für immer kostenlos — kein Konto, keine Installation; deine Kalibrierung bleibt auf diesem Gerät gespeichert</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Kalibrieren: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Messen: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Dein Bildschirm weiß nicht, was ein Zoll ist — er kennt nur Pixel. Die Brücke zwischen beiden ist die <b>Pixeldichte</b>, gemessen in PPI (Pixel pro Zoll). Zeigt dein Bildschirm 141 Pixel pro Zoll, zeichnet das Lineal einen Zoll als exakt 141 Pixel, einen Zentimeter als 55.6 Pixel und einen Millimeter als 5.56 Pixel.</p>
     <p>Der Haken: Zwei Monitore können dieselbe 1920×1080-Auflösung haben und trotzdem 22 oder 32 Zoll breit sein — dieselben Pixel, ganz andere reale Größen. Darum muss ein Online-Lineal die wahre PPI deines Bildschirms kennen. TrueRuler löst das auf zwei Wegen: Es erkennt gängige Smartphones, Tablets und Laptops anhand einer Gerätedatenbank und übernimmt deren Werks-PPI — oder es berechnet die PPI aus der Bildschirmdiagonale. <span id="ppiEcho"></span></p>
     <p>Noch ein Detail: Browser arbeiten mit <b>CSS-Pixeln</b>, die sich auf hochauflösenden („Retina“-)Displays von den physischen Pixeln unterscheiden können. TrueRuler liest das Pixelverhältnis deines Geräts aus und rechnet automatisch um — und warnt dich, wenn der Browser-Zoom nicht auf 100 % steht, denn Zoomen verändert die Größe eines CSS-Pixels.</p>
-    <h2>Die Kalibrierungsformel</h2>
-    <p>Wenn du die Diagonalgröße deines Bildschirms eingibst, berechnet das Lineal die PPI mit dem Satz des Pythagoras:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Rechenbeispiel.</b> Ein 15.6-Zoll-Laptop mit 1920×1080-Bildschirm: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 Pixel in der Diagonale. Geteilt durch 15.6 Zoll → <b>141.2 PPI</b>. Ein Zoll wird also als 141.2 Pixel gezeichnet, ein Zentimeter als 55.6 Pixel (141.2 ÷ 2.54) und ein Millimeter als 5.56 Pixel.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Die Kalibrierungsformel</h2>
+    <p>Wenn du die Diagonalgröße deines Bildschirms eingibst, berechnet das Lineal die PPI mit dem Satz des Pythagoras:</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
+    <p><b>Rechenbeispiel.</b> Ein 15.6-Zoll-Laptop mit 1920×1080-Bildschirm: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 Pixel in der Diagonale. Geteilt durch 15.6 Zoll → <b>141.2 PPI</b>. Ein Zoll wird also als 141.2 Pixel gezeichnet, ein Zentimeter als 55.6 Pixel (141.2 ÷ 2.54) und ein Millimeter als 5.56 Pixel.</p>
+    <p><b>How reliable is each Kalibrierung method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Bildschirmdiagonale — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a Kalibrierung only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Skalen ablesen: Zoll, Zentimeter und Millimeter</h2>
     <p>Das Lineal zeigt metrische und imperiale Skalen nebeneinander. Nutze <b>Millimeter</b> für präzises Arbeiten, <b>Zentimeter</b> fürs Messen im Alltag und <b>Zoll</b> für imperiale Maße. Der eingebaute Umrechner weiter oben beherrscht außerdem Meter, Fuß, Yard und Punkt.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Drücke <b>Drehen</b>, um das horizontale und das vertikale Lineal zu vertauschen — praktisch zum Messen von Höhen oder wenn dein Bildschirm schmal ist. Das vertikale Lineal funktioniert genau wie das horizontale, in Zentimetern, Millimetern und Zoll.</p>
     <h2>Objekte mit dem Messrechteck vermessen</h2>
     <p>Drücke <b>Messen</b> und ziehe ein Rechteck über alles, was auf dem Bildschirm zu sehen ist — ein Foto, eine Skizze, ein Produktbild. Das Rechteck zeigt live Breite × Höhe in cm, mm und Zoll. Ziehe an den Griffen, um die Größe zu ändern, ziehe die Mitte zum Verschieben und nutze die Pfeiltasten zum präzisen Feinjustieren. <b>Kopieren</b> legt den Messwert in deine Zwischenablage.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Ringgröße messen</h2>
     <p>Um deine Ringgröße zu bestimmen, wickle einen dünnen Papierstreifen um deinen Finger, markiere die Überlappung und lege den Streifen flach an das Bildschirmlineal — lies die Länge in Millimetern ab, denn Juweliere bestimmen Ringgrößen anhand des Fingerumfangs in mm. Für einen Ring, den du bereits besitzt, öffne das <b>Messen</b>-Rechteck und ziehe es über den Innendurchmesser des Rings. Die Fingergröße schwankt im Tagesverlauf leicht — miss daher am besten abends, für das zuverlässigste Ergebnis.</p>
     <h2>Winkelmesser-Modus</h2>
