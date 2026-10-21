@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 Millimeter</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 Zoll</td></tr>
       <tr><td>12 Zoll</td><td>30.48 cm</td><td>304.8 mm</td><td>12 Zoll</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Ringgröße messen</h2>
     <p>Um deine Ringgröße zu bestimmen, wickle einen dünnen Papierstreifen um deinen Finger, markiere die Überlappung und lege den Streifen flach an das Bildschirmlineal — lies die Länge in Millimetern ab, denn Juweliere bestimmen Ringgrößen anhand des Fingerumfangs in mm. Für einen Ring, den du bereits besitzt, öffne das <b>Messen</b>-Rechteck und ziehe es über den Innendurchmesser des Rings. Die Fingergröße schwankt im Tagesverlauf leicht — miss daher am besten abends, für das zuverlässigste Ergebnis.</p>
     <h2>Winkelmesser-Modus</h2>
-    <p>Drücke <b>Winkelmesser</b>, um einen vollen 180°-Winkelmesser einzublenden. Ziehe einen der beiden Schenkel auf den Winkel, den du messen willst; die Anzeige zeigt die Gradzahl live. Ziehe die Mitte, um den ganzen Winkelmesser zu verschieben. Er nutzt dieselbe Kalibrierung wie das Lineal, daher bleiben Winkel auf jedem Bildschirm korrekt.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Lineal zum Ausdrucken</h2>
     <p>Drücke <b>Drucken</b> für ein Papierlineal in exakter Originalgröße: 18&nbsp;cm auf der einen und 7&nbsp;Zoll auf der anderen Kante. Drucke mit <b>100 % Skalierung</b> (niemals „An Seite anpassen“), schneide an der Kante entlang und prüfe es an einem bekannten Gegenstand. Ein ausgedrucktes Lineal ist praktisch, wenn du etwas abseits vom Bildschirm messen musst.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Lineal zum Ausdrucken at true size, 18 cm and 7 Zoll"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Smartphones im Desktop-Modus.</b> Manche Mobilbrowser melden einen ungewöhnlichen Viewport; sieht das Lineal falsch aus, nutze die Bankkarten-Kalibrierung.</li>
       <li><b>Kein PD-Lineal.</b> Dies ist ein Allzweck-Messlineal, kein Pupillendistanz-Lineal für die Brillenbestellung — dafür braucht es ein Spezialwerkzeug.</li>
       <li><b>Längenbegrenzung des Bildschirms.</b> Das Bildschirmlineal kann nur so lang sein wie dein Display; für längere Gegenstände nutze das Papierlineal oder miss in Abschnitten.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Warum sieht das Lineal auf meinem Monitor falsch aus?</h3>
       <p>Fast immer, weil zwei Monitore dieselbe Auflösung, aber nicht dieselbe physische Größe haben — ein 1920×1080-Panel kann 22 oder 32 Zoll groß sein. Das Lineal kann nicht raten, also kalibriere diesen Monitor einmal mit der Bankkarten-Methode, danach bleibt er korrekt eingestellt.</p>
       <h3>Wie lang ist das Lineal auf dem Bildschirm?</h3>
-      <p>So lang wie dein Bildschirm — ein 12-Zoll-Lineal passt auf die meisten Laptops, Smartphones zeigen weniger. Für eine Referenz mit fester Länge drucke das Papierlineal: exakt 18&nbsp;cm auf der einen und 7&nbsp;Zoll auf der anderen Kante, bei 100 % Skalierung.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Kann ich es als Millimeterlineal verwenden?</h3>
       <p>Ja. Stelle die Symbolleiste auf <b>mm</b> um, und die Lineale werden mit Millimeterstrichen und -beschriftung neu gezeichnet — ideal für präzise kleine Messungen.</p>
       <h3>Funktioniert es auf Smartphones und Tablets?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Ist dieses Online-Lineal genau?","acceptedAnswer":{"@type":"Answer","text":"Ja — nach der Kalibrierung misst es auf den meisten Bildschirmen auf etwa einen Millimeter genau. Der grüne Statuspunkt bedeutet, dass dein Gerät erkannt wurde und die Werks-Pixeldichte angewendet wird. Wird dein Gerät nicht erkannt, kalibriere mit der Bankkarten-Methode — das ist die präziseste Variante."}},
 {"@type":"Question","name":"Wie kalibriere ich meinen Bildschirm?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your Kalibrierung is saved automatically."}},
 {"@type":"Question","name":"Warum sieht das Lineal auf meinem Monitor falsch aus?","acceptedAnswer":{"@type":"Answer","text":"Fast immer, weil zwei Monitore dieselbe Auflösung, aber nicht dieselbe physische Größe haben — ein 1920×1080-Panel kann 22 oder 32 Zoll groß sein. Das Lineal kann nicht raten, also kalibriere diesen Monitor einmal mit der Bankkarten-Methode, danach bleibt er korrekt eingestellt."}},
-{"@type":"Question","name":"Wie lang ist das Lineal auf dem Bildschirm?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 Zoll on the other at 100% scale."}},
+{"@type":"Question","name":"Wie lang ist das Lineal auf dem Bildschirm?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 Zoll or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 Zoll on the other at 100% scale."}},
 {"@type":"Question","name":"Kann ich es als Millimeterlineal verwenden?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Funktioniert es auf Smartphones und Tablets?","acceptedAnswer":{"@type":"Answer","text":"Ja. Das Layout passt sich kleinen Bildschirmen an, und die beliebtesten Smartphones und Tablets sind für die automatische Kalibrierung in der Gerätedatenbank. Auf Touchscreens ziehst du das Messrechteck mit dem Finger."}},
 {"@type":"Question","name":"Brauche ich dafür meine Kamera?","acceptedAnswer":{"@type":"Answer","text":"Nein. Anders als AR-Mess-Apps nutzt TrueRuler niemals deine Kamera — es misst anhand der Pixeldichte deines Bildschirms, du musst also nichts anvisieren und keine Berechtigung erteilen."}},
