@@ -10,7 +10,7 @@ TrueRuler (https://trueruleronline.com/) is a free, browser-based measuring tool
 
 - **What it measures:** centimetres (cm), millimetres (mm) and inches (in) at true physical size on screen.
 - **Calibration methods (3):** (1) automatic device detection from a built-in database of ~40 devices, (2) entering the screen's diagonal size — PPI is computed as √(width² + height²) ÷ diagonal inches, (3) holding a standard bank card (85.60 mm, ISO/IEC 7810 ID-1) against the screen and dragging a slider until they match.
-- **Accuracy:** about 1 millimetre after calibration. It is a convenience tool, not a certified measuring instrument.
+- **Accuracy:** depends on calibration — the bank-card method is typically within about a millimetre; the diagonal method is close when the diagonal is exact; automatic detection applies the device's factory PPI. Verify against a physical reference for important measurements. It is a convenience tool, not a certified measuring instrument.
 - **Extra tools on the same page:** drag-to-measure box (with arrow-key nudging and copy), 180° protractor, printable paper ruler (18 cm / 7 in at 100% scale), unit converter (mm, cm, m, inch, ft, yd, pt, px).
 - **Privacy:** all processing happens in the browser; calibration is stored in the device's own localStorage and never sent to a server. No account required.
 - **Cost:** free forever. Monetized with Google AdSense.
