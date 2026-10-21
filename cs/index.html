@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimetr</td><td>0.1 cm</td><td>1 mm</td><td>0.03937″</td></tr>
       <tr><td>12 palců</td><td>30.48 cm</td><td>304.8 mm</td><td>12″</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Jak změřit velikost prstenu</h2>
     <p>Velikost prstenu zjistíš tak, že si kolem prstu omotáš tenký proužek papíru, označíš překryv, proužek položíš naplocho k pravítku na obrazovce a odečteš délku v milimetrech – klenotníci totiž velikost prstenu odvozují z obvodu prstu v mm. U prstenu, který už vlastníš, otevři rámeček <b>Měřit</b> a přetáhni ho přes vnitřní průměr kroužku. Prst během dne trochu mění objem, takže nejspolehlivější je měřit večer.</p>
     <h2>Režim úhloměru</h2>
-    <p>Stiskni <b>Úhloměr</b> a přes obrazovku se ti rozprostře plný 180° úhloměr. Jedno rameno přitáhni k úhlu, který chceš změřit – údaj ve stupních uvidíš živě. Za střed celý úhloměr přesuneš. Používá stejnou kalibraci jako pravítko, takže úhly sedí na jakékoli obrazovce.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Papírové pravítko k vytištění</h2>
     <p>Stiskni <b>Tisknout</b> a získáš papírové pravítko v přesné skutečné velikosti: 18&nbsp;cm na jedné hraně a 7&nbsp;palců na druhé. Tiskni ve <b>100% měřítku</b> (nikdy „přizpůsobit stránce“), vystřihni podél hrany a zkontroluj ho podle známého předmětu. Tištěné pravítko se hodí, když potřebuješ měřit něco mimo obrazovku.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Papírové pravítko k vytištění at true size, 18 cm and 7 palce"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telefony v režimu pro počítač.</b> Některé mobilní prohlížeče hlásí zvláštní viewport; když pravítko vypadá špatně, zkalibruj ho bankovní kartou.</li>
       <li><b>Není to PD pravítko.</b> Tohle je univerzální měřicí pravítko, ne pravítko na pupilární vzdálenost pro objednání brýlí – na to je potřeba speciální nástroj.</li>
       <li><b>Limity délky obrazovky.</b> Pravítko na obrazovce může být dlouhé jen jako tvůj displej; delší předměty měř tištěným pravítkem nebo po částech.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Proč pravítko na mém monitoru vypadá špatně?</h3>
       <p>Téměř vždy proto, že dva monitory můžou mít stejné rozlišení, ale jinou fyzickou velikost – panel 1920×1080 může mít 22 i 32 palců. Pravítko to nemůže uhodnout, takže tenhle monitor jednou zkalibruj metodou s bankovní kartou a už to bude sedět napořád.</p>
       <h3>Jak dlouhé je pravítko na obrazovce?</h3>
-      <p>Jak je dlouhá tvá obrazovka – na většinu notebooků se vejde 12palcové pravítko, na telefonu uvidíš míň. Chceš-li pevnou referenci, vytiskni si papírové pravítko: při 100% měřítku má přesně 18&nbsp;cm na jedné hraně a 7&nbsp;palců na druhé.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Můžu ho použít jako milimetrové pravítko?</h3>
       <p>Ano. V liště přepni na <b>mm</b> a pravítka se překreslí s milimetrovými dílky i číslováním – ideální na přesná drobná měření.</p>
       <h3>Funguje na telefonu i tabletu?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Je tohle online pravítko přesné?","acceptedAnswer":{"@type":"Answer","text":"Ano – po kalibraci je na většině obrazovek přesné zhruba na milimetr. Zelená tečka znamená, že tvé zařízení bylo rozpoznáno a použila se tovární hustota pixelů. Pokud tvé zařízení rozpoznáno nebylo, zkalibruj ho metodou s bankovní kartou – ta je nejpřesnější."}},
 {"@type":"Question","name":"Jak zkalibruju obrazovku?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your kalibrace is saved automatically."}},
 {"@type":"Question","name":"Proč pravítko na mém monitoru vypadá špatně?","acceptedAnswer":{"@type":"Answer","text":"Téměř vždy proto, že dva monitory můžou mít stejné rozlišení, ale jinou fyzickou velikost – panel 1920×1080 může mít 22 i 32 palců. Pravítko to nemůže uhodnout, takže tenhle monitor jednou zkalibruj metodou s bankovní kartou a už to bude sedět napořád."}},
-{"@type":"Question","name":"Jak dlouhé je pravítko na obrazovce?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 palce on the other at 100% scale."}},
+{"@type":"Question","name":"Jak dlouhé je pravítko na obrazovce?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 palce or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 palce on the other at 100% scale."}},
 {"@type":"Question","name":"Můžu ho použít jako milimetrové pravítko?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Funguje na telefonu i tabletu?","acceptedAnswer":{"@type":"Answer","text":"Ano. Rozložení se přizpůsobí malým obrazovkám a většina oblíbených telefonů a tabletů je v databázi zařízení, takže se kalibrují automaticky. Na dotykové obrazovce táhni měřicím rámečkem prstem."}},
 {"@type":"Question","name":"Potřebuju kameru?","acceptedAnswer":{"@type":"Answer","text":"Ne. Na rozdíl od AR měřicích aplikací TrueRuler kameru vůbec nepoužívá – měří z hustoty pixelů tvé obrazovky, takže není na co mířit a nemusíš nic povolovat."}},
