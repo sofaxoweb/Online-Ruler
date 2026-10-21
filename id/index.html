@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimeter</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 inci</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Mengukur ukuran cincin</h2>
     <p>Untuk mengetahui ukuran cincin, lilitkan selembar kertas tipis mengelilingi jari Anda, tandai titik bertemunya, lalu letakkan kertas mendatar menempel pada penggaris di layar dan baca panjangnya dalam milimeter — kebanyakan toko perhiasan menentukan ukuran cincin dari keliling jari dalam mm. Untuk cincin yang sudah Anda miliki, buka kotak <b>Ukur</b> lalu seret melintasi diameter dalam cincin. Ukuran jari sedikit berubah sepanjang hari, jadi ukurlah pada malam hari untuk hasil yang paling dapat diandalkan.</p>
     <h2>Mode busur derajat</h2>
-    <p>Tekan <b>Busur derajat</b> untuk menampilkan busur derajat 180° penuh. Seret salah satu lengannya ke sudut yang ingin diukur; tampilannya menunjukkan derajat secara langsung. Seret bagian tengah untuk memindahkan seluruh busur. Alat ini memakai kalibrasi yang sama dengan penggaris, sehingga sudut tetap akurat di layar apa pun.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Penggaris kertas yang bisa dicetak</h2>
     <p>Tekan <b>Cetak</b> untuk penggaris kertas dalam ukuran sebenarnya yang tepat: 18&nbsp;cm di satu sisi dan 7&nbsp;inci di sisi lainnya. Cetak dengan <b>skala 100%</b> (jangan pernah "sesuaikan ke halaman"), potong mengikuti tepinya, dan cocokkan dengan benda yang ukurannya sudah diketahui. Penggaris cetak berguna saat Anda perlu mengukur sesuatu jauh dari layar.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Penggaris kertas yang bisa dicetak at true size, 18 cm and 7 inci"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Ponsel dalam mode desktop.</b> Sebagian peramban seluler melaporkan viewport yang tidak biasa; jika penggaris terlihat salah, gunakan kalibrasi kartu bank.</li>
       <li><b>Bukan penggaris PD.</b> Ini penggaris ukur serbaguna, bukan penggaris jarak pupil untuk memesan kacamata — itu memerlukan alat khusus.</li>
       <li><b>Batas panjang layar.</b> Penggaris di layar hanya bisa sepanjang tampilan Anda; untuk benda yang lebih panjang, gunakan penggaris cetak atau ukur per bagian.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Mengapa penggaris terlihat salah di monitor saya?</h3>
       <p>Hampir selalu karena dua monitor berbagi resolusi tetapi tidak berbagi ukuran fisik — panel 1920×1080 bisa berukuran 22 atau 32 inci. Penggaris tidak bisa menebak, jadi kalibrasi monitor itu sekali saja dengan metode kartu bank dan pengaturannya akan tetap benar.</p>
       <h3>Seberapa panjang penggaris di layar?</h3>
-      <p>Sepanjang layar Anda — penggaris 12 inci muat di kebanyakan laptop, sedangkan ponsel menampilkan lebih sedikit. Untuk acuan panjang yang tetap, cetak penggaris kertas: tepat 18&nbsp;cm di satu sisi dan 7&nbsp;inci di sisi lainnya pada skala 100%.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Bisakah saya menggunakannya sebagai penggaris milimeter?</h3>
       <p>Ya. Alihkan bilah alat ke <b>mm</b> dan penggaris digambar ulang dengan tanda dan angka milimeter — ideal untuk pengukuran kecil yang presisi.</p>
       <h3>Apakah berfungsi di ponsel dan tablet?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Apakah penggaris online ini akurat?","acceptedAnswer":{"@type":"Answer","text":"Ya — setelah dikalibrasi, akurat hingga sekitar satu milimeter di kebanyakan layar. Titik status hijau berarti perangkat Anda dikenali dan kepadatan piksel bawaan pabrik diterapkan. Jika perangkat Anda tidak dikenali, kalibrasi dengan metode kartu bank, yang merupakan opsi paling presisi."}},
 {"@type":"Question","name":"Bagaimana cara mengkalibrasi layar saya?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your kalibrasi is saved automatically."}},
 {"@type":"Question","name":"Mengapa penggaris terlihat salah di monitor saya?","acceptedAnswer":{"@type":"Answer","text":"Hampir selalu karena dua monitor berbagi resolusi tetapi tidak berbagi ukuran fisik — panel 1920×1080 bisa berukuran 22 atau 32 inci. Penggaris tidak bisa menebak, jadi kalibrasi monitor itu sekali saja dengan metode kartu bank dan pengaturannya akan tetap benar."}},
-{"@type":"Question","name":"Seberapa panjang penggaris di layar?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
+{"@type":"Question","name":"Seberapa panjang penggaris di layar?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 inci or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
 {"@type":"Question","name":"Bisakah saya menggunakannya sebagai penggaris milimeter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Apakah berfungsi di ponsel dan tablet?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tampilannya menyesuaikan layar kecil, dan kebanyakan ponsel serta tablet populer ada di basis data perangkat untuk kalibrasi otomatis. Di layar sentuh, seret kotak ukur dengan jari Anda."}},
 {"@type":"Question","name":"Apakah saya perlu kamera?","acceptedAnswer":{"@type":"Answer","text":"Tidak. Berbeda dengan aplikasi ukur AR, TrueRuler tidak pernah memakai kamera Anda — alat ini mengukur dari kepadatan piksel layar, jadi tidak ada yang perlu diarahkan dan tidak ada izin yang perlu diberikan."}},
