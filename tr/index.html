@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 inç</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Yüzük ölçüsü ölçme</h2>
     <p>Yüzük ölçünü bulmak için parmağına ince bir kâğıt şerit sar, üst üste geldiği yeri işaretle, sonra şeridi ekrandaki cetvele düz şekilde koy ve uzunluğu milimetre olarak oku — çoğu kuyumcu yüzükleri parmak çevresine göre mm ile ölçer. Zaten sahip olduğun bir yüzük için <b>Ölç</b> kutusunu aç ve yüzüğün iç çapı boyunca sürükle. Parmak ölçüsü gün içinde biraz değişir, bu yüzden en güvenilir sonuç için akşam ölç.</p>
     <h2>İletki modu</h2>
-    <p><b>İletki</b>'ye basarak tam 180° iletki aç. Ölçmek istediğin açıya iki koldan birini sürükle; gösterge dereceyi canlı verir. Tüm iletkiyi taşımak için ortasından sürükle. Cetvelle aynı kalibrasyonu kullanır, yani açılar her ekranda doğru kalır.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Yazdırılabilir kâğıt cetvel</h2>
     <p><b>Yazdır</b>'a basarak tam gerçek boyutunda kâğıt cetvel al: bir kenarda 18&nbsp;cm, diğer kenarda 7&nbsp;inç. <b>%100 ölçekte</b> yazdır ("sayfaya sığdır" asla), kenar boyunca kes ve bilinen bir nesneyle karşılaştır. Ekrandan uzakta bir şey ölçeceksen basılı cetvel işine yarar.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Yazdırılabilir kâğıt cetvel at true size, 18 cm and 7 inç"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Masaüstü modundaki telefonlar.</b> Bazı mobil tarayıcılar olağandışı bir görünüm alanı bildirir; cetvel yanlış görünürse banka kartı kalibrasyonunu kullan.</li>
       <li><b>PD cetveli değil.</b> Bu genel amaçlı bir ölçüm cetvelidir, gözlük siparişi için göz bebeği mesafesi cetveli değil — o iş için özel bir araç gerekir.</li>
       <li><b>Ekran uzunluğu sınırı.</b> Ekrandaki cetvel ancak ekranın kadar uzun olabilir; daha uzun nesneler için yazdırılabilir cetveli kullan ya da parçalar hâlinde ölç.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Cetvel monitörümde neden yanlış görünüyor?</h3>
       <p>Hemen her zaman, çünkü iki monitör aynı çözünürlüğü paylaşıp farklı fiziksel boyutta olabilir — 1920×1080 panel 22 ya da 32 inç olabilir. Cetvel tahmin edemez, bu yüzden o monitörü banka kartı yöntemiyle bir kez kalibre et, hep doğru kalır.</p>
       <h3>Ekrandaki cetvel ne kadar uzun?</h3>
-      <p>Ekranın elverdiği kadar — 12 inçlik cetvel çoğu dizüstü bilgisayara sığar, telefonlar daha az gösterir. Sabit uzunlukta bir referans için kâğıt cetveli yazdır: %100 ölçekte bir kenarda tam 18&nbsp;cm, diğer kenarda 7&nbsp;inç.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Milimetre cetveli olarak kullanabilir miyim?</h3>
       <p>Evet. Araç çubuğunu <b>mm</b>'ye al, cetveller milimetre çizgi ve numaralarıyla yeniden çizilir — hassas küçük ölçümler için ideal.</p>
       <h3>Telefonlarda ve tabletlerde çalışıyor mu?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Bu çevrimiçi cetvel doğru mu?","acceptedAnswer":{"@type":"Answer","text":"Evet — kalibre edildikten sonra çoğu ekranda yaklaşık bir milimetre hassasiyetindedir. Yeşil durum noktası, cihazının tanındığı ve fabrika piksel yoğunluğunun uygulandığı anlamına gelir. Cihazın tanınmazsa en hassas seçenek olan banka kartı yöntemiyle kalibre et."}},
 {"@type":"Question","name":"Ekranımı nasıl kalibre ederim?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your kalibrasyon is saved automatically."}},
 {"@type":"Question","name":"Cetvel monitörümde neden yanlış görünüyor?","acceptedAnswer":{"@type":"Answer","text":"Hemen her zaman, çünkü iki monitör aynı çözünürlüğü paylaşıp farklı fiziksel boyutta olabilir — 1920×1080 panel 22 ya da 32 inç olabilir. Cetvel tahmin edemez, bu yüzden o monitörü banka kartı yöntemiyle bir kez kalibre et, hep doğru kalır."}},
-{"@type":"Question","name":"Ekrandaki cetvel ne kadar uzun?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inç on the other at 100% scale."}},
+{"@type":"Question","name":"Ekrandaki cetvel ne kadar uzun?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 inç or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inç on the other at 100% scale."}},
 {"@type":"Question","name":"Milimetre cetveli olarak kullanabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Telefonlarda ve tabletlerde çalışıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Evet. Düzen küçük ekranlara uyum sağlar ve popüler telefonlarla tabletlerin çoğu otomatik kalibrasyon için cihaz veritabanındadır. Dokunmatik ekranlarda ölçüm kutusunu parmağınla sürükle."}},
 {"@type":"Question","name":"Kamerama ihtiyacım var mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. AR ölçüm uygulamalarının aksine TrueRuler kameranı asla kullanmaz — ekranının piksel yoğunluğundan ölçer, bu yüzden doğrultacak bir şey ve verilecek bir izin yok."}},
