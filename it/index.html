@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Righello online in dimensioni reali</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Ultimo aggiornamento: 13 ottobre 2026 · Dal team di TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Ultimo aggiornamento: 21 ottobre 2026 · Dal team di TrueRuler</p>
     <p><b>Un righello online trasforma il tuo schermo in un vero strumento di misura.</b> TrueRuler disegna scale in centimetri, millimetri e pollici a dimensioni fisiche reali rilevando la densità dei pixel del tuo dispositivo — oppure con una sola calibrazione usando le dimensioni dello schermo o una comune carta di credito. È gratis, non richiede installazione e funziona su qualsiasi telefono, tablet, laptop o monitor.</p>
     <ul class="ticks">
       <li>Righelli in cm, mm e pollici in dimensioni reali su qualsiasi schermo</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Mantieni lo zoom del browser al 100% per misure precise</li>
       <li>Gratis per sempre — senza account, senza installazione; la tua calibrazione è salvata su questo dispositivo</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Calibra: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Misura: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Il tuo schermo non sa cos'è un pollice — conosce solo i pixel. Il ponte tra i due è la <b>densità dei pixel</b>, misurata in PPI (pixel per pollice). Se il tuo schermo mostra 141 pixel per pollice, il righello disegna un pollice come esattamente 141 pixel, un centimetro come 55,6 pixel e un millimetro come 5,56 pixel.</p>
     <p>C'è un trucco: due monitor possono condividere la stessa risoluzione 1920×1080 ed essere larghi 22 o 32 pollici — gli stessi pixel, dimensioni reali molto diverse. Ecco perché un righello online deve conoscere il vero PPI del tuo schermo. TrueRuler lo fa in due modi: riconosce i telefoni, tablet e laptop più comuni da un database di dispositivi e applica il loro PPI di fabbrica, oppure calcola il PPI dalla diagonale dello schermo. <span id="ppiEcho"></span></p>
     <p>Un altro dettaglio: i browser lavorano in <b>pixel CSS</b>, che possono differire dai pixel fisici sui display ad alta densità ("Retina"). TrueRuler legge il rapporto pixel del tuo dispositivo e converte automaticamente, e ti avvisa se lo zoom del browser non è al 100%, perché lo zoom cambia la dimensione di un pixel CSS.</p>
-    <h2>La formula di calibrazione</h2>
-    <p>Quando inserisci la diagonale del tuo schermo, il righello calcola il PPI con il teorema di Pitagora:</p>
-    <p class="formula"><b>PPI = √(larghezza² + altezza²) ÷ pollici di diagonale</b></p>
-    <p><b>Esempio pratico.</b> Un laptop da 15,6 pollici con schermo 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4.852.800 ≈ 2202,9 pixel in diagonale. Dividi per 15,6 pollici → <b>141,2 PPI</b>. Un pollice viene quindi disegnato come 141,2 pixel, un centimetro come 55,6 pixel (141,2 ÷ 2,54) e un millimetro come 5,56 pixel.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>La formula di calibrazione</h2>
+    <p>Quando inserisci la diagonale del tuo schermo, il righello calcola il PPI con il teorema di Pitagora:</p>
+    <p class="formula"><b>PPI = √(larghezza² + altezza²) ÷ pollici di diagonale</b></p>
+    <p><b>Esempio pratico.</b> Un laptop da 15,6 pollici con schermo 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4.852.800 ≈ 2202,9 pixel in diagonale. Dividi per 15,6 pollici → <b>141,2 PPI</b>. Un pollice viene quindi disegnato come 141,2 pixel, un centimetro come 55,6 pixel (141,2 ÷ 2,54) e un millimetro come 5,56 pixel.</p>
+    <p><b>How reliable is each calibrazione method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Diagonale dello schermo — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a calibrazione only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Leggere le scale: pollici, centimetri e millimetri</h2>
     <p>Il righello mostra le scale metriche e imperiali fianco a fianco. Usa i <b>millimetri</b> per lavori di precisione, i <b>centimetri</b> per le misure quotidiane e i <b>pollici</b> per le misure imperiali. Il convertitore integrato qui sopra gestisce anche metri, piedi, iarde e punti.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Premi <b>Ruota</b> per passare dal righello orizzontale a quello verticale — comodo per misurare altezze o quando lo schermo è stretto. Il righello verticale funziona esattamente come quello orizzontale, in centimetri, millimetri e pollici.</p>
     <h2>Misurare oggetti con il riquadro di misurazione trascinabile</h2>
     <p>Premi <b>Misura</b> e trascina un riquadro su qualsiasi cosa visibile sullo schermo — una foto, un diagramma, l'immagine di un prodotto. Il riquadro mostra in tempo reale larghezza × altezza in cm, mm e pollici. Trascina le maniglie per ridimensionarlo, trascina il centro per spostarlo e usa i tasti freccia per regolazioni precise. <b>Copia</b> mette la misura negli appunti.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Misura dell'anello</h2>
     <p>Per trovare la tua misura dell'anello, avvolgi una sottile striscia di carta intorno al dito, segna il punto di sovrapposizione, poi appoggia la striscia distesa sul righello a schermo e leggi la lunghezza in millimetri — la maggior parte dei gioiellieri misura gli anelli dalla circonferenza del dito in mm. Per un anello che già possiedi, apri il riquadro <b>Misura</b> e trascinalo sul diametro interno dell'anello. La misura del dito varia leggermente durante il giorno, quindi misura la sera per il risultato più affidabile.</p>
     <h2>Modalità goniometro</h2>
