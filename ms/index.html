@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Pembaris dalam talian saiz sebenar</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Kemas kini terakhir: 13 Oktober 2026 · Oleh pasukan TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Kemas kini terakhir: 21 Oktober 2026 · Oleh pasukan TrueRuler</p>
     <p><b>Pembaris dalam talian mengubah skrin anda menjadi alat pengukur sebenar.</b> TrueRuler melukis skala sentimeter, milimeter dan inci pada saiz fizikal sebenar dengan mengesan ketumpatan piksel peranti anda — atau dengan menentukur sekali sahaja menggunakan saiz skrin anda atau kad bank standard. Ia percuma, tidak memerlukan pemasangan, dan berfungsi pada mana-mana telefon, tablet, komputer riba atau monitor.</p>
     <ul class="ticks">
       <li>Pembaris cm, mm dan inci bersaiz sebenar pada mana-mana skrin</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Kekalkan zum pelayar pada 100% untuk pengukuran tepat</li>
       <li>Percuma selamanya — tiada akaun, tiada pemasangan; penentukuran anda disimpan pada peranti ini</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Tentukur: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Ukur: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Skrin anda tidak tahu apa itu inci — ia hanya tahu piksel. Penghubung antara keduanya ialah <b>ketumpatan piksel</b>, diukur dalam PPI (piksel per inci). Jika skrin anda memaparkan 141 piksel per inci, pembaris melukis satu inci sebagai tepat 141 piksel, satu sentimeter sebagai 55.6 piksel, dan satu milimeter sebagai 5.56 piksel.</p>
     <p>Ada satu perkara: dua monitor boleh berkongsi resolusi 1920×1080 yang sama tetapi berukuran 22 atau 32 inci lebar — piksel yang sama, saiz sebenar yang sangat berbeza. Itulah sebabnya pembaris dalam talian mesti mengetahui PPI sebenar skrin anda. TrueRuler melakukannya dalam dua cara: ia mengenali telefon, tablet dan komputer riba biasa daripada pangkalan data peranti dan menggunakan PPI kilang mereka, atau ia mengira PPI daripada saiz pepenjuru skrin. <span id="ppiEcho"></span></p>
     <p>Satu lagi perincian: pelayar berfungsi dalam <b>piksel CSS</b>, yang boleh berbeza daripada piksel fizikal pada paparan berketumpatan tinggi ("Retina"). TrueRuler membaca nisbah piksel peranti anda dan menukar secara automatik, dan ia memberi amaran jika zum pelayar bukan pada 100%, kerana zum mengubah saiz piksel CSS.</p>
-    <h2>Formula penentukuran</h2>
-    <p>Apabila anda memasukkan saiz pepenjuru skrin anda, pembaris mengira PPI dengan teorem Pythagoras:</p>
-    <p class="formula"><b>PPI = √(lebar² + tinggi²) ÷ inci pepenjuru</b></p>
-    <p><b>Contoh pengiraan.</b> Komputer riba 15.6 inci dengan skrin 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel secara pepenjuru. Bahagi dengan 15.6 inci → <b>141.2 PPI</b>. Satu inci oleh itu dilukis sebagai 141.2 piksel, satu sentimeter sebagai 55.6 piksel (141.2 ÷ 2.54), dan satu milimeter sebagai 5.56 piksel.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Formula penentukuran</h2>
+    <p>Apabila anda memasukkan saiz pepenjuru skrin anda, pembaris mengira PPI dengan teorem Pythagoras:</p>
+    <p class="formula"><b>PPI = √(lebar² + tinggi²) ÷ inci pepenjuru</b></p>
+    <p><b>Contoh pengiraan.</b> Komputer riba 15.6 inci dengan skrin 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel secara pepenjuru. Bahagi dengan 15.6 inci → <b>141.2 PPI</b>. Satu inci oleh itu dilukis sebagai 141.2 piksel, satu sentimeter sebagai 55.6 piksel (141.2 ÷ 2.54), dan satu milimeter sebagai 5.56 piksel.</p>
+    <p><b>How reliable is each penentukuran method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Pepenjuru skrin — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a penentukuran only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Membaca skala: inci, sentimeter dan milimeter</h2>
     <p>Pembaris memaparkan skala metrik dan imperial bersebelahan. Gunakan <b>milimeter</b> untuk kerja berketepatan, <b>sentimeter</b> untuk pengukuran harian, dan <b>inci</b> untuk ukuran imperial. Penukar terbina dalam di atas juga mengendalikan meter, kaki, ela dan poin.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Tekan <b>Putar</b> untuk menukar pembaris melintang dan menegak — berguna untuk mengukur ketinggian atau apabila skrin anda sempit. Pembaris menegak berfungsi sama seperti yang melintang, dalam sentimeter, milimeter dan inci.</p>
     <h2>Mengukur objek dengan kotak seret-untuk-ukur</h2>
     <p>Tekan <b>Ukur</b> dan seret kotak pada apa sahaja yang kelihatan pada skrin — foto, rajah, imej produk. Kotak menunjukkan lebar × tinggi secara langsung dalam cm, mm dan inci. Seret pemegang untuk mengubah saiz, seret bahagian tengah untuk mengalihkannya, dan gunakan kekunci anak panah untuk pelarasan tepat. <b>Salin</b> meletakkan bacaan pada papan klip anda.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Mengukur saiz cincin</h2>
     <p>Untuk mengetahui saiz cincin anda, lilitkan jalur kertas nipis pada jari anda, tandakan di mana ia bertindih, kemudian letakkan jalur itu rata pada pembaris skrin dan baca panjangnya dalam milimeter — kebanyakan tukang emas menentukan saiz cincin berdasarkan lilitan jari dalam mm. Untuk cincin yang sudah anda miliki, buka kotak <b>Ukur</b> dan seretkannya merentasi diameter dalam cincin. Saiz jari berubah sedikit sepanjang hari, jadi ukur pada waktu petang untuk hasil paling boleh dipercayai.</p>
     <h2>Mod protraktor</h2>
