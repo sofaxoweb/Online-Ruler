@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">ไม้บรรทัดออนไลน์ขนาดจริง</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">อัปเดตล่าสุด: 13 ตุลาคม 2026 · โดยทีม TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">อัปเดตล่าสุด: 21 ตุลาคม 2026 · โดยทีม TrueRuler</p>
     <p><b>ไม้บรรทัดออนไลน์เปลี่ยนหน้าจอของคุณให้เป็นเครื่องมือวัดจริง</b> TrueRuler วาดสเกลเซนติเมตร มิลลิเมตร และนิ้วในขนาดจริงโดยตรวจจับความหนาแน่นพิกเซลของอุปกรณ์ — หรือปรับเทียบเพียงครั้งเดียวด้วยขนาดหน้าจอหรือบัตรธนาคารมาตรฐาน ใช้งานฟรี ไม่ต้องติดตั้ง และใช้ได้กับโทรศัพท์ แท็บเล็ต แล็ปท็อป หรือจอภาพทุกชนิด</p>
     <ul class="ticks">
       <li>ไม้บรรทัดซม. มม. และนิ้วขนาดจริงบนทุกหน้าจอ</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>คงซูมเบราว์เซอร์ไว้ที่ 100% เพื่อการวัดที่แม่นยำ</li>
       <li>ฟรีตลอดไป — ไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้ง การปรับเทียบถูกบันทึกบนอุปกรณ์นี้</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> ปรับเทียบ: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> วัด: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>หน้าจอของคุณไม่รู้จักว่าหนึ่งนิ้วยาวแค่ไหน — มันรู้จักแค่พิกเซล สะพานเชื่อมระหว่างสองสิ่งนี้คือ <b>ความหนาแน่นพิกเซล</b> ซึ่งวัดเป็น PPI (พิกเซลต่อนิ้ว) ถ้าหน้าจอแสดงผล 141 พิกเซลต่อนิ้ว ไม้บรรทัดจะวาดหนึ่งนิ้วด้วย 141 พิกเซลพอดี หนึ่งเซนติเมตรด้วย 55.6 พิกเซล และหนึ่งมิลลิเมตรด้วย 5.56 พิกเซล</p>
     <p>มีข้อแม้อยู่: จอสองจออาจมีความละเอียด 1920×1080 เท่ากัน แต่กว้าง 22 หรือ 32 นิ้วก็ได้ — พิกเซลเท่ากัน แต่ขนาดจริงต่างกันมาก นั่นคือเหตุผลที่ไม้บรรทัดออนไลน์ต้องรู้ค่า PPI จริงของหน้าจอ TrueRuler ทำได้ 2 วิธี: จดจำโทรศัพท์ แท็บเล็ต และแล็ปท็อปทั่วไปจากฐานข้อมูลอุปกรณ์แล้วใช้ค่า PPI จากโรงงาน หรือคำนวณ PPI จากขนาดเส้นทแยงมุมของหน้าจอ <span id="ppiEcho"></span></p>
     <p>รายละเอียดอีกอย่าง: เบราว์เซอร์ทำงานด้วย <b>พิกเซล CSS</b> ซึ่งอาจต่างจากพิกเซลจริงบนจอความหนาแน่นสูง (แบบ "Retina") TrueRuler จะอ่านอัตราส่วนพิกเซลของอุปกรณ์และแปลงให้อัตโนมัติ และจะเตือนหากซูมเบราว์เซอร์ไม่ได้อยู่ที่ 100% เพราะการซูมเปลี่ยนขนาดของพิกเซล CSS</p>
-    <h2>สูตรการปรับเทียบ</h2>
-    <p>เมื่อคุณกรอกขนาดเส้นทแยงมุมของหน้าจอ ไม้บรรทัดจะคำนวณ PPI ด้วยทฤษฎีบทพีทาโกรัส:</p>
-    <p class="formula"><b>PPI = √(ความกว้าง² + ความสูง²) ÷ นิ้วเส้นทแยงมุม</b></p>
-    <p><b>ตัวอย่างการคำนวณ</b> แล็ปท็อป 15.6 นิ้ว หน้าจอ 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 พิกเซลตามแนวทแยง หารด้วย 15.6 นิ้ว → <b>141.2 PPI</b> ดังนั้นหนึ่งนิ้วจึงวาดด้วย 141.2 พิกเซล หนึ่งเซนติเมตรด้วย 55.6 พิกเซล (141.2 ÷ 2.54) และหนึ่งมิลลิเมตรด้วย 5.56 พิกเซล</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>สูตรการปรับเทียบ</h2>
+    <p>เมื่อคุณกรอกขนาดเส้นทแยงมุมของหน้าจอ ไม้บรรทัดจะคำนวณ PPI ด้วยทฤษฎีบทพีทาโกรัส:</p>
+    <p class="formula"><b>PPI = √(ความกว้าง² + ความสูง²) ÷ นิ้วเส้นทแยงมุม</b></p>
+    <p><b>ตัวอย่างการคำนวณ</b> แล็ปท็อป 15.6 นิ้ว หน้าจอ 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 พิกเซลตามแนวทแยง หารด้วย 15.6 นิ้ว → <b>141.2 PPI</b> ดังนั้นหนึ่งนิ้วจึงวาดด้วย 141.2 พิกเซล หนึ่งเซนติเมตรด้วย 55.6 พิกเซล (141.2 ÷ 2.54) และหนึ่งมิลลิเมตรด้วย 5.56 พิกเซล</p>
+    <p><b>How reliable is each การปรับเทียบ method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>เส้นทแยงมุมหน้าจอ — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a การปรับเทียบ only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>การอ่านสเกล: นิ้ว เซนติเมตร และมิลลิเมตร</h2>
     <p>ไม้บรรทัดแสดงสเกลเมตริกและอิมพีเรียลคู่กัน ใช้ <b>มิลลิเมตร</b> สำหรับงานที่ต้องการความละเอียด ใช้ <b>เซนติเมตร</b> สำหรับการวัดทั่วไป และใช้ <b>นิ้ว</b> สำหรับหน่วยอิมพีเรียล ตัวแปลงหน่วยในตัวด้านบนยังรองรับเมตร ฟุต หลา และพอยต์ด้วย</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>กด <b>หมุน</b> เพื่อสลับไม้บรรทัดแนวนอนกับแนวตั้ง — สะดวกเมื่อต้องการวัดความสูงหรือเมื่อหน้าจอแคบ ไม้บรรทัดแนวตั้งทำงานเหมือนแนวนอนทุกอย่าง ทั้งเซนติเมตร มิลลิเมตร และนิ้ว</p>
     <h2>การวัดวัตถุด้วยกล่องลากเพื่อวัด</h2>
     <p>กด <b>วัด</b> แล้วลากกล่องคลุมสิ่งที่เห็นบนหน้าจอ — รูปถ่าย แผนภาพ รูปสินค้า กล่องจะแสดงความกว้าง × ความสูงแบบเรียลไทม์เป็นซม. มม. และนิ้ว ลากจุดจับเพื่อปรับขนาด ลากตรงกลางเพื่อย้าย และใช้ปุ่มลูกศรเพื่อขยับอย่างละเอียด <b>คัดลอก</b> จะนำค่าที่วัดได้ไปไว้ในคลิปบอร์ด</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>การวัดขนาดแหวน</h2>
     <p>หากต้องการทราบขนาดแหวน ให้พันแถบกระดาษบางรอบนิ้ว ทำเครื่องหมายตรงที่ซ้อนทับกัน แล้ววางแถบราบกับไม้บรรทัดบนหน้าจอ อ่านความยาวเป็นมิลลิเมตร — ร้านเครื่องประดับส่วนใหญ่กำหนดขนาดแหวนจากเส้นรอบวงนิ้วเป็นมม. สำหรับแหวนที่มีอยู่แล้ว ให้เปิดกล่อง <b>วัด</b> แล้วลากคลุมเส้นผ่านศูนย์กลางด้านในของแหวน ขนาดนิ้วจะเปลี่ยนเล็กน้อยระหว่างวัน ควรวัดตอนเย็นจึงจะได้ผลน่าเชื่อถือที่สุด</p>
     <h2>โหมดโปรแทรกเตอร์</h2>
