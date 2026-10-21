@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">실제 크기로 재는 온라인 자</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">최종 업데이트: 2026년 10월 13일 · TrueRuler 팀</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">최종 업데이트: 2026년 10월 21일 · TrueRuler 팀</p>
     <p><b>온라인 자는 화면을 진짜 측정 도구로 바꿔줍니다.</b> TrueRuler는 기기의 픽셀 밀도를 감지해 센티미터, 밀리미터, 인치 눈금을 실제 크기에 맞게 그려줍니다. 화면 크기나 일반 은행 카드로 한 번 보정하는 방법도 있어요. 무료이며 설치가 필요 없고, 휴대폰, 태블릿, 노트북, 모니터 등 어떤 화면에서도 사용할 수 있어요.</p>
     <ul class="ticks">
       <li>어떤 화면에서도 실제 크기의 cm, mm, 인치 자</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>정확한 측정을 위해 브라우저 확대/축소는 100%로 유지하세요</li>
       <li>영원히 무료 — 계정 불필요, 설치 불필요. 보정값은 이 기기에 저장돼요</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> 보정: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> 측정: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>화면은 1인치가 무엇인지 몰라요. 화면이 아는 것은 픽셀뿐이에요. 둘을 연결해주는 것이 바로 <b>픽셀 밀도</b>, 즉 PPI(pixels per inch)예요. 화면이 1인치당 141픽셀이라면, 자는 1인치를 정확히 141픽셀, 1센티미터를 55.6픽셀, 1밀리미터를 5.56픽셀로 그려줍니다.</p>
     <p>단, 주의할 점이 있어요. 1920×1080이라는 같은 해상도라도 22인치와 32인치 모니터가 있어요. 픽셀은 같지만 실제 크기는 크게 다르죠. 그래서 온라인 자는 화면의 진짜 PPI를 알아야 해요. TrueRuler는 두 가지 방법으로 이를 해결해요. 흔한 휴대폰, 태블릿, 노트북을 기기 데이터베이스에서 인식해 공장 출고 시 PPI를 적용하거나, 화면 대각선 크기에서 PPI를 계산해요. <span id="ppiEcho"></span></p>
     <p>한 가지 더: 브라우저는 <b>CSS 픽셀</b> 단위로 동작하는데, 고밀도("Retina") 디스플레이에서는 물리적 픽셀과 다를 수 있어요. TrueRuler는 기기의 픽셀 비율을 읽어 자동으로 변환해주고, 브라우저 확대/축소가 100%가 아닐 경우 경고해줍니다. 확대/축소를 하면 CSS 픽셀의 크기가 달라지기 때문이에요.</p>
-    <h2>보정 계산식</h2>
-    <p>화면의 대각선 크기를 입력하면, 자가 피타고라스 정리로 PPI를 계산해줘요:</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ 대각선 인치</b></p>
-    <p><b>계산 예시.</b> 1920×1080 화면의 15.6인치 노트북: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 대각선 2202.9픽셀. 15.6인치로 나누면 → <b>141.2 PPI</b>. 따라서 1인치는 141.2픽셀, 1센티미터는 55.6픽셀(141.2 ÷ 2.54), 1밀리미터는 5.56픽셀로 그려져요.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>보정 계산식</h2>
+    <p>화면의 대각선 크기를 입력하면, 자가 피타고라스 정리로 PPI를 계산해줘요:</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ 대각선 인치</b></p>
+    <p><b>계산 예시.</b> 1920×1080 화면의 15.6인치 노트북: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 대각선 2202.9픽셀. 15.6인치로 나누면 → <b>141.2 PPI</b>. 따라서 1인치는 141.2픽셀, 1센티미터는 55.6픽셀(141.2 ÷ 2.54), 1밀리미터는 5.56픽셀로 그려져요.</p>
+    <p><b>How reliable is each 보정 method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>화면 대각선 — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a 보정 only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>눈금 읽는 방법: 인치, 센티미터, 밀리미터</h2>
     <p>자에는 미터법과 야드파운드법 눈금이 나란히 표시돼요. 정밀한 작업에는 <b>밀리미터</b>, 일상적인 측정에는 <b>센티미터</b>, 인치 단위 측정에는 <b>인치</b>를 사용하세요. 내장된 단위 변환기로 미터, 피트, 야드, 포인트 변환도 가능해요.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p><b>회전</b>을 누르면 가로 자와 세로 자가 바뀌어요. 높이를 잴 때나 화면이 좁을 때 유용해요. 세로 자는 가로 자와 사용법이 똑같으며 센티미터, 밀리미터, 인치를 지원해요.</p>
     <h2>드래그 측정 상자로 물체 재기</h2>
     <p><b>측정</b>을 누르고 화면에 보이는 것(사진, 도표, 상품 이미지 등) 위에서 상자를 드래그하세요. 상자에 가로×세로가 cm, mm, 인치로 실시간 표시돼요. 모서리를 드래그하면 크기 조절, 가운데를 드래그하면 이동, 방향 키로는 정밀하게 미세 조정할 수 있어요. <b>복사</b>를 누르면 측정값이 클립보드에 복사돼요.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>반지 사이즈 재기</h2>
     <p>반지 사이즈를 알아보려면 얇게 자른 종이를 손가락에 감고 겹치는 부분에 표시한 뒤, 종이를 화면 속 자에 평평하게 대고 길이를 밀리미터로 읽으세요. 대부분의 주얼리 업체는 손가락 둘레(mm)로 반지 사이즈를 정해요. 이미 가지고 있는 반지라면 <b>측정</b> 상자를 열어 반지 안지름에 맞춰 드래그하세요. 손가락 크기는 하루 중에도 조금씩 변하니 저녁에 재는 것이 가장 정확해요.</p>
     <h2>각도기 모드</h2>
