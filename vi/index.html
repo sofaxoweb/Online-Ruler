@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Thước online kích thước thật</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Cập nhật lần cuối: 13 tháng 10, 2026 · Bởi đội ngũ TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Cập nhật lần cuối: 21 tháng 10, 2026 · Bởi đội ngũ TrueRuler</p>
     <p><b>Thước trực tuyến biến màn hình của bạn thành công cụ đo thật.</b> TrueRuler vẽ thang centimet, milimet và inch đúng kích thước vật lý bằng cách phát hiện mật độ điểm ảnh của thiết bị — hoặc hiệu chuẩn một lần bằng kích thước màn hình hay thẻ ngân hàng chuẩn. Miễn phí, không cần cài đặt, dùng được trên mọi điện thoại, máy tính bảng, laptop hay màn hình.</p>
     <ul class="ticks">
       <li>Thước cm, mm và inch đúng kích thước thật trên mọi màn hình</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Giữ mức thu phóng trình duyệt ở 100% để đo chính xác</li>
       <li>Miễn phí mãi mãi — không tài khoản, không cài đặt; hiệu chuẩn được lưu trên thiết bị này</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Hiệu chỉnh: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Đo: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Màn hình của bạn không biết một inch là bao nhiêu — nó chỉ biết điểm ảnh. Cầu nối giữa hai thứ là <b>mật độ điểm ảnh</b>, đo bằng PPI (điểm ảnh trên mỗi inch). Nếu màn hình hiển thị 141 điểm ảnh mỗi inch, thước sẽ vẽ một inch đúng bằng 141 điểm ảnh, một centimet bằng 55.6 điểm ảnh và một milimet bằng 5.56 điểm ảnh.</p>
     <p>Có một điểm cần lưu ý: hai màn hình có thể cùng độ phân giải 1920×1080 nhưng một cái rộng 22 inch, cái kia 32 inch — cùng số điểm ảnh nhưng kích thước thật rất khác nhau. Đó là lý do thước trực tuyến phải biết PPI thật của màn hình. TrueRuler làm điều này theo hai cách: nhận diện điện thoại, máy tính bảng và laptop phổ biến từ cơ sở dữ liệu thiết bị rồi áp dụng PPI gốc của chúng, hoặc tính PPI từ kích thước đường chéo màn hình. <span id="ppiEcho"></span></p>
     <p>Một chi tiết nữa: trình duyệt làm việc với <b>điểm ảnh CSS</b>, có thể khác điểm ảnh vật lý trên màn hình mật độ cao ("Retina"). TrueRuler đọc tỉ lệ điểm ảnh của thiết bị và tự động chuyển đổi, đồng thời cảnh báo nếu mức thu phóng của trình duyệt không ở 100%, vì thu phóng làm thay đổi kích thước điểm ảnh CSS.</p>
-    <h2>Công thức hiệu chuẩn</h2>
-    <p>Khi bạn nhập kích thước đường chéo màn hình, thước sẽ tính PPI bằng định lý Pythagore:</p>
-    <p class="formula"><b>PPI = √(chiều rộng² + chiều cao²) ÷ số inch đường chéo</b></p>
-    <p><b>Ví dụ minh họa.</b> Laptop 15.6 inch màn hình 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 điểm ảnh theo đường chéo. Chia cho 15.6 inch → <b>141.2 PPI</b>. Như vậy một inch được vẽ bằng 141.2 điểm ảnh, một centimet bằng 55.6 điểm ảnh (141.2 ÷ 2.54) và một milimet bằng 5.56 điểm ảnh.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Công thức hiệu chuẩn</h2>
+    <p>Khi bạn nhập kích thước đường chéo màn hình, thước sẽ tính PPI bằng định lý Pythagore:</p>
+    <p class="formula"><b>PPI = √(chiều rộng² + chiều cao²) ÷ số inch đường chéo</b></p>
+    <p><b>Ví dụ minh họa.</b> Laptop 15.6 inch màn hình 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 điểm ảnh theo đường chéo. Chia cho 15.6 inch → <b>141.2 PPI</b>. Như vậy một inch được vẽ bằng 141.2 điểm ảnh, một centimet bằng 55.6 điểm ảnh (141.2 ÷ 2.54) và một milimet bằng 5.56 điểm ảnh.</p>
+    <p><b>How reliable is each hiệu chỉnh method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Đường chéo màn hình — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a hiệu chỉnh only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Đọc thang đo: inch, centimet và milimet</h2>
     <p>Thước hiển thị thang mét và thang inch cạnh nhau. Dùng <b>milimet</b> cho công việc cần độ chính xác, <b>centimet</b> cho đo đạc hằng ngày và <b>inch</b> cho đơn vị đo Anh-Mỹ. Bộ chuyển đổi tích hợp phía trên còn hỗ trợ mét, feet, yard và point.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Nhấn <b>Xoay</b> để đổi thước ngang và thước dọc — tiện khi đo chiều cao hoặc khi màn hình hẹp. Thước dọc hoạt động y hệt thước ngang, với centimet, milimet và inch.</p>
     <h2>Đo vật thể bằng hộp kéo-để-đo</h2>
     <p>Nhấn <b>Đo</b> rồi kéo hộp bao quanh bất cứ thứ gì hiển thị trên màn hình — ảnh chụp, sơ đồ, ảnh sản phẩm. Hộp hiển thị trực tiếp chiều rộng × chiều cao bằng cm, mm và inch. Kéo các tay cầm để đổi kích thước, kéo phần giữa để di chuyển, dùng phím mũi tên để chỉnh tinh. <b>Sao chép</b> sẽ đưa số đo vào clipboard.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Đo size nhẫn</h2>
     <p>Để biết size nhẫn, hãy quấn dải giấy mỏng quanh ngón tay, đánh dấu chỗ giấy chồng lên nhau, rồi đặt dải giấy phẳng áp vào thước trên màn hình và đọc độ dài bằng milimet — hầu hết thợ kim hoàn định size nhẫn theo chu vi ngón tay tính bằng mm. Với chiếc nhẫn bạn đã có, mở hộp <b>Đo</b> rồi kéo qua đường kính trong của nhẫn. Size ngón tay thay đổi nhẹ trong ngày, nên hãy đo vào buổi tối để có kết quả đáng tin nhất.</p>
     <h2>Chế độ thước đo góc</h2>
