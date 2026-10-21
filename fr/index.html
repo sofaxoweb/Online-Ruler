@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Règle en ligne en taille réelle</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Dernière mise à jour : 13 octobre 2026 · Par l'équipe TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Dernière mise à jour : 21 octobre 2026 · Par l'équipe TrueRuler</p>
     <p><b>Une règle en ligne transforme votre écran en un véritable instrument de mesure.</b> TrueRuler trace des graduations en centimètres, millimètres et pouces en taille physique réelle en détectant la densité de pixels de votre appareil — ou en calibrant une seule fois à partir de la taille de votre écran ou d'une carte bancaire standard. C'est gratuit, sans installation, et cela fonctionne sur n'importe quel téléphone, tablette, ordinateur portable ou moniteur.</p>
     <ul class="ticks">
       <li>Des règles en cm, mm et pouces en taille réelle sur n'importe quel écran</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Gardez le zoom du navigateur à 100 % pour des mesures précises</li>
       <li>Gratuit pour toujours — sans compte, sans installation ; votre calibrage est enregistré sur cet appareil</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Calibrer: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Mesurer: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Votre écran ne sait pas ce qu'est un pouce — il ne connaît que les pixels. Le lien entre les deux, c'est la <b>densité de pixels</b>, mesurée en PPI (pixels par pouce). Si votre écran affiche 141 pixels par pouce, la règle trace un pouce avec exactement 141 pixels, un centimètre avec 55.6 pixels et un millimètre avec 5.56 pixels.</p>
     <p>Le hic : deux moniteurs peuvent partager la même résolution 1920×1080 tout en faisant 22 ou 32 pouces de large — les mêmes pixels, des tailles réelles très différentes. C'est pourquoi une règle en ligne doit connaître le vrai PPI de votre écran. TrueRuler s'y prend de deux façons : il reconnaît les téléphones, tablettes et ordinateurs portables courants à partir d'une base d'appareils et applique leur PPI d'usine, ou il calcule le PPI à partir de la taille de la diagonale de l'écran. <span id="ppiEcho"></span></p>
     <p>Un dernier détail : les navigateurs travaillent en <b>pixels CSS</b>, qui peuvent différer des pixels physiques sur les écrans haute densité (« Retina »). TrueRuler lit le ratio de pixels de votre appareil et convertit automatiquement, et vous avertit si le zoom du navigateur n'est pas à 100 %, car le zoom modifie la taille d'un pixel CSS.</p>
-    <h2>La formule de calibrage</h2>
-    <p>Lorsque vous saisissez la taille de la diagonale de votre écran, la règle calcule le PPI avec le théorème de Pythagore :</p>
-    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
-    <p><b>Exemple concret.</b> Un portable de 15.6 pouces avec un écran 1920×1080 : √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels en diagonale. Divisez par 15.6 pouces → <b>141.2 PPI</b>. Un pouce est donc tracé avec 141.2 pixels, un centimètre avec 55.6 pixels (141.2 ÷ 2.54) et un millimètre avec 5.56 pixels.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>La formule de calibrage</h2>
+    <p>Lorsque vous saisissez la taille de la diagonale de votre écran, la règle calcule le PPI avec le théorème de Pythagore :</p>
+    <p class="formula"><b>PPI = √(width² + height²) ÷ diagonal inches</b></p>
+    <p><b>Exemple concret.</b> Un portable de 15.6 pouces avec un écran 1920×1080 : √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 pixels en diagonale. Divisez par 15.6 pouces → <b>141.2 PPI</b>. Un pouce est donc tracé avec 141.2 pixels, un centimètre avec 55.6 pixels (141.2 ÷ 2.54) et un millimètre avec 5.56 pixels.</p>
+    <p><b>How reliable is each calibrage method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Diagonale de l'écran — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a calibrage only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Lire les graduations : pouces, centimètres et millimètres</h2>
     <p>La règle affiche côte à côte les graduations métriques et impériales. Utilisez les <b>millimètres</b> pour les mesures de précision, les <b>centimètres</b> pour les mesures courantes et les <b>pouces</b> pour les mesures impériales. Le convertisseur intégré ci-dessus gère aussi les mètres, pieds, yards et points.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Appuyez sur <b>Pivoter</b> pour inverser les règles horizontale et verticale — pratique pour mesurer une hauteur ou quand votre écran est étroit. La règle verticale fonctionne exactement comme la règle horizontale, en centimètres, millimètres et pouces.</p>
     <h2>Mesurer des objets avec le cadre de mesure à glisser</h2>
     <p>Appuyez sur <b>Mesurer</b> et faites glisser un cadre sur tout élément visible à l'écran — une photo, un schéma, une image de produit. Le cadre affiche en direct la largeur × la hauteur en cm, mm et pouces. Faites glisser les poignées pour redimensionner, le centre pour déplacer, et utilisez les flèches du clavier pour des ajustements précis. <b>Copier</b> place la mesure dans votre presse-papiers.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Mesurer une taille de bague</h2>
     <p>Pour connaître votre taille de bague, enroulez une fine bande de papier autour de votre doigt, marquez l'endroit où elle se chevauche, puis posez-la à plat contre la règle à l'écran et lisez la longueur en millimètres — la plupart des bijoutiers dimensionnent les bagues d'après la circonférence du doigt en mm. Pour une bague que vous possédez déjà, ouvrez le cadre <b>Mesurer</b> et faites-le glisser sur le diamètre intérieur de l'anneau. La taille du doigt varie légèrement au cours de la journée, mesurez donc le soir pour un résultat plus fiable.</p>
     <h2>Mode rapporteur</h2>
