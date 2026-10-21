@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Gerçek boyutta online cetvel</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Son güncelleme: 13 Ekim 2026 · TrueRuler ekibi</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Son güncelleme: 21 Ekim 2026 · TrueRuler ekibi</p>
     <p><b>Çevrimiçi cetvel, ekranını gerçek bir ölçüm aracına dönüştürür.</b> TrueRuler, cihazının piksel yoğunluğunu algılayarak — ya da ekran boyutunla veya standart bir banka kartıyla bir kez kalibre ederek — santimetre, milimetre ve inç ölçeklerini gerçek fiziksel boyutunda çizer. Ücretsizdir, kurulum gerektirmez ve her telefonda, tablette, dizüstü bilgisayarda ya da monitörde çalışır.</p>
     <ul class="ticks">
       <li>Her ekranda gerçek boyutlu cm, mm ve inç cetvelleri</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Doğru ölçüm için tarayıcı yakınlaştırmayı %100'de tut</li>
       <li>Sonsuza dek ücretsiz — hesap yok, kurulum yok; kalibrasyonun bu cihazda saklanır</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Kalibre Et: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Ölç: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Ekranın inçin ne olduğunu bilmez — o sadece piksel bilir. İkisi arasındaki köprü <b>piksel yoğunluğudur</b> ve PPI (inç başına piksel) ile ölçülür. Ekranın inç başına 141 piksel gösteriyorsa cetvel bir inçi tam 141 piksel, bir santimetreyi 55.6 piksel ve bir milimetreyi 5.56 piksel olarak çizer.</p>
     <p>İşin püf noktası şu: iki monitör aynı 1920×1080 çözünürlüğü paylaşıp 22 ya da 32 inç genişliğinde olabilir — aynı pikseller, çok farklı gerçek boyutlar. Bu yüzden çevrimiçi cetvelin ekranının gerçek PPI değerini öğrenmesi gerekir. TrueRuler bunu iki şekilde yapar: yaygın telefonları, tabletleri ve dizüstü bilgisayarları cihaz veritabanından tanıyıp fabrika PPI değerlerini uygular ya da PPI'yi ekranın köşegen boyutundan hesaplar. <span id="ppiEcho"></span></p>
     <p>Bir ayrıntı daha: tarayıcılar <b>CSS pikseliyle</b> çalışır; bu, yüksek yoğunluklu ("Retina") ekranlarda fiziksel pikselden farklı olabilir. TrueRuler cihazının piksel oranını okuyup otomatik dönüştürür ve tarayıcı yakınlaştırman %100'de değilse seni uyarır, çünkü yakınlaştırma CSS pikselinin boyutunu değiştirir.</p>
-    <h2>Kalibrasyon formülü</h2>
-    <p>Ekranının köşegen boyutunu girdiğinde cetvel, Pisagor teoremiyle PPI'yi hesaplar:</p>
-    <p class="formula"><b>PPI = √(genişlik² + yükseklik²) ÷ köşegen inç</b></p>
-    <p><b>Örnek hesaplama.</b> 1920×1080 ekranlı 15,6 inç dizüstü bilgisayar: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel köşegen. 15.6 inçe böl → <b>141.2 PPI</b>. Yani bir inç 141.2 piksel, bir santimetre 55.6 piksel (141.2 ÷ 2.54) ve bir milimetre 5.56 piksel olarak çizilir.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>Kalibrasyon formülü</h2>
+    <p>Ekranının köşegen boyutunu girdiğinde cetvel, Pisagor teoremiyle PPI'yi hesaplar:</p>
+    <p class="formula"><b>PPI = √(genişlik² + yükseklik²) ÷ köşegen inç</b></p>
+    <p><b>Örnek hesaplama.</b> 1920×1080 ekranlı 15,6 inç dizüstü bilgisayar: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 piksel köşegen. 15.6 inçe böl → <b>141.2 PPI</b>. Yani bir inç 141.2 piksel, bir santimetre 55.6 piksel (141.2 ÷ 2.54) ve bir milimetre 5.56 piksel olarak çizilir.</p>
+    <p><b>How reliable is each kalibrasyon method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Ekran köşegeni — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a kalibrasyon only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Ölçekleri okuma: inç, santimetre ve milimetre</h2>
     <p>Cetvel, metrik ve inç ölçeklerini yan yana gösterir. Hassas işler için <b>milimetre</b>, günlük ölçümler için <b>santimetre</b>, inç ölçüleri için <b>inç</b> kullan. Yukarıdaki yerleşik dönüştürücü metre, fit, yarda ve puntoyu da çevirir.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p><b>Döndür</b>'e basarak yatay ve dikey cetvelleri değiştir — yükseklik ölçerken ya da ekranın darsa işe yarar. Dikey cetvel, santimetre, milimetre ve inç olarak yatay cetvelle tamamen aynı çalışır.</p>
     <h2>Sürükle-ölç kutusuyla nesneleri ölçme</h2>
     <p><b>Ölç</b>'e bas ve ekranda görünen her şeyin üzerine bir kutu sürükle — bir fotoğraf, bir şema, bir ürün görseli. Kutu, canlı genişlik × yüksekliği cm, mm ve inç olarak gösterir. Yeniden boyutlandırmak için köşeleri, taşımak için ortayı sürükle; hassas ayar için ok tuşlarını kullan. <b>Kopyala</b>, ölçümü panona alır.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Yüzük ölçüsü ölçme</h2>
     <p>Yüzük ölçünü bulmak için parmağına ince bir kâğıt şerit sar, üst üste geldiği yeri işaretle, sonra şeridi ekrandaki cetvele düz şekilde koy ve uzunluğu milimetre olarak oku — çoğu kuyumcu yüzükleri parmak çevresine göre mm ile ölçer. Zaten sahip olduğun bir yüzük için <b>Ölç</b> kutusunu aç ve yüzüğün iç çapı boyunca sürükle. Parmak ölçüsü gün içinde biraz değişir, bu yüzden en güvenilir sonuç için akşam ölç.</p>
     <h2>İletki modu</h2>
