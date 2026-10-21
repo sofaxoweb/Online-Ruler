@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimeter</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 inci</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Mengukur saiz cincin</h2>
     <p>Untuk mengetahui saiz cincin anda, lilitkan jalur kertas nipis pada jari anda, tandakan di mana ia bertindih, kemudian letakkan jalur itu rata pada pembaris skrin dan baca panjangnya dalam milimeter — kebanyakan tukang emas menentukan saiz cincin berdasarkan lilitan jari dalam mm. Untuk cincin yang sudah anda miliki, buka kotak <b>Ukur</b> dan seretkannya merentasi diameter dalam cincin. Saiz jari berubah sedikit sepanjang hari, jadi ukur pada waktu petang untuk hasil paling boleh dipercayai.</p>
     <h2>Mod protraktor</h2>
-    <p>Tekan <b>Protraktor</b> untuk memaparkan protraktor 180° penuh. Seret mana-mana lengan ke sudut yang ingin anda ukur; bacaan menunjukkan darjah secara langsung. Seret bahagian tengah untuk mengalihkan seluruh protraktor. Ia menggunakan penentukuran yang sama seperti pembaris, jadi sudut kekal tepat pada mana-mana skrin.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Pembaris kertas boleh cetak</h2>
     <p>Tekan <b>Cetak</b> untuk pembaris kertas pada saiz sebenar yang tepat: 18&nbsp;cm pada satu sisi dan 7&nbsp;inci pada sisi yang lain. Cetak pada <b>skala 100%</b> (jangan sekali-kali "muat ke halaman"), potong sepanjang tepi, dan semak dengan objek yang diketahui. Pembaris bercetak berguna apabila anda perlu mengukur sesuatu jauh dari skrin.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Pembaris kertas boleh cetak at true size, 18 cm and 7 inci"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telefon dalam mod desktop.</b> Sesetengah pelayar mudah alih melaporkan viewport yang luar biasa; jika pembaris kelihatan tidak betul, gunakan penentukuran kad bank.</li>
       <li><b>Bukan pembaris PD.</b> Ini ialah pembaris pengukur tujuan umum, bukan pembaris jarak pupillary untuk memesan cermin mata — itu memerlukan alat khusus.</li>
       <li><b>Had panjang skrin.</b> Pembaris pada skrin hanya boleh sepanjang paparan anda; untuk objek yang lebih panjang, gunakan pembaris boleh cetak atau ukur secara berperingkat.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Mengapa pembaris kelihatan tidak betul pada monitor saya?</h3>
       <p>Hampir selalu kerana dua monitor berkongsi resolusi tetapi bukan saiz fizikal — panel 1920×1080 boleh jadi 22 atau 32 inci. Pembaris tidak boleh meneka, jadi tentukurkan monitor itu sekali dengan kaedah kad bank dan ia akan kekal betul.</p>
       <h3>Berapa panjangkah pembaris pada skrin?</h3>
-      <p>Selagi skrin anda muat — pembaris 12 inci muat pada kebanyakan komputer riba, manakala telefon memaparkan kurang. Untuk rujukan panjang tetap, cetak pembaris kertas: tepat 18&nbsp;cm pada satu sisi dan 7&nbsp;inci pada sisi yang lain pada skala 100%.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Bolehkah saya menggunakannya sebagai pembaris milimeter?</h3>
       <p>Ya. Tukar bar alat kepada <b>mm</b> dan pembaris dilukis semula dengan tanda dan nombor milimeter — sesuai untuk pengukuran kecil yang tepat.</p>
       <h3>Adakah ia berfungsi pada telefon dan tablet?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Adakah pembaris dalam talian ini tepat?","acceptedAnswer":{"@type":"Answer","text":"Ya — setelah ditentukur, ia tepat hingga kira-kira satu milimeter pada kebanyakan skrin. Titik status hijau bermakna peranti anda telah dikenal pasti dan ketumpatan piksel kilang digunakan. Jika peranti anda tidak dikenal pasti, tentukurkan dengan kaedah kad bank, yang merupakan pilihan paling tepat."}},
 {"@type":"Question","name":"Bagaimana saya menentukur skrin saya?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your penentukuran is saved automatically."}},
 {"@type":"Question","name":"Mengapa pembaris kelihatan tidak betul pada monitor saya?","acceptedAnswer":{"@type":"Answer","text":"Hampir selalu kerana dua monitor berkongsi resolusi tetapi bukan saiz fizikal — panel 1920×1080 boleh jadi 22 atau 32 inci. Pembaris tidak boleh meneka, jadi tentukurkan monitor itu sekali dengan kaedah kad bank dan ia akan kekal betul."}},
-{"@type":"Question","name":"Berapa panjangkah pembaris pada skrin?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
+{"@type":"Question","name":"Berapa panjangkah pembaris pada skrin?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 inci or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inci on the other at 100% scale."}},
 {"@type":"Question","name":"Bolehkah saya menggunakannya sebagai pembaris milimeter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Adakah ia berfungsi pada telefon dan tablet?","acceptedAnswer":{"@type":"Answer","text":"Ya. Susun atur menyesuaikan dengan skrin kecil, dan kebanyakan telefon dan tablet popular ada dalam pangkalan data peranti untuk penentukuran automatik. Pada skrin sentuh, seret kotak ukuran dengan jari anda."}},
 {"@type":"Question","name":"Adakah saya memerlukan kamera saya?","acceptedAnswer":{"@type":"Answer","text":"Tidak. Tidak seperti aplikasi pengukur AR, TrueRuler tidak pernah menggunakan kamera anda — ia mengukur daripada ketumpatan piksel skrin anda, jadi tiada apa untuk dihalakan dan tiada kebenaran untuk diberikan."}},
