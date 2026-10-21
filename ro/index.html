@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milimetru</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 inch</td></tr>
       <tr><td>12 inchi</td><td>30.48 cm</td><td>304.8 mm</td><td>12 inch</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Cum afli mărimea inelului</h2>
     <p>Ca să afli mărimea inelului, înfășoară o fâșie subțire de hârtie în jurul degetului, marchează unde se suprapune, apoi pune fâșia întinsă lângă rigla de pe ecran și citește lungimea în milimetri – bijutierii stabilesc mărimea inelului după circumferința degetului în mm. Pentru un inel pe care îl ai deja, deschide caseta <b>Măsoară</b> și trage-o peste diametrul interior al inelului. Degetul își schimbă puțin dimensiunea în timpul zilei, așa că măsoară seara pentru cel mai sigur rezultat.</p>
     <h2>Modul raportor</h2>
-    <p>Apasă <b>Raportor</b> și peste ecran se deschide un raportor complet de 180°. Trage oricare braț spre unghiul pe care vrei să-l măsori; afișajul arată live gradele. Trage de centru ca să muți tot raportorul. Folosește aceeași calibrare ca rigla, deci unghiurile rămân corecte pe orice ecran.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Riglă de hârtie de imprimat</h2>
     <p>Apasă <b>Imprimă</b> pentru o riglă de hârtie la dimensiune reală exactă: 18&nbsp;cm pe o margine și 7&nbsp;inch pe cealaltă. Imprimă la <b>scară 100%</b> (niciodată „potrivește la pagină”), taie de-a lungul marginii și verific-o cu un obiect cunoscut. O riglă imprimată e utilă când trebuie să măsori ceva departe de ecran.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Riglă de hârtie de imprimat at true size, 18 cm and 7 țoli"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telefoane în mod desktop.</b> Unele browsere mobile raportează un viewport neobișnuit; dacă rigla arată greșit, calibreaz-o cu cardul bancar.</li>
       <li><b>Nu e o riglă PD.</b> Aceasta e o riglă de măsurat universală, nu o riglă pentru distanța pupilara la comanda ochelarilor – pentru asta îți trebuie un instrument specializat.</li>
       <li><b>Limite de lungime a ecranului.</b> Rigla de pe ecran poate fi lungă doar cât afișajul tău; pentru obiecte mai lungi, folosește rigla imprimată sau măsoară pe porțiuni.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>De ce arată rigla greșit pe monitorul meu?</h3>
       <p>Aproape mereu pentru că două monitoare pot avea aceeași rezoluție, dar dimensiune fizică diferită – un panou 1920×1080 poate avea 22 sau 32 de inch. Rigla nu poate ghici, așa că calibrează monitorul o dată cu metoda cardului bancar și va rămâne corect.</p>
       <h3>Cât de lungă e rigla de pe ecran?</h3>
-      <p>Cât ține ecranul tău – o riglă de 12 inch încape pe majoritatea laptopurilor, iar pe telefon vezi mai puțin. Pentru o referință fixă, imprimă rigla de hârtie: la scară 100% are exact 18&nbsp;cm pe o margine și 7&nbsp;inch pe cealaltă.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>O pot folosi ca riglă milimetrică?</h3>
       <p>Da. Comută bara de instrumente pe <b>mm</b> și riglele se redesenează cu gradații și numere milimetrice – ideal pentru măsurători mici și precise.</p>
       <h3>Funcționează pe telefoane și tablete?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Este precisă această riglă online?","acceptedAnswer":{"@type":"Answer","text":"Da – odată calibrată, e precisă cam la un milimetru pe majoritatea ecranelor. Punctul verde înseamnă că dispozitivul tău a fost recunoscut și s-a aplicat densitatea de pixeli din fabrică. Dacă dispozitivul tău nu e recunoscut, calibrează-l cu metoda cardului bancar, care e cea mai precisă."}},
 {"@type":"Question","name":"Cum îmi calibrez ecranul?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibrare is saved automatically."}},
 {"@type":"Question","name":"De ce arată rigla greșit pe monitorul meu?","acceptedAnswer":{"@type":"Answer","text":"Aproape mereu pentru că două monitoare pot avea aceeași rezoluție, dar dimensiune fizică diferită – un panou 1920×1080 poate avea 22 sau 32 de inch. Rigla nu poate ghici, așa că calibrează monitorul o dată cu metoda cardului bancar și va rămâne corect."}},
-{"@type":"Question","name":"Cât de lungă e rigla de pe ecran?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 țoli on the other at 100% scale."}},
+{"@type":"Question","name":"Cât de lungă e rigla de pe ecran?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 țoli or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 țoli on the other at 100% scale."}},
 {"@type":"Question","name":"O pot folosi ca riglă milimetrică?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Funcționează pe telefoane și tablete?","acceptedAnswer":{"@type":"Answer","text":"Da. Aspectul se adaptează la ecrane mici, iar majoritatea telefoanelor și tabletelor populare sunt în baza de date cu dispozitive, pentru calibrare automată. Pe ecrane tactile, trage caseta de măsurare cu degetul."}},
 {"@type":"Question","name":"Am nevoie de cameră?","acceptedAnswer":{"@type":"Answer","text":"Nu. Spre deosebire de aplicațiile de măsurat AR, TrueRuler nu folosește niciodată camera – măsoară din densitatea de pixeli a ecranului tău, deci n-ai spre ce s-o îndrepți și n-ai ce permisiune să dai."}},
