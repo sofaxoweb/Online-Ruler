@@ -55,6 +55,7 @@
   --accent:#0a84ff; --ruler-bg:#1c1c1e; --tick:#f5f5f7; --num:#f5f5f7; --grid:#38383a;
 }
 *{box-sizing:border-box}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .ruler{position:fixed;background:var(--ruler-bg);z-index:30;box-shadow:0 1px 2px rgba(0,0,0,.06)}
@@ -71,6 +72,9 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",-apple-system,
 .ticks li{padding:5px 0 5px 28px;position:relative}
 .ticks li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
 .steps{margin:10px 0;padding-left:22px}
+.qsteps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.qstep{flex:1 1 180px;background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 12px;font-size:14px}
+.qstep b{color:var(--accent);margin-right:6px}
 .steps li{margin-bottom:8px}
 table.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
 .table-wrap{overflow-x:auto;margin:12px 0}
@@ -205,7 +209,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Regla online en tamaño real</h1>
-    <p class="muted" style="font-size:12.5px;margin-top:-6px">Última actualización: 13 de octubre de 2026 · Por el equipo de TrueRuler</p>
+    <p class="muted" style="font-size:12.5px;margin-top:-6px">Última actualización: 21 de octubre de 2026 · Por el equipo de TrueRuler</p>
     <p><b>Una regla online convierte tu pantalla en una herramienta de medición real.</b> TrueRuler dibuja escalas de centímetros, milímetros y pulgadas en tamaño físico real detectando la densidad de píxeles de tu dispositivo, o calibrando una sola vez con el tamaño de tu pantalla o una tarjeta bancaria estándar. Es gratis, no necesita instalación y funciona en cualquier teléfono, tableta, laptop o monitor.</p>
     <ul class="ticks">
       <li>Reglas de cm, mm y pulgadas en tamaño real, en cualquier pantalla</li>
@@ -214,6 +218,12 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li>Mantén el zoom del navegador al 100 % para mediciones precisas</li>
       <li>Gratis para siempre: sin cuenta y sin instalación; tu calibración se guarda en este dispositivo</li>
     </ul>
+    <p style="margin:14px 0 0"><b>Quick start</b></p>
+    <div class="qsteps">
+      <div class="qstep"><b>1.</b> Set browser zoom to 100%.</div>
+      <div class="qstep"><b>2.</b> Calibrar: pick your device, enter the diagonal, or match a bank card.</div>
+      <div class="qstep"><b>3.</b> Medir: hold the object to the ruler, or drag the measure box.</div>
+    </div>
   </div>
 
   <div class="card">
@@ -223,11 +233,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Tu pantalla no sabe lo que es una pulgada: solo conoce píxeles. El puente entre ambos es la <b>densidad de píxeles</b>, que se mide en PPI (píxeles por pulgada). Si tu pantalla muestra 141 píxeles por pulgada, la regla dibuja una pulgada como exactamente 141 píxeles, un centímetro como 55.6 píxeles y un milímetro como 5.56 píxeles.</p>
     <p>Pero hay un detalle: dos monitores pueden compartir la misma resolución de 1920×1080 y sin embargo medir 22 o 32 pulgadas de ancho: los mismos píxeles, tamaños reales muy distintos. Por eso una regla online debe conocer el PPI real de tu pantalla. TrueRuler lo hace de dos maneras: reconoce los teléfonos, tabletas y laptops más comunes desde una base de datos de dispositivos y aplica su PPI de fábrica, o calcula el PPI a partir del tamaño de la diagonal de la pantalla. <span id="ppiEcho"></span></p>
     <p>Un detalle más: los navegadores trabajan en <b>píxeles CSS</b>, que pueden diferir de los píxeles físicos en pantallas de alta densidad ("Retina"). TrueRuler lee la relación de píxeles de tu dispositivo y convierte automáticamente, y te avisa si el zoom del navegador no está al 100 %, porque el zoom cambia el tamaño del píxel CSS.</p>
-    <h2>La fórmula de calibración</h2>
-    <p>Cuando introduces el tamaño de la diagonal de tu pantalla, la regla calcula el PPI con el teorema de Pitágoras:</p>
-    <p class="formula"><b>PPI = √(ancho² + alto²) ÷ pulgadas de diagonal</b></p>
-    <p><b>Ejemplo resuelto.</b> Una laptop de 15.6 pulgadas con pantalla de 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 píxeles en diagonal. Dividido entre 15.6 pulgadas → <b>141.2 PPI</b>. Por lo tanto, una pulgada se dibuja como 141.2 píxeles, un centímetro como 55.6 píxeles (141.2 ÷ 2.54) y un milímetro como 5.56 píxeles.</p>
-    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
+
   </div>
 
   <div class="card">
@@ -248,6 +254,18 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   </div>
 
   <div class="card">
+    <h2>La fórmula de calibración</h2>
+    <p>Cuando introduces el tamaño de la diagonal de tu pantalla, la regla calcula el PPI con el teorema de Pitágoras:</p>
+    <p class="formula"><b>PPI = √(ancho² + alto²) ÷ pulgadas de diagonal</b></p>
+    <p><b>Ejemplo resuelto.</b> Una laptop de 15.6 pulgadas con pantalla de 1920×1080: √(1920²&nbsp;+&nbsp;1080²) = √4,852,800 ≈ 2202.9 píxeles en diagonal. Dividido entre 15.6 pulgadas → <b>141.2 PPI</b>. Por lo tanto, una pulgada se dibuja como 141.2 píxeles, un centímetro como 55.6 píxeles (141.2 ÷ 2.54) y un milímetro como 5.56 píxeles.</p>
+    <p><b>How reliable is each calibración method?</b> Not every method deserves the same trust:</p>
+    <ul class="ticks">
+      <li><b>Bank card — most precise.</b> A physical reference beats any calculation: typically within about a millimetre when the card is aligned carefully. Bank and ID cards follow the ISO/IEC 7810 ID-1 standard — exactly 85.60 × 53.98 mm — which is why they make a trustworthy reference.</li>
+      <li><b>Diagonal de pantalla — close, if the diagonal is exact.</b> A rounded specification (a “15.6-inch” panel that is really 15.5) shifts every measurement slightly.</li>
+      <li><b>Device detection — convenient, verify once.</b> It applies the factory pixel density of recognised models, but variants of the same model can ship with different panels.</li>
+    </ul>
+    <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a calibración only matches the screen it was made on.</p>
+    <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Cómo leer las escalas: pulgadas, centímetros y milímetros</h2>
     <p>La regla muestra las escalas métricas e imperiales lado a lado. Usa los <b>milímetros</b> para trabajos de precisión, los <b>centímetros</b> para medir en el día a día y las <b>pulgadas</b> para medidas imperiales. El convertidor integrado de arriba también maneja metros, pies, yardas y puntos.</p>
     <div class="table-wrap"><table class="stable">
@@ -264,6 +282,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Pulsa <b>Rotar</b> para intercambiar las reglas horizontal y vertical; es útil para medir alturas o cuando tu pantalla es estrecha. La regla vertical funciona exactamente igual que la horizontal, en centímetros, milímetros y pulgadas.</p>
     <h2>Cómo medir objetos con el recuadro de medición</h2>
     <p>Pulsa <b>Medir</b> y arrastra un recuadro sobre cualquier cosa visible en pantalla: una foto, un diagrama, la imagen de un producto. El recuadro muestra en vivo el ancho × alto en cm, mm y pulgadas. Arrastra los tiradores para cambiar el tamaño, arrastra el centro para moverlo y usa las flechas del teclado para ajustes precisos. <b>Copiar</b> guarda la lectura en tu portapapeles.</p>
+    <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Cómo medir la talla de un anillo</h2>
     <p>Para saber tu talla de anillo, envuelve una tira fina de papel alrededor de tu dedo, marca donde se superpone y luego coloca la tira plana sobre la regla en pantalla y lee la longitud en milímetros; la mayoría de los joyeros calculan las tallas a partir de la circunferencia del dedo en mm. Si ya tienes un anillo, abre el recuadro de <b>Medir</b> y arrástralo a lo ancho del diámetro interior del anillo. El tamaño del dedo varía ligeramente durante el día, así que mide por la noche para un resultado más fiable.</p>
     <h2>Modo transportador</h2>
