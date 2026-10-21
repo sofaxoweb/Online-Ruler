@@ -210,7 +210,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
   <div class="card">
     <h1 style="margin-top:0;font-size:24px">Online Ruler at Actual Size in cm, mm and Inches</h1>
     <p class="muted" style="font-size:12.5px;margin-top:-6px">Last updated: October 21, 2026 · By the TrueRuler team</p>
-    <p><b>An online ruler turns your screen into a real measuring tool.</b> TrueRuler draws centimetre, millimetre and inch scales at true physical size by detecting your device's pixel density — or by calibrating once with your screen size or a standard bank card. It is free, needs no installation, and works on any phone, tablet, laptop or monitor.</p>
+    <p><b>TrueRuler is an online ruler that draws centimetre, millimetre and inch scales at real physical size on your screen.</b> It detects your device's pixel density automatically, or calibrates once from your screen size or a standard bank card. No installation and no account — it works on any phone, tablet, laptop or monitor.</p>
     <ul class="ticks">
       <li>True-size cm, mm and inch rulers on any screen</li>
       <li>Automatic device detection, or calibrate with your screen diagonal or a bank card (85.60&nbsp;mm)</li>
@@ -228,10 +228,10 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
 
   <div class="card">
     <h2>What is an online ruler?</h2>
-    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
+    <p class="def"><b>An online ruler is a web-based measuring tool that displays a ruler on your screen at real physical size.</b> Unlike a static image of a ruler, it rescales itself to your exact display — a centimetre on screen equals a centimetre in the real world. It calculates your display's pixels-per-inch (PPI) and draws every centimetre, millimetre and inch to match a physical ruler held against the screen. After a one-time calibration, you can measure small objects directly on your display — no app to install.</p>
     <h2>How this ruler measures in real size</h2>
     <p>Your screen does not know what an inch is — it only knows pixels. The bridge between the two is <b>pixel density</b>, measured in PPI (pixels per inch). If your screen shows 141 pixels per inch, the ruler draws one inch as exactly 141 pixels, one centimetre as 55.6 pixels, and one millimetre as 5.56 pixels.</p>
-    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. <span id="ppiEcho"></span></p>
+    <p>There is a catch: two monitors can share the same 1920×1080 resolution yet be 22 or 32 inches wide — the same pixels, very different real sizes. That is why an online ruler must learn your screen's true PPI. TrueRuler does this in two ways: it recognises common phones, tablets and laptops from a device database and applies their factory PPI, or it computes PPI from the screen's diagonal size. Diagonal specifications are often rounded — a panel sold as 15.6 inches may measure 15.53 — which is why the bank-card method, not the diagonal, is the precision reference. <span id="ppiEcho"></span></p>
     <p>One more detail: browsers work in <b>CSS pixels</b>, which can differ from physical pixels on high-density ("Retina") displays. TrueRuler reads your device's pixel ratio and converts automatically, and it warns you if browser zoom is not at 100%, because zooming changes the size of a CSS pixel.</p>
 
   </div>
@@ -267,7 +267,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Whichever method you use, recalibrate when you change monitors, display scaling or resolution — a calibration only matches the screen it was made on.</p>
     <!-- [IMAGE: diagram showing diagonal pixel measurement across a 15.6-inch 1920×1080 laptop screen with the PPI formula — alt: "How screen PPI is calculated from resolution and diagonal size"] -->
     <h2>Reading the scales: inches, centimetres and millimetres</h2>
-    <p>The ruler shows metric and imperial scales side by side. Use <b>millimetres</b> for precision work, <b>centimetres</b> for everyday measuring, and <b>inches</b> for imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
+    <p><b>The same scale ruler serves metric and imperial measuring.</b> Millimetres (US spelling: millimeters) give the finest ticks for precision work, centimetres suit everyday measuring, and inches cover imperial measurements. The built-in converter above also handles metres, feet, yards and points.</p>
     <div class="table-wrap"><table class="stable">
       <tr><th>Unit</th><th>In centimetres</th><th>In millimetres</th><th>In inches</th></tr>
       <tr><td>1 inch</td><td>2.54 cm</td><td>25.4 mm</td><td>1 in</td></tr>
@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 millimetre</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 in</td></tr>
       <tr><td>12 inches</td><td>30.48 cm</td><td>304.8 mm</td><td>12 in</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -284,11 +285,11 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <p>Press <b>Measure</b> and drag a box over anything visible on screen — a photo, a diagram, a product image. The box shows live width × height in cm, mm and inches. Drag the handles to resize, drag the centre to move it, and use your arrow keys for precise nudging. <b>Copy</b> puts the reading on your clipboard.</p>
     <p>Everyday uses go well beyond the toolbox: check a phone screen protector or case before you order it, size a craft cut or a photo print, measure screws, bolts and other small parts for a repair, confirm a parcel fits its packaging, or finish a school measurement when no physical ruler is at hand. If it fits on your screen, you can measure it.</p>
     <h2>Measuring ring size</h2>
-    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result.</p>
+    <p>To find your ring size, wrap a thin strip of paper around your finger, mark where it overlaps, then lay the strip flat against the on-screen ruler and read the length in millimetres — most jewellers size rings from the finger's circumference in mm. For a ring you already own, open the <b>Measure</b> box and drag it across the ring's inner diameter. Finger size shifts slightly during the day, so measure in the evening for the most reliable result. Ring size charts convert the same millimetre circumference differently in US, UK and EU standards — treat the millimetre number as the source value and convert it with your jeweller's chart.</p>
     <h2>Protractor mode</h2>
-    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. It uses the same calibration as the ruler, so angles stay true on any screen.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Printable paper ruler</h2>
-    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and check it against a known object. A printed ruler is handy when you need to measure something away from the screen.</p>
+    <p>Press <b>Print</b> for a paper ruler at exact true size: 18&nbsp;cm on one edge and 7&nbsp;inches on the other. It fits on A4 or Letter paper. Print at <b>100% scale</b> (never "fit to page"), cut along the edge, and verify the print against a bank card — the card's 85.60&nbsp;mm edge must match the printed scale exactly before you trust it. A printed ruler is handy when you need to measure something away from the screen.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Printable paper ruler at true size, 18 cm and 7 inches"] -->
   </div>
 
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Phones in desktop mode.</b> Some mobile browsers report an unusual viewport; if the ruler looks wrong, use the bank-card calibration.</li>
       <li><b>Not a PD ruler.</b> This is a general-purpose measuring ruler, not a pupillary-distance ruler for ordering glasses — that needs a specialised tool.</li>
       <li><b>Screen length limits.</b> The on-screen ruler can only be as long as your display; for longer objects, use the printable ruler or measure in sections.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Why does the ruler look wrong on my monitor?</h3>
       <p>Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct.</p>
       <h3>How long is the on-screen ruler?</h3>
-      <p>As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Can I use it as a millimetre ruler?</h3>
       <p>Yes. Switch the toolbar to <b>mm</b> and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements.</p>
       <h3>Does it work on phones and tablets?</h3>
@@ -340,7 +343,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>How do I print a ruler at actual size?</h3>
       <p>Press <b>Print</b>, then print at <b>100% scale</b> — never "fit to page", which would shrink it. Cut along the edge and verify against a bank card (85.60&nbsp;mm) before trusting it.</p>
       <h3>Does it save my settings?</h3>
-      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server.</p>
+      <p>Your calibration, unit choice and theme are saved in your browser's local storage on your own device; nothing is sent to any server. Clearing site data resets them, and Safari may delete saved data after about a week without a visit — recalibrate if the setting seems lost.</p>
       <h3>What is PPI and why does it matter?</h3>
       <p>PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool.</p>
     </div>
@@ -1071,14 +1074,14 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Is this online ruler accurate?","acceptedAnswer":{"@type":"Answer","text":"It depends on calibration. The bank-card method is the most precise — typically within about a millimetre. Screen-diagonal calibration is close when the diagonal is exact, and automatic detection applies your device's factory pixel density. For anything that matters, verify once against a physical ruler or a bank card (85.60 mm wide), and recalibrate if you change displays."}},
 {"@type":"Question","name":"How do I calibrate my screen?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibration is saved automatically."}},
 {"@type":"Question","name":"Why does the ruler look wrong on my monitor?","acceptedAnswer":{"@type":"Answer","text":"Almost always because two monitors share a resolution but not a physical size — a 1920×1080 panel can be 22 or 32 inches. The ruler cannot guess, so calibrate that monitor once with the bank-card method and it will stay correct."}},
-{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inches on the other at 100% scale."}},
+{"@type":"Question","name":"How long is the on-screen ruler?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 inches on the other at 100% scale."}},
 {"@type":"Question","name":"Can I use it as a millimetre ruler?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Does it work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout adapts to small screens, and most popular phones and tablets are in the device database for automatic calibration. On touch screens, drag the measure box with your finger."}},
 {"@type":"Question","name":"Do I need my camera?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike AR measuring apps, TrueRuler never uses your camera — it measures from your screen's pixel density, so there is nothing to point and no permission to grant."}},
 {"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account and no installation. All processing happens in your browser; nothing you measure is uploaded anywhere."}},
 {"@type":"Question","name":"Can I measure my ring size with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrap a paper strip around your finger, mark the overlap, lay it flat against the on-screen ruler and read the millimetres — jewellers size rings from finger circumference. Or drag the Measure box across a ring's inner diameter."}},
 {"@type":"Question","name":"How do I print a ruler at actual size?","acceptedAnswer":{"@type":"Answer","text":"Press Print, then print at 100% scale — never 'fit to page', which would shrink it. Cut along the edge and verify against a bank card (85.60 mm) before trusting it."}},
-{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device. Clearing site data resets them; nothing is sent to any server."}},
+{"@type":"Question","name":"Does it save my settings?","acceptedAnswer":{"@type":"Answer","text":"Your calibration, unit choice and theme are saved in your browser's local storage on your own device; nothing is sent to any server. Clearing site data resets them, and Safari may delete saved data after about a week without a visit — recalibrate if the setting seems lost."}},
 {"@type":"Question","name":"What is PPI and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"PPI means pixels per inch — your screen's pixel density. A ruler must know it to convert pixels into real centimetres and inches. That single number is the whole difference between a decorative ruler image and a true-size measuring tool."}}
 ]}
 </script>
