@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <tr><td>1 milímetro</td><td>0.1 cm</td><td>1 mm</td><td>0.03937 pol</td></tr>
       <tr><td>12 polegadas</td><td>30.48 cm</td><td>304.8 mm</td><td>12 pol</td></tr>
     </table></div>
+    <p><b>Reading the scale:</b> the longest lines mark whole centimetres or inches, the medium lines mark half units, and the shortest lines mark millimetres or sixteenths of an inch. A full foot — 12 inches, 30.48 cm — fits on screens from about 14 inches up, so on most full-size laptops the on-screen ruler works as a 12 inch ruler.</p>
   </div>
 
   <div class="card">
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
     <h2>Medir o tamanho do anel</h2>
     <p>Para descobrir o tamanho do seu anel, enrole uma tira fina de papel à volta do dedo, marque onde se sobrepõe e depois pouse a tira esticada contra a régua no ecrã, lendo o comprimento em milímetros — a maioria dos joalheiros dimensiona os anéis a partir da circunferência do dedo em mm. Para um anel que já tenha, abra a caixa <b>Medir</b> e arraste-a ao longo do diâmetro interno do anel. O tamanho do dedo varia ligeiramente ao longo do dia, por isso meça à noite para o resultado mais fiável.</p>
     <h2>Modo transferidor</h2>
-    <p>Prima <b>Transferidor</b> para sobrepor um transferidor completo de 180°. Arraste qualquer um dos braços até ao ângulo que quer medir; a leitura mostra os graus em direto. Arraste o centro para mover o transferidor todo. Usa a mesma calibração da régua, por isso os ângulos mantêm-se corretos em qualquer ecrã.</p>
+    <p>Press <b>Protractor</b> to overlay a full 180° protractor. Drag either arm to the angle you want to measure; the readout shows the degrees live. Drag the centre to move the whole protractor. Angles do not depend on calibration — a degree is a degree at any PPI — so the protractor stays correct even on a screen the ruler has not calibrated.</p>
     <h2>Régua de papel para imprimir</h2>
     <p>Prima <b>Imprimir</b> para obter uma régua de papel em tamanho exatamente real: 18&nbsp;cm num dos lados e 7&nbsp;polegadas no outro. Imprima a <b>100% de escala</b> (nunca "ajustar à página"), corte pelo rebordo e confirme com um objeto conhecido. Uma régua impressa dá jeito quando precisa de medir algo longe do ecrã.</p>
     <!-- [IMAGE: the printed 18 cm / 7 inch paper ruler next to a standard bank card for scale — alt: "Régua de papel para imprimir at true size, 18 cm and 7 polegadas"] -->
@@ -301,6 +302,8 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <li><b>Telemóveis em modo de computador.</b> Alguns navegadores móveis reportam uma janela de visualização invulgar; se a régua aparecer errada, use a calibração com cartão bancário.</li>
       <li><b>Não é uma régua de DP.</b> Esta é uma régua de medição de uso geral, não uma régua de distância pupilar para encomendar óculos — isso requer uma ferramenta especializada.</li>
       <li><b>Limites do comprimento do ecrã.</b> A régua no ecrã só pode ser tão comprida quanto o seu ecrã; para objetos mais compridos, use a régua para imprimir ou meça por secções.</li>
+      <li><b>Safari may clear saved settings.</b> Safari can delete a site's stored data after about a week without a visit — if your calibration is gone, recalibrate; it takes seconds.</li>
+      <li><b>Curved screens and parallax.</b> A thick or curved screen can shift a reading slightly when you view it at an angle — read the scale straight-on, with the object flat against the display.</li>
     </ul>
   </div>
 
@@ -326,7 +329,7 @@ footer{border-top:1px solid var(--grid);padding:26px 18px;text-align:center;colo
       <h3>Porque é que a régua aparece errada no meu monitor?</h3>
       <p>Quase sempre porque dois monitores partilham a resolução mas não o tamanho físico — um painel de 1920×1080 pode ter 22 ou 32 polegadas. A régua não consegue adivinhar, por isso calibre esse monitor uma vez com o método do cartão bancário e ficará correto.</p>
       <h3>Qual é o comprimento da régua no ecrã?</h3>
-      <p>Tão comprida quanto o seu ecrã — uma régua de 12 polegadas cabe na maioria dos portáteis, enquanto os telemóveis mostram menos. Para uma referência de comprimento fixo, imprima a régua de papel: exatamente 18&nbsp;cm num dos lados e 7&nbsp;polegadas no outro a 100% de escala.</p>
+      <p>As long as your screen. Laptops with screens of 14 inches or more show a full 12-inch ruler (30.48&nbsp;cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18&nbsp;cm on one edge and 7&nbsp;inches on the other at 100% scale.</p>
       <h3>Posso usá-la como régua de milímetros?</h3>
       <p>Sim. Mude a barra de ferramentas para <b>mm</b> e as réguas são redesenhadas com marcas e numeração de milímetros — ideal para medições pequenas e precisas.</p>
       <h3>Funciona em telemóveis e tablets?</h3>
@@ -1071,7 +1074,7 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
 {"@type":"Question","name":"Esta régua online é precisa?","acceptedAnswer":{"@type":"Answer","text":"Sim — depois de calibrada, tem uma precisão de cerca de um milímetro na maioria dos ecrãs. O ponto de estado verde significa que o seu dispositivo foi reconhecido e que a densidade de píxeis de fábrica foi aplicada. Se o seu dispositivo não for reconhecido, calibre com o método do cartão bancário, que é a opção mais precisa."}},
 {"@type":"Question","name":"Como calibro o meu ecrã?","acceptedAnswer":{"@type":"Answer","text":"Pick any of three methods: choose your device from the list, enter your screen's diagonal size, or hold a standard bank card (85.60 mm wide) against the blue guide and drag the slider until they match. Your calibração is saved automatically."}},
 {"@type":"Question","name":"Porque é que a régua aparece errada no meu monitor?","acceptedAnswer":{"@type":"Answer","text":"Quase sempre porque dois monitores partilham a resolução mas não o tamanho físico — um painel de 1920×1080 pode ter 22 ou 32 polegadas. A régua não consegue adivinhar, por isso calibre esse monitor uma vez com o método do cartão bancário e ficará correto."}},
-{"@type":"Question","name":"Qual é o comprimento da régua no ecrã?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen — a 12-inch ruler fits on most laptops, while phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 polegadas on the other at 100% scale."}},
+{"@type":"Question","name":"Qual é o comprimento da régua no ecrã?","acceptedAnswer":{"@type":"Answer","text":"As long as your screen. Laptops with screens of 14 polegadas or more show a full 12-inch ruler (30.48 cm); phones show less. For a fixed-length reference, print the paper ruler: exactly 18 cm on one edge and 7 polegadas on the other at 100% scale."}},
 {"@type":"Question","name":"Posso usá-la como régua de milímetros?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the toolbar to mm and the rulers redraw with millimetre ticks and numbering — ideal for precise small measurements."}},
 {"@type":"Question","name":"Funciona em telemóveis e tablets?","acceptedAnswer":{"@type":"Answer","text":"Sim. O esquema adapta-se a ecrãs pequenos, e a maioria dos telemóveis e tablets populares está na base de dados de dispositivos para calibração automática. Em ecrãs táteis, arraste a caixa de medição com o dedo."}},
 {"@type":"Question","name":"Preciso da minha câmara?","acceptedAnswer":{"@type":"Answer","text":"Não. Ao contrário das aplicações de medição com realidade aumentada, a TrueRuler nunca usa a sua câmara — mede a partir da densidade de píxeis do seu ecrã, por isso não há nada para apontar nem nenhuma permissão para conceder."}},
